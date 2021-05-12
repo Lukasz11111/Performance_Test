@@ -1,0 +1,32 @@
+2021-05-12 08:31:32,400 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2021-05-12 08:31:32,413 INFO o.a.j.JMeter: Loading user properties from: /jmeter/apache-jmeter-5.4.1/bin/user.properties
+2021-05-12 08:31:32,414 INFO o.a.j.JMeter: Loading system properties from: /jmeter/apache-jmeter-5.4.1/bin/system.properties
+2021-05-12 08:31:32,414 INFO o.a.j.JMeter: Setting JMeter property: server.rmi.ssl.disable=true
+2021-05-12 08:31:32,419 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: Version 5.4.1
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: java.version=1.8.0_292
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: os.name=Linux
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: os.arch=amd64
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: os.version=5.4.0-1046-azure
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: file.encoding=UTF-8
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: java.awt.headless=true
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: Max memory     =1073741824
+2021-05-12 08:31:32,420 INFO o.a.j.JMeter: Available Processors =16
+2021-05-12 08:31:32,424 INFO o.a.j.JMeter: Default Locale=English (EN)
+2021-05-12 08:31:32,424 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2021-05-12 08:31:32,424 INFO o.a.j.JMeter: JMeterHome=/jmeter/apache-jmeter-5.4.1
+2021-05-12 08:31:32,424 INFO o.a.j.JMeter: user.dir  =/
+2021-05-12 08:31:32,425 INFO o.a.j.JMeter: PWD       =/
+2021-05-12 08:31:32,425 INFO o.a.j.JMeter: IP: 172.17.0.8 Name: 9b38737d428e FullName: 9b38737d428e
+2021-05-12 08:31:32,428 ERROR o.a.j.JMeter: An error occurred: 
+java.lang.IllegalArgumentException: Cannot write to '/testJM/result' as folder is not empty
+	at org.apache.jorphan.util.JOrphanUtils.canSafelyWriteToFolder(JOrphanUtils.java:663) ~[jorphan.jar:5.4.1]
+	at org.apache.jorphan.util.JOrphanUtils.canSafelyWriteToFolder(JOrphanUtils.java:619) ~[jorphan.jar:5.4.1]
+	at org.apache.jmeter.JMeter.extractAndSetReportOutputFolder(JMeter.java:609) ~[ApacheJMeter_core.jar:5.4.1]
+	at org.apache.jmeter.JMeter.start(JMeter.java:563) [ApacheJMeter_core.jar:5.4.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_292]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:254) [ApacheJMeter.jar:5.4.1]

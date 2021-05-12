@@ -1,7 +1,14 @@
 # #!/bin/bash
 FOLDERS=tmp_test/*
-SLAVE_COUNT=3
+SLAVE_COUNT=2
 
+date_str=`date +"%m-%d-%y_%H;%M"`
+RAPORT_NAME="raports/raport-$date_str.xlsx"
+
+RDB_REMOVE="$1"
+
+echo RevDeBug server restart...
+sudo python3 request.py http://20.188.58.169:8888/up n
 for x in $FOLDERS; do
   echo "Processing $x folder..."
   FILES=$x/*
@@ -24,8 +31,16 @@ for x in $FOLDERS; do
       for ((VARIABLE = $START; VARIABLE <= $END; VARIABLE++)); do
         ((i++))
         echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $i of $var ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        sudo bash stress.sh $f $VARIABLE
+        sudo bash stress.sh $f $VARIABLE $RAPORT_NAME $x
       done
     done
   fi
 done
+tmp=`echo $RDB_REMOVE`
+R=1
+if [[ $tmp == "1" ]]; then
+echo RevDeBug instance removing...
+sudo python3 request.py http://20.188.58.169:8888/down y
+sudo python3 save_data_removing.py $RAPORT_NAME
+fi
+
