@@ -1,6 +1,6 @@
 # #!/bin/bash
 FOLDERS=tmp_test/*
-SLAVE_COUNT=2
+SLAVE_COUNT=1
 
 date_str=`date +"%m-%d-%y_%H;%M"`
 RAPORT_NAME="raports/raport-$date_str.xlsx"

@@ -56,7 +56,7 @@ filename_raport=sys.argv[3]
 
 sheet_name=json_config['application_name'] 
 
-infile = r"./jmeter.log"
+infile = r"test/path/jmeter.log"
 
 with open(infile) as f:
     f = f.readlines()
