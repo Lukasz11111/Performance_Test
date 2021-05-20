@@ -10,18 +10,17 @@ CONFIG_TEST_FILE_PATH="$4"
 
 # YOU MUST SET .CONFIG IN TEST FOLDER
 
-#All sections are divided by _
-# 1. application language name (dotnet,java,js,python)
-# 2. Called endpoints, divided by "-"
-# 3. Endpoint type
-# 4. Code len (in the case of multiple endpoints (various))
-# 5. Number of threads
-# 6. Repeat calls
-# 7. Test time
-# 8. Testing application name (In devOps)
 
+#All sections are divided by _
+# 1. Id order
+# 2. Testing application name (In devOps)
+# 3. Err proportion
+# 4. Endpoint type
+# 5. Code len (in the case of multiple endpoints (various))
 
 file="$1"
+
+echo $file
 
 sudo python3 get_app_name.py $CONFIG_TEST_FILE_PATH $JSON_RAPORT_PATH $RESULT_STATISTICS_PATH 
 
@@ -32,13 +31,19 @@ RAPORT_NAME="$3"
 
 sudo rm tmp.txt
 
+echo $file
+
 sudo npm run test:linux_before --prefix $CYPRESS_PATH 
+
+echo $file
 
 sudo rm -rf $RESULT_PATH
 
 slave_count="$2"
 
 sudo bash $INIT_JM $slave_count $file
+
+echo $file
 
 sudo npm run test:linux_after  --prefix $CYPRESS_PATH
 

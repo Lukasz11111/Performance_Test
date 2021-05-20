@@ -25,25 +25,19 @@ def createSheet(sheet):
     sheet["D3"] = "Calls/s avg" 
     sheet["E3"] = "sent  kb/s"
     sheet["F3"] = "Response AVG /s"
-    sheet["G3"] = "Endpoint type"
-    sheet["H3"] = "Code length"
-    sheet["I3"] = "Threads count"
-    sheet["J3"] = "Repeat calls"
-    sheet["K3"] = "Time"
-    sheet["L3"] = "Endpoints"
+    sheet["G3"] = "Code length"
+    sheet["H3"] = "Err proportion"
+    sheet["I3"] = "RDB/APM"
     sheet.column_dimensions['A'].width =13
     sheet.column_dimensions['B'].width =10
     sheet.column_dimensions['C'].width =10
     sheet.column_dimensions['D'].width =10
     sheet.column_dimensions['E'].width =10
     sheet.column_dimensions['F'].width =15
-    sheet.column_dimensions['G'].width =7
-    sheet.column_dimensions['H'].width =7
-    sheet.column_dimensions['I'].width =7
-    sheet.column_dimensions['J'].width =15
-    sheet.column_dimensions['K'].width =5
-    sheet.column_dimensions['L'].width =5
-    sheet.column_dimensions['M'].width =15
+    sheet.column_dimensions['G'].width =15
+    sheet.column_dimensions['H'].width =15
+    sheet.column_dimensions['I'].width =20
+
 
 
 with open(JSON_RAPORT_PATH) as f:
@@ -107,13 +101,8 @@ sheet["C4"] = json_dict["TotalJmeter"]["sampleCount"]
 sheet["D4"]=list_result[len(list_result)-1]
 sheet["E4"] = json_dict["TotalJmeter"]["sentKBytesPerSec"]
 sheet["F4"] = json_dict["TotalJmeter"]["meanResTime"]
-sheet["G4"] = data_name[0]
-sheet["G4"] = data_name[2]
-sheet["H4"] = data_name[3]
-sheet["I4"] = data_name[4]
-sheet["J4"] = data_name[5]
-sheet["K4"] = data_name[6]
-sheet["L4"] = data_name[1].replace("-"," /")
-
+sheet["G4"] = data_name[3].replace(".jmx","")
+sheet["H4"] = data_name[2].replace("-"," /")
+sheet["I4"] = json_config['info'] 
 
 workbook.save(filename=filename_raport)

@@ -1,6 +1,6 @@
 # #!/bin/bash
 FOLDERS=tmp_test/*
-SLAVE_COUNT=1
+SLAVE_COUNT=2
 
 date_str=`date +"%m-%d-%y_%H;%M"`
 RAPORT_NAME="raports/raport-$date_str.xlsx"
@@ -9,6 +9,23 @@ RDB_REMOVE="$1"
 
 echo RevDeBug server restart...
 sudo python3 request.py http://20.188.58.169:8888/up n
+
+counterall=0
+counterall_done=0
+
+START=0
+END=$SLAVE_COUNT
+for ((VARIABLE = $START; VARIABLE <= $END; VARIABLE++)); do
+  for x in $FOLDERS; do
+  FILES=$x/*
+  if [ "$(ls -A $FILES)" ]; then
+      for f in $FILES; do
+        ((counterall++))
+      done
+    fi
+  done
+done
+
 for x in $FOLDERS; do
   echo "Processing $x folder..."
   FILES=$x/*
@@ -30,8 +47,11 @@ for x in $FOLDERS; do
       END=$SLAVE_COUNT
       for ((VARIABLE = $START; VARIABLE <= $END; VARIABLE++)); do
         ((i++))
-        echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $i of $var ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        sudo bash stress.sh $f $VARIABLE $RAPORT_NAME $x
+        ((counterall_done++))
+        echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $counterall_done of $counterall ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $i of $var from folder ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        sudo bash stress.sh $f $VARIABLE $RAPORT_NAME $x 
+        
       done
     done
   fi

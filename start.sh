@@ -1,2 +1,6 @@
+echo helo
+source  main.sh
 
-source  Jmeter_test/main.sh
+
+
+

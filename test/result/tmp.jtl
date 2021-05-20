@@ -1,74 +1,761 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1620860377417,109,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-21,,false,,111,394,504,504,http://40.89.147.34:6015/Error/err_loop_for_1000,107,0,56
-1620860377418,108,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-35,,false,,111,394,505,505,http://40.89.147.34:6015/Error/err_loop_for_1000,107,0,55
-1620860377417,114,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-42,,false,,111,394,504,504,http://40.89.147.34:6015/Error/err_loop_for_1000,108,0,62
-1620860377417,114,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-38,,false,,111,394,504,504,http://40.89.147.34:6015/Error/err_loop_for_1000,108,0,58
-1620860377500,34,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-27,,false,,111,394,505,505,http://40.89.147.34:6015/Error/err_loop_for_1000,34,0,3
-1620860377456,73,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-80,,false,,111,394,504,504,http://40.89.147.34:6015/Error/err_loop_for_1000,73,0,19
-1620860376265,117,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-21,,false,,111,394,504,504,null,107,1152,56
-1620860376426,78,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-80,,false,,111,394,504,504,null,73,1030,19
-1620860376272,34,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-27,,false,,111,394,505,505,null,34,1228,3
-1620860377422,109,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-20,,false,,111,394,504,504,http://40.89.147.34:6015/Error/err_loop_for_1000,103,0,54
-1620860376289,118,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-35,,false,,111,394,505,505,null,107,1129,55
-1620860376264,114,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-20,,false,,111,394,504,504,null,103,1158,54
-1620860376293,119,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-38,,false,,111,394,504,504,null,108,1124,58
-1620860376297,120,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-42,,false,,111,394,504,504,null,108,1120,62
-1620860377499,40,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-36,,false,,111,394,498,498,http://40.89.147.34:6015/Error/err_loop_for_1000,40,0,5
-1620860376290,40,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-36,,false,,111,394,498,498,null,40,1209,5
-1620860377504,35,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-52,,false,,111,394,498,498,http://40.89.147.34:6015/Error/err_loop_for_1000,35,0,4
-1620860376322,35,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-52,,false,,111,394,498,498,null,35,1182,4
-1620860377473,67,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-7,,false,,111,394,497,498,http://40.89.147.34:6015/Error/err_loop_for_1000,67,0,3
-1620860376226,66,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-7,,false,,111,394,497,498,null,67,1247,3
-1620860377520,38,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-19,,false,,111,394,502,502,http://40.89.147.34:6015/Error/err_loop_for_1000,38,0,7
-1620860376263,39,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-19,,false,,111,394,502,502,null,38,1257,7
-1620860377532,34,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-34,,false,,111,394,502,502,http://40.89.147.34:6015/Error/err_loop_for_1000,34,0,3
-1620860377529,37,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-96,,false,,111,394,502,502,http://40.89.147.34:6015/Error/err_loop_for_1000,37,0,3
-1620860376288,34,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-34,,false,,111,394,502,502,null,34,1244,3
-1620860376471,38,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-96,,false,,111,394,502,502,null,37,1058,3
-1620860377524,43,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-45,,false,,111,394,501,501,http://40.89.147.34:6015/Error/err_loop_for_1000,43,0,7
-1620860376305,44,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-45,,false,,111,394,501,501,null,43,1219,7
-1620860377528,40,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-18,,false,,111,394,500,500,http://40.89.147.34:6015/Error/err_loop_for_1000,40,0,3
-1620860376267,40,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-18,,false,,111,394,500,500,null,40,1261,3
-1620860377536,33,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-33,,false,,111,394,500,500,http://40.89.147.34:6015/Error/err_loop_for_1000,33,0,2
-1620860376288,33,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-33,,false,,111,394,500,500,null,33,1248,2
-1620860377532,38,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-77,,false,,111,394,499,499,http://40.89.147.34:6015/Error/err_loop_for_1000,38,0,6
-1620860376418,38,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-77,,false,,111,394,499,499,null,38,1114,6
-1620860377541,38,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-108,,false,,111,394,504,504,http://40.89.147.34:6015/Error/err_loop_for_1000,38,0,3
-1620860376504,38,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-108,,false,,111,394,504,504,null,38,1037,3
-1620860377552,36,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-39,,false,,111,394,511,511,http://40.89.147.34:6015/Error/err_loop_for_1000,36,0,3
-1620860376294,36,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-39,,false,,111,394,511,511,null,36,1258,3
-1620860377554,35,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-62,,false,,111,394,513,513,http://40.89.147.34:6015/Error/err_loop_for_1000,35,0,4
-1620860376371,35,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-62,,false,,111,394,513,513,null,35,1183,4
-1620860377588,35,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-55,,false,,111,394,518,518,http://40.89.147.34:6015/Error/err_loop_for_1000,35,0,3
-1620860376333,36,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-55,,false,,111,394,518,518,null,35,1255,3
-1620860377472,152,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-37,,false,,111,394,517,517,http://40.89.147.34:6015/Error/err_loop_for_1000,152,0,3
-1620860376292,153,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-37,,false,,111,394,517,517,null,152,1180,3
-1620860377424,201,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-22,,false,,111,394,516,516,http://40.89.147.34:6015/Error/err_loop_for_1000,201,0,50
-1620860376269,201,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-22,,false,,111,394,516,516,null,201,1155,50
-1620860377425,202,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-8,,false,,111,394,518,518,http://40.89.147.34:6015/Error/err_loop_for_1000,202,0,48
-1620860376228,201,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-8,,false,,111,394,518,518,null,202,1197,48
-1620860377597,38,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-105,,false,,111,394,520,520,http://40.89.147.34:6015/Error/err_loop_for_1000,38,0,6
-1620860376496,38,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-105,,false,,111,394,520,520,null,38,1101,6
-1620860377616,33,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-23,,false,,111,394,526,526,http://40.89.147.34:6015/Error/err_loop_for_1000,33,0,2
-1620860376276,33,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-23,,false,,111,394,526,526,null,33,1340,2
-1620860377615,41,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-24,,false,,111,394,533,533,http://40.89.147.34:6015/Error/err_loop_for_1000,41,0,3
-1620860377615,41,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-25,,false,,111,394,533,533,http://40.89.147.34:6015/Error/err_loop_for_1000,41,0,3
-1620860376276,41,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-24,,false,,111,394,533,533,null,41,1339,3
-1620860376268,41,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-25,,false,,111,394,533,533,null,41,1347,3
-1620860377612,55,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-127,,false,,111,394,537,537,http://40.89.147.34:6015/Error/err_loop_for_1000,55,0,22
-1620860376558,55,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-127,,false,,111,394,537,537,null,55,1054,22
-1620860377632,40,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-31,,false,,111,394,536,536,http://40.89.147.34:6015/Error/err_loop_for_1000,40,0,9
-1620860377636,36,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-78,,false,,111,394,536,536,http://40.89.147.34:6015/Error/err_loop_for_1000,36,0,4
-1620860376420,36,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-78,,false,,111,394,536,536,null,36,1216,4
-1620860376284,40,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-31,,false,,111,394,536,536,null,40,1348,9
-1620860377642,34,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-88,,false,,111,394,535,535,http://40.89.147.34:6015/Error/err_loop_for_1000,34,0,2
-1620860376458,34,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-88,,false,,111,394,535,535,null,34,1184,2
-1620860377644,36,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-133,,false,,111,394,536,536,http://40.89.147.34:6015/Error/err_loop_for_1000,36,0,3
-1620860376580,36,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-133,,false,,111,394,536,536,null,36,1064,3
-1620860377644,40,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-10,,false,,111,394,537,537,http://40.89.147.34:6015/Error/err_loop_for_1000,40,0,8
-1620860376240,40,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-10,,false,,111,394,537,537,null,40,1404,8
-1620860377658,36,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-130,,false,,111,394,540,540,http://40.89.147.34:6015/Error/err_loop_for_1000,36,0,5
-1620860376576,37,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-130,,false,,111,394,540,540,null,36,1082,5
-1620860377661,37,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-50,,false,,111,394,540,540,http://40.89.147.34:6015/Error/err_loop_for_1000,37,0,3
-1620860377660,38,http://40.89.147.34:6015/Error/err_loop_for_1000,500,Internal Server Error,dotnet_-errorloopfor1000_error_medium_900_inf_30s_dotNetEndpoint 1-157,,false,,111,394,540,540,http://40.89.147.34:6015/Error/err_loop_for_1000,38,0,7
-1620860376654,38,Test,,"Number of samples in transaction : 1, number of failing samples : 1",dotnet_-errorloopfor1000_error_medium_900_inf_3
+1621503884353,30,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-3,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,27,0,20
+1621503884683,28,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-42,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,26,0,18
+1621503874238,30,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-3,,true,,358,380,100,100,null,27,10133,20
+1621503884684,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-15,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874355,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-15,,true,,358,380,100,100,null,5,10329,3
+1621503884748,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-36,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874564,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-36,,true,,358,380,100,100,null,5,10184,3
+1621503884805,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-2,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874229,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-2,,true,,358,380,100,100,null,5,10577,3
+1621503884850,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-26,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874464,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-26,,true,,358,380,100,100,null,5,10386,3
+1621503884866,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-57,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874774,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-57,,true,,358,380,100,100,null,5,10092,3
+1621503885108,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-45,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874654,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-45,,true,,358,380,100,100,null,5,10454,3
+1621503885121,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-87,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875074,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-87,,true,,358,380,100,100,null,4,10048,3
+1621503885282,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-85,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875054,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-85,,true,,358,380,100,100,null,5,10228,3
+1621503885313,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-63,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874835,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-63,,true,,358,380,100,100,null,5,10478,3
+1621503885465,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-81,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875017,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-81,,true,,358,380,100,100,null,4,10448,2
+1621503885595,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-84,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875044,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-84,,true,,358,380,100,100,null,4,10552,2
+1621503885700,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-46,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874663,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-46,,true,,358,380,100,100,null,4,11037,2
+1621503885835,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-79,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874994,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-79,,true,,358,380,100,100,null,5,10841,3
+1621503885852,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-34,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874544,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-34,,true,,358,380,100,100,null,4,11308,2
+1621503885856,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503885897,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-52,text,true,,358,380,99,99,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874724,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-52,,true,,358,380,99,99,null,5,11173,3
+1621503885902,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503886079,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-12,text,true,,358,380,98,98,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874325,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-12,,true,,358,380,98,98,null,4,11754,2
+1621503886215,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-80,text,true,,358,380,98,98,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875005,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-80,,true,,358,380,98,98,null,4,11211,3
+1621503886681,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-66,text,true,,358,380,98,98,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874863,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-66,,true,,358,380,98,98,null,5,11818,3
+1621503886687,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503886725,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-68,text,true,,358,380,97,97,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874884,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-68,,true,,358,380,97,97,null,4,11841,2
+1621503886730,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503886840,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-44,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874644,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-44,,true,,358,380,96,96,null,5,12196,3
+1621503886966,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-72,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874924,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-72,,true,,358,380,96,96,null,5,12042,3
+1621503886971,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503886999,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-92,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875124,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-92,,true,,358,380,95,95,null,5,11875,3
+1621503887068,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-21,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874414,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-21,,true,,358,380,95,95,null,4,12654,2
+1621503887117,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-47,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874674,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-47,,true,,358,380,95,95,null,5,12443,3
+1621503887188,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-94,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875144,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-94,,true,,358,380,95,95,null,4,12044,3
+1621503887280,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-22,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874424,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-22,,true,,358,380,95,95,null,5,12856,3
+1621503887340,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-6,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874265,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-6,,true,,358,380,95,95,null,5,13075,3
+1621503887739,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-74,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874943,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-74,,true,,358,380,95,95,null,4,12797,3
+1621503887760,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-90,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875104,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-90,,true,,358,380,95,95,null,5,12656,3
+1621503887836,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-95,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875154,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-95,,true,,358,380,95,95,null,4,12682,3
+1621503887921,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-86,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875064,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-86,,true,,358,380,95,95,null,5,12857,3
+1621503887926,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503887961,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-11,text,true,,358,380,94,94,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874314,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-11,,true,,358,380,94,94,null,4,13647,3
+1621503887966,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503887980,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-51,text,true,,358,380,93,93,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874714,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-51,,true,,358,380,93,93,null,4,13266,3
+1621503887985,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888008,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-69,text,true,,358,380,92,92,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874894,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-69,,true,,358,380,92,92,null,5,13114,3
+1621503888013,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888141,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-100,text,true,,358,380,91,91,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875206,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-100,,true,,358,380,91,91,null,5,12935,3
+1621503888146,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888218,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-18,text,true,,358,380,90,90,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874384,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-18,,true,,358,380,90,90,null,5,13834,3
+1621503888239,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-88,text,true,,358,380,90,90,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875084,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-88,,true,,358,380,90,90,null,4,13155,2
+1621503888243,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503888327,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-56,text,true,,358,380,89,89,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874764,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-56,,true,,358,380,89,89,null,5,13563,3
+1621503888332,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888414,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-55,text,true,,358,380,88,88,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874753,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-55,,true,,358,380,88,88,null,5,13661,3
+1621503888475,7,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-39,text,true,,358,380,88,88,http://40.89.147.34:6020/Product/getall,7,0,5
+1621503874594,7,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-39,,true,,358,380,88,88,null,7,13882,5
+1621503888717,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-24,text,true,,358,380,88,88,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874444,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-24,,true,,358,380,88,88,null,5,14273,3
+1621503888827,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-28,text,true,,358,380,88,88,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874484,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-28,,true,,358,380,88,88,null,5,14343,3
+1621503888832,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503888941,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-76,text,true,,358,380,87,87,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874964,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-76,,true,,358,380,87,87,null,5,13978,3
+1621503874512,28,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-42,,true,,358,380,100,100,null,26,10178,18
+1621503884742,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-24,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874333,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-24,,true,,358,380,100,100,null,5,10409,3
+1621503884763,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-10,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874193,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-10,,true,,358,380,100,100,null,4,10570,3
+1621503884942,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-55,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874641,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-55,,true,,358,380,100,100,null,5,10300,3
+1621503884982,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-25,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874342,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-25,,true,,358,380,100,100,null,4,10640,2
+1621503885061,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-88,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874971,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-88,,true,,358,380,100,100,null,5,10090,3
+1621503885131,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-5,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874145,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-5,,true,,358,380,100,100,null,5,10985,3
+1621503885268,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-59,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874682,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-59,,true,,358,380,100,100,null,5,10585,3
+1621503885595,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-83,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,4
+1621503874922,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-83,,true,,358,380,100,100,null,5,10672,4
+1621503885782,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-34,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874433,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-34,,true,,358,380,100,100,null,5,11348,3
+1621503885846,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-60,text,true,,358,380,100,100,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874692,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-60,,true,,358,380,100,100,null,4,11153,3
+1621503885851,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503885950,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-21,text,true,,358,380,99,99,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874302,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-21,,true,,358,380,99,99,null,5,11647,3
+1621503885955,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503886046,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-63,text,true,,358,380,98,98,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874725,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-63,,true,,358,380,98,98,null,4,11321,3
+1621503886124,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-46,text,true,,358,380,98,98,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874551,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-46,,true,,358,380,98,98,null,4,11572,2
+1621503886128,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503886170,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-31,text,true,,358,380,97,97,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874402,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-31,,true,,358,380,97,97,null,4,11767,3
+1621503886256,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-74,text,true,,358,380,97,97,http://40.89.147.34:6020/Product/getall,5,0,4
+1621503874835,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-74,,true,,358,380,97,97,null,5,11420,4
+1621503886262,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503886320,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-54,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874632,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-54,,true,,358,380,96,96,null,5,11687,3
+1621503886498,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-79,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874883,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-79,,true,,358,380,96,96,null,4,11615,3
+1621503886573,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-12,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874212,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-12,,true,,358,380,96,96,null,5,12360,3
+1621503886644,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-76,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874851,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-76,,true,,358,380,96,96,null,5,11792,3
+1621503886677,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-100,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875094,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-100,,true,,358,380,96,96,null,4,11583,2
+1621503886736,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-16,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874253,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-16,,true,,358,380,96,96,null,4,12483,3
+1621503886865,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-45,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874542,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-45,,true,,358,380,96,96,null,4,12322,2
+1621503887065,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-81,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874902,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-81,,true,,358,380,96,96,null,5,12162,3
+1621503887162,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-23,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,5,0,4
+1621503874322,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-23,,true,,358,380,96,96,null,5,12839,4
+1621503887249,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-37,text,true,,358,380,96,96,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874464,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-37,,true,,358,380,96,96,null,4,12784,2
+1621503887253,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503887274,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-50,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,4
+1621503874592,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-50,,true,,358,380,95,95,null,5,12682,4
+1621503887473,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-17,text,true,,358,380,95,95,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874265,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-17,,true,,358,380,95,95,null,5,13207,3
+1621503887478,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503887631,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-9,text,true,,358,380,94,94,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503874183,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-9,,true,,358,380,94,94,null,6,13447,4
+1621503887680,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-96,text,true,,358,380,94,94,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875052,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-96,,true,,358,380,94,94,null,4,12627,3
+1621503887743,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-65,text,true,,358,380,94,94,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874742,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-65,,true,,358,380,94,94,null,4,13001,3
+1621503887869,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-68,text,true,,358,380,94,94,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503874772,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-68,,true,,358,380,94,94,null,6,13096,4
+1621503887875,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888233,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-19,text,true,,358,380,93,93,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874282,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-19,,true,,358,380,93,93,null,4,13951,3
+1621503888291,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-13,text,true,,358,380,93,93,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874225,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-13,,true,,358,380,93,93,null,5,14065,3
+1621503888296,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888299,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-53,text,true,,358,380,92,92,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874622,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-53,,true,,358,380,92,92,null,5,13676,3
+1621503888304,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888438,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-73,text,true,,358,380,91,91,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874821,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-73,,true,,358,380,91,91,null,4,13617,2
+1621503888443,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888479,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-69,text,true,,358,380,90,90,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874782,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-69,,true,,358,380,90,90,null,4,13697,2
+1621503888616,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-70,text,true,,358,380,90,90,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874792,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-70,,true,,358,380,90,90,null,5,13823,3
+1621503888644,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-44,text,true,,358,380,90,90,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874532,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-44,,true,,358,380,90,90,null,5,14111,3
+1621503888649,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888675,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-32,text,true,,358,380,89,89,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874413,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-32,,true,,358,380,89,89,null,5,14261,3
+1621503888839,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-98,text,true,,358,380,89,89,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875072,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-98,,true,,358,380,89,89,null,4,13766,3
+1621503888844,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503888854,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-82,text,true,,358,380,88,88,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874912,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-82,,true,,358,380,88,88,null,4,13942,3
+1621503889168,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-49,text,true,,358,380,88,88,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874581,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-49,,true,,358,380,88,88,null,4,14588,2
+1621503889173,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889255,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-20,text,true,,358,380,87,87,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874293,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-20,,true,,358,380,87,87,null,4,14962,3
+1621503888972,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889078,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-13,text,true,,358,380,86,86,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874335,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-13,,true,,358,380,86,86,null,5,14743,3
+1621503889083,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889166,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-20,text,true,,358,380,85,85,http://40.89.147.34:6020/Product/getall,5,0,2
+1621503874405,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-20,,true,,358,380,85,85,null,5,14761,2
+1621503889171,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889188,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-10,text,true,,358,380,84,84,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874304,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-10,,true,,358,380,84,84,null,4,14885,3
+1621503889358,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-16,text,true,,358,380,84,84,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874365,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-16,,true,,358,380,84,84,null,5,14992,3
+1621503889363,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889417,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-19,text,true,,358,380,83,83,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874394,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-19,,true,,358,380,83,83,null,5,15022,3
+1621503889423,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889749,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-48,text,true,,358,380,82,82,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874684,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-48,,true,,358,380,82,82,null,5,15064,3
+1621503889754,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889783,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-49,text,true,,358,380,81,81,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874694,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-49,,true,,358,380,81,81,null,4,15088,2
+1621503889985,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-43,text,true,,358,380,81,81,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874634,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-43,,true,,358,380,81,81,null,4,15350,2
+1621503890000,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-29,text,true,,358,380,81,81,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874494,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-29,,true,,358,380,81,81,null,5,15505,3
+1621503890010,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-54,text,true,,358,380,81,81,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874743,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-54,,true,,358,380,81,81,null,4,15266,3
+1621503890014,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503890058,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-71,text,true,,358,380,80,80,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874914,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-71,,true,,358,380,80,80,null,4,15144,3
+1621503890063,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890094,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-98,text,true,,358,380,79,79,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875184,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-98,,true,,358,380,79,79,null,4,14910,3
+1621503890099,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890121,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-23,text,true,,358,380,78,78,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874435,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-23,,true,,358,380,78,78,null,4,15685,3
+1621503890125,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890162,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-31,text,true,,358,380,77,77,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874514,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-31,,true,,358,380,77,77,null,4,15647,2
+1621503890166,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890434,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-8,text,true,,358,380,76,76,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874284,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-8,,true,,358,380,76,76,null,5,16149,3
+1621503890439,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503890444,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-58,text,true,,358,380,75,75,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503890444,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-7,text,true,,358,380,75,75,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874275,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-7,,true,,358,380,75,75,null,4,16169,3
+1621503874784,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-58,,true,,358,380,75,75,null,4,15660,3
+1621503890449,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890449,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890447,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-35,text,true,,358,380,73,73,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874554,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-35,,true,,358,380,73,73,null,4,15892,2
+1621503890451,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890450,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-42,text,true,,358,380,72,72,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874623,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-42,,true,,358,380,72,72,null,4,15826,2
+1621503890592,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-93,text,true,,358,380,72,72,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875134,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-93,,true,,358,380,72,72,null,5,15458,3
+1621503890806,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-1,text,true,,358,380,72,72,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874225,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-1,,true,,358,380,72,72,null,5,16581,3
+1621503890811,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890836,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-65,text,true,,358,380,71,71,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874853,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-65,,true,,358,380,71,71,null,5,15982,3
+1621503890841,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890914,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-89,text,true,,358,380,70,70,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875094,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-89,,true,,358,380,70,70,null,5,15819,3
+1621503890919,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891151,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-17,text,true,,358,380,69,69,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874377,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-17,,true,,358,380,69,69,null,4,16773,2
+1621503891155,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891204,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-14,text,true,,358,380,68,68,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874344,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-14,,true,,358,380,68,68,null,5,16859,3
+1621503891243,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-60,text,true,,358,380,68,68,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874804,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-60,,true,,358,380,68,68,null,4,16438,2
+1621503891344,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-33,text,true,,358,380,68,68,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874536,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-33,,true,,358,380,68,68,null,4,16807,2
+1621503891348,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503891484,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-61,text,true,,358,380,67,67,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874814,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-61,,true,,358,380,67,67,null,4,16669,3
+1621503891489,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891749,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-32,text,true,,358,380,66,66,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874524,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-32,,true,,358,380,66,66,null,5,17224,3
+1621503891754,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891814,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-41,text,true,,358,380,65,65,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874614,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-41,,true,,358,380,65,65,null,4,17200,3
+1621503891819,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891850,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-27,text,true,,358,380,64,64,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874475,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-27,,true,,358,380,64,64,null,5,17374,3
+1621503891855,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891912,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-37,text,true,,358,380,63,63,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874574,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-37,,true,,358,380,63,63,null,4,17338,3
+1621503891985,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-30,text,true,,358,380,63,63,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874504,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-30,,true,,358,380,63,63,null,4,17481,3
+1621503891990,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892068,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-5,text,true,,358,380,62,62,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874256,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-5,,true,,358,380,62,62,null,4,17811,2
+1621503892072,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503892092,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-91,text,true,,358,380,61,61,http://40.89.147.34:6020/Product/getall,5,0,2
+1621503875114,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-91,,true,,358,380,61,61,null,5,16977,2
+1621503892097,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892399,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-25,text,true,,358,380,60,60,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874454,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-25,,true,,358,380,60,60,null,4,17944,3
+1621503892404,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889423,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-77,text,true,,358,380,87,87,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874862,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-77,,true,,358,380,87,87,null,4,14561,3
+1621503889428,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889423,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-7,text,true,,358,380,87,87,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874163,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-7,,true,,358,380,87,87,null,5,15260,3
+1621503889621,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-30,text,true,,358,380,86,86,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874395,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-30,,true,,358,380,86,86,null,5,15226,3
+1621503889626,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889821,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-29,text,true,,358,380,85,85,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874382,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-29,,true,,358,380,85,85,null,5,15439,3
+1621503889826,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889879,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-52,text,true,,358,380,84,84,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874611,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-52,,true,,358,380,84,84,null,5,15268,3
+1621503889884,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889901,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-92,text,true,,358,380,83,83,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875012,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-92,,true,,358,380,83,83,null,4,14889,2
+1621503889905,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889956,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-57,text,true,,358,380,82,82,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874662,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-57,,true,,358,380,82,82,null,5,15294,3
+1621503889961,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503889981,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-61,text,true,,358,380,81,81,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874702,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-61,,true,,358,380,81,81,null,5,15279,3
+1621503889986,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890073,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-85,text,true,,358,380,80,80,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874945,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-85,,true,,358,380,80,80,null,4,15129,2
+1621503890074,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-78,text,true,,358,380,80,80,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874872,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-78,,true,,358,380,80,80,null,4,15202,2
+1621503890387,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-75,text,true,,358,380,80,80,http://40.89.147.34:6020/Product/getall,6,0,3
+1621503874842,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-75,,true,,358,380,80,80,null,6,15545,3
+1621503890393,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890734,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-35,text,true,,358,380,79,79,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874442,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-35,,true,,358,380,79,79,null,5,16292,3
+1621503890739,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890763,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-89,text,true,,358,380,78,78,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874982,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-89,,true,,358,380,78,78,null,5,15781,3
+1621503890768,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503890854,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-11,text,true,,358,380,77,77,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874202,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-11,,true,,358,380,77,77,null,5,16652,3
+1621503890859,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891091,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-14,text,true,,358,380,76,76,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874234,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-14,,true,,358,380,76,76,null,5,16857,3
+1621503891096,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891143,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-93,text,true,,358,380,75,75,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875022,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-93,,true,,358,380,75,75,null,5,16121,3
+1621503891227,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-95,text,true,,358,380,75,75,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875042,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-95,,true,,358,380,75,75,null,5,16185,3
+1621503891232,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891333,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-87,text,true,,358,380,74,74,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874962,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-87,,true,,358,380,74,74,null,4,16372,3
+1621503891364,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-8,text,true,,358,380,74,74,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874177,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-8,,true,,358,380,74,74,null,5,17187,3
+1621503891369,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891416,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-38,text,true,,358,380,73,73,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503874472,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-38,,true,,358,380,73,73,null,6,16945,4
+1621503891423,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891450,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-33,text,true,,358,380,72,72,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874422,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-33,,true,,358,380,72,72,null,4,17028,3
+1621503891454,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503891509,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-40,text,true,,358,380,71,71,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874491,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-40,,true,,358,380,71,71,null,4,17018,2
+1621503891513,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891570,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-22,text,true,,358,380,70,70,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874312,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-22,,true,,358,380,70,70,null,4,17258,2
+1621503891574,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891677,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-66,text,true,,358,380,69,69,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874752,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-66,,true,,358,380,69,69,null,5,16925,3
+1621503891687,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-2,text,true,,358,380,69,69,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874118,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-2,,true,,358,380,69,69,null,5,17570,3
+1621503891692,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503891696,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-86,text,true,,358,380,68,68,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874952,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-86,,true,,358,380,68,68,null,4,16744,2
+1621503891700,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891848,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-43,text,true,,358,380,67,67,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874522,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-43,,true,,358,380,67,67,null,5,17326,3
+1621503891853,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891848,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-80,text,true,,358,380,66,66,http://40.89.147.34:6020/Product/getall,6,0,5
+1621503874892,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-80,,true,,358,380,66,66,null,6,16956,5
+1621503891855,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503891954,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-15,text,true,,358,380,65,65,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874243,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-15,,true,,358,380,65,65,null,4,17711,3
+1621503891994,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-47,text,true,,358,380,65,65,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874562,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-47,,true,,358,380,65,65,null,5,17432,3
+1621503891999,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892288,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-64,text,true,,358,380,64,64,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874732,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-64,,true,,358,380,64,64,null,5,17557,3
+1621503892304,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-1,text,true,,358,380,64,64,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874118,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-1,,true,,358,380,64,64,null,4,18187,3
+1621503892393,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-39,text,true,,358,380,64,64,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503892394,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-51,text,true,,358,380,64,64,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874482,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-39,,true,,358,380,64,64,null,5,17911,3
+1621503874602,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-51,,true,,358,380,64,64,null,4,17792,2
+1621503892398,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503892398,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503892679,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-90,text,true,,358,380,62,62,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874993,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-90,,true,,358,380,62,62,null,4,17686,3
+1621503892684,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892768,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-62,text,true,,358,380,61,61,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874715,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-62,,true,,358,380,61,61,null,4,18053,3
+1621503892773,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892824,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-72,text,true,,358,380,60,60,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503892594,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-59,text,true,,358,380,59,59,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874793,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-59,,true,,358,380,59,59,null,4,17801,3
+1621503892599,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892763,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-77,text,true,,358,380,58,58,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874974,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-77,,true,,358,380,58,58,null,5,17788,3
+1621503892769,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892827,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-50,text,true,,358,380,57,57,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874704,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-50,,true,,358,380,57,57,null,5,18122,3
+1621503892832,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892970,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-53,text,true,,358,380,56,56,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874735,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-53,,true,,358,380,56,56,null,4,18234,2
+1621503892974,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503893007,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-78,text,true,,358,380,55,55,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874984,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-78,,true,,358,380,55,55,null,4,18022,3
+1621503893081,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-40,text,true,,358,380,55,55,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874603,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-40,,true,,358,380,55,55,null,5,18477,3
+1621503893086,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893470,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-82,text,true,,358,380,54,54,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875025,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-82,,true,,358,380,54,54,null,5,18444,3
+1621503893475,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893496,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-64,text,true,,358,380,53,53,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874844,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-64,,true,,358,380,53,53,null,4,18652,3
+1621503893501,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893713,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-67,text,true,,358,380,52,52,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874874,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-67,,true,,358,380,52,52,null,4,18838,2
+1621503893717,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893715,3,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-62,text,true,,358,380,51,51,http://40.89.147.34:6020/Product/getall,3,0,2
+1621503874827,3,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-62,,true,,358,380,51,51,null,3,18887,2
+1621503893719,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893772,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-9,text,true,,358,380,50,50,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503893772,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-38,text,true,,358,380,50,50,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874296,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-9,,true,,358,380,50,50,null,4,19475,3
+1621503874584,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-38,,true,,358,380,50,50,null,4,19187,3
+1621503893777,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893777,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893868,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-97,text,true,,358,380,48,48,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875176,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-97,,true,,358,380,48,48,null,4,18692,3
+1621503893873,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893902,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-4,text,true,,358,380,47,47,http://40.89.147.34:6020/Product/getall,5,0,4
+1621503874248,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-4,,true,,358,380,47,47,null,5,19655,4
+1621503893908,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893964,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-73,text,true,,358,380,46,46,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874934,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-73,,true,,358,380,46,46,null,5,19029,3
+1621503893969,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503894012,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-70,text,true,,358,380,45,45,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874903,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-70,,true,,358,380,45,45,null,4,19109,3
+1621503894017,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503894160,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-99,text,true,,358,380,44,44,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875195,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-99,,true,,358,380,44,44,null,4,18964,2
+1621503894164,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503894538,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-75,text,true,,358,380,43,43,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874954,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-75,,true,,358,380,43,43,null,5,19583,3
+1621503894543,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503894814,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-83,text,true,,358,380,42,42,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875033,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-83,,true,,358,380,42,42,null,5,19780,3
+1621503894819,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503894978,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-96,text,true,,358,380,41,41,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503875164,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-96,,true,,358,380,41,41,null,4,19814,3
+1621503894983,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503895430,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-63,text,true,,358,380,40,40,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503885318,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-63,,true,,358,380,40,40,null,4,10112,3
+1621503895435,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503895927,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-2,text,true,,358,380,39,39,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503884810,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-2,,true,,358,380,39,39,null,5,11116,3
+1621503895932,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503896240,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-84,text,true,,358,380,38,38,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503885600,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-84,,true,,358,380,38,38,null,5,10639,3
+1621503896245,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503897521,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-47,text,true,,358,380,37,37,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503887122,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-47,,true,,358,380,37,37,null,5,10398,3
+1621503897526,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503897669,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-45,text,true,,358,380,36,36,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503885113,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-45,,true,,358,380,36,36,null,5,12555,3
+1621503897674,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503898416,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-94,text,true,,358,380,35,35,http://40.89.147.34:6020/Product/getall,6,0,3
+1621503887193,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-94,,true,,358,380,35,35,null,6,11222,3
+1621503898422,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503898429,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-44,text,true,,358,380,34,34,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503886845,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-44,,true,,358,380,34,34,null,5,11583,3
+1621503898434,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503898667,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-85,text,true,,358,380,33,33,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503885287,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-85,,true,,358,380,33,33,null,4,13379,3
+1621503898671,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503898841,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-36,text,true,,358,380,32,32,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503884753,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-36,,true,,358,380,32,32,null,4,14087,3
+1621503898846,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503898872,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-39,text,true,,358,380,31,31,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503888483,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-39,,true,,358,380,31,31,null,4,10388,3
+1621503898877,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899100,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-55,text,true,,358,380,30,30,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503888419,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-55,,true,,358,380,30,30,null,5,10680,3
+1621503899105,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899111,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-6,text,true,,358,380,29,29,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503887345,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-6,,true,,358,380,29,29,null,4,11765,2
+1621503899115,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503899628,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-26,text,true,,358,380,28,28,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503884855,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-26,,true,,358,380,28,28,null,4,14772,2
+1621503899632,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899648,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-15,text,true,,358,380,27,27,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503884690,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-15,,true,,358,380,27,27,null,5,14957,3
+1621503874811,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-72,,true,,358,380,60,60,null,5,18025,3
+1621503892841,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503892920,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-3,text,true,,358,380,59,59,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503874127,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-3,,true,,358,380,59,59,null,6,18794,4
+1621503892926,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893064,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-36,text,true,,358,380,58,58,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874452,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-36,,true,,358,380,58,58,null,5,18612,3
+1621503893069,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893069,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-94,text,true,,358,380,57,57,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875033,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-94,,true,,358,380,57,57,null,4,18036,2
+1621503893073,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893162,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-27,text,true,,358,380,56,56,http://40.89.147.34:6020/Product/getall,6,0,3
+1621503874362,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-27,,true,,358,380,56,56,null,6,18800,3
+1621503893168,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893264,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-48,text,true,,358,380,55,55,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874572,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-48,,true,,358,380,55,55,null,5,18692,3
+1621503893269,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893395,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-4,text,true,,358,380,54,54,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874136,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-4,,true,,358,380,54,54,null,5,19260,3
+1621503893400,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893473,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-41,text,true,,358,380,53,53,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874503,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-41,,true,,358,380,53,53,null,4,18970,2
+1621503893477,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893494,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-28,text,true,,358,380,52,52,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874372,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-28,,true,,358,380,52,52,null,5,19122,3
+1621503893499,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893507,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-6,text,true,,358,380,51,51,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874153,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-6,,true,,358,380,51,51,null,4,19354,3
+1621503893511,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893570,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-71,text,true,,358,380,50,50,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503874802,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-71,,true,,358,380,50,50,null,5,18768,3
+1621503893575,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893693,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-18,text,true,,358,380,49,49,http://40.89.147.34:6020/Product/getall,5,0,4
+1621503893694,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-56,text,true,,358,380,49,49,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874652,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-56,,true,,358,380,49,49,null,4,19042,3
+1621503874274,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-18,,true,,358,380,49,49,null,5,19419,4
+1621503893698,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503893698,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503893762,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-99,text,true,,358,380,47,47,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875084,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-99,,true,,358,380,47,47,null,4,18678,2
+1621503893766,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893909,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-58,text,true,,358,380,46,46,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874672,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-58,,true,,358,380,46,46,null,4,19238,3
+1621503893914,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503893932,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-26,text,true,,358,380,45,45,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503874354,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-26,,true,,358,380,45,45,null,4,19578,2
+1621503893936,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503893933,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-67,text,true,,358,380,44,44,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503874762,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-67,,true,,358,380,44,44,null,4,19171,3
+1621503893937,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503894131,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-84,text,true,,358,380,43,43,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503874934,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-84,,true,,358,380,43,43,null,6,19197,4
+1621503894137,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503894261,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-91,text,true,,358,380,42,42,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503875001,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-91,,true,,358,380,42,42,null,4,19261,2
+1621503894266,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503894710,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-97,text,true,,358,380,41,41,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503875062,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-97,,true,,358,380,41,41,null,5,19648,3
+1621503894715,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1621503894910,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-24,text,true,,358,380,40,40,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503884748,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-24,,true,,358,380,40,40,null,4,10164,3
+1621503894915,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503895386,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-88,text,true,,358,380,39,39,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503885067,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-88,,true,,358,380,39,39,null,4,10320,2
+1621503895391,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503895473,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-42,text,true,,358,380,38,38,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503884720,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-42,,true,,358,380,38,38,null,5,10754,3
+1621503895478,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503895751,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-83,text,true,,358,380,37,37,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503885600,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-83,,true,,358,380,37,37,null,5,10152,3
+1621503895756,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503898087,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-79,text,true,,358,380,36,36,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503886503,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-79,,true,,358,380,36,36,null,5,11585,3
+1621503898092,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503898472,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-65,text,true,,358,380,35,35,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503887748,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-65,,true,,358,380,35,35,null,4,10726,3
+1621503898477,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503898904,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-69,text,true,,358,380,34,34,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503888484,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-69,,true,,358,380,34,34,null,4,10422,3
+1621503898909,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899053,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-32,text,true,,358,380,33,33,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503888680,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-32,,true,,358,380,33,33,null,5,10374,3
+1621503899059,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899424,7,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-63,text,true,,358,380,32,32,http://40.89.147.34:6020/Product/getall,7,0,4
+1621503886051,7,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-63,,true,,358,380,32,32,null,7,13374,4
+1621503899431,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899467,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-59,text,true,,358,380,31,31,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503885273,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-59,,true,,358,380,31,31,null,4,14195,2
+1621503899471,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899588,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-7,text,true,,358,380,30,30,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503889428,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-7,,true,,358,380,30,30,null,5,10160,3
+1621503899593,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899627,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-70,text,true,,358,380,29,29,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503888621,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-70,,true,,358,380,29,29,null,5,11007,3
+1621503899632,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900035,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-9,text,true,,358,380,28,28,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503887637,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-9,,true,,358,380,28,28,null,5,12400,3
+1621503900041,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900271,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-10,text,true,,358,380,27,27,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503884768,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-10,,true,,358,380,27,27,null,5,15505,3
+1621503900273,3,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-45,text,true,,358,380,27,27,http://40.89.147.34:6020/Product/getall,3,0,2
+1621503886869,3,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-45,,true,,358,380,27,27,null,3,13406,2
+1621503900277,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900284,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900429,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-5,text,true,,358,380,25,25,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503885136,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-5,,true,,358,380,25,25,null,5,15294,3
+1621503900435,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900466,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-85,text,true,,358,380,24,24,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503890078,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-85,,true,,358,380,24,24,null,5,10388,3
+1621503900471,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900514,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-54,text,true,,358,380,23,23,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503886325,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-54,,true,,358,380,23,23,null,4,14191,3
+1621503900519,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900709,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-12,text,true,,358,380,22,22,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503886578,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-12,,true,,358,380,22,22,null,5,14132,3
+1621503900714,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900745,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-19,text,true,,358,380,21,21,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503888238,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-19,,true,,358,380,21,21,null,5,12508,3
+1621503900750,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901209,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-82,text,true,,358,380,20,20,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503888859,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-82,,true,,358,380,20,20,null,5,12351,3
+1621503901214,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901324,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-25,text,true,,358,380,19,19,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503884987,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-25,,true,,358,380,19,19,null,5,16338,3
+1621503901329,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901401,8,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-55,text,true,,358,380,18,18,http://40.89.147.34:6020/Product/getall,8,0,6
+1621503884947,8,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-55,,true,,358,380,18,18,null,8,16455,6
+1621503901409,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901507,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-87,text,true,,358,380,17,17,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503891338,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-87,,true,,358,380,17,17,null,5,10169,3
+1621503901512,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901632,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-16,text,true,,358,380,16,16,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503886741,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-16,,true,,358,380,16,16,null,5,14892,3
+1621503901637,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901704,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-50,text,true,,358,380,15,15,http://40.89.147.34:6020/Product/getall,5,0,4
+1621503887280,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-50,,true,,358,380,15,15,null,5,14426,4
+1621503901710,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901820,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-81,text,true,,358,380,14,14,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503887070,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-81,,true,,358,380,14,14,null,5,14751,3
+1621503901825,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901949,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-78,text,true,,358,380,13,13,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503890078,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-78,,true,,358,380,13,13,null,6,11871,4
+1621503901956,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902189,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-31,text,true,,358,380,12,12,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503886175,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-31,,true,,358,380,12,12,null,4,16016,3
+1621503902194,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902251,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-34,text,true,,358,380,11,11,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503885787,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-34,,true,,358,380,11,11,null,4,16465,3
+1621503902256,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902431,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-20,text,true,,358,380,10,10,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503889278,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-20,,true,,358,380,10,10,null,5,13153,3
+1621503902436,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902478,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-1,text,true,,358,380,9,9,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503892308,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-1,,true,,358,380,9,9,null,4,10170,3
+1621503902483,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902558,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-76,text,true,,358,380,8,8,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503886649,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-76,,true,,358,380,8,8,null,5,15910,3
+1621503902563,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902916,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-66,text,true,,358,380,7,7,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503891683,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-66,,true,,358,380,7,7,null,5,11233,3
+1621503902921,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903040,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-93,text,true,,358,380,6,6,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503891148,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-93,,true,,358,380,6,6,null,4,11892,2
+1621503903044,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903072,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-15,text,true,,358,380,5,5,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503891959,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-15,,true,,358,380,5,5,null,4,11114,3
+1621503903077,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903252,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-96,text,true,,358,380,4,4,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503887685,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-96,,true,,358,380,4,4,null,5,15568,3
+1621503903257,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903255,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-23,text,true,,358,380,3,3,http://40.89.147.34:6020/Product/getall,3,0,2
+1621503887168,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-23,,true,,358,380,3,3,null,3,16088,2
+1621503903259,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903311,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-100,text,true,,358,380,2,2,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503886682,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-100,,true,,358,380,2,2,null,5,16630,3
+1621503903316,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903780,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-64,text,true,,358,380,1,1,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503892294,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.8-1_StressTestDotNetCore_100%Success_short_none 1-64,,true,,358,380,1,1,null,5,11486,3
+1621503903785,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503899659,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900165,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-21,text,true,,358,380,26,26,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503887072,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-21,,true,,358,380,26,26,null,4,13092,2
+1621503900170,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900518,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-42,text,true,,358,380,25,25,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503890454,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-42,,true,,358,380,25,25,null,4,10064,3
+1621503900523,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900629,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-87,text,true,,358,380,24,24,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503885126,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-87,,true,,358,380,24,24,null,5,15502,3
+1621503900634,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900761,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-49,text,true,,358,380,23,23,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503889787,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-49,,true,,358,380,23,23,null,4,10974,2
+1621503900765,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503900779,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-24,text,true,,358,380,22,22,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503888722,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-24,,true,,358,380,22,22,null,5,12056,3
+1621503900784,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901105,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-74,text,true,,358,380,21,21,http://40.89.147.34:6020/Product/getall,6,0,3
+1621503887744,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-74,,true,,358,380,21,21,null,6,13360,3
+1621503901111,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901115,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-22,text,true,,358,380,20,20,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503887285,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-22,,true,,358,380,20,20,null,4,13830,3
+1621503901120,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901141,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-43,text,true,,358,380,19,19,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503889989,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-43,,true,,358,380,19,19,null,4,11152,2
+1621503901145,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901354,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-14,text,true,,358,380,18,18,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503891209,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-14,,true,,358,380,18,18,null,4,10146,3
+1621503901359,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901472,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-60,text,true,,358,380,17,17,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503891247,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-60,,true,,358,380,17,17,null,4,10226,3
+1621503901477,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901659,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-29,text,true,,358,380,16,16,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503890005,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-29,,true,,358,380,16,16,null,5,11654,3
+1621503901664,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901730,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-12,text,true,,358,380,15,15,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503886083,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-12,,true,,358,380,15,15,null,4,15647,3
+1621503901735,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503901891,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-79,text,true,,358,380,14,14,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503885840,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-79,,true,,358,380,14,14,null,5,16050,3
+1621503901896,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902210,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-92,text,true,,358,380,13,13,http://40.89.147.34:6020/Product/getall,5,0,2
+1621503887004,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-92,,true,,358,380,13,13,null,5,15205,2
+1621503902215,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503902461,7,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-90,text,true,,358,380,12,12,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503887765,7,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-90,,true,,358,380,12,12,null,6,14695,4
+1621503902468,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903016,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-46,text,true,,358,380,11,11,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503903018,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-95,text,true,,358,380,11,11,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503885705,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-46,,true,,358,380,11,11,null,6,17310,4
+1621503887841,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-95,,true,,358,380,11,11,null,4,15176,3
+1621503903022,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903022,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903051,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-18,text,true,,358,380,9,9,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503888224,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-18,,true,,358,380,9,9,null,5,14826,3
+1621503903056,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903271,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-37,text,true,,358,380,8,8,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503891917,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-37,,true,,358,380,8,8,null,5,11354,3
+1621503903276,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903800,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-81,text,true,,358,380,7,7,http://40.89.147.34:6020/Product/getall,4,0,3
+1621503885470,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-81,,true,,358,380,7,7,null,4,18329,3
+1621503903804,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903934,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-93,text,true,,358,380,6,6,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503890598,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-93,,true,,358,380,6,6,null,5,13336,3
+1621503903939,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503903946,4,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-3,text,true,,358,380,5,5,http://40.89.147.34:6020/Product/getall,4,0,2
+1621503884400,4,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-3,,true,,358,380,5,5,null,4,19545,2
+1621503903950,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503904049,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-57,text,true,,358,380,4,4,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503884871,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-57,,true,,358,380,4,4,null,5,19177,3
+1621503904054,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503904128,6,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-78,text,true,,358,380,3,3,http://40.89.147.34:6020/Product/getall,6,0,4
+1621503893012,6,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-78,,true,,358,380,3,3,null,6,11116,4
+1621503904134,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503904155,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-10,text,true,,358,380,2,2,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503889193,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-10,,true,,358,380,2,2,null,5,14962,3
+1621503904161,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1621503904219,5,http://40.89.147.34:6020/Product/getall,200,OK,172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-80,text,true,,358,380,1,1,http://40.89.147.34:6020/Product/getall,5,0,3
+1621503886220,5,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",172.17.0.7-1_StressTestDotNetCore_100%Success_short_none 1-80,,true,,358,380,1,1,null,5,17998,3
+1621503904224,0,Test,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
