@@ -1,154 +1,333 @@
-2021-05-20 09:44:32,829 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2021-05-20 09:44:32,843 INFO o.a.j.JMeter: Loading user properties from: /jmeter/apache-jmeter-5.4.1/bin/user.properties
-2021-05-20 09:44:32,843 INFO o.a.j.JMeter: Loading system properties from: /jmeter/apache-jmeter-5.4.1/bin/system.properties
-2021-05-20 09:44:32,844 INFO o.a.j.JMeter: Setting JMeter property: server.rmi.ssl.disable=true
-2021-05-20 09:44:32,849 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: Version 5.4.1
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: java.version=1.8.0_292
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: os.name=Linux
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: os.arch=amd64
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: os.version=5.4.0-1046-azure
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: file.encoding=UTF-8
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: java.awt.headless=true
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: Max memory     =1073741824
-2021-05-20 09:44:32,850 INFO o.a.j.JMeter: Available Processors =16
-2021-05-20 09:44:32,854 INFO o.a.j.JMeter: Default Locale=English (EN)
-2021-05-20 09:44:32,854 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2021-05-20 09:44:32,854 INFO o.a.j.JMeter: JMeterHome=/jmeter/apache-jmeter-5.4.1
-2021-05-20 09:44:32,854 INFO o.a.j.JMeter: user.dir  =/
-2021-05-20 09:44:32,855 INFO o.a.j.JMeter: PWD       =/
-2021-05-20 09:44:32,855 INFO o.a.j.JMeter: IP: 172.17.0.9 Name: 39c38ea9c5d5 FullName: 39c38ea9c5d5
-2021-05-20 09:44:32,858 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/testJM/result'
-2021-05-20 09:44:32,860 INFO o.a.j.s.FileServer: Default base='/'
-2021-05-20 09:44:32,862 INFO o.a.j.s.FileServer: Set new base='/testJM'
-2021-05-20 09:44:32,963 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2021-05-20 09:44:33,009 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2021-05-20 09:44:33,013 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2021-05-20 09:44:33,018 INFO o.a.j.s.SaveService: Loading file: /testJM/test.jmx
-2021-05-20 09:44:33,054 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
-2021-05-20 09:44:33,057 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
-2021-05-20 09:44:33,082 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-20 09:44:33,082 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-20 09:44:33,082 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-20 09:44:33,082 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-20 09:44:33,082 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2021-05-20 09:44:33,082 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2021-05-20 09:44:33,093 INFO o.a.j.JMeter: Creating summariser <summary>
-2021-05-20 09:44:33,100 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
-2021-05-20 09:44:33,100 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: /testJM/result/tmp.jtl
-2021-05-20 09:44:33,100 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /jmeter/apache-jmeter-5.4.1/bin/reportgenerator.properties
-2021-05-20 09:44:33,101 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
-2021-05-20 09:44:33,105 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
-2021-05-20 09:44:33,107 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
-2021-05-20 09:44:33,107 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
-2021-05-20 09:44:33,107 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
-2021-05-20 09:44:33,107 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
-2021-05-20 09:44:33,107 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
-2021-05-20 09:44:33,107 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
-2021-05-20 09:44:33,108 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
-2021-05-20 09:44:33,108 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
-2021-05-20 09:44:33,111 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,111 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,111 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,112 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,112 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,112 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,112 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,112 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,112 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,112 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-20 09:44:33,113 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
-2021-05-20 09:44:33,113 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
-2021-05-20 09:44:33,113 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
-2021-05-20 09:44:33,113 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
-2021-05-20 09:44:33,114 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
-2021-05-20 09:44:33,116 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
-2021-05-20 09:44:33,118 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.8
-2021-05-20 09:44:33,120 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,163 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.7
-2021-05-20 09:44:33,163 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,182 INFO o.a.j.e.DistributedRunner: Starting distributed test with remote engines: [172.17.0.8, 172.17.0.7] @ Thu May 20 09:44:33 UTC 2021 (1621503873181)
-2021-05-20 09:44:33,182 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
-2021-05-20 09:44:33,186 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2021-05-20 09:44:33,187 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2021-05-20 09:44:33,413 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,413 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,415 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2021-05-20 09:44:33,418 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
-2021-05-20 09:44:33,418 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
-2021-05-20 09:44:33,419 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,419 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,659 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,659 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,759 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.8 basedir='testJM'
-2021-05-20 09:44:33,759 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
-2021-05-20 09:44:33,766 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.8
-2021-05-20 09:44:33,766 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
-2021-05-20 09:44:33,766 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,767 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,767 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
-2021-05-20 09:44:33,767 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
-2021-05-20 09:44:33,767 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,767 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,773 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,773 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-20 09:44:33,877 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.7 basedir='testJM'
-2021-05-20 09:44:33,877 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
-2021-05-20 09:44:33,881 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.7
-2021-05-20 09:44:33,881 INFO o.a.j.e.DistributedRunner: Remote engines have been started:[172.17.0.8, 172.17.0.7]
-2021-05-20 09:44:34,065 INFO o.a.j.JMeter: Started remote host:  172.17.0.8 (1621503874065)
-2021-05-20 09:44:34,179 INFO o.a.j.JMeter: Started remote host:  172.17.0.7 (1621503874179)
-2021-05-20 09:44:44,392 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2021-05-20 09:44:44,392 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
-2021-05-20 09:44:44,392 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2021-05-20 09:44:44,392 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2021-05-20 09:45:00,283 INFO o.a.j.r.Summariser: summary +    196 in 00:00:26 =    7.5/s Avg:     4 Min:     3 Max:    30 Err:     0 (0.00%) Active: 51 Started: 200 Finished: 149
-2021-05-20 09:45:03,790 INFO o.a.j.JMeter: Finished remote host: 172.17.0.8 (1621503903790)
-2021-05-20 09:45:04,229 INFO o.a.j.r.Summariser: summary +     84 in 00:00:04 =   21.3/s Avg:     4 Min:     3 Max:     8 Err:     0 (0.00%) Active: 0 Started: 200 Finished: 200
-2021-05-20 09:45:04,229 INFO o.a.j.r.Summariser: summary =    280 in 00:00:30 =    9.3/s Avg:     4 Min:     3 Max:    30 Err:     0 (0.00%)
-2021-05-20 09:45:04,230 INFO o.a.j.JMeter: Finished remote host: 172.17.0.7 (1621503904230)
-2021-05-20 09:45:04,230 INFO o.a.j.JMeter: All remote engines have ended test, starting RemoteTestStopper thread
-2021-05-20 09:45:09,232 INFO o.a.j.JMeter: Interrupting RMI Reaper
-2021-05-20 09:45:09,233 INFO o.a.j.JMeter: Generating Dashboard
-2021-05-20 09:45:09,233 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
-2021-05-20 09:45:09,240 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
-2021-05-20 09:45:09,315 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
-2021-05-20 09:45:09,316 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
-2021-05-20 09:45:09,317 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
-2021-05-20 09:45:09,317 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
-2021-05-20 09:45:09,321 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
-2021-05-20 09:45:09,325 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
-2021-05-20 09:45:09,325 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
-2021-05-20 09:45:09,325 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
-2021-05-20 09:45:09,336 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
-2021-05-20 09:45:09,337 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
-2021-05-20 09:45:09,337 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
-2021-05-20 09:45:09,337 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
-2021-05-20 09:45:09,341 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
-2021-05-20 09:45:09,342 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 1960 samples
-2021-05-20 09:45:09,342 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
-2021-05-20 09:45:09,342 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
-2021-05-20 09:45:09,342 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
-2021-05-20 09:45:09,344 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
-2021-05-20 09:45:09,344 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
-2021-05-20 09:45:09,344 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 11400 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 2280 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 760 samples
-2021-05-20 09:45:09,345 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 760 samples produced in 94ms on channel 0
-2021-05-20 09:45:09,345 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
-2021-05-20 09:45:09,472 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
-2021-05-20 09:45:09,472 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
-2021-05-20 09:45:09,472 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
-2021-05-20 09:45:09,472 INFO o.a.j.r.d.JsonExporter: Checking output folder
-2021-05-20 09:45:09,473 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to /testJM/result/statistics.json
-2021-05-20 09:45:09,504 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
-2021-05-20 09:45:09,505 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: /testJM/result
-2021-05-20 09:45:09,579 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: /testJM/result, creating folder structure
-2021-05-20 09:45:09,581 INFO o.a.j.r.d.TemplateVisitor: Copying folder from '/jmeter/apache-jmeter-5.4.1/bin/report-template' to '/testJM/result', got message: /testJM/result, found non empty folder with following content [/testJM/result/statistics.json, /testJM/result/tmp.jtl], will be ignored
-2021-05-20 09:45:09,738 INFO o.a.j.JMeter: Dashboard generated
+2021-05-24 13:20:08,234 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2021-05-24 13:20:08,248 INFO o.a.j.JMeter: Loading user properties from: /jmeter/apache-jmeter-5.4.1/bin/user.properties
+2021-05-24 13:20:08,248 INFO o.a.j.JMeter: Loading system properties from: /jmeter/apache-jmeter-5.4.1/bin/system.properties
+2021-05-24 13:20:08,248 INFO o.a.j.JMeter: Setting JMeter property: server.rmi.ssl.disable=true
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: Version 5.4.1
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: java.version=1.8.0_292
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: os.name=Linux
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: os.arch=amd64
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: os.version=5.4.0-1046-azure
+2021-05-24 13:20:08,254 INFO o.a.j.JMeter: file.encoding=UTF-8
+2021-05-24 13:20:08,255 INFO o.a.j.JMeter: java.awt.headless=true
+2021-05-24 13:20:08,255 INFO o.a.j.JMeter: Max memory     =1073741824
+2021-05-24 13:20:08,255 INFO o.a.j.JMeter: Available Processors =16
+2021-05-24 13:20:08,259 INFO o.a.j.JMeter: Default Locale=English (EN)
+2021-05-24 13:20:08,259 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2021-05-24 13:20:08,259 INFO o.a.j.JMeter: JMeterHome=/jmeter/apache-jmeter-5.4.1
+2021-05-24 13:20:08,259 INFO o.a.j.JMeter: user.dir  =/
+2021-05-24 13:20:08,259 INFO o.a.j.JMeter: PWD       =/
+2021-05-24 13:20:08,259 INFO o.a.j.JMeter: IP: 172.17.0.9 Name: d19ac582eae9 FullName: d19ac582eae9
+2021-05-24 13:20:08,262 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/testJM/result'
+2021-05-24 13:20:08,264 INFO o.a.j.s.FileServer: Default base='/'
+2021-05-24 13:20:08,265 INFO o.a.j.s.FileServer: Set new base='/testJM'
+2021-05-24 13:20:08,368 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2021-05-24 13:20:08,420 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2021-05-24 13:20:08,424 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2021-05-24 13:20:08,429 INFO o.a.j.s.SaveService: Loading file: /testJM/test.jmx
+2021-05-24 13:20:08,466 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2021-05-24 13:20:08,469 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2021-05-24 13:20:08,492 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-24 13:20:08,492 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-24 13:20:08,492 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-24 13:20:08,492 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-24 13:20:08,492 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2021-05-24 13:20:08,493 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2021-05-24 13:20:08,512 INFO o.a.j.JMeter: Creating summariser <summary>
+2021-05-24 13:20:08,519 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2021-05-24 13:20:08,519 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: /testJM/result/tmp.jtl
+2021-05-24 13:20:08,519 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /jmeter/apache-jmeter-5.4.1/bin/reportgenerator.properties
+2021-05-24 13:20:08,520 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2021-05-24 13:20:08,523 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2021-05-24 13:20:08,526 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2021-05-24 13:20:08,526 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2021-05-24 13:20:08,526 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2021-05-24 13:20:08,526 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2021-05-24 13:20:08,526 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2021-05-24 13:20:08,526 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2021-05-24 13:20:08,526 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2021-05-24 13:20:08,527 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2021-05-24 13:20:08,530 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,530 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,530 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,530 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,531 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,531 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,531 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,531 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,531 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,531 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-24 13:20:08,532 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2021-05-24 13:20:08,532 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2021-05-24 13:20:08,532 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2021-05-24 13:20:08,533 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2021-05-24 13:20:08,533 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2021-05-24 13:20:08,535 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2021-05-24 13:20:08,539 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2021-05-24 13:20:08,539 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-05-24 13:20:08,540 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-05-24 13:20:08,543 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2021-05-24 13:20:08,543 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2021-05-24 13:20:08,784 INFO o.a.j.JMeter: Running test (1621862408784)
+2021-05-24 13:20:08,819 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : 1_StressTestDotNetCore_-err-_var_short
+2021-05-24 13:20:08,819 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group 1_StressTestDotNetCore_-err-_var_short.
+2021-05-24 13:20:08,819 INFO o.a.j.e.StandardJMeterEngine: Thread will start next loop on error
+2021-05-24 13:20:08,820 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=100 ramp-up=1 delayedStart=false
+2021-05-24 13:20:08,829 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2021-05-24 13:20:08,829 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2021-05-24 13:20:08,829 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2021-05-24 13:20:08,829 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2021-05-24 13:20:08,830 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-1
+2021-05-24 13:20:08,836 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-2
+2021-05-24 13:20:08,845 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-3
+2021-05-24 13:20:08,854 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-4
+2021-05-24 13:20:08,863 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-5
+2021-05-24 13:20:08,872 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-6
+2021-05-24 13:20:08,882 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-7
+2021-05-24 13:20:08,892 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-8
+2021-05-24 13:20:08,903 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-9
+2021-05-24 13:20:08,904 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2021-05-24 13:20:08,904 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2021-05-24 13:20:08,912 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-10
+2021-05-24 13:20:08,922 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-11
+2021-05-24 13:20:08,931 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-12
+2021-05-24 13:20:08,941 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-13
+2021-05-24 13:20:08,955 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-14
+2021-05-24 13:20:08,962 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-15
+2021-05-24 13:20:08,971 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-16
+2021-05-24 13:20:08,981 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-17
+2021-05-24 13:20:08,992 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-18
+2021-05-24 13:20:09,004 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-19
+2021-05-24 13:20:09,011 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-20
+2021-05-24 13:20:09,021 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-21
+2021-05-24 13:20:09,032 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-22
+2021-05-24 13:20:09,041 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-23
+2021-05-24 13:20:09,051 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-24
+2021-05-24 13:20:09,061 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-25
+2021-05-24 13:20:09,071 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-26
+2021-05-24 13:20:09,081 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-27
+2021-05-24 13:20:09,091 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-28
+2021-05-24 13:20:09,101 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-29
+2021-05-24 13:20:09,114 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-30
+2021-05-24 13:20:09,121 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-31
+2021-05-24 13:20:09,131 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-32
+2021-05-24 13:20:09,141 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-33
+2021-05-24 13:20:09,151 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-34
+2021-05-24 13:20:09,161 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-35
+2021-05-24 13:20:09,171 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-36
+2021-05-24 13:20:09,181 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-37
+2021-05-24 13:20:09,192 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-38
+2021-05-24 13:20:09,201 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-39
+2021-05-24 13:20:09,211 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-40
+2021-05-24 13:20:09,221 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-41
+2021-05-24 13:20:09,231 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-42
+2021-05-24 13:20:09,241 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-43
+2021-05-24 13:20:09,251 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-44
+2021-05-24 13:20:09,261 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-45
+2021-05-24 13:20:09,271 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-46
+2021-05-24 13:20:09,282 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-47
+2021-05-24 13:20:09,294 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-48
+2021-05-24 13:20:09,301 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-49
+2021-05-24 13:20:09,310 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-50
+2021-05-24 13:20:09,321 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-51
+2021-05-24 13:20:09,331 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-52
+2021-05-24 13:20:09,341 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-53
+2021-05-24 13:20:09,351 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-54
+2021-05-24 13:20:09,361 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-55
+2021-05-24 13:20:09,371 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-56
+2021-05-24 13:20:09,381 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-57
+2021-05-24 13:20:09,391 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-58
+2021-05-24 13:20:09,401 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-59
+2021-05-24 13:20:09,411 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-60
+2021-05-24 13:20:09,424 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-61
+2021-05-24 13:20:09,431 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-62
+2021-05-24 13:20:09,440 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-63
+2021-05-24 13:20:09,453 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-64
+2021-05-24 13:20:09,461 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-65
+2021-05-24 13:20:09,471 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-66
+2021-05-24 13:20:09,481 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-67
+2021-05-24 13:20:09,492 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-68
+2021-05-24 13:20:09,501 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-69
+2021-05-24 13:20:09,511 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-70
+2021-05-24 13:20:09,522 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-71
+2021-05-24 13:20:09,531 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-72
+2021-05-24 13:20:09,541 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-73
+2021-05-24 13:20:09,551 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-74
+2021-05-24 13:20:09,563 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-75
+2021-05-24 13:20:09,571 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-76
+2021-05-24 13:20:09,581 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-77
+2021-05-24 13:20:09,591 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-78
+2021-05-24 13:20:09,601 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-79
+2021-05-24 13:20:09,611 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-80
+2021-05-24 13:20:09,621 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-81
+2021-05-24 13:20:09,631 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-82
+2021-05-24 13:20:09,641 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-83
+2021-05-24 13:20:09,651 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-84
+2021-05-24 13:20:09,661 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-85
+2021-05-24 13:20:09,670 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-86
+2021-05-24 13:20:09,681 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-87
+2021-05-24 13:20:09,693 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-88
+2021-05-24 13:20:09,701 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-89
+2021-05-24 13:20:09,711 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-90
+2021-05-24 13:20:09,720 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-91
+2021-05-24 13:20:09,731 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-92
+2021-05-24 13:20:09,741 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-93
+2021-05-24 13:20:09,750 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-94
+2021-05-24 13:20:09,761 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-95
+2021-05-24 13:20:09,773 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-96
+2021-05-24 13:20:09,781 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-97
+2021-05-24 13:20:09,791 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-98
+2021-05-24 13:20:09,800 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-99
+2021-05-24 13:20:09,811 INFO o.a.j.t.JMeterThread: Thread started: 1_StressTestDotNetCore_-err-_var_short 1-100
+2021-05-24 13:20:09,930 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = d19ac582eae9
+2021-05-24 13:20:09,934 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2021-05-24 13:20:12,617 INFO o.a.j.u.JsseSSLManager: Using default SSL protocol: TLS
+2021-05-24 13:20:12,617 INFO o.a.j.u.JsseSSLManager: SSL session context: per-thread
+2021-05-24 13:20:30,006 INFO o.a.j.r.Summariser: summary +   1310 in 00:00:21 =   61.7/s Avg:    18 Min:     3 Max:    43 Err:   621 (47.40%) Active: 100 Started: 100 Finished: 0
+2021-05-24 13:20:36,894 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-31
+2021-05-24 13:20:37,006 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-95
+2021-05-24 13:20:37,084 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-12
+2021-05-24 13:20:37,112 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-83
+2021-05-24 13:20:37,240 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-8
+2021-05-24 13:20:37,271 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-75
+2021-05-24 13:20:37,303 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-80
+2021-05-24 13:20:37,322 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-58
+2021-05-24 13:20:37,339 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-67
+2021-05-24 13:20:37,357 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-10
+2021-05-24 13:20:37,362 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-16
+2021-05-24 13:20:37,363 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-14
+2021-05-24 13:20:37,364 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-19
+2021-05-24 13:20:37,385 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-6
+2021-05-24 13:20:37,458 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-3
+2021-05-24 13:20:37,463 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-63
+2021-05-24 13:20:37,490 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-73
+2021-05-24 13:20:37,494 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-71
+2021-05-24 13:20:37,506 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-92
+2021-05-24 13:20:37,534 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-77
+2021-05-24 13:20:37,535 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-27
+2021-05-24 13:20:37,546 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-5
+2021-05-24 13:20:37,551 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-4
+2021-05-24 13:20:37,566 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-78
+2021-05-24 13:20:37,586 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-29
+2021-05-24 13:20:37,586 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-94
+2021-05-24 13:20:37,596 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-39
+2021-05-24 13:20:37,597 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-55
+2021-05-24 13:20:37,632 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-49
+2021-05-24 13:20:37,632 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-90
+2021-05-24 13:20:37,665 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-36
+2021-05-24 13:20:37,716 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-48
+2021-05-24 13:20:37,728 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-45
+2021-05-24 13:20:37,773 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-38
+2021-05-24 13:20:37,777 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-46
+2021-05-24 13:20:37,801 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-82
+2021-05-24 13:20:37,815 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-74
+2021-05-24 13:20:37,840 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-44
+2021-05-24 13:20:37,845 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-60
+2021-05-24 13:20:37,859 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-34
+2021-05-24 13:20:37,877 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-41
+2021-05-24 13:20:37,894 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-51
+2021-05-24 13:20:37,895 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-87
+2021-05-24 13:20:37,896 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-85
+2021-05-24 13:20:37,899 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-93
+2021-05-24 13:20:37,956 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-54
+2021-05-24 13:20:37,991 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-43
+2021-05-24 13:20:38,003 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-35
+2021-05-24 13:20:38,012 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-21
+2021-05-24 13:20:38,023 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-9
+2021-05-24 13:20:38,030 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-98
+2021-05-24 13:20:38,045 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-28
+2021-05-24 13:20:38,056 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-15
+2021-05-24 13:20:38,078 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-89
+2021-05-24 13:20:38,122 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-25
+2021-05-24 13:20:38,150 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-24
+2021-05-24 13:20:38,161 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-7
+2021-05-24 13:20:38,169 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-97
+2021-05-24 13:20:38,170 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-47
+2021-05-24 13:20:38,260 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-62
+2021-05-24 13:20:38,262 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-33
+2021-05-24 13:20:38,264 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-30
+2021-05-24 13:20:38,284 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-2
+2021-05-24 13:20:38,290 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-96
+2021-05-24 13:20:38,315 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-84
+2021-05-24 13:20:38,339 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-57
+2021-05-24 13:20:38,366 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-72
+2021-05-24 13:20:38,366 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-11
+2021-05-24 13:20:38,368 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-88
+2021-05-24 13:20:38,386 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-37
+2021-05-24 13:20:38,386 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-99
+2021-05-24 13:20:38,392 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-61
+2021-05-24 13:20:38,396 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-22
+2021-05-24 13:20:38,415 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-26
+2021-05-24 13:20:38,416 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-79
+2021-05-24 13:20:38,421 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-76
+2021-05-24 13:20:38,436 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-40
+2021-05-24 13:20:38,462 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-17
+2021-05-24 13:20:38,462 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-66
+2021-05-24 13:20:38,518 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-1
+2021-05-24 13:20:38,519 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-20
+2021-05-24 13:20:38,520 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-86
+2021-05-24 13:20:38,522 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-23
+2021-05-24 13:20:38,577 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-56
+2021-05-24 13:20:38,598 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-64
+2021-05-24 13:20:38,599 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-59
+2021-05-24 13:20:38,626 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-13
+2021-05-24 13:20:38,628 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-68
+2021-05-24 13:20:38,634 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-69
+2021-05-24 13:20:38,635 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-52
+2021-05-24 13:20:38,698 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-42
+2021-05-24 13:20:38,705 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-65
+2021-05-24 13:20:38,802 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-81
+2021-05-24 13:20:38,802 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-91
+2021-05-24 13:20:38,814 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-32
+2021-05-24 13:20:38,814 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-50
+2021-05-24 13:20:38,830 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-18
+2021-05-24 13:20:38,834 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-70
+2021-05-24 13:20:38,872 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-100
+2021-05-24 13:20:38,899 INFO o.a.j.t.JMeterThread: Stopping because end time detected by thread: 1_StressTestDotNetCore_-err-_var_short 1-53
+2021-05-24 13:20:38,899 INFO o.a.j.t.JMeterThread: Thread finished: 1_StressTestDotNetCore_-err-_var_short 1-53
+2021-05-24 13:20:38,899 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2021-05-24 13:20:38,900 INFO o.a.j.r.Summariser: summary +    582 in 00:00:09 =   65.4/s Avg:    19 Min:     3 Max:    41 Err:   297 (51.03%) Active: 0 Started: 100 Finished: 100
+2021-05-24 13:20:38,900 INFO o.a.j.r.Summariser: summary =   1892 in 00:00:30 =   62.8/s Avg:    18 Min:     3 Max:    43 Err:   918 (48.52%)
+2021-05-24 13:20:38,900 INFO o.a.j.JMeter: Generating Dashboard
+2021-05-24 13:20:38,900 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2021-05-24 13:20:38,910 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2021-05-24 13:20:39,051 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2021-05-24 13:20:39,051 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2021-05-24 13:20:39,053 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2021-05-24 13:20:39,053 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2021-05-24 13:20:39,058 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2021-05-24 13:20:39,062 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2021-05-24 13:20:39,062 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2021-05-24 13:20:39,062 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2021-05-24 13:20:39,097 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2021-05-24 13:20:39,098 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2021-05-24 13:20:39,099 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2021-05-24 13:20:39,099 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2021-05-24 13:20:39,113 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2021-05-24 13:20:39,114 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 13244 samples
+2021-05-24 13:20:39,114 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2021-05-24 13:20:39,114 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2021-05-24 13:20:39,114 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2021-05-24 13:20:39,114 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2021-05-24 13:20:39,114 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2021-05-24 13:20:39,114 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2021-05-24 13:20:39,115 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2021-05-24 13:20:39,116 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2021-05-24 13:20:39,116 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2021-05-24 13:20:39,116 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2021-05-24 13:20:39,116 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 42150 samples
+2021-05-24 13:20:39,116 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 8430 samples
+2021-05-24 13:20:39,116 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 2810 samples
+2021-05-24 13:20:39,117 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 2810 samples produced in 186ms on channel 0
+2021-05-24 13:20:39,117 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2021-05-24 13:20:39,219 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2021-05-24 13:20:39,219 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2021-05-24 13:20:39,219 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2021-05-24 13:20:39,220 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2021-05-24 13:20:39,220 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to /testJM/result/statistics.json
+2021-05-24 13:20:39,251 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2021-05-24 13:20:39,253 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: /testJM/result
+2021-05-24 13:20:39,329 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: /testJM/result, creating folder structure
+2021-05-24 13:20:39,331 INFO o.a.j.r.d.TemplateVisitor: Copying folder from '/jmeter/apache-jmeter-5.4.1/bin/report-template' to '/testJM/result', got message: /testJM/result, found non empty folder with following content [/testJM/result/statistics.json, /testJM/result/tmp.jtl], will be ignored
+2021-05-24 13:20:39,488 INFO o.a.j.JMeter: Dashboard generated

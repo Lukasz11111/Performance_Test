@@ -7,27 +7,43 @@ import re
 
 JSON_RAPORT_PATH=sys.argv[2]
 JSON_CONFIG_PATH=sys.argv[4]+"/.config"
-
+JSON_RDB_INFO=sys.argv[5]
 
 def createSheet(sheet):
-    sheet["A1"] = "Application in RevDeBug"
-    sheet["B1"] = json_config['application_name']
-    sheet["C1"] = "Git link"
-    sheet["D1"] = json_config['git_link'] 
-    sheet["E1"] = "RevDeBug server"
-    sheet["F1"] = json_config['server_rdb']
-    sheet["G1"] = "Language"
-    sheet["H1"] = json_config['language']
+    sheet["A1"] = "RevDeBug spec"
+    sheet["B1"] = "CPU: "
+    sheet["C1"] = rdb_info['cpu']
+    sheet["D1"] = "RAM: " 
+    sheet["E1"] =  rdb_info['ram']
+    sheet["F1"] = "Size: "
+    sheet["G1"] =  rdb_info['size']
 
-    sheet["A3"] = "Recordings"
-    sheet["B3"] = "Trace Span"
-    sheet["C3"] = "JM Count"
-    sheet["D3"] = "Calls/s avg" 
-    sheet["E3"] = "sent  kb/s"
-    sheet["F3"] = "Response AVG /s"
-    sheet["G3"] = "Code length"
-    sheet["H3"] = "Err proportion"
-    sheet["I3"] = "RDB/APM"
+    sheet["A2"] = "Application spec"
+    sheet["B2"] = "CPU: "
+    sheet["C2"] = json_config['cpu']
+    sheet["D2"] = "RAM: " 
+    sheet["E2"] =  json_config['ram']
+    sheet["F2"] = "Size: "
+    sheet["G2"] =  json_config['size']
+
+    sheet["A3"] = "Application spec"
+    sheet["B3"] = json_config['application_name']
+    sheet["C3"] = "Git link"
+    sheet["D3"] = json_config['git_link'] 
+    sheet["E3"] = "RevDeBug server"
+    sheet["F3"] = json_config['server_rdb']
+    sheet["G3"] = "Language"
+    sheet["H3"] = json_config['language']
+
+    sheet["A5"] = "Recordings"
+    sheet["B5"] = "Trace Span"
+    sheet["C5"] = "JM Count"
+    sheet["D5"] = "Calls/s avg" 
+    sheet["E5"] = "sent  kb/s"
+    sheet["F5"] = "Response AVG /s"
+    sheet["G5"] = "Code length"
+    sheet["H5"] = "Err proportion"
+    sheet["I5"] = "RDB/APM"
     sheet.column_dimensions['A'].width =13
     sheet.column_dimensions['B'].width =10
     sheet.column_dimensions['C'].width =10
@@ -45,6 +61,9 @@ with open(JSON_RAPORT_PATH) as f:
 
 with open(JSON_CONFIG_PATH) as f:
     json_config = json.load(f)
+
+with open(JSON_RDB_INFO) as f:
+    rdb_info = json.load(f)
 
 filename_raport=sys.argv[3]
 
@@ -93,16 +112,16 @@ else:
 
 
 
-sheet.insert_rows(idx=4)
+sheet.insert_rows(idx=6)
 
-sheet["A4"] = json_dict["Recordings"]
-sheet["B4"] = json_dict["Trace_Span"]
-sheet["C4"] = json_dict["TotalJmeter"]["sampleCount"]
-sheet["D4"]=list_result[len(list_result)-1]
-sheet["E4"] = json_dict["TotalJmeter"]["sentKBytesPerSec"]
-sheet["F4"] = json_dict["TotalJmeter"]["meanResTime"]
-sheet["G4"] = data_name[3].replace(".jmx","")
-sheet["H4"] = data_name[2].replace("-"," /")
-sheet["I4"] = json_config['info'] 
+sheet["A6"] = json_dict["Recordings"]
+sheet["B6"] = json_dict["Trace_Span"]
+sheet["C6"] = json_dict["TotalJmeter"]["sampleCount"]
+sheet["D6"]=list_result[len(list_result)-1]
+sheet["E6"] = json_dict["TotalJmeter"]["sentKBytesPerSec"]
+sheet["F6"] = json_dict["TotalJmeter"]["meanResTime"]
+sheet["G6"] = data_name[3].replace(".jmx","")
+sheet["H6"] = data_name[2].replace("-"," /")
+sheet["I6"] = json_config['info'] 
 
 workbook.save(filename=filename_raport)

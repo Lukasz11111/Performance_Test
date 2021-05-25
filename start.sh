@@ -1,5 +1,5 @@
-echo helo
-source  main.sh
+
+source  main.sh 1 1
 
 
 
