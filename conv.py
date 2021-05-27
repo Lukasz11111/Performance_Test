@@ -44,6 +44,7 @@ def createSheet(sheet):
     sheet["G5"] = "Code length"
     sheet["H5"] = "Err proportion"
     sheet["I5"] = "RDB/APM"
+    sheet["J5"] = "Delay"
     sheet.column_dimensions['A'].width =13
     sheet.column_dimensions['B'].width =10
     sheet.column_dimensions['C'].width =10
@@ -123,5 +124,6 @@ sheet["F6"] = json_dict["TotalJmeter"]["meanResTime"]
 sheet["G6"] = data_name[3].replace(".jmx","")
 sheet["H6"] = data_name[2].replace("-"," /")
 sheet["I6"] = json_config['info'] 
+sheet["J6"] = sys.argv[6]
 
 workbook.save(filename=filename_raport)

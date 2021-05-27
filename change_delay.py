@@ -2,7 +2,6 @@ import sys
 import re
 FILE=sys.argv[1]
 DELAY=sys.argv[2]
-
 with open(FILE) as f:
     f = f.readlines()
 f=str(f)[2:]
