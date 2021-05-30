@@ -2,13 +2,16 @@
 RESULT_PATH=/home/azureuser/Jmeter_test/test/result/
 JSON_RAPORT_PATH=/home/azureuser/devopscypresstests/stress.json
 RESULT_STATISTICS_PATH=$RESULT_PATH/statistics.json
-CYPRESS_PATH=~/devopscypresstests
+CYPRESS_PATH="$6"
 INIT_JM=/home/azureuser/Jmeter_test/docker-jm/init.sh
 RAPORTS_FOLDER=/home/azureuser/Jmeter_test/raports
 CONFIG_TEST_FILE_PATH="$4"
 CHANGE_DELAY_PATH=/home/azureuser/Jmeter_test/change_delay.py 
 CHANGE_info_PATH=/home/azureuser/Jmeter_test/tmp_test/.rdb-info
+MODE ="$7"
 #Test names in jmeter:
+
+
 
 # YOU MUST SET .CONFIG IN TEST FOLDER
 
@@ -56,7 +59,7 @@ sudo npm run test:linux_after  --prefix $CYPRESS_PATH
 
 sudo cat $JSON_RAPORT_PATH
 
-sudo python3 conv.py $file $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY
+sudo python3 conv.py $file $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE
 
 #todo after all cp to new folder (date name)
 #todo the amount of space used by the recordings

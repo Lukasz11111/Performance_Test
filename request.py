@@ -1,14 +1,28 @@
 import requests
 import sys
 import json
+import aiohttp
+import asyncio
+import time
 
 HOST=sys.argv[1]
 SAVE=sys.argv[2]
 
-r =requests.get(HOST)
+async def main():
+    async with aiohttp.ClientSession() as session:
+            async with session.get(HOST) as resp:
+                t = await resp.text()
+                return t
+
+loop = asyncio.get_event_loop()
+try:
+  r = loop.run_until_complete(main())
+except:
+  print("")
+    
 
 if SAVE=='y':
-    result=str(r.text)
+    result=str(r)
     result=result.split('|')
     result[0]=result[0].split(':')
     result[1]=result[1].split(':')

@@ -1,156 +1,202 @@
-2021-05-27 12:07:23,412 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2021-05-27 12:07:23,425 INFO o.a.j.JMeter: Loading user properties from: /jmeter/apache-jmeter-5.4.1/bin/user.properties
-2021-05-27 12:07:23,426 INFO o.a.j.JMeter: Loading system properties from: /jmeter/apache-jmeter-5.4.1/bin/system.properties
-2021-05-27 12:07:23,426 INFO o.a.j.JMeter: Setting JMeter property: server.rmi.ssl.disable=true
-2021-05-27 12:07:23,431 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: Version 5.4.1
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: java.version=1.8.0_292
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: os.name=Linux
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: os.arch=amd64
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: os.version=5.4.0-1046-azure
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: file.encoding=UTF-8
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: java.awt.headless=true
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: Max memory     =1073741824
-2021-05-27 12:07:23,432 INFO o.a.j.JMeter: Available Processors =16
-2021-05-27 12:07:23,436 INFO o.a.j.JMeter: Default Locale=English (EN)
-2021-05-27 12:07:23,436 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2021-05-27 12:07:23,436 INFO o.a.j.JMeter: JMeterHome=/jmeter/apache-jmeter-5.4.1
-2021-05-27 12:07:23,436 INFO o.a.j.JMeter: user.dir  =/
-2021-05-27 12:07:23,436 INFO o.a.j.JMeter: PWD       =/
-2021-05-27 12:07:23,437 INFO o.a.j.JMeter: IP: 172.17.0.9 Name: 67724c77c3c3 FullName: 67724c77c3c3
-2021-05-27 12:07:23,440 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/testJM/result'
-2021-05-27 12:07:23,442 INFO o.a.j.s.FileServer: Default base='/'
-2021-05-27 12:07:23,442 INFO o.a.j.s.FileServer: Set new base='/testJM'
-2021-05-27 12:07:23,539 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2021-05-27 12:07:23,585 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2021-05-27 12:07:23,589 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2021-05-27 12:07:23,594 INFO o.a.j.s.SaveService: Loading file: /testJM/test.jmx
-2021-05-27 12:07:23,629 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
-2021-05-27 12:07:23,632 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
-2021-05-27 12:07:23,656 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-27 12:07:23,656 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-27 12:07:23,656 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-27 12:07:23,656 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2021-05-27 12:07:23,656 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2021-05-27 12:07:23,656 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2021-05-27 12:07:23,679 INFO o.a.j.JMeter: Creating summariser <summary>
-2021-05-27 12:07:23,687 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
-2021-05-27 12:07:23,687 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: /testJM/result/tmp.jtl
-2021-05-27 12:07:23,687 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /jmeter/apache-jmeter-5.4.1/bin/reportgenerator.properties
-2021-05-27 12:07:23,687 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
-2021-05-27 12:07:23,691 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
-2021-05-27 12:07:23,694 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
-2021-05-27 12:07:23,698 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,698 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,698 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,698 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,698 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,698 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,699 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,699 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,699 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,699 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
-2021-05-27 12:07:23,700 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
-2021-05-27 12:07:23,700 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
-2021-05-27 12:07:23,700 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
-2021-05-27 12:07:23,700 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
-2021-05-27 12:07:23,700 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
-2021-05-27 12:07:23,703 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
-2021-05-27 12:07:23,705 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.8
-2021-05-27 12:07:23,707 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:23,749 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.7
-2021-05-27 12:07:23,749 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:23,768 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.6
-2021-05-27 12:07:23,768 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:23,786 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.5
-2021-05-27 12:07:23,786 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:23,806 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.4
-2021-05-27 12:07:23,806 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:23,828 INFO o.a.j.e.DistributedRunner: Starting distributed test with remote engines: [172.17.0.8, 172.17.0.6, 172.17.0.7, 172.17.0.4, 172.17.0.5] @ Thu May 27 12:07:23 UTC 2021 (1622117243826)
-2021-05-27 12:07:23,828 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
-2021-05-27 12:07:23,832 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2021-05-27 12:07:23,832 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2021-05-27 12:07:24,049 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,050 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,051 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2021-05-27 12:07:24,054 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
-2021-05-27 12:07:24,054 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
-2021-05-27 12:07:24,055 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,055 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,302 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,302 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,407 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.8 basedir='testJM'
-2021-05-27 12:07:24,407 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
-2021-05-27 12:07:24,415 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.8
-2021-05-27 12:07:24,415 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
-2021-05-27 12:07:24,415 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,415 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,416 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
-2021-05-27 12:07:24,416 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
-2021-05-27 12:07:24,416 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,416 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,440 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,440 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,563 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.6 basedir='testJM'
-2021-05-27 12:07:24,563 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
-2021-05-27 12:07:24,568 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.6
-2021-05-27 12:07:24,568 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
-2021-05-27 12:07:24,568 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,568 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,569 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
-2021-05-27 12:07:24,569 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
-2021-05-27 12:07:24,569 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,569 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,576 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,576 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,696 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.7 basedir='testJM'
-2021-05-27 12:07:24,696 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
-2021-05-27 12:07:24,700 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.7
-2021-05-27 12:07:24,700 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
-2021-05-27 12:07:24,701 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,701 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,701 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
-2021-05-27 12:07:24,701 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
-2021-05-27 12:07:24,701 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,701 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,706 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,706 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,775 INFO o.a.j.JMeter: Started remote host:  172.17.0.8 (1622117244774)
-2021-05-27 12:07:24,833 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.4 basedir='testJM'
-2021-05-27 12:07:24,833 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
-2021-05-27 12:07:24,839 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.4
-2021-05-27 12:07:24,839 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
-2021-05-27 12:07:24,839 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,839 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,839 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
-2021-05-27 12:07:24,839 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
-2021-05-27 12:07:24,840 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,840 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,846 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,846 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
-2021-05-27 12:07:24,999 INFO o.a.j.JMeter: Started remote host:  172.17.0.6 (1622117244999)
-2021-05-27 12:07:25,009 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.5 basedir='testJM'
-2021-05-27 12:07:25,009 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
-2021-05-27 12:07:25,014 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.5
-2021-05-27 12:07:25,014 INFO o.a.j.e.DistributedRunner: Remote engines have been started:[172.17.0.8, 172.17.0.6, 172.17.0.7, 172.17.0.4, 172.17.0.5]
-2021-05-27 12:07:25,086 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2021-05-27 12:07:25,087 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
-2021-05-27 12:07:25,087 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2021-05-27 12:07:25,087 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2021-05-27 12:07:25,236 INFO o.a.j.JMeter: Started remote host:  172.17.0.7 (1622117245235)
-2021-05-27 12:07:25,431 INFO o.a.j.JMeter: Started remote host:  172.17.0.4 (1622117245430)
-2021-05-27 12:07:25,771 INFO o.a.j.JMeter: Started remote host:  172.17.0.5 (1622117245771)
-2021-05-27 12:07:30,004 INFO o.a.j.r.Summariser: summary +  37870 in 00:00:05 = 7243.7/s Avg:    38 Min:     0 Max:  1016 Err:  9617 (25.39%) Active: 500 Started: 500 Finished: 0
-2021-05-27 12:08:03,470 INFO o.a.j.r.Summariser: summary + 257202 in 00:00:33 = 7685.0/s Avg:    47 Min:     0 Max:  7304 Err: 64416 (25.04%) Active: 22 Started: 500 Finished: 478
-2021-05-27 12:08:03,471 INFO o.a.j.r.Summariser: summary = 295072 in 00:00:39 = 7625.4/s Avg:    46 Min:     0 Max:  7304 Err: 74033 (25.09%)
-2021-05-27 12:08:03,472 INFO o.a.j.JMeter: Finished remote host: 172.17.0.5 (1622117283472)
-2021-05-27 12:08:06,541 INFO o.a.j.JMeter: Finished remote host: 172.17.0.7 (1622117286541)
-2021-05-27 12:08:10,382 INFO o.a.j.JMeter: Finished remote host: 172.17.0.4 (1622117290382)
+2021-05-30 18:25:35,578 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2021-05-30 18:25:35,591 INFO o.a.j.JMeter: Loading user properties from: /jmeter/apache-jmeter-5.4.1/bin/user.properties
+2021-05-30 18:25:35,591 INFO o.a.j.JMeter: Loading system properties from: /jmeter/apache-jmeter-5.4.1/bin/system.properties
+2021-05-30 18:25:35,591 INFO o.a.j.JMeter: Setting JMeter property: server.rmi.ssl.disable=true
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: Version 5.4.1
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: java.version=1.8.0_292
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: os.name=Linux
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: os.arch=amd64
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: os.version=5.4.0-1046-azure
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: file.encoding=UTF-8
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: java.awt.headless=true
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: Max memory     =1073741824
+2021-05-30 18:25:35,597 INFO o.a.j.JMeter: Available Processors =16
+2021-05-30 18:25:35,601 INFO o.a.j.JMeter: Default Locale=English (EN)
+2021-05-30 18:25:35,602 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2021-05-30 18:25:35,602 INFO o.a.j.JMeter: JMeterHome=/jmeter/apache-jmeter-5.4.1
+2021-05-30 18:25:35,602 INFO o.a.j.JMeter: user.dir  =/
+2021-05-30 18:25:35,602 INFO o.a.j.JMeter: PWD       =/
+2021-05-30 18:25:35,602 INFO o.a.j.JMeter: IP: 172.17.0.9 Name: f5108f801cf6 FullName: f5108f801cf6
+2021-05-30 18:25:35,605 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/testJM/result'
+2021-05-30 18:25:35,607 INFO o.a.j.s.FileServer: Default base='/'
+2021-05-30 18:25:35,608 INFO o.a.j.s.FileServer: Set new base='/testJM'
+2021-05-30 18:25:35,705 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2021-05-30 18:25:35,750 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2021-05-30 18:25:35,754 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2021-05-30 18:25:35,759 INFO o.a.j.s.SaveService: Loading file: /testJM/test.jmx
+2021-05-30 18:25:35,793 INFO o.a.j.p.h.c.CookieManager: Settings: Delete null: true Check: true Allow variable: true Save: false Prefix: COOKIE_
+2021-05-30 18:25:35,796 INFO o.a.j.p.h.c.CacheManager: Will only cache the following methods: [GET]
+2021-05-30 18:25:35,810 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-30 18:25:35,810 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-30 18:25:35,810 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-30 18:25:35,811 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2021-05-30 18:25:35,811 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2021-05-30 18:25:35,811 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2021-05-30 18:25:35,845 INFO o.a.j.JMeter: Creating summariser <summary>
+2021-05-30 18:25:35,853 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2021-05-30 18:25:35,853 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: /testJM/result/tmp.jtl
+2021-05-30 18:25:35,853 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /jmeter/apache-jmeter-5.4.1/bin/reportgenerator.properties
+2021-05-30 18:25:35,853 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2021-05-30 18:25:35,857 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2021-05-30 18:25:35,860 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2021-05-30 18:25:35,864 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,864 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,864 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,864 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,864 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,864 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,864 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,865 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,865 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,865 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2021-05-30 18:25:35,865 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2021-05-30 18:25:35,866 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2021-05-30 18:25:35,866 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2021-05-30 18:25:35,866 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2021-05-30 18:25:35,866 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2021-05-30 18:25:35,869 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2021-05-30 18:25:35,871 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.8
+2021-05-30 18:25:35,872 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:35,914 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.7
+2021-05-30 18:25:35,914 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:35,933 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.6
+2021-05-30 18:25:35,933 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:35,952 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.5
+2021-05-30 18:25:35,953 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:35,972 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 172.17.0.4
+2021-05-30 18:25:35,972 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:35,994 INFO o.a.j.e.DistributedRunner: Starting distributed test with remote engines: [172.17.0.8, 172.17.0.6, 172.17.0.7, 172.17.0.4, 172.17.0.5] @ Sun May 30 18:25:35 UTC 2021 (1622399135993)
+2021-05-30 18:25:35,994 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
+2021-05-30 18:25:35,999 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2021-05-30 18:25:35,999 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2021-05-30 18:25:36,209 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,209 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,211 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2021-05-30 18:25:36,214 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
+2021-05-30 18:25:36,214 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
+2021-05-30 18:25:36,215 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,215 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,459 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,460 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,564 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.8 basedir='testJM'
+2021-05-30 18:25:36,564 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
+2021-05-30 18:25:36,570 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.8
+2021-05-30 18:25:36,571 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
+2021-05-30 18:25:36,571 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,571 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,571 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
+2021-05-30 18:25:36,571 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
+2021-05-30 18:25:36,571 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,572 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,577 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,577 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,696 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.6 basedir='testJM'
+2021-05-30 18:25:36,697 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
+2021-05-30 18:25:36,702 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.6
+2021-05-30 18:25:36,702 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
+2021-05-30 18:25:36,702 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,702 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,702 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
+2021-05-30 18:25:36,702 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
+2021-05-30 18:25:36,702 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,703 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,709 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,709 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,831 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.7 basedir='testJM'
+2021-05-30 18:25:36,831 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
+2021-05-30 18:25:36,836 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.7
+2021-05-30 18:25:36,836 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
+2021-05-30 18:25:36,837 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,837 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,837 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
+2021-05-30 18:25:36,837 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
+2021-05-30 18:25:36,837 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,837 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,844 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,844 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,901 INFO o.a.j.JMeter: Started remote host:  172.17.0.8 (1622399136901)
+2021-05-30 18:25:36,972 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.4 basedir='testJM'
+2021-05-30 18:25:36,972 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
+2021-05-30 18:25:36,978 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.4
+2021-05-30 18:25:36,978 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
+2021-05-30 18:25:36,978 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,978 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,978 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
+2021-05-30 18:25:36,978 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
+2021-05-30 18:25:36,979 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,979 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,983 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:36,984 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2021-05-30 18:25:37,088 INFO o.a.j.JMeter: Started remote host:  172.17.0.6 (1622399137088)
+2021-05-30 18:25:37,133 INFO o.a.j.e.ClientJMeterEngine: sent test to 172.17.0.5 basedir='testJM'
+2021-05-30 18:25:37,133 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
+2021-05-30 18:25:37,139 INFO o.a.j.e.ClientJMeterEngine: sent run command to 172.17.0.5
+2021-05-30 18:25:37,139 INFO o.a.j.e.DistributedRunner: Remote engines have been started:[172.17.0.8, 172.17.0.6, 172.17.0.7, 172.17.0.4, 172.17.0.5]
+2021-05-30 18:25:37,274 INFO o.a.j.JMeter: Started remote host:  172.17.0.7 (1622399137273)
+2021-05-30 18:25:37,459 INFO o.a.j.JMeter: Started remote host:  172.17.0.4 (1622399137459)
+2021-05-30 18:25:37,558 INFO o.a.j.JMeter: Started remote host:  172.17.0.5 (1622399137558)
+2021-05-30 18:25:38,103 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2021-05-30 18:25:38,103 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2021-05-30 18:25:38,103 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2021-05-30 18:25:38,103 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2021-05-30 18:26:00,822 INFO o.a.j.r.Summariser: summary +   7006 in 00:00:24 =  292.9/s Avg:     1 Min:     0 Max:    35 Err:     0 (0.00%) Active: 500 Started: 496 Finished: 0
+2021-05-30 18:26:07,170 INFO o.a.j.JMeter: Finished remote host: 172.17.0.8 (1622399167170)
+2021-05-30 18:26:07,345 INFO o.a.j.JMeter: Finished remote host: 172.17.0.6 (1622399167345)
+2021-05-30 18:26:07,547 INFO o.a.j.JMeter: Finished remote host: 172.17.0.7 (1622399167547)
+2021-05-30 18:26:07,653 INFO o.a.j.JMeter: Finished remote host: 172.17.0.4 (1622399167653)
+2021-05-30 18:26:07,714 INFO o.a.j.r.Summariser: summary +   2642 in 00:00:07 =  383.3/s Avg:     0 Min:     0 Max:    12 Err:     0 (0.00%) Active: 0 Started: 496 Finished: 500
+2021-05-30 18:26:07,714 INFO o.a.j.r.Summariser: summary =   9648 in 00:00:31 =  313.1/s Avg:     1 Min:     0 Max:    35 Err:     0 (0.00%)
+2021-05-30 18:26:07,714 INFO o.a.j.JMeter: Finished remote host: 172.17.0.5 (1622399167714)
+2021-05-30 18:26:07,714 INFO o.a.j.JMeter: All remote engines have ended test, starting RemoteTestStopper thread
+2021-05-30 18:26:12,717 INFO o.a.j.JMeter: Interrupting RMI Reaper
+2021-05-30 18:26:12,717 INFO o.a.j.JMeter: Generating Dashboard
+2021-05-30 18:26:12,717 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2021-05-30 18:26:12,727 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2021-05-30 18:26:13,000 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2021-05-30 18:26:13,000 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2021-05-30 18:26:13,002 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2021-05-30 18:26:13,002 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2021-05-30 18:26:13,012 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2021-05-30 18:26:13,016 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2021-05-30 18:26:13,016 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2021-05-30 18:26:13,016 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2021-05-30 18:26:13,073 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2021-05-30 18:26:13,074 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2021-05-30 18:26:13,074 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2021-05-30 18:26:13,074 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2021-05-30 18:26:13,101 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2021-05-30 18:26:13,102 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 67536 samples
+2021-05-30 18:26:13,102 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2021-05-30 18:26:13,102 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2021-05-30 18:26:13,102 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2021-05-30 18:26:13,104 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2021-05-30 18:26:13,104 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2021-05-30 18:26:13,104 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2021-05-30 18:26:13,109 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2021-05-30 18:26:13,110 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2021-05-30 18:26:13,110 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2021-05-30 18:26:13,110 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2021-05-30 18:26:13,110 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 152085 samples
+2021-05-30 18:26:13,110 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 30417 samples
+2021-05-30 18:26:13,110 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 10139 samples
+2021-05-30 18:26:13,110 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 10139 samples produced in 373ms on channel 0
+2021-05-30 18:26:13,110 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2021-05-30 18:26:13,233 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2021-05-30 18:26:13,233 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2021-05-30 18:26:13,233 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2021-05-30 18:26:13,234 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2021-05-30 18:26:13,234 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to /testJM/result/statistics.json
+2021-05-30 18:26:13,271 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2021-05-30 18:26:13,273 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: /testJM/result
+2021-05-30 18:26:13,365 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: /testJM/result, creating folder structure
+2021-05-30 18:26:13,367 INFO o.a.j.r.d.TemplateVisitor: Copying folder from '/jmeter/apache-jmeter-5.4.1/bin/report-template' to '/testJM/result', got message: /testJM/result, found non empty folder with following content [/testJM/result/statistics.json, /testJM/result/tmp.jtl], will be ignored
+2021-05-30 18:26:13,540 INFO o.a.j.JMeter: Dashboard generated

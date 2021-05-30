@@ -123,7 +123,7 @@ sheet["E6"] = json_dict["TotalJmeter"]["sentKBytesPerSec"]
 sheet["F6"] = json_dict["TotalJmeter"]["meanResTime"]
 sheet["G6"] = data_name[3].replace(".jmx","")
 sheet["H6"] = data_name[2].replace("-"," /")
-sheet["I6"] = json_config['info'] 
+sheet["I6"] = sys.argv[7]
 sheet["J6"] = sys.argv[6]
 
 workbook.save(filename=filename_raport)
