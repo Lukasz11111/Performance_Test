@@ -17,8 +17,7 @@ HOST=HOST_PORT_array[0]
 if PORT=='null':
     PORT=''
 
-if type(PORT) != int:
-    PORT=''
+
 
 print(HOST+"    "+PORT)
 
@@ -29,6 +28,8 @@ f=str(f)[:-2]
 
 f=str(f).replace("\\n","")
 f=str(f).replace("', '","")
+
+print(PORT)
 
 port_new='<stringProp name="Argument.value">'+PORT+'</stringProp>'
 host_new='<stringProp name="Argument.value">'+HOST+'</stringProp>'

@@ -4,10 +4,26 @@ import json
 import os
 import sys
 import re
-
+from openpyxl.styles import PatternFill, colors
 JSON_RAPORT_PATH=sys.argv[2]
 JSON_CONFIG_PATH=sys.argv[4]+"/.config"
 JSON_RDB_INFO=sys.argv[5]
+
+def getMode(x):
+    return {
+        '1': "rdb and apm",
+        '2': "apm",
+        '3': "none",
+        '4': "rdb"
+    }[x]
+
+def getColor(x):
+    return {
+        'rdb and apm': "ffdbd9",
+        'apm': "00CCFFFF",
+        'none': "00FFFFCC",
+        'rdb': "00C0C0C0"
+    }[x]
 
 def createSheet(sheet):
     sheet["A1"] = "RevDeBug spec"
@@ -115,6 +131,24 @@ else:
 
 sheet.insert_rows(idx=6)
 
+def style(sheet):
+    color = str(getColor(getMode(str(sys.argv[7])) ))
+    print(color)
+    sheet["A6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["B6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["C6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["D6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["E6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["F6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["G6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["H6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["I6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["J6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+
+
+
+style(sheet)
+
 sheet["A6"] = json_dict["Recordings"]
 sheet["B6"] = json_dict["Trace_Span"]
 sheet["C6"] = json_dict["TotalJmeter"]["sampleCount"]
@@ -123,7 +157,7 @@ sheet["E6"] = json_dict["TotalJmeter"]["sentKBytesPerSec"]
 sheet["F6"] = json_dict["TotalJmeter"]["meanResTime"]
 sheet["G6"] = data_name[3].replace(".jmx","")
 sheet["H6"] = data_name[2].replace("-"," /")
-sheet["I6"] = sys.argv[7]
+sheet["I6"] = getMode(str(sys.argv[7])) 
 sheet["J6"] = sys.argv[6]
 
 workbook.save(filename=filename_raport)

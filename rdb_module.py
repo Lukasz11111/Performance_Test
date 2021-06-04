@@ -20,8 +20,8 @@ def f(x):
     }[x]
 
 def to_bool(value):
-    valid = {'true': True, 't': True, '1': True,
-             'false': False, 'f': False, '0': False,
+    valid = {'true': True, 't': True, '1': True, "True": True,
+             'false': False, 'f': False, '0': False, "False":False,
              }
     return valid[value.lower()]
 

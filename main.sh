@@ -31,7 +31,7 @@ END=$SLAVE_COUNT
 DELAY="$2"
 case $DELAY in
 1)
-  DELAY_array=(0 1000)
+  DELAY_array=(0  25 50  150  250 350  500 750 1000 2000 )
   ;;
 2)
   DELAY_array=(10 100 250 500 1000 1500 10000)
@@ -44,7 +44,7 @@ case $DELAY in
   ;;
 esac
 for mode in 1 2 3 4; do
-active_mod_host_port=$(python3 rdb_module.py ./tmp_test/java_rdbapm/.config $mode 2>&1)
+  active_mod_host_port=$(python3 rdb_module.py ./tmp_test/java_rdbapm/.config $mode 2>&1)
   if [[ $active_mod_host_port != "0" ]]; then
     for i in "${DELAY_array[@]}"; do
       for ((VARIABLE = $START; VARIABLE <= $END; VARIABLE++)); do
@@ -53,7 +53,6 @@ active_mod_host_port=$(python3 rdb_module.py ./tmp_test/java_rdbapm/.config $mod
           if [ "$(ls -A $FILES)" ]; then
             for test_file in $FILES; do
               ((counterall++))
-              echo $counterall
             done
           fi
         done
@@ -81,7 +80,7 @@ for x in $FOLDERS; do
     for test_file in $FILES; do
       for iZ in "${DELAY_array[@]}"; do
         for mode in 1 2 3 4; do
-        active_mod_host_port=$(python3 rdb_module.py ./tmp_test/java_rdbapm/.config $mode 2>&1)
+          active_mod_host_port=$(python3 rdb_module.py  $x/.config $mode 2>&1)
           if [[ $active_mod_host_port != "0" ]]; then
             echo $mode
             echo $active_mod_host_port
@@ -96,7 +95,6 @@ for x in $FOLDERS; do
               echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $counterall_done of $counterall ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
               echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $i of $var from folder ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
               echo $iZ
-
               sudo bash stress.sh $test_file 5 $RAPORT_NAME $x $iZ $CYPRESS_PATH $mode
 
             done

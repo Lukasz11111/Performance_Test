@@ -8,7 +8,7 @@ RAPORTS_FOLDER=/home/azureuser/Jmeter_test/raports
 CONFIG_TEST_FILE_PATH="$4"
 CHANGE_DELAY_PATH=/home/azureuser/Jmeter_test/change_delay.py 
 CHANGE_info_PATH=/home/azureuser/Jmeter_test/tmp_test/.rdb-info
-MODE ="$7"
+MODE="$7"
 #Test names in jmeter:
 
 
