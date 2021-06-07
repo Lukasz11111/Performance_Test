@@ -9,6 +9,7 @@ CONFIG_TEST_FILE_PATH="$4"
 CHANGE_DELAY_PATH=/home/azureuser/Jmeter_test/change_delay.py 
 CHANGE_info_PATH=/home/azureuser/Jmeter_test/tmp_test/.rdb-info
 MODE="$7"
+PROP="$8"
 #Test names in jmeter:
 
 
@@ -59,7 +60,7 @@ sudo npm run test:linux_after  --prefix $CYPRESS_PATH
 
 sudo cat $JSON_RAPORT_PATH
 
-sudo python3 conv.py $file $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE
+sudo python3 conv.py $PROP $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
 
 #todo after all cp to new folder (date name)
 #todo the amount of space used by the recordings

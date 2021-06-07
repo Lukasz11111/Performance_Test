@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.0, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.0, 500, 1500, "1"], "isController": false}, {"data": [0.0, 500, 1500, "Test"], "isController": true}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.05154639175257732, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.0, 500, 1500, "err"], "isController": false}, {"data": [0.09803921568627451, 500, 1500, "Test"], "isController": true}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 2194, 2194, 100.0, 0.5446672743846853, 0, 113, 0.0, 1.0, 1.0, 1.0, 161.72784903435058, 360.42282867094207, 0.0], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["1", 2194, 2194, 100.0, 0.5446672743846853, 0, 113, 0.0, 1.0, 1.0, 1.0, 161.72784903435058, 360.42282867094207, 0.0], "isController": false}, {"data": ["Test", 2194, 2194, 100.0, 0.8705560619872372, -1, 122, 1.0, 1.0, 1.0, 11.0, 162.66310794780546, 362.50712438834523, 0.0], "isController": true}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 4600, 4600, 100.0, 1.8497826086956468, 0, 33, 1.0, 4.0, 4.0, 10.0, 316.02088485847764, 132.39546836356143, 115.42169036823304], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["err", 4600, 4600, 100.0, 1.8497826086956468, 0, 33, 1.0, 4.0, 4.0, 10.0, 316.02088485847764, 132.39546836356143, 115.42169036823304], "isController": false}, {"data": ["Test", 5100, 4600, 90.19607843137256, 1.6688235294117686, 0, 33, 1.0, 3.0, 4.0, 9.0, 325.8369537439305, 123.124740448505, 107.33951731408128], "isController": true}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Non HTTP response code: java.net.UnknownHostException/Non HTTP response message: Traceback: Name or service not known", 10, 0.45578851412944393, 0.45578851412944393], "isController": false}, {"data": ["Non HTTP response code: java.net.UnknownHostException/Non HTTP response message: Traceback", 2184, 99.54421148587056, 99.54421148587056], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["500/Internal Server Error", 4600, 100.0, 100.0], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 2194, 2194, "Non HTTP response code: java.net.UnknownHostException/Non HTTP response message: Traceback", 2184, "Non HTTP response code: java.net.UnknownHostException/Non HTTP response message: Traceback: Name or service not known", 10, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["1", 2194, 2194, "Non HTTP response code: java.net.UnknownHostException/Non HTTP response message: Traceback", 2184, "Non HTTP response code: java.net.UnknownHostException/Non HTTP response message: Traceback: Name or service not known", 10, null, null, null, null, null, null], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 4600, 4600, "500/Internal Server Error", 4600, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["err", 4600, 4600, "500/Internal Server Error", 4600, null, null, null, null, null, null, null, null], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 

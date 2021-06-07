@@ -1,14 +1,21 @@
 
 import sys
 import re
+import json
 FILE=sys.argv[1]
-Error=sys.argv[2]
-Success=sys.argv[3]
+PATH_CONF=sys.argv[2]
 
-PROTOCOL_= sys.argv[4]
+with open(PATH_CONF) as f:
+    json_dict = json.load(f)
+
+
+Error=json_dict["err"]
+Success=json_dict["success"]
+PROTOCOL_= json_dict["protocol"]
 
 #100=100% succes, 0= 100% error, 50=50% succes itd.
-PROPORTION=int(sys.argv[5])
+PROPORTION=int(sys.argv[3])
+
 
 
 with open(FILE) as f:
@@ -18,6 +25,7 @@ f=str(f)[:-2]
 
 f=str(f).replace("\\n","")
 f=str(f).replace("', '","")
+
 
 
 ERROR_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="'''+Error+'''" enabled="true">
@@ -95,13 +103,13 @@ if PROPORTION == 90 or  PROPORTION == 80 or PROPORTION == 70 or  PROPORTION == 6
     if now_err:
       if error_count>0:
         string=string+ERROR_CALL_STR
-        error_count=error_count-2
+        error_count=error_count-10
         if(success_count!=0):
           now_err=False
     elif not now_err:
       if success_count>0:
         string=string+SUCCESSES_CALL_STR
-        success_count=success_count-2
+        success_count=success_count-10
         if(error_count!=0):
           now_err=True
 

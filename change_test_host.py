@@ -21,6 +21,9 @@ if PORT=='null':
 
 print(HOST+"    "+PORT)
 
+
+
+
 with open(FILE) as f:
     f = f.readlines()
 f=str(f)[2:]

@@ -55,12 +55,12 @@ def createSheet(sheet):
     sheet["B5"] = "Trace Span"
     sheet["C5"] = "JM Count"
     sheet["D5"] = "Calls/s avg" 
-    sheet["E5"] = "sent  kb/s"
+    sheet["E5"] = "Sent  kb/s"
     sheet["F5"] = "Response AVG /s"
-    sheet["G5"] = "Code length"
-    sheet["H5"] = "Err proportion"
-    sheet["I5"] = "RDB/APM"
-    sheet["J5"] = "Delay"
+    # sheet["G5"] = "Code length"
+    sheet["G5"] = "Successes"
+    sheet["H5"] = "RDB/APM"
+    sheet["I5"] = "Delay"
     sheet.column_dimensions['A'].width =13
     sheet.column_dimensions['B'].width =10
     sheet.column_dimensions['C'].width =10
@@ -99,8 +99,7 @@ for line in f:
         tmp[2]=tmp[2][:-3]
         list_result.append(tmp[2])
 
-data_name=sys.argv[1].split("/")
-data_name=data_name[len(data_name)-1].split("_")
+data_name=sys.argv[1]
 
 
 
@@ -143,7 +142,7 @@ def style(sheet):
     sheet["G6"].fill = PatternFill(fgColor=color, fill_type = "solid")
     sheet["H6"].fill = PatternFill(fgColor=color, fill_type = "solid")
     sheet["I6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["J6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    # sheet["J6"].fill = PatternFill(fgColor=color, fill_type = "solid")
 
 
 
@@ -155,9 +154,9 @@ sheet["C6"] = json_dict["TotalJmeter"]["sampleCount"]
 sheet["D6"]=list_result[len(list_result)-1]
 sheet["E6"] = json_dict["TotalJmeter"]["sentKBytesPerSec"]
 sheet["F6"] = json_dict["TotalJmeter"]["meanResTime"]
-sheet["G6"] = data_name[3].replace(".jmx","")
-sheet["H6"] = data_name[2].replace("-"," /")
-sheet["I6"] = getMode(str(sys.argv[7])) 
-sheet["J6"] = sys.argv[6]
+# sheet["G6"] = data_name[3].replace(".jmx","")
+sheet["G6"] = data_name
+sheet["H6"] = getMode(str(sys.argv[7])) 
+sheet["I6"] = sys.argv[6]
 
 workbook.save(filename=filename_raport)
