@@ -61,6 +61,7 @@ def createSheet(sheet):
     sheet["G5"] = "Successes"
     sheet["H5"] = "RDB/APM"
     sheet["I5"] = "Delay"
+    sheet["J5"] = "Jmeter err proportion"
     sheet.column_dimensions['A'].width =13
     sheet.column_dimensions['B'].width =10
     sheet.column_dimensions['C'].width =10
@@ -70,6 +71,7 @@ def createSheet(sheet):
     sheet.column_dimensions['G'].width =15
     sheet.column_dimensions['H'].width =15
     sheet.column_dimensions['I'].width =20
+    sheet.column_dimensions['J'].width =10
 
 
 
@@ -142,6 +144,7 @@ def style(sheet):
     sheet["G6"].fill = PatternFill(fgColor=color, fill_type = "solid")
     sheet["H6"].fill = PatternFill(fgColor=color, fill_type = "solid")
     sheet["I6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+    sheet["J6"].fill = PatternFill(fgColor=color, fill_type = "solid")
     # sheet["J6"].fill = PatternFill(fgColor=color, fill_type = "solid")
 
 
@@ -158,5 +161,6 @@ sheet["F6"] = json_dict["TotalJmeter"]["meanResTime"]
 sheet["G6"] = data_name
 sheet["H6"] = getMode(str(sys.argv[7])) 
 sheet["I6"] = sys.argv[6]
+sheet["J6"] = json_dict["TotalJmeter"]["errorPct"]
 
 workbook.save(filename=filename_raport)

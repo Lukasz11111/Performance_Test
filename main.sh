@@ -20,8 +20,8 @@ CHANGE_TEST_HOST_PATH=./change_test_host.py
 # sudo python3 request.py http://40.89.147.34:8888 n
 # sleep 45
 
-# (cd $CYPRESS_PATH && sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH && cd $PATH)
-
+#  (cd $CYPRESS_PATH && sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH && cd $PATH)
+ 
 counterall=0
 counterall_done=0
 
@@ -31,8 +31,8 @@ END=$SLAVE_COUNT
 DELAY="$2"
 case $DELAY in
 1)
-  #  DELAY_array=(0 25 50 150 250 350 500 750 1000 2000)
-  DELAY_array=(0 25 50 150 250 350 500 750 1000 )
+  #  DELAY_array=(0 25 50 150 250 350 500 750 1000 )
+  DELAY_array=(0 )
   ;;
 2)
   DELAY_array=(10 100 250 500 1000 1500 10000)
