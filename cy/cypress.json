@@ -1,0 +1,33 @@
+{
+    "screenshotOnRunFailure": false,
+    "videoCompression": false,
+    "viewportWidth": 1240,
+    "viewportHeight": 1080,
+    "chromeWebSecurity": false,
+    "integrationFolder": "cypress/integration",
+	"screenshotsFolder": "artifacts/media/screenshots",
+	"videosFolder": "artifacts/media/videos",
+    "trashAssetsBeforeRuns": false,
+    "jsonReporterOptions": {
+        "reportDir": "artifacts/data/",
+        "overwrite": false,
+        "html": false,
+        "json": false
+     },    
+    "htmlReporterOptions": {
+      "reportDir": "artifacts/report/",
+      "overwrite": false,
+      "html": false,
+      "json": false
+   },
+   "env": {
+    "APM_START_PAGE": "/apm",
+    "HOME_START_PAGE": "/Home",
+    "LOGIN": "damian+DevOpsMonitorTest@revdebug.com",
+    "PRODUCTION_BUILD": "false",
+    "PASSWORD": "/w6Y=bx%}!4@zQT?",
+    "RDB_HOSTNAME": "20.188.58.169"
+   },
+   "experimentalFetchPolyfill": true,
+   "experimentalNetworkStubbing": true
+}

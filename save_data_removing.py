@@ -6,6 +6,7 @@ import sys
 JSON_RES="rdb_res.json"
 filename_raport=sys.argv[1]
 
+# data deletion
 
 def createSheet(sheet,f):
     sheet["A1"] = "Removed:"

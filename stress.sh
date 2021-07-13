@@ -1,8 +1,8 @@
 #!/bin/bash
 RESULT_PATH=/home/azureuser/Jmeter_test/test/result/
-JSON_RAPORT_PATH=/home/azureuser/devopscypresstests/stress.json
 RESULT_STATISTICS_PATH=$RESULT_PATH/statistics.json
 CYPRESS_PATH="$6"
+JSON_RAPORT_PATH="$6"/stress.json
 INIT_JM=/home/azureuser/Jmeter_test/docker-jm/init.sh
 RAPORTS_FOLDER=/home/azureuser/Jmeter_test/raports
 CONFIG_TEST_FILE_PATH="$4"

@@ -7,7 +7,7 @@ RAPORT_NAME="raports/raport-$date_str.xlsx"
 
 RDB_REMOVE="$1"
 PATH="$3"
-CYPRESS_PATH=~/devopscypresstests
+CYPRESS_PATH=./cy
 
 CHANGE_TEST_HOST_PATH=./change_test_host.py
 

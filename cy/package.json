@@ -1,0 +1,28 @@
+{
+    "scripts": {
+        "cypress:version": "cypress version",
+        "cypress:verify": "cypress verify",
+        "cypress:open": "cypress open --env testtt=hi",
+        "cypress:run": "node cypress/scripts/run.js",
+        "test:windows": "npm-run-all cypress:prepare:windows cypress:run cypress:windows:copyArtifacts --continue-on-error",
+        "cypress:windows:copyArtifacts": "xcopy /E /I /Q artifacts\\media artifacts\\report",
+        "cypress:prepare:windows": "rd /s /q artifacts || echo precypress:run completed",
+        "test:linux": "npm-run-all cypress:prepare:linux cypress:run  --spec 'cypress/integration/Stress/before.spec.js'  cypress:linux:copyArtifacts --continue-on-error",
+        "test:linux_before": "cypress run --spec 'cypress/integration/Stress/before.spec.js'",
+        "test:linux_after": "cypress run --spec 'cypress/integration/Stress/after.spec.js'",
+        "test:linux_deduplication": "cypress run --spec 'cypress/integration/Stress/deduplication.spec.js'",
+        "cypress:linux:copyArtifacts": "cp -r artifacts/media artifacts/report",
+        "cypress:prepare:linux": "rm -rf artifacts && echo precypress:run completed"
+    },
+    "dependencies": {
+        "cypress": "^5.6.0",
+        "cypress-iframe": "^1.0.1",
+        "googleapis": "^39.2.0",
+        "mocha": "^8.0.1",
+        "mochawesome": "^4.1.0",
+        "mochawesome-merge": "^4.0.3",
+        "mochawesome-report-generator": "^5.1.0",
+        "nodemailer": "^6.5.0",
+        "npm-run-all": "^4.1.5"
+    }
+}

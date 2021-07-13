@@ -7,9 +7,6 @@ RDB_MOD=sys.argv[2]
 
 with open(PATH_CONF) as f:
     json_dict = json.load(f)
-# json_dict["module"]["rdb_and_apm"]["is_on"]:
-
-
 
 def f(x):
     return {

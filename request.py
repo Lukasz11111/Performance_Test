@@ -8,6 +8,8 @@ import time
 HOST=sys.argv[1]
 SAVE=sys.argv[2]
 
+# rdb removal / startup
+
 async def main():
     async with aiohttp.ClientSession() as session:
             async with session.get(HOST) as resp:
