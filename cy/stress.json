@@ -1,17 +1,17 @@
 {
   "Application_name": "PythonTornado",
   "Jmeter_raport_path": "/home/azureuser/Jmeter_test/test/result//statistics.json",
-  "APM_Spans_Before": 20341,
-  "APM_Spans_After": 20341,
-  "Recording_Before": 983,
-  "Recording_After": 983,
+  "APM_Spans_Before": 8671,
+  "APM_Spans_After": 8671,
+  "Recording_Before": 11,
+  "Recording_After": 11,
   "Recordings": 0,
   "Trace_Span": 0,
   "TotalJmeter": {
-    "sampleCount": 26938,
-    "meanResTime": 26.75116935184485,
-    "receivedKBytesPerSec": 425.21509630926727,
-    "sentKBytesPerSec": 623.6488079202586,
-    "errorPct": 100
+    "sampleCount": 27469,
+    "meanResTime": 26.256798572936656,
+    "receivedKBytesPerSec": 298.0377580120041,
+    "sentKBytesPerSec": 705.2533129616952,
+    "errorPct": 25.279406
   }
 }

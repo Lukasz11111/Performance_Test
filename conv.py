@@ -4,10 +4,80 @@ import json
 import os
 import sys
 import re
-from openpyxl.styles import PatternFill, colors
+from openpyxl.styles import PatternFill, colors, Alignment
+
+
 JSON_RAPORT_PATH=sys.argv[2]
 JSON_CONFIG_PATH=sys.argv[4]+"/.config"
 JSON_RDB_INFO=sys.argv[5]
+
+active_line="6"
+col_nr_Recordings='A'
+col_nr_How_many_rec_should='B'
+col_nr_TraceSpan='C'
+col_nr_JMCount='D'
+col_nr_Calls='E'
+col_nr_Sent='F'
+col_nr_Response='G'
+col_nr_Successes='H'
+col_nr_Module='I'
+col_nr_Delay='J'
+col_nr_JmeterErr='K'
+
+dict_Recordings={}
+dict_How_many_rec_should={}
+dict_TraceSpan={}
+dict_JMCount={}
+dict_Calls={}
+dict_Sent={}
+dict_Response={}
+dict_Successes={}
+dict_Module={}
+dict_Delay={}
+dict_JmeterErr={}
+
+
+dict_legend={
+    "Recordings":dict_Recordings,
+    'How_many_rec_should':dict_How_many_rec_should,
+    'TraceSpan':dict_TraceSpan,
+    'JMCount':dict_JMCount,
+    'Calls':dict_Calls,
+    'Sent':dict_Sent,
+    'Response':dict_Response,
+    'Successes':dict_Successes,
+    'Module':dict_Module,
+    'Delay':dict_Delay,
+    'JmeterErr':dict_JmeterErr
+}
+
+
+
+
+
+def style(sheet,active_line):
+    color = str(getColor(getMode(str(sys.argv[7])) ))
+    print(color)
+    Line_legend="6"
+    setStyl(sheet[col_nr_Recordings+active_line],color)
+    setStyl(sheet[col_nr_TraceSpan+active_line],color)
+    setStyl(sheet[col_nr_JMCount+active_line],color)
+    setStyl(sheet[col_nr_Calls+active_line],color)
+    setStyl(sheet[col_nr_Sent+active_line],color)
+    setStyl(sheet[col_nr_Response+active_line],color)
+    setStyl(sheet[col_nr_Successes+active_line],color)
+    setStyl(sheet[col_nr_Module+active_line],color)
+    setStyl(sheet[col_nr_Delay+active_line],color)
+    setStyl(sheet[col_nr_JmeterErr+active_line],color)
+    setStyl(sheet[col_nr_How_many_rec_should+active_line],color)
+
+
+def setStyl(call,color):
+    call.fill = PatternFill(fgColor=color, fill_type = "solid")
+    
+
+
+    
 
 def getMode(x):
     return {
@@ -26,52 +96,72 @@ def getColor(x):
     }[x]
 
 def createSheet(sheet):
-    sheet["A1"] = "RevDeBug spec"
-    sheet["B1"] = "CPU: "
-    sheet["C1"] = rdb_info['cpu']
-    sheet["D1"] = "RAM: " 
-    sheet["E1"] =  rdb_info['ram']
-    sheet["F1"] = "Size: "
-    sheet["G1"] =  rdb_info['size']
+    Line_RevDeBug_spec="1"
+    Line_Application_spec="2"
+    Line_Application_name="3"
+    Line_legend="5"
 
-    sheet["A2"] = "Application spec"
-    sheet["B2"] = "CPU: "
-    sheet["C2"] = json_config['cpu']
-    sheet["D2"] = "RAM: " 
-    sheet["E2"] =  json_config['ram']
-    sheet["F2"] = "Size: "
-    sheet["G2"] =  json_config['size']
+    sheet["A"+Line_RevDeBug_spec] = "RevDeBug spec"
+    sheet["B"+Line_RevDeBug_spec] = "CPU: "
+    sheet["C"+Line_RevDeBug_spec] = rdb_info['cpu']
+    sheet["D"+Line_RevDeBug_spec] = "RAM: " 
+    sheet["E"+Line_RevDeBug_spec] =  rdb_info['ram']
+    sheet["F"+Line_RevDeBug_spec] = "Size: "
+    sheet["G"+Line_RevDeBug_spec] =  rdb_info['size']
 
-    sheet["A3"] = "Application spec"
-    sheet["B3"] = json_config['application_name']
-    sheet["C3"] = "Git link"
-    sheet["D3"] = json_config['git_link'] 
-    sheet["E3"] = "RevDeBug server"
-    sheet["F3"] = json_config['server_rdb']
-    sheet["G3"] = "Language"
-    sheet["H3"] = json_config['language']
+    sheet["A"+Line_Application_spec] = "Application spec"
+    sheet["B"+Line_Application_spec] = "CPU: "
+    sheet["C"+Line_Application_spec] = json_config['cpu']
+    sheet["D"+Line_Application_spec] = "RAM: " 
+    sheet["E"+Line_Application_spec] =  json_config['ram']
+    sheet["F"+Line_Application_spec] = "Size: "
+    sheet["G"+Line_Application_spec] =  json_config['size']
 
-    sheet["A5"] = "Recordings"
-    sheet["B5"] = "Trace Span"
-    sheet["C5"] = "JM Count"
-    sheet["D5"] = "Calls/s avg" 
-    sheet["E5"] = "Sent  kb/s"
-    sheet["F5"] = "Response AVG /s"
-    # sheet["G5"] = "Code length"
-    sheet["G5"] = "Successes"
-    sheet["H5"] = "RDB/APM"
-    sheet["I5"] = "Delay"
-    sheet["J5"] = "Jmeter err proportion"
-    sheet.column_dimensions['A'].width =13
-    sheet.column_dimensions['B'].width =10
-    sheet.column_dimensions['C'].width =10
-    sheet.column_dimensions['D'].width =10
-    sheet.column_dimensions['E'].width =10
-    sheet.column_dimensions['F'].width =15
-    sheet.column_dimensions['G'].width =15
-    sheet.column_dimensions['H'].width =15
-    sheet.column_dimensions['I'].width =20
-    sheet.column_dimensions['J'].width =10
+    sheet["A"+Line_Application_name] = "Application name"
+    sheet["B"+Line_Application_name] = json_config['application_name']
+    sheet["C"+Line_Application_name] = "Git link"
+    sheet["D"+Line_Application_name] = json_config['git_link'] 
+    sheet["E"+Line_Application_name] = "RevDeBug server"
+    sheet["F"+Line_Application_name] = json_config['server_rdb']
+    sheet["G"+Line_Application_name] = "Language"
+    sheet["H"+Line_Application_name] = json_config['language']
+
+    sheet[col_nr_Recordings+Line_legend] = "Recordings"
+    sheet[col_nr_TraceSpan+Line_legend] = "Trace Span"
+    sheet[col_nr_JMCount+Line_legend] = "JM Count"
+    sheet[col_nr_Calls+Line_legend] = "Calls/s avg" 
+    sheet[col_nr_Sent+Line_legend] = "Sent  kb/s"
+    sheet[col_nr_Response+Line_legend] = "Response AVG /s"
+    sheet[col_nr_Successes+Line_legend] = "Successes"
+    sheet[col_nr_Module+Line_legend] = "RDB/APM"
+    sheet[col_nr_Delay+Line_legend] = "Delay"
+    sheet[col_nr_JmeterErr+Line_legend] = "Jmeter proportion"
+    sheet[col_nr_How_many_rec_should+Line_legend] = "Expected number of recordings"
+
+    sheet[col_nr_Recordings+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_TraceSpan+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_JMCount+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_Calls+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_Sent+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_Response+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_Successes+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_Module+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_Delay+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_JmeterErr+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_How_many_rec_should+Line_legend].alignment = Alignment(wrap_text=True)
+    
+
+    sheet.column_dimensions[col_nr_Recordings].width =10
+    sheet.column_dimensions[col_nr_TraceSpan].width =10
+    sheet.column_dimensions[col_nr_JMCount].width =10
+    sheet.column_dimensions[col_nr_Calls].width =10
+    sheet.column_dimensions[col_nr_Sent].width =10
+    sheet.column_dimensions[col_nr_Response].width =15
+    sheet.column_dimensions[col_nr_Successes].width =15
+    sheet.column_dimensions[col_nr_Module].width =15
+    sheet.column_dimensions[col_nr_Delay].width =15
+    sheet.column_dimensions[col_nr_JmeterErr].width =15
+    sheet.column_dimensions[col_nr_How_many_rec_should].width =17
 
 
 
@@ -126,41 +216,35 @@ else:
     sheet = workbook.active
     createSheet(sheet)
 
-
-
-
-
 sheet.insert_rows(idx=6)
 
-def style(sheet):
-    color = str(getColor(getMode(str(sys.argv[7])) ))
-    print(color)
-    sheet["A6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["B6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["C6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["D6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["E6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["F6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["G6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["H6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["I6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    sheet["J6"].fill = PatternFill(fgColor=color, fill_type = "solid")
-    # sheet["J6"].fill = PatternFill(fgColor=color, fill_type = "solid")
+value_Recordings=str(json_dict["Recordings"])
+value_Trace_Span = json_dict["Trace_Span"]
+value_sampleCount= json_dict["TotalJmeter"]["sampleCount"]
+value_CallsPerSec= list_result[len(list_result)-1]
+value_sentKBytesPerSec= json_dict["TotalJmeter"]["sentKBytesPerSec"]
+value_meanResTime= json_dict["TotalJmeter"]["meanResTime"]
+value_predicted_proportion= data_name
+value_real_proportion =json_dict["TotalJmeter"]["errorPct"]
+value_rdb_module=getMode(str(sys.argv[7])) 
+value_Delay= sys.argv[6]
+if (str(sys.argv[7])=="4" or str(sys.argv[7])=="1"):
+    value_How_many_rec_should='~'+str((float(value_real_proportion)/100)*value_sampleCount)
+else:
+    value_How_many_rec_should="0"
 
 
-
-style(sheet)
-
-sheet["A6"] = json_dict["Recordings"]
-sheet["B6"] = json_dict["Trace_Span"]
-sheet["C6"] = json_dict["TotalJmeter"]["sampleCount"]
-sheet["D6"]=list_result[len(list_result)-1]
-sheet["E6"] = json_dict["TotalJmeter"]["sentKBytesPerSec"]
-sheet["F6"] = json_dict["TotalJmeter"]["meanResTime"]
-# sheet["G6"] = data_name[3].replace(".jmx","")
-sheet["G6"] = data_name
-sheet["H6"] = getMode(str(sys.argv[7])) 
-sheet["I6"] = sys.argv[6]
-sheet["J6"] = json_dict["TotalJmeter"]["errorPct"]
+style(sheet, active_line)
+sheet[col_nr_Recordings+active_line]  = value_Recordings
+sheet[col_nr_TraceSpan+active_line]  = value_Trace_Span
+sheet[col_nr_JMCount+active_line] = value_sampleCount
+sheet[col_nr_Calls+active_line]=value_CallsPerSec
+sheet[col_nr_Sent+active_line] = value_sentKBytesPerSec
+sheet[col_nr_Response+active_line] = value_meanResTime
+sheet[col_nr_Successes+active_line] =value_predicted_proportion
+sheet[col_nr_Module+active_line] = value_rdb_module 
+sheet[col_nr_Delay+active_line] = value_Delay
+sheet[col_nr_JmeterErr+active_line]= value_real_proportion
+sheet[col_nr_How_many_rec_should+active_line]= value_How_many_rec_should
 
 workbook.save(filename=filename_raport)

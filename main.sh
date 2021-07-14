@@ -20,8 +20,9 @@ CHANGE_TEST_HOST_PATH=./change_test_host.py
 # sudo python3 request.py http://40.89.147.34:8888 n
 # sleep 45
 
-#  (cd $CYPRESS_PATH && sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH && cd $PATH)
- 
+(cd $CYPRESS_PATH && sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH && cd $PATH)
+sudo rm -rf ./dict_legend.txt
+
 counterall=0
 counterall_done=0
 
