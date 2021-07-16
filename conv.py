@@ -5,6 +5,11 @@ import os
 import sys
 import re
 from openpyxl.styles import PatternFill, colors, Alignment
+import ast
+import pickle
+
+import copy
+
 
 
 JSON_RAPORT_PATH=sys.argv[2]
@@ -24,6 +29,9 @@ col_nr_Module='I'
 col_nr_Delay='J'
 col_nr_JmeterErr='K'
 
+
+dict_main={}
+
 dict_Recordings={}
 dict_How_many_rec_should={}
 dict_TraceSpan={}
@@ -36,22 +44,37 @@ dict_Module={}
 dict_Delay={}
 dict_JmeterErr={}
 
+dict_legend_path="./dict_legend.txt"
 
-dict_legend={
-    "Recordings":dict_Recordings,
-    'How_many_rec_should':dict_How_many_rec_should,
-    'TraceSpan':dict_TraceSpan,
-    'JMCount':dict_JMCount,
-    'Calls':dict_Calls,
-    'Sent':dict_Sent,
-    'Response':dict_Response,
-    'Successes':dict_Successes,
-    'Module':dict_Module,
-    'Delay':dict_Delay,
-    'JmeterErr':dict_JmeterErr
-}
+if(os.path.exists(dict_legend_path)):
+    with open(dict_legend_path, 'rb') as f:
+        dict_main=pickle.load(f)
 
 
+    # file = open(dict_legend_path, "r")
+    # contents = file.read()
+    # dict = ast.literal_eval(contents)
+elif(not os.path.exists(dict_legend_path) or not bool(dict_main)):
+    dict_legend={
+        "Recordings":dict_Recordings,
+        'How_many_rec_should':dict_How_many_rec_should,
+        'TraceSpan':dict_TraceSpan,
+        'JMCount':dict_JMCount,
+        'Calls':dict_Calls,
+        'Sent':dict_Sent,
+        'Response':dict_Response,
+        'Successes':dict_Successes,
+        'Module':dict_Module,
+        'Delay':dict_Delay,
+        'JmeterErr':dict_JmeterErr
+    }
+
+    dict_main={
+        "rdb and apm":copy.deepcopy(dict_legend),
+        'apm':copy.deepcopy(dict_legend),
+        'none':copy.deepcopy(dict_legend),
+        'rdb':copy.deepcopy(dict_legend)
+    }
 
 
 
@@ -178,7 +201,7 @@ filename_raport=sys.argv[3]
 
 sheet_name=json_config['application_name'] 
 
-infile = r"test/path/jmeter.log"
+infile = r"./test/path/jmeter.log"
 
 with open(infile) as f:
     f = f.readlines()
@@ -218,33 +241,79 @@ else:
 
 sheet.insert_rows(idx=6)
 
-value_Recordings=str(json_dict["Recordings"])
-value_Trace_Span = json_dict["Trace_Span"]
-value_sampleCount= json_dict["TotalJmeter"]["sampleCount"]
-value_CallsPerSec= list_result[len(list_result)-1]
-value_sentKBytesPerSec= json_dict["TotalJmeter"]["sentKBytesPerSec"]
-value_meanResTime= json_dict["TotalJmeter"]["meanResTime"]
-value_predicted_proportion= data_name
-value_real_proportion =json_dict["TotalJmeter"]["errorPct"]
-value_rdb_module=getMode(str(sys.argv[7])) 
-value_Delay= sys.argv[6]
+value={}
+value["Recordings"]=str(json_dict["Recordings"])
+value["TraceSpan"] = json_dict["Trace_Span"]
+value['JMCount']= json_dict["TotalJmeter"]["sampleCount"]
+value['Calls']= list_result[len(list_result)-1]
+value['Sent']= json_dict["TotalJmeter"]["sentKBytesPerSec"]
+value['Response']= json_dict["TotalJmeter"]["meanResTime"]
+value['Successes']= data_name
+value['JmeterErr'] =json_dict["TotalJmeter"]["errorPct"]
+value['Module']=getMode(str(sys.argv[7])) 
+value['Delay']= sys.argv[6]
 if (str(sys.argv[7])=="4" or str(sys.argv[7])=="1"):
-    value_How_many_rec_should='~'+str((float(value_real_proportion)/100)*value_sampleCount)
+    value['How_many_rec_should']='~'+str(((100-int(value['Successes']))/100)*value['JMCount'])
 else:
-    value_How_many_rec_should="0"
+    value['How_many_rec_should']="0"
 
+legend =dict_main[getMode(str(sys.argv[7]))]
+
+
+
+for key_value in value:
+    if(value['Successes'] in legend[key_value]):
+        legend[key_value][value['Successes']].append(value[key_value])
+    else: 
+        legend[key_value][value['Successes']]=list()
+        legend[key_value][value['Successes']].append(value[key_value])
+
+
+
+
+f = open(dict_legend_path, "wb")
+pickle.dump(dict_main, f, pickle.HIGHEST_PROTOCOL)
+f.close()
+
+
+dict_le={}
+
+"""
+for key_dict_main in dict_main:
+    for key_value in value:
+        for key_succes in dict_main[key_dict_main][key_value]:
+            for  key in dict_main[key_dict_main][key_value][key_succes]:
+                if(key_succes+key_dict_main in dict_le):
+                    # if(key_value in dict_le[key_succes+key_dict_main]):
+                    #     dict_le[key_succes+key_dict_main][key_value]+=key
+                    # else: 
+                    #     dict_le[key_succes+key_dict_main][key_value]=dict()
+                    #     dict_le[key_succes+key_dict_main][key_value]+=key
+                    print (key)
+                    print (dict_le[key_succes+key_dict_main][key_value])
+                    dict_le[key_succes+key_dict_main][key_value]=int(dict_le[key_succes+key_dict_main][key_value]) +int(key)
+                else:
+                    dict_le[key_succes+key_dict_main]=dict()
+                    dict_le[key_succes+key_dict_main][key_value]=key
+
+"""
+
+                
+                
+
+print(dict_le)  
 
 style(sheet, active_line)
-sheet[col_nr_Recordings+active_line]  = value_Recordings
-sheet[col_nr_TraceSpan+active_line]  = value_Trace_Span
-sheet[col_nr_JMCount+active_line] = value_sampleCount
-sheet[col_nr_Calls+active_line]=value_CallsPerSec
-sheet[col_nr_Sent+active_line] = value_sentKBytesPerSec
-sheet[col_nr_Response+active_line] = value_meanResTime
-sheet[col_nr_Successes+active_line] =value_predicted_proportion
-sheet[col_nr_Module+active_line] = value_rdb_module 
-sheet[col_nr_Delay+active_line] = value_Delay
-sheet[col_nr_JmeterErr+active_line]= value_real_proportion
-sheet[col_nr_How_many_rec_should+active_line]= value_How_many_rec_should
+sheet[col_nr_Recordings+active_line]  = value["Recordings"]
+sheet[col_nr_TraceSpan+active_line]  = value["TraceSpan"]
+sheet[col_nr_JMCount+active_line] = value['JMCount']
+sheet[col_nr_Calls+active_line]=value['Calls']
+sheet[col_nr_Sent+active_line] = value['Sent']
+sheet[col_nr_Response+active_line] = value['Response']
+sheet[col_nr_Successes+active_line] =value['Successes']
+sheet[col_nr_Module+active_line] = value['Module'] 
+sheet[col_nr_Delay+active_line] = value['Delay']
+sheet[col_nr_JmeterErr+active_line]= value['JmeterErr']
+sheet[col_nr_How_many_rec_should+active_line]= value['How_many_rec_should']
 
 workbook.save(filename=filename_raport)

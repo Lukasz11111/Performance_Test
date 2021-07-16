@@ -1,17 +1,17 @@
 {
-  "Application_name": "PythonTornado",
+  "Application_name": "PythonFlask",
   "Jmeter_raport_path": "/home/azureuser/Jmeter_test/test/result//statistics.json",
-  "APM_Spans_Before": 8671,
-  "APM_Spans_After": 8671,
-  "Recording_Before": 11,
-  "Recording_After": 11,
-  "Recordings": 0,
+  "APM_Spans_Before": 2611,
+  "APM_Spans_After": 2611,
+  "Recording_Before": 2141,
+  "Recording_After": 2500,
+  "Recordings": 3590,
   "Trace_Span": 0,
   "TotalJmeter": {
-    "sampleCount": 27469,
-    "meanResTime": 26.256798572936656,
-    "receivedKBytesPerSec": 298.0377580120041,
-    "sentKBytesPerSec": 705.2533129616952,
-    "errorPct": 25.279406
+    "sampleCount": 7914,
+    "meanResTime": 91.65478898155189,
+    "receivedKBytesPerSec": 85.77873889298775,
+    "sentKBytesPerSec": 187.42406532687497,
+    "errorPct": 0
   }
 }

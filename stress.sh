@@ -32,7 +32,7 @@ file="$1"
 sudo python3 $CHANGE_DELAY_PATH $file $DELAY
 
 echo $file
-
+ 
 sudo python3 get_app_name.py $CONFIG_TEST_FILE_PATH $JSON_RAPORT_PATH $RESULT_STATISTICS_PATH 
 
 #!/bin/sh
@@ -59,7 +59,7 @@ echo $file
 sudo npm run test:linux_after  --prefix $CYPRESS_PATH
 
 sudo cat $JSON_RAPORT_PATH
-
+echo sudo python3 conv.py $PROP $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE
 sudo python3 conv.py $PROP $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
 
 #todo after all cp to new folder (date name)
