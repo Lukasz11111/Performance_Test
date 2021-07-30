@@ -1,18 +1,20 @@
 #!/bin/bash
-RESULT_PATH=/home/azureuser/Jmeter_test/test/result/
-RESULT_STATISTICS_PATH=$RESULT_PATH/statistics.json
+RESULT_PATH=./test/result/
+RESULT_STATISTICS_PATH=/home/azureuser/stress_test/test/result//statistics.json
 CYPRESS_PATH="$6"
-JSON_RAPORT_PATH="$6"/stress.json
-INIT_JM=/home/azureuser/Jmeter_test/docker-jm/init.sh
-RAPORTS_FOLDER=/home/azureuser/Jmeter_test/raports
+JSON_RAPORT_PATH=/home/azureuser/stress_test/cy/stress.json
+INIT_JM=./docker-jm/init.sh
+RAPORTS_FOLDER=./raports
 CONFIG_TEST_FILE_PATH="$4"
-CHANGE_DELAY_PATH=/home/azureuser/Jmeter_test/change_delay.py 
-CHANGE_info_PATH=/home/azureuser/Jmeter_test/tmp_test/.rdb-info
+CHANGE_DELAY_PATH=./change_delay.py 
+CHANGE_info_PATH=./tmp_test/.rdb-info
 MODE="$7"
 PROP="$8"
 #Test names in jmeter:
 
 
+echo $RESULT_STATISTICS_PATH
+#TODO budowanie obrazow mastera /slave
 
 # YOU MUST SET .CONFIG IN TEST FOLDER
 
@@ -44,7 +46,7 @@ sudo rm tmp.txt
 
 echo $file
 
-sudo npm run test:linux_before --prefix $CYPRESS_PATH 
+# sudo npm run test:linux_before --prefix $CYPRESS_PATH 
 
 echo $file
 

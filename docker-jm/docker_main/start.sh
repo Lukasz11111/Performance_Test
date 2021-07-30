@@ -1,3 +1,8 @@
 #!/bin/bash
+
+# gdzie z tym kluczem
 chmod 600 server1.pem
-ssh -i  server1.pem azureuser@20.43.39.179  "cd /home/azureuser/Jmeter_test; bash /home/azureuser/Jmeter_test/start.sh /home/azureuser/Jmeter_test"
+
+# Sztywne ip !!!!!!!!!!!!!
+# sztywne pathy!!!!!!
+ssh -i  server1.pem azureuser@20.199.122.246  "cd /home/azureuser/stress_test/; bash /home/azureuser/stress_test//start.sh /home/azureuser/stress_test/"

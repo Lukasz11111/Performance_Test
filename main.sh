@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 FOLDERS=tmp_test/*
 SLAVE_COUNT=0
 
@@ -21,7 +21,7 @@ CHANGE_TEST_HOST_PATH=./change_test_host.py
 # sleep 45
 
 # (cd $PATH/$CYPRESS_PATH && sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH && cd $PATH)
-sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH && cd $PATH
+# sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH
 sudo rm -rf ./dict_legend.txt
 
 counterall=0
@@ -95,7 +95,7 @@ for x in $FOLDERS; do
             if [[ $active_mod_host_port != "0" ]]; then
               echo $mode
               echo $active_mod_host_port
-              sudo python3 $CHANGE_TEST_HOST_PATH $test_file $active_mod_host_port
+              sudo python3 $CHANGE_TEST_HOST_PATH $test_file $active_mod_host_port $x/.config
               echo "Processing $test_file file..."
               # take action on each file. $test_file store current file name
               START=0

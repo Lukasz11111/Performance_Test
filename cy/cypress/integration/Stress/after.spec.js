@@ -14,6 +14,7 @@ describe('After stresss test', () => {
   // Test case summary:
   // Expected result:
   it('Chcek recording count', { retries: 10 }, () => {
+    // it('Chcek recording count', () => {
     // console.log(Cypress.env('STRESS_APP_NAME'));
     cy.get('.rk-trace-search > div:nth-of-type(1)').contains('Search').click();
     cy.wait(2000);

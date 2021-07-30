@@ -10,7 +10,8 @@ sudo docker run -dit --name slave2  jm-slave:latest /bin/bash
 sudo docker run -dit --name slave3  jm-slave:latest /bin/bash
 sudo docker run -dit --name slave4  jm-slave:latest /bin/bash
 sudo docker run -dit --name slave5  jm-slave:latest /bin/bash
-sudo docker run -dit --name master -v /home/azureuser/Jmeter_test/test/:/testJM jm-master:latest
+# sztywny path!!!!!!!!!!!
+sudo docker run -dit --name master -v /home/azureuser/stress_test/test/:/testJM jm-master:latest
 
 sudo touch iphost.txt
 sudo chmod 777 iphost.txt

@@ -1,5 +1,6 @@
 import sys
 import re
+import json
 FILE=sys.argv[1]
 HOST_PORT=sys.argv[2]
 
@@ -17,9 +18,17 @@ HOST=HOST_PORT_array[0]
 if PORT=='null':
     PORT=''
 
+PATH_CONF=sys.argv[3]
+
+with open(PATH_CONF) as f:
+    json_dict = json.load(f)
+
+try:
+    TEST_TIME=str(int(json_dict["test_time"]))
+except:
+    TEST_TIME='15'
 
 
-print(HOST+"    "+PORT)
 
 
 
@@ -32,8 +41,9 @@ f=str(f)[:-2]
 f=str(f).replace("\\n","")
 f=str(f).replace("', '","")
 
-print(PORT)
 
+
+test_time_new='<stringProp name="ThreadGroup.duration">'+TEST_TIME+'</stringProp>'
 port_new='<stringProp name="Argument.value">'+PORT+'</stringProp>'
 host_new='<stringProp name="Argument.value">'+HOST+'</stringProp>'
 
@@ -51,8 +61,14 @@ host_old ='<stringProp name="Argument.value">'+z+'</stringProp>'
 x =str(f).replace(host_old, host_new)
 
 
+z= f.split('<stringProp name="ThreadGroup.duration">')
+z=z[1].split('</stringProp>')[0].replace(' ', '')
+test_time_old =' <stringProp name="ThreadGroup.duration">'+z+'</stringProp>'
 
+
+
+b =str(x).replace(test_time_old, test_time_new)
 
 f = open(FILE, "w")
-f.write(x)
+f.write(b)
 f.close()

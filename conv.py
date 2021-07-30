@@ -10,7 +10,9 @@ import pickle
 
 import copy
 
+dict_legend_path="./dict_legend.txt"
 
+infile = r"./test/path/jmeter.log"
 
 JSON_RAPORT_PATH=sys.argv[2]
 JSON_CONFIG_PATH=sys.argv[4]+"/.config"
@@ -18,7 +20,7 @@ JSON_RDB_INFO=sys.argv[5]
 
 active_line="6"
 col_nr_Recordings='A'
-col_nr_How_many_rec_should='B'
+col_nr_How_many_rec_should_percent='B'
 col_nr_TraceSpan='C'
 col_nr_JMCount='D'
 col_nr_Calls='E'
@@ -27,13 +29,13 @@ col_nr_Response='G'
 col_nr_Successes='H'
 col_nr_Module='I'
 col_nr_Delay='J'
-col_nr_JmeterErr='K'
+# col_nr_JmeterErr='K'
 
 
 dict_main={}
 
 dict_Recordings={}
-dict_How_many_rec_should={}
+dict_How_many_rec_should_percent={}
 dict_TraceSpan={}
 dict_JMCount={}
 dict_Calls={}
@@ -42,9 +44,9 @@ dict_Response={}
 dict_Successes={}
 dict_Module={}
 dict_Delay={}
-dict_JmeterErr={}
+# dict_JmeterErr={}
 
-dict_legend_path="./dict_legend.txt"
+
 
 if(os.path.exists(dict_legend_path)):
     with open(dict_legend_path, 'rb') as f:
@@ -57,7 +59,7 @@ if(os.path.exists(dict_legend_path)):
 elif(not os.path.exists(dict_legend_path) or not bool(dict_main)):
     dict_legend={
         "Recordings":dict_Recordings,
-        'How_many_rec_should':dict_How_many_rec_should,
+        'How_many_rec_should_percent':dict_How_many_rec_should_percent,
         'TraceSpan':dict_TraceSpan,
         'JMCount':dict_JMCount,
         'Calls':dict_Calls,
@@ -66,7 +68,7 @@ elif(not os.path.exists(dict_legend_path) or not bool(dict_main)):
         'Successes':dict_Successes,
         'Module':dict_Module,
         'Delay':dict_Delay,
-        'JmeterErr':dict_JmeterErr
+        # 'JmeterErr':dict_JmeterErr
     }
 
     dict_main={
@@ -91,8 +93,7 @@ def style(sheet,active_line):
     setStyl(sheet[col_nr_Successes+active_line],color)
     setStyl(sheet[col_nr_Module+active_line],color)
     setStyl(sheet[col_nr_Delay+active_line],color)
-    setStyl(sheet[col_nr_JmeterErr+active_line],color)
-    setStyl(sheet[col_nr_How_many_rec_should+active_line],color)
+    setStyl(sheet[col_nr_How_many_rec_should_percent+active_line],color)
 
 
 def setStyl(call,color):
@@ -155,11 +156,11 @@ def createSheet(sheet):
     sheet[col_nr_Calls+Line_legend] = "Calls/s avg" 
     sheet[col_nr_Sent+Line_legend] = "Sent  kb/s"
     sheet[col_nr_Response+Line_legend] = "Response AVG /s"
-    sheet[col_nr_Successes+Line_legend] = "Successes"
+    sheet[col_nr_Successes+Line_legend] = "Successes set/real"
     sheet[col_nr_Module+Line_legend] = "RDB/APM"
     sheet[col_nr_Delay+Line_legend] = "Delay"
-    sheet[col_nr_JmeterErr+Line_legend] = "Jmeter proportion"
-    sheet[col_nr_How_many_rec_should+Line_legend] = "Expected number of recordings"
+    # sheet[col_nr_JmeterErr+Line_legend] = "Jmeter proportion"
+    sheet[col_nr_How_many_rec_should_percent+Line_legend] = "Perc recordings"
 
     sheet[col_nr_Recordings+Line_legend].alignment = Alignment(wrap_text=True)
     sheet[col_nr_TraceSpan+Line_legend].alignment = Alignment(wrap_text=True)
@@ -170,8 +171,8 @@ def createSheet(sheet):
     sheet[col_nr_Successes+Line_legend].alignment = Alignment(wrap_text=True)
     sheet[col_nr_Module+Line_legend].alignment = Alignment(wrap_text=True)
     sheet[col_nr_Delay+Line_legend].alignment = Alignment(wrap_text=True)
-    sheet[col_nr_JmeterErr+Line_legend].alignment = Alignment(wrap_text=True)
-    sheet[col_nr_How_many_rec_should+Line_legend].alignment = Alignment(wrap_text=True)
+    # sheet[col_nr_JmeterErr+Line_legend].alignment = Alignment(wrap_text=True)
+    sheet[col_nr_How_many_rec_should_percent+Line_legend].alignment = Alignment(wrap_text=True)
     
 
     sheet.column_dimensions[col_nr_Recordings].width =10
@@ -183,8 +184,8 @@ def createSheet(sheet):
     sheet.column_dimensions[col_nr_Successes].width =15
     sheet.column_dimensions[col_nr_Module].width =15
     sheet.column_dimensions[col_nr_Delay].width =15
-    sheet.column_dimensions[col_nr_JmeterErr].width =15
-    sheet.column_dimensions[col_nr_How_many_rec_should].width =17
+    # sheet.column_dimensions[col_nr_JmeterErr].width =15
+    sheet.column_dimensions[col_nr_How_many_rec_should_percent].width =12
 
 
 
@@ -201,11 +202,12 @@ filename_raport=sys.argv[3]
 
 sheet_name=json_config['application_name'] 
 
-infile = r"./test/path/jmeter.log"
+
 
 with open(infile) as f:
     f = f.readlines()
 
+calls=0
 list_result=[]
 for line in f: 
     x = re.search("summary = .* Avg", line)
@@ -213,8 +215,10 @@ for line in f:
         tmp =x.group(0).split("=")
         tmp[2]=tmp[2][:-3]
         list_result.append(tmp[2])
+        calls=list_result[len(list_result)-1].split("/s")[0]
 
-data_name=sys.argv[1]
+successes=str(sys.argv[1])
+data_name=successes+'/'+str(100-int(float(json_dict["TotalJmeter"]["errorPct"])))
 
 
 
@@ -222,40 +226,46 @@ if os.path.exists(filename_raport):
     workbook = load_workbook(filename=filename_raport)
     if not sheet_name in workbook.sheetnames:
         workbook.create_sheet(sheet_name)
-        sheet_ac = workbook.get_sheet_by_name(sheet_name)
+        sheet_ac = workbook[sheet_name]
         workbook.active=sheet_ac
         sheet = workbook.active
         createSheet(sheet)
     else:
-        sheet_ac = workbook.get_sheet_by_name(sheet_name)
+        sheet_ac = workbook[sheet_name]
         workbook.active=sheet_ac
         sheet = workbook.active
     
 else:
     workbook = Workbook()
     workbook.create_sheet(sheet_name)
-    sheet_ac = workbook.get_sheet_by_name(sheet_name)
+    sheet_ac = workbook[sheet_name]
     workbook.active=sheet_ac
     sheet = workbook.active
     createSheet(sheet)
 
 sheet.insert_rows(idx=6)
 
+
 value={}
-value["Recordings"]=str(json_dict["Recordings"])
-value["TraceSpan"] = json_dict["Trace_Span"]
-value['JMCount']= json_dict["TotalJmeter"]["sampleCount"]
-value['Calls']= list_result[len(list_result)-1]
-value['Sent']= json_dict["TotalJmeter"]["sentKBytesPerSec"]
-value['Response']= json_dict["TotalJmeter"]["meanResTime"]
+value["Recordings"]=str(int(float(json_dict["Recordings"])))
+value["TraceSpan"] = int(float(json_dict["Trace_Span"]))
+value['JMCount']= int(float(json_dict["TotalJmeter"]["sampleCount"]))
+value['Calls']= int(float(calls.strip()))
+value['Sent']= int(float(json_dict["TotalJmeter"]["sentKBytesPerSec"]))
+value['Response']= int(float(json_dict["TotalJmeter"]["meanResTime"]))
 value['Successes']= data_name
-value['JmeterErr'] =json_dict["TotalJmeter"]["errorPct"]
-value['Module']=getMode(str(sys.argv[7])) 
+# value['JmeterErr'] =int(float(json_dict["TotalJmeter"]["errorPct"]))
+value['Module']= getMode(str(sys.argv[7]))
 value['Delay']= sys.argv[6]
 if (str(sys.argv[7])=="4" or str(sys.argv[7])=="1"):
-    value['How_many_rec_should']='~'+str(((100-int(value['Successes']))/100)*value['JMCount'])
+    How_many_rec_should=((100-int(successes))/100)*value['JMCount']
+    if(int(How_many_rec_should)!=0):
+        result =int((int(value["Recordings"])/How_many_rec_should)*100)
+        value['How_many_rec_should_percent']=str(result)+ "%"
+    else:
+        value['How_many_rec_should_percent']="-"
 else:
-    value['How_many_rec_should']="0"
+    value['How_many_rec_should_percent']="-"
 
 legend =dict_main[getMode(str(sys.argv[7]))]
 
@@ -298,11 +308,46 @@ for key_dict_main in dict_main:
 
 """
 
-                
-                
 
-print(dict_le)  
+dict_le={}
 
+
+# def add_value(key_value, dict_,key):
+
+#     if (key_value in dict_):
+#         try:
+#             dict_[key_value]=int(dict_[key_value]) +int(key)
+#         except:
+#             dict_[key_value]="-"
+#     else: 
+#         dict_[key_value]=dict()
+#         try:
+#             dict_[key_value]=int(key)
+#         except:
+#             dict_[key_value]="-" 
+
+
+
+# for key_dict_main in dict_main:
+#     for key_value in value:
+#         for key_succes in dict_main[key_dict_main][key_value]:
+#             for  key in dict_main[key_dict_main][key_value][key_succes]:
+#                 if(key_succes+key_dict_main in dict_le):
+#                     add_value(key_value, dict_le[key_succes+key_dict_main],key)
+#                 else:
+#                     dict_le[key_succes+key_dict_main]=dict()
+#                     add_value(key_value, dict_le[key_succes+key_dict_main],key)
+
+
+# for key in dict_le:
+#     for key2 in dict_le[key]:
+        
+#         print(str(key)+"     " + str(key2)+"     " +str(dict_le[key][key2]))
+
+       
+
+                
+            
 style(sheet, active_line)
 sheet[col_nr_Recordings+active_line]  = value["Recordings"]
 sheet[col_nr_TraceSpan+active_line]  = value["TraceSpan"]
@@ -313,7 +358,13 @@ sheet[col_nr_Response+active_line] = value['Response']
 sheet[col_nr_Successes+active_line] =value['Successes']
 sheet[col_nr_Module+active_line] = value['Module'] 
 sheet[col_nr_Delay+active_line] = value['Delay']
-sheet[col_nr_JmeterErr+active_line]= value['JmeterErr']
-sheet[col_nr_How_many_rec_should+active_line]= value['How_many_rec_should']
+# sheet[col_nr_JmeterErr+active_line]= value['JmeterErr']
+sheet[col_nr_How_many_rec_should_percent+active_line]= value['How_many_rec_should_percent']
+
+
+
+
+
+
 
 workbook.save(filename=filename_raport)
