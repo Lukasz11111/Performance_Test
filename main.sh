@@ -11,17 +11,7 @@ CYPRESS_PATH=./cy
 
 CHANGE_TEST_HOST_PATH=./change_test_host.py
 
-# echo RevDeBug server restart...
-# #rdb server
-# sudo python3 request.py http://20.188.58.169:8888/up n
-# sleep 50
-# # apps
-# echo Applcations server restart...
-# sudo python3 request.py http://40.89.147.34:8888 n
-# sleep 45
-
-# (cd $PATH/$CYPRESS_PATH && sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH && cd $PATH)
-# sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH
+sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH
 sudo rm -rf ./dict_legend.txt
 
 counterall=0
@@ -33,7 +23,6 @@ END=$SLAVE_COUNT
 DELAY="$2"
 case $DELAY in
 1)
-  #  DELAY_array=(0 25 50 150 250 350 500 750 1000 )
   DELAY_array=(0 )
   ;;
 2)
@@ -47,13 +36,17 @@ case $DELAY in
   ;;
 esac
 
+
+for x in $FOLDERS; do
+active_folder=$(python3 if_folder_is_active.py $x/.config 2>&1)
+if [[ $active_folder != "0" ]]; then
 for mode in 1 2 3 4; do
-  active_mod_host_port=$(python3 rdb_module.py ./tmp_test/java_rdbapm/.config $mode 2>&1)
+  active_mod_host_port=$(python3 rdb_module.py $x/.config $mode 2>&1)
   if [[ $active_mod_host_port != "0" ]]; then
     for i in "${DELAY_array[@]}"; do
       for ((VARIABLE = $START; VARIABLE <= $END; VARIABLE++)); do
 
-        for x in $FOLDERS; do
+       
           if [ ! -f $x/.config ]; then
             echo "File not found!"
           else
@@ -65,14 +58,17 @@ for mode in 1 2 3 4; do
             done
           fi
 
-        done
+        
       done
     done
   fi
 done
-
+fi
+done
 echo $counterall
 for x in $FOLDERS; do
+active_folder=$(python3 if_folder_is_active.py $x/.config 2>&1)
+if [[ $active_folder != "0" ]]; then
   if [ ! -f $x/.config ]; then
     echo "File not found!"
   else
@@ -119,15 +115,7 @@ for x in $FOLDERS; do
 
     done
   fi
+  fi
 done
 
-# tmp=$(echo $RDB_REMOVE)
-# R=1
-# if [[ $tmp == "1" ]]; then
-#   echo RevDeBug instance removing...
-#   sudo python3 request.py http://20.188.58.169:8888/down y
-#   sudo python3 save_data_removing.py $RAPORT_NAME
-#   echo Applcations server restart...
-#   sudo python3 request.py http://40.89.147.34:8888 n
-# fi
 echo RUN END

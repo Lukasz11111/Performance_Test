@@ -39,14 +39,15 @@ def to_bool(value):
     return valid[value.lower()]
 
 def get_mod(number):
-    
-    if to_bool(json_dict["proportions"][number]):
-        return "1"
-    else:
+    try:
+        if to_bool(json_dict["proportions"][number]):
+            return "1"
+        else:
+            return "0"
+    except:
         return "0"
    
         
-
 sys.exit(f(RDB_MOD))
 
 

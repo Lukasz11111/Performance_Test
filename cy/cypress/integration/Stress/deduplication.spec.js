@@ -1,4 +1,4 @@
-describe('After stresss test', () => {
+describe('Before it all starts', () => {
   let domElements;
   beforeEach(function () {
     cy.loginToApm();
@@ -9,7 +9,7 @@ describe('After stresss test', () => {
 
   // Test case summary:
   // Expected result:
-  it('Chcek recording count', () => {
+  it('Disable deduplication', () => {
   cy.visit(Cypress.env("RDB_HOSTNAME") +'/globalSettings/Index')
   cy.contains('Recording Options').click()
   cy.get('#on-event-deduplication').then((checkbox)=>{

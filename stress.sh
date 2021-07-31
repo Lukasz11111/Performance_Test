@@ -46,7 +46,7 @@ sudo rm tmp.txt
 
 echo $file
 
-# sudo npm run test:linux_before --prefix $CYPRESS_PATH 
+sudo npm run test:linux_before --prefix $CYPRESS_PATH 
 
 echo $file
 
