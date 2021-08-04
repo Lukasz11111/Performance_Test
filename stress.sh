@@ -7,7 +7,9 @@ INIT_JM=./docker-jm/init.sh
 RAPORTS_FOLDER=./raports
 CONFIG_TEST_FILE_PATH="$4"
 CHANGE_DELAY_PATH=./change_delay.py 
-CHANGE_info_PATH=./tmp_test/.rdb-info
+
+##Delete this?
+CHANGE_info_PATH=./Application/.rdb-info
 MODE="$7"
 PROP="$8"
 #Test names in jmeter:
@@ -46,7 +48,12 @@ sudo rm tmp.txt
 
 echo $file
 
-sudo npm run test:linux_before --prefix $CYPRESS_PATH 
+
+
+
+# if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
+ sudo npm run test:linux_before --prefix $CYPRESS_PATH 
+# fi
 
 echo $file
 
@@ -57,12 +64,12 @@ slave_count="$2"
 sudo bash $INIT_JM $slave_count $file
 
 echo $file
-
+if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
 sudo npm run test:linux_after  --prefix $CYPRESS_PATH
-
 sudo cat $JSON_RAPORT_PATH
 echo sudo python3 conv.py $PROP $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE
 sudo python3 conv.py $PROP $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
+fi
 
 #todo after all cp to new folder (date name)
 #todo the amount of space used by the recordings

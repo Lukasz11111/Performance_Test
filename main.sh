@@ -1,9 +1,12 @@
 #!/bin/bash
-FOLDERS=tmp_test/*
+FOLDERS=Application/*
 SLAVE_COUNT=0
 
 date_str=$(date +"%m-%d-%y_%H;%M")
 RAPORT_NAME="raports/raport-$date_str.xlsx"
+
+
+
 
 RDB_REMOVE="$1"
 PATH="$3"
@@ -11,7 +14,16 @@ CYPRESS_PATH=./cy
 
 CHANGE_TEST_HOST_PATH=./change_test_host.py
 
-sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH
+
+
+
+# DEDUPLICATION_ACTIVE="${CYPRESS_DEDUPLICATION:-'1'}"
+
+
+# if [ "$CYPRESS_DEDUPLICATION" != "0" ]; then
+sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH 
+# fi
+
 sudo rm -rf ./dict_legend.txt
 
 counterall=0
@@ -103,7 +115,7 @@ if [[ $active_folder != "0" ]]; then
                 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $i of $var from folder ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 echo $iZ
                sudo bash stress.sh $test_file 5 $RAPORT_NAME $x $iZ $CYPRESS_PATH $mode $prop
-                 sudo rm tmp.jmx
+              
               done
 
             fi
@@ -116,6 +128,7 @@ if [[ $active_folder != "0" ]]; then
     done
   fi
   fi
+  sudo rm $x/tmp.jmx
 done
 
 echo RUN END

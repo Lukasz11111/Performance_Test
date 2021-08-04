@@ -1,0 +1,9 @@
+version: "3.0"  # optional since v1.27.0
+services:
+    main:
+        image: main:latest
+        build:
+            context: ./docker-jm/docker_main
+        environment:
+            CYPRESS_RAPORT_ACTIVE: ${CYPRESS_RAPORT_ACTIVE:-1}
+            CYPRESS_DEDUPLICATION: ${CYPRESS_DEDUPLICATION:-1}

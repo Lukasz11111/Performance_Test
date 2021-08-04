@@ -27,7 +27,8 @@
     "LOGIN": "damian+DevOpsMonitorTest@revdebug.com",
     "PRODUCTION_BUILD": "false",
     "PASSWORD": "/w6Y=bx%}!4@zQT?",
-    "RDB_HOSTNAME": "20.188.58.169"
+    "RDB_HOSTNAME": "20.188.58.169",
+    "RDB_PROTOCOL": "http://"
    },
    "experimentalFetchPolyfill": true,
    "experimentalNetworkStubbing": true

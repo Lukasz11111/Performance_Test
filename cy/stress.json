@@ -1,9 +1,13 @@
 {
-  "Application_name": "StressTestDotNetCore",
+  "Application_name": "PythonDjango",
   "Jmeter_raport_path": "/home/azureuser/stress_test/test/result//statistics.json",
-  "APM_Spans_Before": 56189,
+  "APM_Spans_Before": 12418,
   "APM_Spans_After": 0,
-  "Recording_Before": 2207,
+  "APM_Successes_Before": 6522,
+  "APM_Errors_Before": 5897,
+  "APM_Successes_After": 6522,
+  "APM_Errors_After": 5897,
+  "Recording_Before": 4686,
   "Recording_After": 0,
   "Recordings": 0,
   "Trace_Span": 0,
@@ -13,5 +17,7 @@
     "receivedKBytesPerSec": 0,
     "sentKBytesPerSec": 0,
     "errorPct": 0
-  }
+  },
+  "Trace_Span_Suc": 2580,
+  "Trace_Span_Err": 2565
 }

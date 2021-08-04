@@ -1,3 +1,6 @@
+
+ sudo docker stop master slave5 slave4 slave3 slave2 slave1 slave0;
+
 sudo docker start slave0 
 sudo docker start slave5 
 

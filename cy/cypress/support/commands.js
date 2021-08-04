@@ -1,7 +1,7 @@
 
 import { UrlHelper, QueryHelper } from '../support/helpers';
 
-var demoUrlHelper = new UrlHelper(Cypress.env('RDB_HOSTNAME'), 'http://');
+var demoUrlHelper = new UrlHelper(Cypress.env('RDB_HOSTNAME'), Cypress.env('RDB_PROTOCOL'));
 
 // Purpose of the command: To login directly to apm page
 Cypress.Commands.add('loginToApm', () => {
