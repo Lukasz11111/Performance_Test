@@ -73,13 +73,13 @@ describe('After stresss test', () => {
         cy.get(':nth-child(3) > .rk-trace-bar-i').click()
         cy.contains('Success').click()
         cy.get('.rk-trace-search-btn > span.vm').click()
-        cy.wait(2000)
+        cy.wait(1000)
         cy.get('.rk-page > :nth-child(4)').then((text) => {
           json.APM_Successes_After = parseInt(text.text());
           cy.get(':nth-child(3) > .rk-trace-bar-i').click()
           cy.contains('Error').click()
           cy.get('.rk-trace-search-btn > span.vm').click()
-          cy.wait(2000)
+          cy.wait(1000)
           cy.get('.rk-page > :nth-child(4)').then((text) => {
             json.APM_Errors_After = parseInt(text.text());
             json.Trace_Span_Suc=(json.APM_Successes_After - json.APM_Successes_Before) * 15;

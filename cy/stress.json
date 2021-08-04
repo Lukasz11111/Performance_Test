@@ -1,13 +1,13 @@
 {
   "Application_name": "PythonDjango",
   "Jmeter_raport_path": "/home/azureuser/stress_test/test/result//statistics.json",
-  "APM_Spans_Before": 12418,
+  "APM_Spans_Before": 14973,
   "APM_Spans_After": 0,
-  "APM_Successes_Before": 6522,
-  "APM_Errors_Before": 5897,
-  "APM_Successes_After": 6522,
-  "APM_Errors_After": 5897,
-  "Recording_Before": 4686,
+  "APM_Successes_Before": 7806,
+  "APM_Errors_Before": 7168,
+  "APM_Successes_After": 7806,
+  "APM_Errors_After": 7168,
+  "Recording_Before": 6497,
   "Recording_After": 0,
   "Recordings": 0,
   "Trace_Span": 0,
@@ -18,6 +18,6 @@
     "sentKBytesPerSec": 0,
     "errorPct": 0
   },
-  "Trace_Span_Suc": 2580,
-  "Trace_Span_Err": 2565
+  "Trace_Span_Suc": 1965,
+  "Trace_Span_Err": 1935
 }

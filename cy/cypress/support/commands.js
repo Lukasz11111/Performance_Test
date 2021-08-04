@@ -45,7 +45,7 @@ Cypress.Commands.add('setDate', (date) => {
 //Check if all traces have been received
 Cypress.Commands.add('getTrace', (k) => {
     cy.get('.flex-h.rk-page > span:nth-of-type(2)').then((text) => {
-        cy.wait(10000);
+        cy.wait(6000);
         cy.reload();
         cy.get('.rk-header > :nth-child(2) > :nth-child(4)').click();
         cy.get('.rk-trace-search > div:nth-of-type(1)').contains('Search').click();
@@ -64,7 +64,7 @@ Cypress.Commands.add('getRecordings', () => {
         let tex = new String(text.text());
         tex = tex.split(' ')[1].substring(1).slice(0, -1);
         let recordin_count = parseInt(tex);
-        cy.wait(10000);
+        cy.wait(6000);
         cy.reload();
         cy.wait(5000);
         cy.contains('Last').then((text_after) => {

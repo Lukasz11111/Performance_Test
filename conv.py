@@ -21,62 +21,71 @@ JSON_RDB_INFO=sys.argv[5]
 active_line="6"
 col_nr_Recordings='A'
 col_nr_How_many_rec_should_percent='B'
-col_nr_TraceSpan='C'
-col_nr_JMCount='D'
-col_nr_Calls='E'
-col_nr_Sent='F'
-col_nr_Response='G'
-col_nr_Successes='H'
-col_nr_Module='I'
-col_nr_Delay='J'
+
+
+col_nr_Trace_suc='C'
+col_nr_Trace_err='D'
+
+col_nr_Trace_percent='E'
+col_nr_TraceSpan='F'
+col_nr_JMCount='G'
+col_nr_Calls='H'
+col_nr_Sent='I'
+col_nr_Response='J'
+col_nr_Successes='K'
+col_nr_Module='L'
+col_nr_Delay='M'
+
+
+
 # col_nr_JmeterErr='K'
 
 
-dict_main={}
+# dict_main={}
 
-dict_Recordings={}
-dict_How_many_rec_should_percent={}
-dict_TraceSpan={}
-dict_JMCount={}
-dict_Calls={}
-dict_Sent={}
-dict_Response={}
-dict_Successes={}
-dict_Module={}
-dict_Delay={}
+# dict_Recordings={}
+# dict_How_many_rec_should_percent={}
+# dict_TraceSpan={}
+# dict_JMCount={}
+# dict_Calls={}
+# dict_Sent={}
+# dict_Response={}
+# dict_Successes={}
+# dict_Module={}
+# dict_Delay={}
 # dict_JmeterErr={}
 
 
 
-if(os.path.exists(dict_legend_path)):
-    with open(dict_legend_path, 'rb') as f:
-        dict_main=pickle.load(f)
+# if(os.path.exists(dict_legend_path)):
+#     with open(dict_legend_path, 'rb') as f:
+#         dict_main=pickle.load(f)
 
 
-    # file = open(dict_legend_path, "r")
-    # contents = file.read()
-    # dict = ast.literal_eval(contents)
-elif(not os.path.exists(dict_legend_path) or not bool(dict_main)):
-    dict_legend={
-        "Recordings":dict_Recordings,
-        'How_many_rec_should_percent':dict_How_many_rec_should_percent,
-        'TraceSpan':dict_TraceSpan,
-        'JMCount':dict_JMCount,
-        'Calls':dict_Calls,
-        'Sent':dict_Sent,
-        'Response':dict_Response,
-        'Successes':dict_Successes,
-        'Module':dict_Module,
-        'Delay':dict_Delay,
-        # 'JmeterErr':dict_JmeterErr
-    }
+#     # file = open(dict_legend_path, "r")
+#     # contents = file.read()
+#     # dict = ast.literal_eval(contents)
+# elif(not os.path.exists(dict_legend_path) or not bool(dict_main)):
+#     dict_legend={
+#         "Recordings":dict_Recordings,
+#         'How_many_rec_should_percent':dict_How_many_rec_should_percent,
+#         'TraceSpan':dict_TraceSpan,
+#         'JMCount':dict_JMCount,
+#         'Calls':dict_Calls,
+#         'Sent':dict_Sent,
+#         'Response':dict_Response,
+#         'Successes':dict_Successes,
+#         'Module':dict_Module,
+#         'Delay':dict_Delay,
+#         # 'JmeterErr':dict_JmeterErr
+#     }
 
-    dict_main={
-        "rdb and apm":copy.deepcopy(dict_legend),
-        'apm':copy.deepcopy(dict_legend),
-        'none':copy.deepcopy(dict_legend),
-        'rdb':copy.deepcopy(dict_legend)
-    }
+#     dict_main={
+#         "rdb and apm":copy.deepcopy(dict_legend),
+#         'apm':copy.deepcopy(dict_legend),
+#         'none':copy.deepcopy(dict_legend),
+#         'rdb':copy.deepcopy(dict_legend)
+#     }
 
 
 
@@ -85,6 +94,11 @@ def style(sheet,active_line):
     print(color)
     Line_legend="6"
     setStyl(sheet[col_nr_Recordings+active_line],color)
+
+    setStyl(sheet[col_nr_Trace_suc+active_line],color)
+    setStyl(sheet[col_nr_Trace_err+active_line],color)
+    setStyl(sheet[col_nr_Trace_percent+active_line],color)
+    
     setStyl(sheet[col_nr_TraceSpan+active_line],color)
     setStyl(sheet[col_nr_JMCount+active_line],color)
     setStyl(sheet[col_nr_Calls+active_line],color)
@@ -149,6 +163,12 @@ def createSheet(sheet):
     sheet["F"+Line_Application_name] = json_config['server_rdb']
     sheet["G"+Line_Application_name] = "Language"
     sheet["H"+Line_Application_name] = json_config['language']
+ 
+
+    sheet[col_nr_Trace_suc+Line_legend] = "Trace successes"
+    sheet[col_nr_Trace_err+Line_legend] = "Trace error"
+    sheet[col_nr_Trace_percent+Line_legend] = "Perc trace"
+
 
     sheet[col_nr_Recordings+Line_legend] = "Recordings"
     sheet[col_nr_TraceSpan+Line_legend] = "Trace Span"
@@ -217,8 +237,7 @@ for line in f:
         list_result.append(tmp[2])
         calls=list_result[len(list_result)-1].split("/s")[0]
 
-successes=str(sys.argv[1])
-data_name=successes+'/'+str(100-int(float(json_dict["TotalJmeter"]["errorPct"])))
+
 
 
 
@@ -245,6 +264,25 @@ else:
 
 sheet.insert_rows(idx=6)
 
+def percent_prop_rec(successes_percent, jm_count, value):
+    How_many_should=((100-int(successes_percent))/100)*jm_count
+    if(int(How_many_should)!=0):
+        result =int((int(value)/How_many_should)*100)
+        result=str(result)+ "%"
+    else:
+        result="-"
+    return result
+
+def percent_prop_trace(successes_percent, jm_count, value):
+    if(int(jm_count)!=0):
+        result =int((int(value)/jm_count)*100)
+        result=str(result)+ "%"
+    else:
+        result="-"
+    return result
+
+successes=str(sys.argv[1])
+data_name=successes+'/'+str(100-int(float(json_dict["TotalJmeter"]["errorPct"])))
 
 value={}
 value["Recordings"]=str(int(float(json_dict["Recordings"])))
@@ -254,102 +292,35 @@ value['Calls']= int(float(calls.strip()))
 value['Sent']= int(float(json_dict["TotalJmeter"]["sentKBytesPerSec"]))
 value['Response']= int(float(json_dict["TotalJmeter"]["meanResTime"]))
 value['Successes']= data_name
+
+
+
+value["Trace_err"]=int(float(json_dict["Trace_Span_Err"]))
+value["Trace_suc"]=int(float(json_dict["Trace_Span_Suc"]))
+
 # value['JmeterErr'] =int(float(json_dict["TotalJmeter"]["errorPct"]))
 value['Module']= getMode(str(sys.argv[7]))
 value['Delay']= sys.argv[6]
+
 if (str(sys.argv[7])=="4" or str(sys.argv[7])=="1"):
-    How_many_rec_should=((100-int(successes))/100)*value['JMCount']
-    if(int(How_many_rec_should)!=0):
-        result =int((int(value["Recordings"])/How_many_rec_should)*100)
-        value['How_many_rec_should_percent']=str(result)+ "%"
-    else:
-        value['How_many_rec_should_percent']="-"
+    value['How_many_rec_should_percent']=percent_prop_rec(successes,value['JMCount'],value["Recordings"])
 else:
     value['How_many_rec_should_percent']="-"
 
-legend =dict_main[getMode(str(sys.argv[7]))]
+if (str(sys.argv[7])=="2" or str(sys.argv[7])=="1"):
+    value["Trace_percent"]=percent_prop_trace(successes,value['JMCount'],value["TraceSpan"])
+else:
+    value["Trace_percent"]="-"
 
 
-
-for key_value in value:
-    if(value['Successes'] in legend[key_value]):
-        legend[key_value][value['Successes']].append(value[key_value])
-    else: 
-        legend[key_value][value['Successes']]=list()
-        legend[key_value][value['Successes']].append(value[key_value])
-
-
-
-
-f = open(dict_legend_path, "wb")
-pickle.dump(dict_main, f, pickle.HIGHEST_PROTOCOL)
-f.close()
-
-
-dict_le={}
-
-"""
-for key_dict_main in dict_main:
-    for key_value in value:
-        for key_succes in dict_main[key_dict_main][key_value]:
-            for  key in dict_main[key_dict_main][key_value][key_succes]:
-                if(key_succes+key_dict_main in dict_le):
-                    # if(key_value in dict_le[key_succes+key_dict_main]):
-                    #     dict_le[key_succes+key_dict_main][key_value]+=key
-                    # else: 
-                    #     dict_le[key_succes+key_dict_main][key_value]=dict()
-                    #     dict_le[key_succes+key_dict_main][key_value]+=key
-                    print (key)
-                    print (dict_le[key_succes+key_dict_main][key_value])
-                    dict_le[key_succes+key_dict_main][key_value]=int(dict_le[key_succes+key_dict_main][key_value]) +int(key)
-                else:
-                    dict_le[key_succes+key_dict_main]=dict()
-                    dict_le[key_succes+key_dict_main][key_value]=key
-
-"""
-
-
-dict_le={}
-
-
-# def add_value(key_value, dict_,key):
-
-#     if (key_value in dict_):
-#         try:
-#             dict_[key_value]=int(dict_[key_value]) +int(key)
-#         except:
-#             dict_[key_value]="-"
-#     else: 
-#         dict_[key_value]=dict()
-#         try:
-#             dict_[key_value]=int(key)
-#         except:
-#             dict_[key_value]="-" 
-
-
-
-# for key_dict_main in dict_main:
-#     for key_value in value:
-#         for key_succes in dict_main[key_dict_main][key_value]:
-#             for  key in dict_main[key_dict_main][key_value][key_succes]:
-#                 if(key_succes+key_dict_main in dict_le):
-#                     add_value(key_value, dict_le[key_succes+key_dict_main],key)
-#                 else:
-#                     dict_le[key_succes+key_dict_main]=dict()
-#                     add_value(key_value, dict_le[key_succes+key_dict_main],key)
-
-
-# for key in dict_le:
-#     for key2 in dict_le[key]:
-        
-#         print(str(key)+"     " + str(key2)+"     " +str(dict_le[key][key2]))
-
-       
-
-                
             
 style(sheet, active_line)
 sheet[col_nr_Recordings+active_line]  = value["Recordings"]
+
+sheet[col_nr_Trace_err+active_line]  = value["Trace_err"]
+sheet[col_nr_Trace_suc+active_line]  = value["Trace_suc"]
+sheet[col_nr_Trace_percent+active_line]  = value["Trace_percent"]
+
 sheet[col_nr_TraceSpan+active_line]  = value["TraceSpan"]
 sheet[col_nr_JMCount+active_line] = value['JMCount']
 sheet[col_nr_Calls+active_line]=value['Calls']
@@ -360,10 +331,6 @@ sheet[col_nr_Module+active_line] = value['Module']
 sheet[col_nr_Delay+active_line] = value['Delay']
 # sheet[col_nr_JmeterErr+active_line]= value['JmeterErr']
 sheet[col_nr_How_many_rec_should_percent+active_line]= value['How_many_rec_should_percent']
-
-
-
-
 
 
 
