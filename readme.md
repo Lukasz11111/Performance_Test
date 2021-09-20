@@ -2,6 +2,12 @@
 
 The script is used to send a large number of requests to selected applications that use RvDeBug in order to test as an application with RevDebug and the Revdebug instance itself will behave under heavy load.
 ## Init script
+Clone repo
+
+You need docker, docker-compose
+
+Run init.sh in the root directory
+
 ## Using test
 ### Application
 The first step to run the tests is to create a test application with at least 2 endpoints: endpoint with error and endpoint with success.
