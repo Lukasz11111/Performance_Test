@@ -1,8 +1,9 @@
 #!/bin/bash
 RESULT_PATH=./test/result/
-RESULT_STATISTICS_PATH=/home/azureuser/stress_test/test/result//statistics.json
+MAIN_PATH="${10}"
+RESULT_STATISTICS_PATH=$MAIN_PATH/test/result//statistics.json
 CYPRESS_PATH="$6"
-JSON_RAPORT_PATH=/home/azureuser/stress_test/cy/stress.json
+JSON_RAPORT_PATH=$MAIN_PATH/cy/stress.json
 INIT_JM=./docker-jm/init.sh
 RAPORTS_FOLDER=./raports
 CONFIG_TEST_FILE_PATH="$4"
@@ -13,6 +14,7 @@ CHANGE_info_PATH=./Application/.rdb-info
 MODE="$7"
 PROP="$8"
 RDB_INSTANCE="$9"
+
 #Test names in jmeter:
 
 
@@ -30,6 +32,9 @@ echo $RESULT_STATISTICS_PATH
 # 5. Code len (in the case of multiple endpoints (various))
 
 DELAY="$5"
+
+echo $DELAY
+echo "$5"
 
 file="$1"
 

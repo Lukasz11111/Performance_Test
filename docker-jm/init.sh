@@ -1,5 +1,6 @@
 test_file="$2"
 slave_count="$1"
+
 # sudo docker build -t jmbase .
 # sudo docker build -t jm-master jm-master/
 # sudo docker build -t jm-slave jm-slave/
@@ -10,14 +11,14 @@ sudo docker run -dit --name slave2  jm-slave:latest /bin/bash
 sudo docker run -dit --name slave3  jm-slave:latest /bin/bash
 sudo docker run -dit --name slave4  jm-slave:latest /bin/bash
 sudo docker run -dit --name slave5  jm-slave:latest /bin/bash
-# sztywny path!!!!!!!!!!!
-sudo docker run -dit --name master -v /home/azureuser/stress_test/test/:/testJM jm-master:latest
+MAIN_PATH="$(readlink -f .)"
+sudo docker run -dit --name master -v $MAIN_PATH/test/:/testJM jm-master:latest
 
 sudo touch iphost.txt
 sudo chmod 777 iphost.txt
 sudo docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(sudo docker ps  -q)  > iphost.txt
 
-iphost=$( python get_hostip_slave.py $slave_count 2>&1) 
+iphost=$( python3 get_hostip_slave.py $slave_count 2>&1) 
 echo $iphost
 
 cp $test_file test/test.jmx 

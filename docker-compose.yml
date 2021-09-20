@@ -4,6 +4,8 @@ services:
         image: main:latest
         build:
             context: ./docker-jm/docker_main
+            args: 
+               PATH_ARG:  /home/azureuser/lm_performance_test
         environment:
             CYPRESS_RAPORT_ACTIVE: ${CYPRESS_RAPORT_ACTIVE:-1}
             CYPRESS_DEDUPLICATION: ${CYPRESS_DEDUPLICATION:-1}
