@@ -10,9 +10,11 @@ describe('Before it all starts', () => {
   // Test case summary:
   // Expected result:
   it('Disable deduplication', () => {
-  cy.visit(Cypress.env("RDB_HOSTNAME") +'/globalSettings/Index')
-  cy.contains('Recording Options').click()
-  cy.get('#on-event-deduplication').then((checkbox)=>{
+    console.log(Cypress.env("RDB_HOSTNAME"))
+    cy.log(Cypress.env("RDB_HOSTNAME"))
+    cy.visit(Cypress.env("RDB_HOSTNAME") +'/globalSettings/Index')
+    cy.contains('Recording Options').click()
+    cy.get('#on-event-deduplication').then((checkbox)=>{
       if(checkbox[0].checked){
         cy.get('#on-event-deduplication').click()
     }

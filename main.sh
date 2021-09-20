@@ -3,26 +3,13 @@ FOLDERS=Application/*
 SLAVE_COUNT=0
 
 date_str=$(date +"%m-%d-%y_%H;%M")
-RAPORT_NAME="raports/raport-$date_str.xlsx"
-
-
-
+RAPORT_NAME="raport-$date_str.xlsx"
 
 RDB_REMOVE="$1"
 PATH="$3"
 CYPRESS_PATH=./cy
 
 CHANGE_TEST_HOST_PATH=./change_test_host.py
-
-
-
-
-# DEDUPLICATION_ACTIVE="${CYPRESS_DEDUPLICATION:-'1'}"
-
-
-# if [ "$CYPRESS_DEDUPLICATION" != "0" ]; then
-sudo npm run test:linux_deduplication --prefix $CYPRESS_PATH 
-# fi
 
 sudo rm -rf ./dict_legend.txt
 
@@ -32,25 +19,41 @@ counterall_done=0
 START=0
 END=$SLAVE_COUNT
 
-DELAY="$2"
-case $DELAY in
-1)
-  DELAY_array=(0 )
-  ;;
-2)
-  DELAY_array=(10 100 250 500 1000 1500 10000)
-  ;;
-3)
-  DELAY_array=(10 50 100 150 250 400 500 600 750 1000 1500 2000 3000 5000 10000)
-  ;;
-*)
-  DELAY_array=(0)
-  ;;
-esac
+
+
+# DELAY="$2"
+# case $DELAY in
+# 1)
+#   DELAY_array=( 0 )
+#   ;;
+# 2)
+#   DELAY_array=(10 100 250 500 1000 1500 10000)
+#   ;;
+# 3)
+#   DELAY_array=(10 50 100 150 250 400 500 600 750 1000 1500 2000 3000 5000 10000)
+#   ;;
+# *)
+#   DELAY_array=(0)
+#   ;;
+# esac
+
+for x in $FOLDERS; do
+active_folder=$(python3 if_folder_is_active.py $x/.config 2>&1)
+  if [[ $active_folder != "0" ]]; then
+    if [ "$CYPRESS_DEDUPLICATION" != "0" ]; then
+
+    DELAY_array=($(python3 delay.py $x/.config 2>&1))
+    
+    rdb_hostname=$(python3 get_ip_rdb_instance.py $x/.config 2>&1)
+    sudo  npm run test:linux_deduplication --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$rdb_hostname
+    fi
+  fi
+done
 
 
 for x in $FOLDERS; do
 active_folder=$(python3 if_folder_is_active.py $x/.config 2>&1)
+
 if [[ $active_folder != "0" ]]; then
 for mode in 1 2 3 4; do
   active_mod_host_port=$(python3 rdb_module.py $x/.config $mode 2>&1)
@@ -77,7 +80,11 @@ for mode in 1 2 3 4; do
 done
 fi
 done
-echo $counterall
+
+# for x in $FOLDERS; do
+# active_folder+=$(python3 if_folder_is_active.py $x/.config 2>&1)
+# done
+
 for x in $FOLDERS; do
 active_folder=$(python3 if_folder_is_active.py $x/.config 2>&1)
 if [[ $active_folder != "0" ]]; then
@@ -91,7 +98,6 @@ if [[ $active_folder != "0" ]]; then
         FILES=$x/*
         counter=0
         
-        echo $prop
         sudo python3 change_proportion.py model.jmx $x/.config $prop
         sudo cp tmp.jmx $x/tmp.jmx
         test_file=$x/tmp.jmx
@@ -101,8 +107,7 @@ if [[ $active_folder != "0" ]]; then
           for mode in 1 2 3 4; do
             active_mod_host_port=$(python3 rdb_module.py $x/.config $mode 2>&1)
             if [[ $active_mod_host_port != "0" ]]; then
-              echo $mode
-              echo $active_mod_host_port
+              rdb_hostname=$(python3 get_ip_rdb_instance.py $x/.config 2>&1)
               sudo python3 $CHANGE_TEST_HOST_PATH $test_file $active_mod_host_port $x/.config
               echo "Processing $test_file file..."
               # take action on each file. $test_file store current file name
@@ -113,8 +118,7 @@ if [[ $active_folder != "0" ]]; then
                 ((counterall_done++))
                 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $counterall_done of $counterall ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $i of $var from folder ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                echo $iZ
-               sudo bash stress.sh $test_file 5 $RAPORT_NAME $x $iZ $CYPRESS_PATH $mode $prop
+               sudo bash stress.sh $test_file 5 $RAPORT_NAME $x $iZ $CYPRESS_PATH $mode $prop $rdb_hostname
               
               done
 

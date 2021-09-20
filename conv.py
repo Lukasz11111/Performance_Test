@@ -37,61 +37,16 @@ col_nr_Module='L'
 col_nr_Delay='M'
 
 
-
-# col_nr_JmeterErr='K'
-
-
-# dict_main={}
-
-# dict_Recordings={}
-# dict_How_many_rec_should_percent={}
-# dict_TraceSpan={}
-# dict_JMCount={}
-# dict_Calls={}
-# dict_Sent={}
-# dict_Response={}
-# dict_Successes={}
-# dict_Module={}
-# dict_Delay={}
-# dict_JmeterErr={}
-
-
-
-# if(os.path.exists(dict_legend_path)):
-#     with open(dict_legend_path, 'rb') as f:
-#         dict_main=pickle.load(f)
-
-
-#     # file = open(dict_legend_path, "r")
-#     # contents = file.read()
-#     # dict = ast.literal_eval(contents)
-# elif(not os.path.exists(dict_legend_path) or not bool(dict_main)):
-#     dict_legend={
-#         "Recordings":dict_Recordings,
-#         'How_many_rec_should_percent':dict_How_many_rec_should_percent,
-#         'TraceSpan':dict_TraceSpan,
-#         'JMCount':dict_JMCount,
-#         'Calls':dict_Calls,
-#         'Sent':dict_Sent,
-#         'Response':dict_Response,
-#         'Successes':dict_Successes,
-#         'Module':dict_Module,
-#         'Delay':dict_Delay,
-#         # 'JmeterErr':dict_JmeterErr
-#     }
-
-#     dict_main={
-#         "rdb and apm":copy.deepcopy(dict_legend),
-#         'apm':copy.deepcopy(dict_legend),
-#         'none':copy.deepcopy(dict_legend),
-#         'rdb':copy.deepcopy(dict_legend)
-#     }
+def hidden_col(worksheet):
+    worksheet.column_dimensions[col_nr_Trace_suc].hidden= True
+    worksheet.column_dimensions[col_nr_Trace_err].hidden= True
+    worksheet.column_dimensions[col_nr_Sent].hidden= True
+    worksheet.column_dimensions[col_nr_Response].hidden= True
 
 
 
 def style(sheet,active_line):
     color = str(getColor(getMode(str(sys.argv[7])) ))
-    print(color)
     Line_legend="6"
     setStyl(sheet[col_nr_Recordings+active_line],color)
 
@@ -108,6 +63,7 @@ def style(sheet,active_line):
     setStyl(sheet[col_nr_Module+active_line],color)
     setStyl(sheet[col_nr_Delay+active_line],color)
     setStyl(sheet[col_nr_How_many_rec_should_percent+active_line],color)
+    
 
 
 def setStyl(call,color):
@@ -130,7 +86,7 @@ def getColor(x):
         'rdb and apm': "ffdbd9",
         'apm': "00CCFFFF",
         'none': "00FFFFCC",
-        'rdb': "00C0C0C0"
+        'rdb': "00CCFFCC"
     }[x]
 
 def createSheet(sheet):
@@ -218,7 +174,12 @@ with open(JSON_CONFIG_PATH) as f:
 with open(JSON_RDB_INFO) as f:
     rdb_info = json.load(f)
 
-filename_raport=sys.argv[3]
+describe=''
+if "raport_name" in json_config:
+    if not (json_config['raport_name'] is None):
+        describe=describe+json_config['raport_name']+"_"
+
+filename_raport="raports/"+json_config['language']+"_"+describe+sys.argv[3]
 
 sheet_name=json_config['application_name'] 
 
@@ -263,6 +224,7 @@ else:
     createSheet(sheet)
 
 sheet.insert_rows(idx=6)
+
 
 def percent_prop_rec(successes_percent, jm_count, value):
     How_many_should=((100-int(successes_percent))/100)*jm_count
@@ -332,6 +294,6 @@ sheet[col_nr_Delay+active_line] = value['Delay']
 # sheet[col_nr_JmeterErr+active_line]= value['JmeterErr']
 sheet[col_nr_How_many_rec_should_percent+active_line]= value['How_many_rec_should_percent']
 
-
+hidden_col(sheet)
 
 workbook.save(filename=filename_raport)
