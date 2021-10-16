@@ -1,6 +1,7 @@
 #!/bin/bash
 RESULT_PATH=./test/result/
 MAIN_PATH="${10}"
+FLAG_DEDUPLICATION="${11}"
 RESULT_STATISTICS_PATH=$MAIN_PATH/test/result//statistics.json
 CYPRESS_PATH="$6"
 JSON_RAPORT_PATH=$MAIN_PATH/cy/stress.json
@@ -15,10 +16,9 @@ MODE="$7"
 PROP="$8"
 RDB_INSTANCE="$9"
 
+
 #Test names in jmeter:
 
-
-echo $RESULT_STATISTICS_PATH
 #TODO budowanie obrazow mastera /slave
 
 # YOU MUST SET .CONFIG IN TEST FOLDER
@@ -33,10 +33,8 @@ echo $RESULT_STATISTICS_PATH
 
 DELAY="$5"
 
-echo $DELAY
-echo "$5"
-
 file="$1"
+
 
 
 sudo python3 $CHANGE_DELAY_PATH $file $DELAY
@@ -54,12 +52,17 @@ sudo rm tmp.txt
 
 echo $file
 
+date +%s > 'StartTime'
 
 
+if [ $FLAG_DEDUPLICATION -ne 0 ]; then
+       sudo python3 deduplicatiion.py $CONFIG_TEST_FILE_PATH
+fi 
 
-if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
- sudo npm run test:linux_before --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$RDB_INSTANCE
-fi
+
+# if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
+#  sudo npm run test:linux_before --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$RDB_INSTANCE
+# fi
 
 echo $file
 
@@ -70,12 +73,15 @@ slave_count="$2"
 sudo bash $INIT_JM $slave_count $file
 
 echo $file
-if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
-sudo npm run test:linux_after  --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$RDB_INSTANCE
-sudo cat $JSON_RAPORT_PATH
+
+# if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
+# sudo npm run test:linux_after  --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$RDB_INSTANCE
+# sudo cat $JSON_RAPORT_PATH
+
+
 echo sudo python3 conv.py $PROP $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE
 sudo python3 conv.py $PROP $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
-fi
+# fi
 
 #todo after all cp to new folder (date name)
 #todo the amount of space used by the recordings

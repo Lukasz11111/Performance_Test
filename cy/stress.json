@@ -1,23 +1,23 @@
 {
-  "Application_name": "PythonFlask",
-  "Jmeter_raport_path": "/home/azureuser/lm_performance_test/test/result//statistics.json",
-  "APM_Spans_Before": 0,
-  "APM_Spans_After": 222517,
-  "APM_Successes_Before": 25214,
-  "APM_Errors_Before": 222205,
-  "APM_Successes_After": 25214,
-  "APM_Errors_After": 25214,
-  "Recording_Before": 2486,
-  "Recording_After": 2706,
-  "Recordings": 2200,
-  "Trace_Span": 3337755,
-  "TotalJmeter": {
-    "sampleCount": 4677,
-    "meanResTime": 138.85845627539035,
-    "receivedKBytesPerSec": 132.85455929724526,
-    "sentKBytesPerSec": 101.19675188832939,
-    "errorPct": 0
-  },
-  "Trace_Span_Suc": 0,
-  "Trace_Span_Err": -2954865
+    "Application_name": "Java",
+    "Jmeter_raport_path": "/home/azureuser/stress_test/test/result//statistics.json",
+    "APM_Spans_Before": 0,
+    "APM_Spans_After": 0,
+    "APM_Successes_Before": 1000,
+    "APM_Errors_Before": 1000,
+    "APM_Successes_After": 25214,
+    "APM_Errors_After": 25214,
+    "Recording_Before": 0,
+    "Recording_After": 0,
+    "Recordings": 0,
+    "Trace_Span": 0,
+    "TotalJmeter": {
+        "sampleCount": 0,
+        "meanResTime": 0,
+        "receivedKBytesPerSec": 0,
+        "sentKBytesPerSec": 0,
+        "errorPct": 0
+    },
+    "Trace_Span_Suc": 0,
+    "Trace_Span_Err": -2954865
 }

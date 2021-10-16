@@ -1,2 +1,3 @@
 /raports/*
 docker-jm/docker_main/server1.pem
+.env

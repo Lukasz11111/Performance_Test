@@ -47,4 +47,10 @@
     sudo docker build -t jm-slave jm-slave/
     cd ..
     mkdir raports
+
+
+    sudo pip3 install selenium                        
+    sudo apt-get install -y chromium-chromedriver  -y
+    sudo pip3 install requests
+
 echo DONE

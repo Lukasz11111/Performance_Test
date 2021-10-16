@@ -25,7 +25,6 @@ active_folder=$(python3 if_folder_is_active.py $x/.config 2>&1)
   if [[ $active_folder != "0" ]]; then
     if [ "$CYPRESS_DEDUPLICATION" != "0" ]; then
     rdb_hostname=$(python3 get_ip_rdb_instance.py $x/.config 2>&1)
-    sudo  npm run test:linux_deduplication --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$rdb_hostname
     fi
   fi
 done
@@ -60,6 +59,7 @@ fi
 done
 
 for x in $FOLDERS; do
+deduplication=1
 active_folder=$(python3 if_folder_is_active.py $x/.config 2>&1)
 if [[ $active_folder != "0" ]]; then
 DELAY_array=($(python3 delay.py $x/.config 2>&1))
@@ -94,8 +94,8 @@ DELAY_array=($(python3 delay.py $x/.config 2>&1))
                 ((counterall_done++))
                 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $counterall_done of $counterall ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ $i of $var from folder ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-               sudo bash stress.sh $test_file 5 $RAPORT_NAME $x $iZ $CYPRESS_PATH $mode $prop $rdb_hostname $MAIN_PATH
-              
+               sudo bash stress.sh $test_file 5 $RAPORT_NAME $x $iZ $CYPRESS_PATH $mode $prop $rdb_hostname $MAIN_PATH $deduplication
+              deduplication=0
               done
 
             fi

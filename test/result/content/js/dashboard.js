@@ -173,7 +173,7 @@ $(document).ready(function() {
     });
 
     // Creates APDEX table
-    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [9.612303748798462E-4, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.0, 500, 1500, "err"], "isController": false}, {"data": [0.0019206145966709346, 500, 1500, "Test"], "isController": true}]}, function(index, item){
+    createTable($("#apdexTable"), {"supportsControllersDiscrimination": true, "overall": {"data": [0.0, 500, 1500, "Total"], "isController": false}, "titles": ["Apdex", "T (Toleration threshold)", "F (Frustration threshold)", "Label"], "items": [{"data": [0.0, 500, 1500, "Test"], "isController": true}, {"data": [0.0, 500, 1500, "/err11"], "isController": false}]}, function(index, item){
         switch(index){
             case 0:
                 item = item.toFixed(3);
@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 4677, 4677, 100.0, 138.85845627539035, 5, 273, 151.0, 175.0, 199.0, 263.0, 277.0734597156398, 132.85455929724526, 101.19675188832939], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["err", 4677, 4677, 100.0, 138.85845627539035, 5, 273, 151.0, 175.0, 199.0, 263.0, 277.0734597156398, 132.85455929724526, 101.19675188832939], "isController": false}, {"data": ["Test", 4686, 4677, 99.80793854033291, 138.59218950064002, 0, 273, 151.0, 175.0, 199.0, 263.0, 273.9389687828832, 131.0993195918099, 99.85976685811995], "isController": true}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 861, 861, 100.0, 19.010452961672478, 2, 172, 11.0, 49.0, 71.89999999999998, 120.0, 355.1980198019802, 916.7855140006188, 0.0], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Test", 861, 861, 100.0, 19.01045296167251, 2, 172, 11.0, 49.0, 71.89999999999998, 120.0, 322.8346456692913, 833.253875492126, 0.0], "isController": true}, {"data": ["/err11", 861, 861, 100.0, 19.010452961672478, 2, 172, 11.0, 49.0, 71.89999999999998, 120.0, 355.1980198019802, 916.7855140006188, 0.0], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["500/INTERNAL SERVER ERROR", 4677, 100.0, 100.0], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 861, 100.0, 100.0], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 4677, 4677, "500/INTERNAL SERVER ERROR", 4677, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["err", 4677, 4677, "500/INTERNAL SERVER ERROR", 4677, null, null, null, null, null, null, null, null], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 861, 861, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 861, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": [], "isController": false}, {"data": ["/err11", 861, 861, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 861, null, null, null, null, null, null, null, null], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 

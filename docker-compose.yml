@@ -5,7 +5,11 @@ services:
         build:
             context: ./docker-jm/docker_main
             args: 
-               PATH_ARG:  /home/azureuser/lm_performance_test
+                PATH_ARG: ${PATH_MAIN:-/home/azureuser/lm_performance_test}
         environment:
             CYPRESS_RAPORT_ACTIVE: ${CYPRESS_RAPORT_ACTIVE:-1}
             CYPRESS_DEDUPLICATION: ${CYPRESS_DEDUPLICATION:-1}
+            LC_RDB_LOGIN: ${LC_RDB_LOGIN:-}
+            LC_RDB_PASS: ${LC_RDB_PASS:-}
+            LC_STRESS_KEY_JMETER_VM: ${LC_STRESS_KEY_JMETER_VM:-}
+            LC_STRESS_KEY_RDB: ${LC_STRESS_KEY_RDB:-}
