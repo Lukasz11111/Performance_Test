@@ -3,7 +3,7 @@ services:
     main:
         image: main:latest
         build:
-            context: ./docker-jm/docker_main
+            context: .
             args: 
                 PATH_ARG: ${PATH_MAIN:-/home/azureuser/lm_performance_test}
         environment:
@@ -13,3 +13,53 @@ services:
             LC_RDB_PASS: ${LC_RDB_PASS:-}
             LC_STRESS_KEY_JMETER_VM: ${LC_STRESS_KEY_JMETER_VM:-}
             LC_STRESS_KEY_RDB: ${LC_STRESS_KEY_RDB:-}
+            POSTGRESS_CONTAINER_NAME: ${POSTGRESS_CONTAINER_NAME:-revdebug-server-docker-compose_postgres_1}
+        volumes:
+            - ./:/app
+    jmmaster:
+        container_name: master
+        image: jm-master:latest
+        build:
+            context:  docker-jm/jm-master/
+        tty: true
+        stdin_open: true
+        volumes:
+            - ./test:/testJM
+        network_mode: "bridge"
+
+    slave0:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+
+    slave1:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+    slave2:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+    slave3:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+    slave4:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+    slave5:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+    slave6:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"

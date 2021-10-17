@@ -28,12 +28,12 @@
     # sudo chmod +x /usr/local/bin/docker-compose
 
 
-    #  Install cypress dependencies
-    sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-    sudo apt-get install npm
-    cd cy
-    sudo npm install
-    cd ..
+    # #  Install cypress dependencies
+    # sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+    # sudo apt-get install npm
+    # cd cy
+    # sudo npm install
+    # cd ..
 
 
     #  Install python module

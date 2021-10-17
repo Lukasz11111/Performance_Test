@@ -8,6 +8,7 @@ f = open("iphost.txt", "r").read()
 f =f.split("/")
 ip='-R'
 ite=0
+
 if not slave_count==0:
     for x in f[:]:
         if not "slave" in str(x):

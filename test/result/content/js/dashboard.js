@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 861, 861, 100.0, 19.010452961672478, 2, 172, 11.0, 49.0, 71.89999999999998, 120.0, 355.1980198019802, 916.7855140006188, 0.0], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Test", 861, 861, 100.0, 19.01045296167251, 2, 172, 11.0, 49.0, 71.89999999999998, 120.0, 322.8346456692913, 833.253875492126, 0.0], "isController": true}, {"data": ["/err11", 861, 861, 100.0, 19.010452961672478, 2, 172, 11.0, 49.0, 71.89999999999998, 120.0, 355.1980198019802, 916.7855140006188, 0.0], "isController": false}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 1200, 1200, 100.0, 16.516666666666648, 2, 124, 13.0, 33.0, 45.950000000000045, 87.98000000000002, 714.2857142857143, 1843.6104910714287, 0.0], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["Test", 1200, 1200, 100.0, 16.517499999999984, 2, 124, 13.0, 33.0, 45.950000000000045, 87.98000000000002, 719.8560287942412, 1857.987777444511, 0.0], "isController": true}, {"data": ["/err11", 1200, 1200, 100.0, 16.516666666666648, 2, 124, 13.0, 33.0, 45.950000000000045, 87.98000000000002, 714.2857142857143, 1843.6104910714287, 0.0], "isController": false}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 861, 100.0, 100.0], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 1200, 100.0, 100.0], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 861, 861, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 861, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": [], "isController": false}, {"data": ["/err11", 861, 861, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 861, null, null, null, null, null, null, null, null], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 1200, 1200, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 1200, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": [], "isController": false}, {"data": ["/err11", 1200, 1200, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 1200, null, null, null, null, null, null, null, null], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 

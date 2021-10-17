@@ -1,6 +1,6 @@
 {
     "Application_name": "Java",
-    "Jmeter_raport_path": "/home/azureuser/stress_test/test/result//statistics.json",
+    "Jmeter_raport_path": ".test/result/statistics.json",
     "APM_Spans_Before": 0,
     "APM_Spans_After": 0,
     "APM_Successes_Before": 1000,
