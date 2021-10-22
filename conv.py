@@ -15,6 +15,7 @@ dict_legend_path="./dict_legend.txt"
 infile = r"./test/path/jmeter.log"
 
 JSON_RAPORT_PATH=sys.argv[2]
+
 JSON_CONFIG_PATH=sys.argv[4]+"/.config"
 JSON_RDB_INFO=sys.argv[5]
 
@@ -69,10 +70,6 @@ def style(sheet,active_line):
 def setStyl(call,color):
     call.fill = PatternFill(fgColor=color, fill_type = "solid")
     
-
-
-    
-
 def getMode(x):
     return {
         '1': "rdb and apm",
@@ -182,8 +179,6 @@ if "raport_name" in json_config:
 filename_raport="raports/"+json_config['language']+"_"+describe+sys.argv[3]
 
 sheet_name=json_config['application_name'] 
-
-
 
 with open(infile) as f:
     f = f.readlines()

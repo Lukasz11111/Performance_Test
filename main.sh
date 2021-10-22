@@ -55,7 +55,7 @@ DELAY_array=($(python3 delay.py $file_in_folder/.config 2>&1))
   if [ ! -f $file_in_folder/.config ]; then
     echo "File not found!"
   else
-
+    . getRemoteIpRDB.sh $file_in_folder
     echo "Processing $file_in_folder folder..."
     for prop in 100 95 90 85 80 75 70 65 60 55 50 45 40 35 30 25 20 15 10 5 0; do
       proportion_on=$(python3 if_this_proportion_is_on.py $file_in_folder/.config $prop 2>&1)

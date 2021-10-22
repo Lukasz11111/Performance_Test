@@ -7,13 +7,18 @@ services:
             args: 
                 PATH_ARG: ${PATH_MAIN:-/home/azureuser/lm_performance_test}
         environment:
-            CYPRESS_RAPORT_ACTIVE: ${CYPRESS_RAPORT_ACTIVE:-1}
-            CYPRESS_DEDUPLICATION: ${CYPRESS_DEDUPLICATION:-1}
             LC_RDB_LOGIN: ${LC_RDB_LOGIN:-}
             LC_RDB_PASS: ${LC_RDB_PASS:-}
             LC_STRESS_KEY_JMETER_VM: ${LC_STRESS_KEY_JMETER_VM:-}
             LC_STRESS_KEY_RDB: ${LC_STRESS_KEY_RDB:-}
+            LC_USER_SYSTEM: ${LC_USER_SYSTEM:-azureuser}
             POSTGRESS_CONTAINER_NAME: ${POSTGRESS_CONTAINER_NAME:-revdebug-server-docker-compose_postgres_1}
+            RDB_DB: ${RDB_DB:-revdebug_db}
+            RDB_USER: ${RDB_USER:-rdb_user}
+            RDB_PASS: ${RDB_PASS:-masterkey}
+            RDB_PORT_DB: ${RDB_PASS:-5432}
+            RDB_USER_SYSTEM: ${RDB_USER_SYSTEM:-azureuser}
+
         volumes:
             - ./:/app
     jmmaster:
@@ -26,40 +31,54 @@ services:
         volumes:
             - ./test:/testJM
         network_mode: "bridge"
-
     slave0:
         image: jm-slave:latest
         build:
             context: docker-jm/jm-slave/
         network_mode: "bridge"
+        logging:
+            driver: none
+
 
     slave1:
         image: jm-slave:latest
         build:
             context: docker-jm/jm-slave/
         network_mode: "bridge"
+        logging:
+            driver: none
     slave2:
         image: jm-slave:latest
         build:
             context: docker-jm/jm-slave/
         network_mode: "bridge"
+        logging:
+            driver: none
     slave3:
         image: jm-slave:latest
         build:
             context: docker-jm/jm-slave/
         network_mode: "bridge"
+        logging:
+            driver: none
     slave4:
         image: jm-slave:latest
         build:
             context: docker-jm/jm-slave/
         network_mode: "bridge"
+        logging:
+            driver: none
     slave5:
         image: jm-slave:latest
         build:
             context: docker-jm/jm-slave/
         network_mode: "bridge"
+        logging:
+            driver: none
     slave6:
         image: jm-slave:latest
         build:
             context: docker-jm/jm-slave/
         network_mode: "bridge"
+        logging:
+            driver: none

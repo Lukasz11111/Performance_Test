@@ -104,8 +104,7 @@ describe('After stresss test', () => {
           (jsonFile) => {
             json.TotalJmeter.sampleCount = jsonFile.Total.sampleCount;
             json.TotalJmeter.meanResTime = jsonFile.Total.meanResTime;
-            json.TotalJmeter.receivedKBytesPerSec =
-              jsonFile.Total.receivedKBytesPerSec;
+            json.TotalJmeter.receivedKBytesPerSec =jsonFile.Total.receivedKBytesPerSec;
             json.TotalJmeter.sentKBytesPerSec = jsonFile.Total.sentKBytesPerSec;
           }
         );

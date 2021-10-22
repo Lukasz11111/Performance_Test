@@ -1,7 +1,7 @@
 #!/bin/bash
 RESULT_PATH=./test/result/
 RESULT_STATISTICS_PATH=.test/result/statistics.json
-JSON_RAPORT_PATH=./cy/stress.json
+JSON_RAPORT_PATH=./test/stress.json
 INIT_JM=./test/startJmeter.sh
 RAPORTS_FOLDER=./raports
 CHANGE_info_PATH=./Application/.rdb-info
@@ -21,23 +21,21 @@ POSTGRESS_CONTAINER_NAME="$8"
 
 date +%s > 'StartTime'
 
+
+
 if [ $FLAG_DEDUPLICATION -ne 0 ]; then
+chmod 777 deduplicatiion.py
         python3 deduplicatiion.py $CONFIG_TEST_FILE_PATH
 fi 
 
+rm -rf $RESULT_PATH
 
-# if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
-#   npm run test:linux_before --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$RDB_INSTANCE
-# fi
-
- rm -rf $RESULT_PATH
-
+python3 get_trace_beafore.py $CONFIG_TEST_FILE_PATH
 
 bash $INIT_JM 6 $JMETER_FILE
 
-echo $POSTGRESS_CONTAINER_NAME
-
-#  bash getRemoteIpRDB.sh $POSTGRESS_CONTAINER_NAME
+echo $CONFIG_TEST_FILE_PATH 
+python3 get_recording_and_trace.py $CONFIG_TEST_FILE_PATH
 # if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
 #  npm run test:linux_after  --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$RDB_INSTANCE
 #  cat $JSON_RAPORT_PATH

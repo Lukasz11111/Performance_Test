@@ -22,12 +22,13 @@ with open(JSON_CONFIG_PATH+"/.config") as f:
     json_config = json.load(f)
 
 result=json_config['application_name'] 
-
+os.environ['REMOTE_RDB_HOST'] = json_config['server_rdb'] 
 f = open("tmp.txt", "a")
 f.write(result)
 f.close()
 
 JSON_RAPORT_PATH=sys.argv[2]
+
 
 with open(JSON_RAPORT_PATH, 'r', encoding='utf-8' ) as x:
     json_dict = json.load(x)

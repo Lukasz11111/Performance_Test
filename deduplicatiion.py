@@ -2,6 +2,9 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import os
+import sys
+import json
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
@@ -12,14 +15,17 @@ options.add_argument("no-sandbox")
 options.add_argument("disable-setuid-sandbox")
 options.add_argument("disable-webgl")
 options.add_argument("disable-popup-blocking")
+options.add_argument('--disable-dev-shm-usage')
 
-import os
-import sys
+JSON_CONFIG_PATH=sys.argv[1]+"/.config"
 
-HOST="20.188.58.169"
-PROTOCOL="http"
+with open(JSON_CONFIG_PATH) as f:
+    json_config = json.load(f)
 
-driver = webdriver.Chrome('/usr/bin/chromedriver',options=options)  
+HOST=json_config['server_rdb']
+PROTOCOL=json_config['protocol']
+
+driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=options)  
 
 driver.get(f'{PROTOCOL}://{HOST}')
 
