@@ -187,7 +187,7 @@ $(document).ready(function() {
     }, [[0, 0]], 3);
 
     // Create statistics table
-    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 1731, 1731, 100.0, 48.963604852686316, 7, 221, 31.0, 122.0, 150.0, 187.68000000000006, 609.0781140042224, 315.8403110705489, 222.4562642945109], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["/err", 1731, 1731, 100.0, 48.963604852686316, 7, 221, 31.0, 122.0, 150.0, 187.68000000000006, 609.0781140042224, 315.8403110705489, 222.4562642945109], "isController": false}, {"data": ["Test", 1731, 1731, 100.0, 48.963604852686295, 7, 221, 31.0, 122.0, 150.0, 187.68000000000006, 608.8638761871263, 315.72921704625395, 222.37801727928246], "isController": true}]}, function(index, item){
+    createTable($("#statisticsTable"), {"supportsControllersDiscrimination": true, "overall": {"data": ["Total", 3227, 3227, 100.0, 12.075612023551283, 2, 176, 8.0, 24.0, 31.0, 92.4399999999996, 1192.5351071692537, 3077.9983283675165, 0.0], "isController": false}, "titles": ["Label", "#Samples", "FAIL", "Error %", "Average", "Min", "Max", "Median", "90th pct", "95th pct", "99th pct", "Transactions/s", "Received", "Sent"], "items": [{"data": ["/err", 3227, 3227, 100.0, 12.075612023551283, 2, 176, 8.0, 24.0, 31.0, 92.4399999999996, 1192.5351071692537, 3077.9983283675165, 0.0], "isController": false}, {"data": ["Test", 3227, 3227, 100.0, 12.075612023551281, 2, 176, 8.0, 24.0, 31.0, 92.4399999999996, 1192.0945696342815, 3076.8612768978574, 0.0], "isController": true}]}, function(index, item){
         switch(index){
             // Errors pct
             case 3:
@@ -217,7 +217,7 @@ $(document).ready(function() {
     }, [[0, 0]], 0, summaryTableHeader);
 
     // Create error table
-    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["500", 1731, 100.0, 100.0], "isController": false}]}, function(index, item){
+    createTable($("#errorsTable"), {"supportsControllersDiscrimination": false, "titles": ["Type of error", "Number of errors", "% in errors", "% in all samples"], "items": [{"data": ["Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 3227, 100.0, 100.0], "isController": false}]}, function(index, item){
         switch(index){
             case 2:
             case 3:
@@ -228,7 +228,7 @@ $(document).ready(function() {
     }, [[1, 1]]);
 
         // Create top5 errors by sampler
-    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 1731, 1731, "500", 1731, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["/err", 1731, 1731, "500", 1731, null, null, null, null, null, null, null, null], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
+    createTable($("#top5ErrorsBySamplerTable"), {"supportsControllersDiscrimination": false, "overall": {"data": ["Total", 3227, 3227, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 3227, null, null, null, null, null, null, null, null], "isController": false}, "titles": ["Sample", "#Samples", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors", "Error", "#Errors"], "items": [{"data": ["/err", 3227, 3227, "Non HTTP response code: org.apache.http.conn.HttpHostConnectException/Non HTTP response message: Connect to 40.89.147.34:8080 [/40.89.147.34] failed: Connection refused (Connection refused)", 3227, null, null, null, null, null, null, null, null], "isController": false}, {"data": [], "isController": false}]}, function(index, item){
         return item;
     }, [[0, 0]], 0);
 

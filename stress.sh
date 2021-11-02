@@ -19,7 +19,7 @@ POSTGRESS_CONTAINER_NAME="$8"
 
  python3 get_app_name.py $CONFIG_TEST_FILE_PATH $JSON_RAPORT_PATH $RESULT_STATISTICS_PATH 
 
-date +%s > 'StartTime'
+date +%s > '.StartTime'
 
 
 
@@ -36,14 +36,12 @@ bash $INIT_JM 6 $JMETER_FILE
 
 echo $CONFIG_TEST_FILE_PATH 
 python3 get_recording_and_trace.py $CONFIG_TEST_FILE_PATH
-# if [ "$CYPRESS_RAPORT_ACTIVE" != "0" ]; then
-#  npm run test:linux_after  --prefix $CYPRESS_PATH -- --env RDB_HOSTNAME=$RDB_INSTANCE
-#  cat $JSON_RAPORT_PATH
 
+rm -rf .StartTime
 
 echo  python3 conv.py $PROPORTION $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE
- python3 conv.py $PROPORTION $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
-# fi
+python3 conv.py $PROPORTION $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
+
 
 #todo after all cp to new folder (date name)
 #todo the amount of space used by the recordings

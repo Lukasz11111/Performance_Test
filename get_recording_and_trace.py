@@ -26,7 +26,7 @@ PORT=os.getenv('RDB_PORT_DB')
 DB_HOST=os.getenv('IP_REMOTE_RDB_DB')
 KEY_PW=os.getenv('RDB_USER_SYSTEM')
 
-with open('./StartTime') as t:
+with open('./.StartTime') as t:
     StartTime = json.load(t)
     StartTime=datetime.fromtimestamp(StartTime)
 
