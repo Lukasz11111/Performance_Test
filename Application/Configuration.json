@@ -1,0 +1,125 @@
+{
+    "tests_time": "15",
+    "server_rdb_default": "20.188.58.169",
+    "server_app_default": "40.89.147.34",
+    "raport_name": "",
+    "raportOn":true,
+    "server":{
+        "cleanAfterSingleApp": true,
+        "initialFilling": 0,
+        "_comment": "If you not set test_time, that will be default"
+    },
+    "Tests": [
+        {
+            "active": "true",
+            "_comment": "If you not set test_time, that will be default",
+            "test_time": "2",
+            "git_link": "",
+            "application_name": "Java",
+            "appPath": "lm-javastress",
+            "server_rdb_default": "20.188.58.169",
+            "server_app_default": "40.89.147.34",
+            "language": "java",
+            "endpoints": [
+                {
+                    "name": "/err",
+                    "error": true,
+                    "code": "2"
+                },
+                {
+                    "name": "/",
+                    "error": false,
+                    "code": "2"
+                }
+            ],
+            "raport_name": "_Remont",
+            "proportions": [],
+            "module": [
+                {
+                    "mod": {
+                        "name": "rdb_and_apm",
+                        "host": "40.89.147.34",
+                        "port": "8080",
+                        "_comment": "If you not set host, that will be default"
+                    }
+                },
+                {
+                    "mod": {
+                        "name": "apm",
+                        "host": "40.89.147.34",
+                        "port": "8081"
+                    }
+                },
+                {
+                    "mod": {
+                        "name": "none",
+                        "host": "40.89.147.34",
+                        "port": "8082"
+                    }
+                },
+                {
+                    "mod": {
+                        "name": "rdb",
+                        "host": "40.89.147.34",
+                        "port": "8083"
+                    }
+                }
+            ]
+        },
+        {
+            "active": "true",
+            "test_time": "2",
+            "git_link": "",
+            "application_name": "Java",
+            "appPath": "lm-javastress",
+            "server_rdb": "20.188.58.169",
+            "server_app_default": "40.89.147.34",
+            "language": "java",
+            "endpoints": [
+                {
+                    "name": "/err",
+                    "error": true,
+                    "code": "2"
+                },
+                {
+                    "name": "/",
+                    "error": false,
+                    "code": "2"
+                }
+            ],
+            "raport_name": "_Remont",
+            "proportions": [],
+            "module": [
+                {
+                    "mod": {
+                        "name": "rdb_and_apm",
+                        "host": "40.89.147.34",
+                        "port": "8080",
+                        "_comment": "If you not set host, that will be default"
+                    }
+                },
+                {
+                    "mod": {
+                        "name": "apm",
+                        "host": "40.89.147.34",
+                        "port": "8081"
+                    }
+                },
+                {
+                    "mod": {
+                        "name": "none",
+                        "host": "40.89.147.34",
+                        "port": "8082"
+                    }
+                },
+                {
+                    "mod": {
+                        "name": "rdb",
+                        "host": "40.89.147.34",
+                        "port": "8083"
+                    }
+                }
+            ]
+        }
+    ]
+}
