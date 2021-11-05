@@ -1,5 +1,5 @@
 #!/bin/bash
-FOLDERS=Application/*
+FOLDERS=TestsConfig/*
 SLAVE_COUNT=0
 
 date_str=$(date +"%m-%d-%y_%H;%M")

@@ -7,6 +7,8 @@ services:
             args: 
                 PATH_ARG: ${PATH_MAIN:-/home/azureuser/lm_performance_test}
         environment:
+            TEST_CONFIG_PATH: ${TEST_CONFIG_PATH:-.TestsConfig/Configuration.json}
+
             LC_RDB_LOGIN: ${LC_RDB_LOGIN:-}
             LC_RDB_PASS: ${LC_RDB_PASS:-}
             LC_STRESS_KEY_JMETER_VM: ${LC_STRESS_KEY_JMETER_VM:-}
@@ -54,8 +56,6 @@ services:
     #     network_mode: "bridge"
     #     logging:
     #         driver: none
-
-
     # slave1:
     #     image: jm-slave:latest
     #     build:

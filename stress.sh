@@ -4,7 +4,7 @@ RESULT_STATISTICS_PATH=.test/result/statistics.json
 JSON_RAPORT_PATH=./test/stress.json
 INIT_JM=./test/startJmeter.sh
 RAPORTS_FOLDER=./raports
-CHANGE_info_PATH=./Application/.rdb-info
+
 
 JMETER_FILE="$1"
 CONFIG_TEST_FILE_PATH="$3"
