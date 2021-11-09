@@ -46,12 +46,10 @@ ERROR_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTT
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
-          <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-              <stringProp name="RandomTimer.range">0</stringProp>
+         <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
               <stringProp name="ConstantTimer.delay">0</stringProp>
-              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
-            </UniformRandomTimer>
+            </ConstantTimer>
             <hashTree/>
           </hashTree> '''
 
@@ -73,12 +71,10 @@ SUCCESSES_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass=
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
-          <hashTree>
-            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
-              <stringProp name="RandomTimer.range">0</stringProp>
+         <hashTree>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
               <stringProp name="ConstantTimer.delay">0</stringProp>
-              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
-            </UniformRandomTimer>
+            </ConstantTimer>
             <hashTree/>
           </hashTree> '''
 
