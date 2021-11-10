@@ -3,7 +3,12 @@
     "server_rdb_default": "20.188.58.169",
     "server_app_default": "40.89.147.34",
     "raport_name": "",
+    "codeLen":"all",
+    "_comment": "Only endpoints with the appropriate tags will be called: short, long, mid, all",
     "raportOn": true,
+    "delay": [
+        21
+    ],
     "server": {
         "cleanAfterSingleApp": true,
         "initialFilling": 0,
@@ -20,6 +25,12 @@
             "server_rdb_default": "20.188.58.169",
             "server_app_default": "40.89.147.34",
             "language": "java",
+            "delay": [
+                0,
+                12,
+                23,
+                1000
+            ],
             "endpoints": [
                 {
                     "name": "/err",
@@ -34,24 +45,17 @@
             ],
             "raport_name": "_Remont",
             "proportions": [
-                23,
-                43,
-                3,
-                2,
-                3,
-                4,
-                4
+                0,
+                25
             ],
             "module": [
-                { 
-                    
+                {
                     "test_time": "150",
                     "name": "apm",
                     "host": "40.89.147.34",
                     "port": "8081"
                 },
                 {
-
                     "name": "none",
                     "host": "40.89.147.34",
                     "port": "8082"
@@ -69,7 +73,6 @@
             "git_link": "",
             "application_name": "Java",
             "appPath": "lm-javastress",
-            "server_rdb": "20.188.58.169",
             "server_app_default": "40.89.147.34",
             "language": "java",
             "endpoints": [
@@ -86,10 +89,7 @@
             ],
             "raport_name": "_Remont",
             "proportions": [
-                1,
-                23,
-                42,
-                43
+                50
             ],
             "module": [
                 {

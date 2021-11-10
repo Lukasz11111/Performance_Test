@@ -11,22 +11,13 @@ f=str(f).replace("\\n","")
 f=str(f).replace("', '","")
 
 
-string1 ='<stringProp name="RandomTimer.range">'+DELAY+'</stringProp>'
-string2 ='<stringProp name="ConstantTimer.delay">'+DELAY+'</stringProp>'
-
-
-##TESTS must have same delay time!!!!!!!!!!!! this find first delay and replace all this delay
-z= f.split('<stringProp name="RandomTimer.range">')
-z=z[1].split('</stringProp>')[0]
-search_one='<stringProp name="RandomTimer.range">'+z+'</stringProp>'
+string =f'<stringProp name="ConstantTimer.delay">{DELAY}</stringProp>'
 
 z= f.split('<stringProp name="ConstantTimer.delay">')
 z=z[1].split('</stringProp>')[0]
-search_two='<stringProp name="ConstantTimer.delay">'+z+'</stringProp>'
+search='<stringProp name="ConstantTimer.delay">'+z+'</stringProp>'
 
-
-x =str(f).replace(search_one, string1)
-x =str(x).replace(search_two, string2)
+x =str(x).replace(search, string)
 
 
 f = open(FILE, "w")

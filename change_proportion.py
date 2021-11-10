@@ -3,18 +3,25 @@ import sys
 import re
 import json
 FILE=sys.argv[1]
-PATH_CONF=sys.argv[2]
 
-with open(PATH_CONF) as f:
+
+with open("TestsConfig/Configuration.json") as f:
     json_dict = json.load(f)
 
 
-Error=json_dict["err"]
-Success=json_dict["success"]
-PROTOCOL_= json_dict["protocol"]
+# Error=json_dict["err"]
+# Success=json_dict["success"]
+# PROTOCOL_= json_dict["protocol"]
+
+Error="json_dict[err]"
+Success="json_dict[success]"
+PROTOCOL_= "json_dict[protocol]"
+
+
+
 
 #100=100% succes, 0= 100% error, 50=50% succes itd.
-PROPORTION=int(sys.argv[3])
+PROPORTION=int(sys.argv[2])
 
 
 
@@ -51,7 +58,7 @@ ERROR_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTT
               <stringProp name="ConstantTimer.delay">0</stringProp>
             </ConstantTimer>
             <hashTree/>
-          </hashTree> '''
+          </hashTree>'''
 
 SUCCESSES_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="'''+Success+'''" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -71,12 +78,12 @@ SUCCESSES_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass=
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
-         <hashTree>
+          <hashTree>
             <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
               <stringProp name="ConstantTimer.delay">0</stringProp>
             </ConstantTimer>
             <hashTree/>
-          </hashTree> '''
+          </hashTree>'''
 
 
 string=''
@@ -84,46 +91,36 @@ error_count=100-PROPORTION
 success_count=PROPORTION
 
 
-if PROPORTION ==100 or  PROPORTION ==0:
-  if PROPORTION==100:
-    string=SUCCESSES_CALL_STR
-  else:
-    string=ERROR_CALL_STR
+def division_(error_count,success_count):
+  modList=[100, 50, 30, 25, 20, 15, 13,11,10,5,7,6,4,3,2]
+  for value in modList:
+    if chcekIfYouCanDivision(error_count,success_count, value):
+      error_count=error_count/value
+      success_count=success_count/value
+  return [error_count,success_count]
 
-if PROPORTION ==50:
-  string=SUCCESSES_CALL_STR+ERROR_CALL_STR
+def chcekIfYouCanDivision(value, value2,mod):
+  if value % mod == 0 and value2 % mod == 0:
+    return True
+  return False
 
-if PROPORTION == 90 or  PROPORTION == 80 or PROPORTION == 70 or  PROPORTION == 60 or  PROPORTION == 40 or PROPORTION == 30 or  PROPORTION == 20 or  PROPORTION == 10:
-  now_err=True
-  for x in range(0,10):
-    if now_err:
-      if error_count>0:
-        string=string+ERROR_CALL_STR
-        error_count=error_count-10
-        if(success_count!=0):
-          now_err=False
-    elif not now_err:
-      if success_count>0:
-        string=string+SUCCESSES_CALL_STR
-        success_count=success_count-10
-        if(error_count!=0):
-          now_err=True
+listProp= division_(error_count,success_count)
+error_count=int(listProp[0])
+success_count=int(listProp[1])
+lenProp=0
+if error_count>=success_count:
+  lenProp=error_count
+else:
+  lenProp=success_count
 
-if PROPORTION == 95 or  PROPORTION == 85 or PROPORTION == 75 or  PROPORTION == 65 or PROPORTION == 55 or  PROPORTION == 45 or PROPORTION == 35 or  PROPORTION == 25 or  PROPORTION == 15 or  PROPORTION == 5:
-  now_err=True
-  for x in range(0,20):
-    if now_err:
-      if error_count>0:
-        string=string+ERROR_CALL_STR
-        error_count=error_count-5
-        if(success_count!=0):
-          now_err=False
-    elif not now_err:
-      if success_count>0:
-        string=string+SUCCESSES_CALL_STR
-        success_count=success_count-5
-        if(error_count!=0):
-          now_err=True
+for x in range(0,lenProp):
+  if error_count>0:
+    string=f'{string}{ERROR_CALL_STR}'
+  if success_count>0:
+    string=f'{string}{SUCCESSES_CALL_STR}'
+  error_count=error_count-1
+  success_count=success_count-1
+
 
 z =str(f).replace("ERRORS_",string )
 

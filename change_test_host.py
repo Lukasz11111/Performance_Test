@@ -4,6 +4,8 @@ import json
 FILE=sys.argv[1]
 HOST_PORT=sys.argv[2]
 
+PATH_CONF=sys.argv[3]
+
 HOST_PORT_array=HOST_PORT.split(":")
 
 
@@ -18,7 +20,7 @@ HOST=HOST_PORT_array[0]
 if PORT=='null':
     PORT=''
 
-PATH_CONF=sys.argv[3]
+
 
 with open(PATH_CONF) as f:
     json_dict = json.load(f)

@@ -1,19 +1,25 @@
 import argparse
 import json
+import datetime
+
 JSON_CONFIG="TestsConfig/Configuration.json"
 
 parser = argparse.ArgumentParser(description='Get config')
 
 
+parser.add_argument('-getTestDelay',  nargs='?')
+parser.add_argument('-getRDBHost',  nargs='?')
+parser.add_argument('-getTestProportion',  nargs='?')
+parser.add_argument('-ifTestIsActive',  nargs='?')
 parser.add_argument('-getCountOfAllTest',  nargs='?')
 parser.add_argument('-approximateTime',  nargs='?')
-parser.add_argument('-TotalJmeter',  nargs='?')
+parser.add_argument('-getTestsLen',  nargs='?')
 
-args=parser.parse_args().__dict__
+argsP=parser.parse_args().__dict__
 
-filtered = {k: v for k, v in args.items() if v is not None}
-args.clear()
-args.update(filtered)
+filtered = {k: v for k, v in argsP.items() if v is not None}
+argsP.clear()
+argsP.update(filtered)
 
 with open(JSON_CONFIG) as f:
     json_dict = json.load(f)
@@ -64,6 +70,9 @@ def getAllRun():
                 runs["allRun"]=runs["allRun"]+(proportionSize*allOnMode)
     return runs
 
+def getTestsLen():
+    return len(json_dict['Tests'])
+
 def ifModIsActiv(mod):
     if 'active' in mod:
         if not to_bool(mod['active']):
@@ -85,19 +94,66 @@ def returnLenOfActiveMod(mods):
     return activeMod
 
 
-# print(getAllRun())
+def ifTestIsActive(idTest):
+    if 'active' in json_dict['Tests'][int(idTest)]:
+        try:
+            if to_bool(json_dict['Tests'][int(idTest)]['active']):
+                return "1"
+            else:
+                return "0"
+        except:
+            return "0"
+    else:
+        return "1"
 
-import datetime
+def listToString(valueList):
+    result=""
+    for i in valueList:
+        result=f'{result} {i}'
+    return result
 
-# with open(JSON_RAPORT_PATH, "w", encoding='utf-8') as x:    
-#     json.dump(json_dict, x, ensure_ascii=False, indent=4)
+def getConf(name,idTest,defaultVal):
+    if  name in json_dict["Tests"][int(idTest)]:
+        if not json_dict["Tests"][int(idTest)][name]:
+            return getConfTest(name,defaultVal)
+        else:
+            return json_dict["Tests"][int(idTest)][name]
+    else:
+        return getConfTest(name,defaultVal)
 
-for key in args:
-    result = {
-    'getCountOfAllTest': getAllRun()['allRun'],
-    'approximateTime': str(datetime.timedelta(seconds=getAllRun()["testTime"])),
-    }[key]
+def getConfTest(name,defaultVal):
+    if  name in json_dict:
+        if not json_dict[name]:
+            return defaultVal
+        else:   
+            return json_dict[name]
+    else:
+        return defaultVal
 
-import sys
+def getTestDelay(idTest):
+    return listToString(getConf("delay",idTest,[0]))
 
-sys.exit(result)
+def getRDBHost(idTest):
+    return getConf("server_rdb_default",idTest,"0.0.0.0")
+
+def getTestProportion(idTest):
+    return listToString(getConf("proportions",idTest,[50]))
+
+def getResult(argsP):
+    for key, val in argsP.items():
+        result = {
+        'getRDBHost': lambda x: getRDBHost(x),
+        'getTestDelay': lambda x: getTestDelay(x),
+        'getTestProportion': lambda x: getTestProportion(x),
+        'ifTestIsActive': lambda x: ifTestIsActive(x),
+        'getTestsLen': lambda x: getTestsLen(),
+        'getCountOfAllTest': lambda x: getAllRun()['allRun'],
+        'approximateTime': lambda x: str(datetime.timedelta(seconds=getAllRun()["testTime"])),
+        }[key](val)
+    return result
+
+result=str(getResult(argsP))
+
+
+from sys import exit
+exit(result)

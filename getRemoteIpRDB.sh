@@ -1,9 +1,8 @@
 #!/bin/bash
 
-
-JSON_CONFIG_PATH="$1"
 chmod 600 $LC_STRESS_KEY_RDB
-REMOTE_RDB_HOST=$(python3 get_ip_rdb_instance.py $JSON_CONFIG_PATH/.config 2>&1)
+REMOTE_RDB_HOST="$(python3 operationOnConfig.py -getRDBHost $1 2>&1)"
+echo $REMOTE_RDB_HOST
 mkdir /root/.ssh
 touch /root/.ssh/known_hosts
 
