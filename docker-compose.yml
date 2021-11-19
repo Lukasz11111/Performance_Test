@@ -15,6 +15,7 @@ services:
             LC_STRESS_KEY_RDB: ${LC_STRESS_KEY_RDB:-}
             LC_USER_SYSTEM: ${LC_USER_SYSTEM:-azureuser}
             POSTGRESS_CONTAINER_NAME: ${POSTGRESS_CONTAINER_NAME:-revdebug-server-docker-compose_postgres_1}
+            RDB_HOST: ${RDB_HOST:-}
             RDB_DB: ${RDB_DB:-revdebug_db}
             RDB_USER: ${RDB_USER:-rdb_user}
             RDB_PASS: ${RDB_PASS:-masterkey}
@@ -24,7 +25,7 @@ services:
             REVDEBUG_SERVER_NAME: ${REVDEBUG_SERVER_NAME:-}
             REVDEBUG_CERTIFICATE_NAME: ${REVDEBUG_CERTIFICATE_NAME:-}
             REVDEBUG_DOCKER_TAG: ${REVDEBUG_DOCKER_TAG:-}
-
+            KEYCLOAK_ACTIVE: ${KEYCLOAK_ACTIVE:-0}
             LC_STRESS_KEY_APP: ${LC_STRESS_KEY_APP:-}
             APP_USER_SYSTEM: ${APP_USER_SYSTEM:-azureuser}
             APPS_PATH: ${APPS_PATH:-~/stress}

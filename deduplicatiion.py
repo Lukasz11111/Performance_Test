@@ -30,13 +30,21 @@ driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=options)
 
 driver.get(f'{PROTOCOL}://{HOST}')
 
-search_user = driver.find_element(By.XPATH,"/html//input[@id='email']")
+if operationOnConfigPython.getKeycloakActiv(idTest,idMod):
+    Xuser="/html//input[@id='email']"
+    Xpass="/html//input[@id='password']"
+else:
+    Xuser="/html//input[@id='username']"
+    Xpass="/html//input[@id='password']"
 
-search_user.send_keys(os.environ['LC_RDB_LOGIN'])
 
-search_pass= driver.find_element(By.XPATH,"/html//input[@id='password']")
+search_user = driver.find_element(By.XPATH,Xuser)
 
-search_pass.send_keys(os.environ['LC_RDB_PASS'])
+search_user.send_keys(str(operationOnConfigPython.getLogin(idTest,idMod)))
+
+search_pass= driver.find_element(By.XPATH,Xpass)
+
+search_pass.send_keys(str(operationOnConfigPython.getPass(idTest,idMod)))
 
 search_pass.submit()
 

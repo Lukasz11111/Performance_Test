@@ -1,13 +1,32 @@
 {
     "test_time": "15",
     "thread": "10",
-    "server_rdb_default": "20.188.58.169",
-    "server_app_default": "40.89.147.34",
+    "server_app_default":"40.89.147.34",
+    "server_rdb_default": 
+     {
+         "protocol": "http",
+        "host": "20.188.58.169",
+        "login": "",
+        "password": "",
+        "key_path": "./TestStart/server1.pem",
+        "user_sys": "azureuser",
+        "db": "revdebug_db",
+        "db_user": "rdb_user",
+        "db_pass": "masterkey",
+        "db_port": "5432",
+        "rdb_auth": "E56D341B29AC483B",
+        "rdb_cert_name": "mycert",
+        "rdb_docker_tag": "nightly",
+        "deduplication": "0",
+        "pg_container_name":"revdebug-server-docker-compose_postgres_1",
+        "keycloak_active": 0
+    },
     "raport_name": "",
     "codeLen":"all",
     "slave":"6",
     "_comment": "Only endpoints with the appropriate tags will be called: short, long, mid, all",
     "raportOn": true,
+    
     "delay": [
         21
     ],
