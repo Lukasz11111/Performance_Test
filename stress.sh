@@ -1,8 +1,8 @@
 #!/bin/bash
-RESULT_PATH=./test/result/
-RESULT_STATISTICS_PATH=.test/result/statistics.json
-JSON_RAPORT_PATH=./test/stress.json
-INIT_JM=./test/startJmeter.sh
+RESULT_PATH=./TestResult/result/
+RESULT_STATISTICS_PATH=./TestResult/result/statistics.json
+JSON_RAPORT_PATH=./TestResult/stress.json
+INIT_JM=./TestStart/startJmeter.sh
 RAPORTS_FOLDER=./raports
 
 
@@ -15,18 +15,18 @@ PROPORTION="$6"
 FLAG_DEDUPLICATION="$7"
 POSTGRESS_CONTAINER_NAME="$8"
 
- python3 change_delay.py $JMETER_FILE $DELAY
+#  python3 change_delay.py $JMETER_FILE $DELAY
 
- python3 get_app_name.py $CONFIG_TEST_FILE_PATH $JSON_RAPORT_PATH $RESULT_STATISTICS_PATH 
+#  python3 get_app_name.py $CONFIG_TEST_FILE_PATH $JSON_RAPORT_PATH $RESULT_STATISTICS_PATH 
 
-date +%s > '.StartTime'
+# date +%s > '.StartTime'
 
 
 
-if [ $FLAG_DEDUPLICATION -ne 0 ]; then
-chmod 777 deduplicatiion.py
-        python3 deduplicatiion.py $CONFIG_TEST_FILE_PATH
-fi 
+# if [ $FLAG_DEDUPLICATION -ne 0 ]; then
+# chmod 777 deduplicatiion.py
+#         python3 deduplicatiion.py $CONFIG_TEST_FILE_PATH
+# fi 
 
 rm -rf $RESULT_PATH
 

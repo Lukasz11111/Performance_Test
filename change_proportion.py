@@ -3,30 +3,22 @@ import sys
 import re
 import json
 FILE=sys.argv[1]
-
+import operationOnConfigPython
+import random
 
 with open("TestsConfig/Configuration.json") as f:
     json_dict = json.load(f)
-
-
-# Error=json_dict["err"]
-# Success=json_dict["success"]
-# PROTOCOL_= json_dict["protocol"]
-
-Error="json_dict[err]"
-Success="json_dict[success]"
-PROTOCOL_= "json_dict[protocol]"
-
-
+idTest=int(sys.argv[3])
+idMod=int(sys.argv[5])
+PROTOCOL_= operationOnConfigPython.getProtocoleApp(idTest,idMod)
 
 
 #100=100% succes, 0= 100% error, 50=50% succes itd.
 PROPORTION=int(sys.argv[2])
 
 
-
 with open(FILE) as f:
-    f = f.readlines()
+    f = [line.rstrip() for line in f]
 f=str(f)[2:]
 f=str(f)[:-2]
 
@@ -34,56 +26,32 @@ f=str(f).replace("\\n","")
 f=str(f).replace("', '","")
 
 
-
-ERROR_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="'''+Error+'''" enabled="true">
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
-            <stringProp name="HTTPSampler.port">${PORT}</stringProp>
-            <stringProp name="HTTPSampler.protocol">'''+PROTOCOL_+'''</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">'''+Error+'''</stringProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-         <hashTree>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-              <stringProp name="ConstantTimer.delay">0</stringProp>
-            </ConstantTimer>
-            <hashTree/>
-          </hashTree>'''
-
-SUCCESSES_CALL_STR=''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="'''+Success+'''" enabled="true">
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
-            <stringProp name="HTTPSampler.port">${PORT}</stringProp>
-            <stringProp name="HTTPSampler.protocol">'''+PROTOCOL_+'''</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">'''+Success+'''</stringProp>
-            <stringProp name="HTTPSampler.method">GET</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
+def createTestString(endpoint):
+  return ''' <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="'''+endpoint+'''" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+              <stringProp name="HTTPSampler.port">${PORT}</stringProp>
+              <stringProp name="HTTPSampler.protocol">'''+PROTOCOL_+'''</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">'''+endpoint+'''</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            </HTTPSamplerProxy>
           <hashTree>
-            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-              <stringProp name="ConstantTimer.delay">0</stringProp>
-            </ConstantTimer>
-            <hashTree/>
-          </hashTree>'''
+              <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+                <stringProp name="ConstantTimer.delay">0</stringProp>
+              </ConstantTimer>
+              <hashTree/>
+            </hashTree>'''
+
 
 
 string=''
@@ -113,18 +81,106 @@ if error_count>=success_count:
 else:
   lenProp=success_count
 
+
+
+
 for x in range(0,lenProp):
   if error_count>0:
-    string=f'{string}{ERROR_CALL_STR}'
+    errEndpoint=random.choice(operationOnConfigPython.getErrorEndpoint(idTest)).get('name')
+    string=f'{string}{createTestString(str(errEndpoint))}'
   if success_count>0:
-    string=f'{string}{SUCCESSES_CALL_STR}'
+    sucEndpoint=random.choice(operationOnConfigPython.getSuccesEndpoint(idTest)).get('name')
+    string=f'{string}{createTestString(str(sucEndpoint))}'
   error_count=error_count-1
   success_count=success_count-1
 
 
 z =str(f).replace("ERRORS_",string )
 
-
-f = open("./tmp.jmx", "w")
+FILE_RESULT="./tmp.jmx"
+f = open(FILE_RESULT, "w")
 f.write(z)
+f.close()
+
+DELAY=sys.argv[4]
+
+with open(FILE_RESULT) as f:
+    f = [line.rstrip() for line in f]
+
+f=str(f)[2:]
+f=str(f)[:-2]
+
+f=str(f).replace("\\n","")
+f=str(f).replace("', '","")
+
+
+string =f'<stringProp name="ConstantTimer.delay">{DELAY}</stringProp>'
+
+z= f.split('<stringProp name="ConstantTimer.delay">')
+
+z=z[1].split('</stringProp>')[0]
+
+search='<stringProp name="ConstantTimer.delay">'+z+'</stringProp>'
+
+x =str(f).replace(search, string)
+
+
+f = open(FILE_RESULT, "w")
+f.write(x)
+f.close()
+
+
+
+
+with open(FILE_RESULT) as f:
+    f = f.readlines()
+f=str(f)[2:]
+f=str(f)[:-2]
+
+f=str(f).replace("\\n","")
+f=str(f).replace("', '","")
+
+TEST_TIME=operationOnConfigPython.getTestTime(idTest,idMod)
+PORT=str(operationOnConfigPython.getAppPort(idTest, idMod))
+HOST=str(operationOnConfigPython.getAppHost(idTest, idMod))
+THREAD_COUNT=str(operationOnConfigPython.getThCount(idTest, idMod))
+
+
+
+test_time_new='<stringProp name="ThreadGroup.duration">'+TEST_TIME+'</stringProp>'
+port_new='<stringProp name="Argument.value">'+PORT+'</stringProp>'
+host_new='<stringProp name="Argument.value">'+HOST+'</stringProp>'
+th_new=f'<stringProp name="ThreadGroup.num_threads">{THREAD_COUNT}</stringProp>'
+
+
+
+
+z= f.split('<elementProp name="PORT" elementType="Argument">')
+z=z[1].split('</elementProp>')[0].split('<stringProp name=')[2].split('"Argument.value">')[1].replace('</stringProp>', '').replace(' ', '')
+port_old ='<stringProp name="Argument.value">'+z+'</stringProp>'
+
+f =str(f).replace(port_old, port_new)
+
+
+z= f.split('<elementProp name="BASE_URL_1" elementType="Argument">')
+z=z[1].split('</elementProp>')[0].split('<stringProp name=')[2].split('"Argument.value">')[1].replace('</stringProp>', '').replace(' ', '')
+host_old ='<stringProp name="Argument.value">'+z+'</stringProp>'
+
+x =str(f).replace(host_old, host_new)
+
+
+z= f.split('<stringProp name="ThreadGroup.duration">')
+z=z[1].split('</stringProp>')[0].replace(' ', '')
+test_time_old =' <stringProp name="ThreadGroup.duration">'+z+'</stringProp>'
+
+b =str(x).replace(test_time_old, test_time_new)
+
+z=f.split('<stringProp name="ThreadGroup.num_threads">')
+z=z[1].split('</stringProp>')[0].replace(' ', '')
+th_old ='<stringProp name="ThreadGroup.num_threads">'+z+'</stringProp>'
+
+b=str(b).replace(th_old, th_new)
+
+f = open(FILE_RESULT, "w")
+f.write(b)
 f.close()

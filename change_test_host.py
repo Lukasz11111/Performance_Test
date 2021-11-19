@@ -67,8 +67,6 @@ z= f.split('<stringProp name="ThreadGroup.duration">')
 z=z[1].split('</stringProp>')[0].replace(' ', '')
 test_time_old =' <stringProp name="ThreadGroup.duration">'+z+'</stringProp>'
 
-
-
 b =str(x).replace(test_time_old, test_time_new)
 
 f = open(FILE, "w")

@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 import os
 import sys
 import json
+import operationOnConfigPython
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
@@ -17,13 +18,13 @@ options.add_argument("disable-webgl")
 options.add_argument("disable-popup-blocking")
 options.add_argument('--disable-dev-shm-usage')
 
-JSON_CONFIG_PATH=sys.argv[1]+"/.config"
 
-with open(JSON_CONFIG_PATH) as f:
-    json_config = json.load(f)
+idTest=sys.argv[1]
+idMod=sys.argv[2]
 
-HOST=json_config['server_rdb']
-PROTOCOL=json_config['protocol']
+
+HOST=operationOnConfigPython.getRDBHost(idTest,idMod)
+PROTOCOL=operationOnConfigPython.getProtocoleRDB(idTest,idMod)
 
 driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=options)  
 

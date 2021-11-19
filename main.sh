@@ -34,24 +34,45 @@ function exec_tests(){
   for test in $(seq 0 1 $testsLen); do
     deduplication=1
     ifTestIsActive=$(python3 operationOnConfig.py -ifTestIsActive $test 2>&1)
-      if [[ $active_folder != "0" ]]; then
+      if [[ $ifTestIsActive != "0" ]]; then
           exec_testsProp $deduplication $test
       fi
   done
 }
 
 function exec_testsProp(){
-    DELAY_array=($(python3 operationOnConfig.py -getTestDelay $2 2>&1))
-    for testDelay in "${DELAY_array[@]}"; do
+ proportion=($(python3 operationOnConfig.py -getTestProportion $2 2>&1))
+    for proportionVal in "${proportion[@]}"; do
+      DELAY_array=($(python3 operationOnConfig.py -getTestDelay $2 2>&1))
+      for testDelay in "${DELAY_array[@]}"; do
+     
     # todo odkomentuj to 
       # . getRemoteIpRDB.sh $2
-      proportion=($(python3 operationOnConfig.py -getTestProportion $2 2>&1))
-        for proportionVal in "${proportion[@]}"; do
-          python3 change_proportion.py model.jmx $proportionVal
+     exec_testMod  $proportionVal $2 $testDelay
         done
       done
 }
 
+function exec_testMod(){
+    modesLen=($(python3 operationOnConfig.py -getModeLen $2 2>&1))
+    modesIt=$(expr $modesLen - 1)
+    for mod in $(seq 0 1 $modesIt); do
+      python3 change_proportion.py model.jmx  $1 $2 $3 $mod
+        if [ $FLAG_DEDUPLICATION -ne 0 ]; then
+        # todo od komentowac (strefa ryzka bez testów)
+        # chmod 777 deduplicatiion.py 
+        # python3 deduplicatiion.py $2 $mod
+        fi 
+      bash stress.sh $test_file $RAPORT_NAME $file_in_folder $iZ  $mode $prop  $deduplication $POSTGRESS_CONTAINER_NAME
+      rm ./tmp.jmx
+    done
+}
+
+
+
+function singleTest(){
+python3 operationOnResultBefore.py $1 $2
+}
 
 exec_tests $testsLen
 
@@ -71,18 +92,19 @@ exec_tests $testsLen
 #       proportion_on=$(python3 if_this_proportion_is_on.py $file_in_folder/.config $prop 2>&1)
 #       if [[ $proportion_on == "1" ]]; then
      
-
-
-
 #          python3 change_proportion.py model.jmx $file_in_folder/.config $prop
 #          mv tmp.jmx $file_in_folder/tmp.jmx
 #         test_file=$file_in_folder/tmp.jmx
 #         i=0
 
+
 #         for iZ in "${DELAY_array[@]}"; do
 #           for mode in 1 2 3 4; do
 #             active_mod_host_port=$(python3 rdb_module.py $file_in_folder/.config $mode 2>&1)
 #             if [[ $active_mod_host_port != "0" ]]; then
+
+
+
 #                python3 $CHANGE_TEST_HOST_PATH $test_file $active_mod_host_port $file_in_folder/.config
 #               echo "Processing $test_file file..."
             

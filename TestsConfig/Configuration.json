@@ -1,9 +1,11 @@
 {
     "test_time": "15",
+    "thread": "10",
     "server_rdb_default": "20.188.58.169",
     "server_app_default": "40.89.147.34",
     "raport_name": "",
     "codeLen":"all",
+    "slave":"6",
     "_comment": "Only endpoints with the appropriate tags will be called: short, long, mid, all",
     "raportOn": true,
     "delay": [
@@ -25,6 +27,8 @@
             "server_rdb_default": "20.188.58.169",
             "server_app_default": "40.89.147.34",
             "language": "java",
+            "protocolApp": "https",
+            "protocolRDB": "https",
             "delay": [
                 0,
                 12,
@@ -38,7 +42,7 @@
                     "code": "2"
                 },
                 {
-                    "name": "/",
+                    "name": "/smokozort",
                     "error": false,
                     "code": "2"
                 }
@@ -52,17 +56,17 @@
                 {
                     "test_time": "150",
                     "name": "apm",
-                    "host": "40.89.147.34",
+                    "server_app_default": "40.89.147.34",
                     "port": "8081"
                 },
                 {
                     "name": "none",
-                    "host": "40.89.147.34",
+                    "server_app_default": "40.89.147.34",
                     "port": "8082"
                 },
                 {
                     "name": "rdb",
-                    "host": "40.89.147.34",
+                    "server_app_default": "40.89.147.34",
                     "port": "8083"
                 }
             ]
@@ -75,6 +79,7 @@
             "appPath": "lm-javastress",
             "server_app_default": "40.89.147.34",
             "language": "java",
+            "thread": "13",
             "endpoints": [
                 {
                     "name": "/err",
@@ -89,28 +94,35 @@
             ],
             "raport_name": "_Remont",
             "proportions": [
-                50
+                41
+            ],
+            "delay": [
+                0,
+                12,
+                23,
+                1000
             ],
             "module": [
                 {
                     "name": "rdb_and_apm",
-                    "host": "40.89.147.34",
+                    "server_app_default": "40.89.147.34",
                     "port": "8080",
                     "_comment": "If you not set host, that will be default"
                 },
                 {
                     "name": "apm",
-                    "host": "40.89.147.34",
+                    "server_app_default": "40.89.147.34",
                     "port": "8081"
                 },
                 {
                     "name": "none",
-                    "host": "40.89.147.34",
+                    "server_app_default": "40.89.147.34",
                     "port": "8082"
                 },
                 {
+                    "thread": "1234263",
                     "name": "rdb",
-                    "host": "40.89.147.34",
+                    "server_app_default": "40.89.147.34",
                     "port": "8083"
                 }
             ]
