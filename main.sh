@@ -1,27 +1,13 @@
 #!/bin/bash
-FOLDERS=TestsConfig/*
-SLAVE_COUNT=0
 
 date_str=$(date +"%m-%d-%y_%H;%M")
 RAPORT_NAME="raport-$date_str.xlsx"
 
+. SetStaticPath.sh
+
 RDB_REMOVE="$1"
 
-CYPRESS_PATH=./cy
-
-CHANGE_TEST_HOST_PATH=./change_test_host.py
-
- rm -rf ./dict_legend.txt
-
-# counterall=0
 counterall_done=0
-
-START=0
-END=$SLAVE_COUNT
-
-
-
-
 
 counterall="$(python3 operationOnConfig.py -getCountOfAllTest 1 2>&1)"
 
@@ -32,23 +18,20 @@ testsLen="$(python3 operationOnConfig.py -getTestsLen 1 2>&1 >/dev/null)"
 function exec_tests(){
   testsLen=$(expr $1 - 1)
   for test in $(seq 0 1 $testsLen); do
-    deduplication=1
+    
     ifTestIsActive=$(python3 operationOnConfig.py -ifTestIsActive $test 2>&1)
       if [[ $ifTestIsActive != "0" ]]; then
-          exec_testsProp $deduplication $test
+          exec_testsProp  $test
       fi
   done
 }
 
 function exec_testsProp(){
- proportion=($(python3 operationOnConfig.py -getTestProportion $2 2>&1))
+ proportion=($(python3 operationOnConfig.py -getTestProportion $1 2>&1))
     for proportionVal in "${proportion[@]}"; do
-      DELAY_array=($(python3 operationOnConfig.py -getTestDelay $2 2>&1))
+      DELAY_array=($(python3 operationOnConfig.py -getTestDelay $1 2>&1))
       for testDelay in "${DELAY_array[@]}"; do
-     
-    # todo odkomentuj to 
-      # . getRemoteIpRDB.sh $2
-     exec_testMod  $proportionVal $2 $testDelay
+          exec_testMod  $proportionVal $1 $testDelay
         done
       done
 }
@@ -57,22 +40,35 @@ function exec_testMod(){
     modesLen=($(python3 operationOnConfig.py -getModeLen $2 2>&1))
     modesIt=$(expr $modesLen - 1)
     for mod in $(seq 0 1 $modesIt); do
-      python3 change_proportion.py model.jmx  $1 $2 $3 $mod
-        if [ $FLAG_DEDUPLICATION -ne 0 ]; then
-        # todo od komentowac (strefa ryzka bez testów)
-        # chmod 777 deduplicatiion.py 
-        # python3 deduplicatiion.py $2 $mod
+      python3 change_proportion.py $1 $2 $3 $mod
+      . getDBIpRDB.sh $2 $mod
+      
+      deduplication=$(python3 operationOnConfig.py -getDeduplication $test -mod $2 2>&1)
+        if [ $deduplication -ne 1 ]; then
+        chmod 777 deduplicatiion.py 
+        python3 deduplicatiion.py $2 $mod
         fi 
-      bash stress.sh $test_file $RAPORT_NAME $file_in_folder $iZ  $mode $prop  $deduplication $POSTGRESS_CONTAINER_NAME
+      singleTest $2 $mod
       rm ./tmp.jmx
     done
 }
 
 
-
 function singleTest(){
-python3 operationOnResultBefore.py $1 $2
+python3 GetTraceBefore.py $1 $2
+
+rm -rf $RESULT_PATH
+
+SLAVE_COUNT="$(python3 operationOnConfig.py -getSlave $1 -mod $2 2>&1)"
+
+bash $INIT_JM $SLAVE_COUNT $TMP_TEST_FILE
+
+python3 GetRecordingAndTrace.py $1 $2
+
+# python3 conv.py $PROPORTION $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
+
 }
+
 
 exec_tests $testsLen
 

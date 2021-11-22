@@ -1,19 +1,15 @@
 {
-    "Recordings": 0,
-    "Trace_Span": 0,
     "TotalJmeter": {
-        "sampleCount": 3227,
-        "meanResTime": 12.075612023551283,
-        "receivedKBytesPerSec": 3077.9983283675165,
-        "sentKBytesPerSec": 0.0,
+        "sampleCount": 0,
+        "meanResTime": 0,
+        "receivedKBytesPerSec": 0,
+        "sentKBytesPerSec": 0,
         "errorPct": 0
     },
-    "Trace_Span_Suc": 0,
-    "Trace_Span_Err": 0,
-    "APM_Spans_Before": 0,
-    "APM_Spans_After": 0,
-    "Recording_Before": 0,
-    "Recording_After": 0,
-    "Application_name": "Java",
-    "Jmeter_raport_path": ".test/result/statistics.json"
-}
+    "Recordings": 0,
+    "Trace": 0,
+    "Trace_Succes": 0,
+    "Trace_Succes_Before": 0,
+    "Trace_Error": 0,
+    "Trace_Error_Before": 0,
+    "StartTime": 

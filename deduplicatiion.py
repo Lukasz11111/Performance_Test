@@ -24,7 +24,7 @@ idMod=sys.argv[2]
 
 
 HOST=operationOnConfigPython.getRDBHost(idTest,idMod)
-PROTOCOL=operationOnConfigPython.getProtocoleRDB(idTest,idMod)
+PROTOCOL=operationOnConfigPython.getRdbProtocol(idTest,idMod)
 
 driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=options)  
 

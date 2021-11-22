@@ -5,9 +5,9 @@
     "server_rdb_default": 
      {
          "protocol": "http",
-        "host": "20.188.58.169",
-        "login": "",
-        "password": "",
+        "host": "20.199.127.147",
+        "login": "a",
+        "password": "a",
         "key_path": "./TestStart/server1.pem",
         "user_sys": "azureuser",
         "db": "revdebug_db",
@@ -18,8 +18,8 @@
         "rdb_cert_name": "mycert",
         "rdb_docker_tag": "nightly",
         "deduplication": "0",
-        "pg_container_name":"revdebug-server-docker-compose_postgres_1",
-        "keycloak_active": 0
+        "pg_container_name":"rdb_postgres_1",
+        "keycloak_active": 1
     },
     "raport_name": "",
     "codeLen":"all",
@@ -28,7 +28,7 @@
     "raportOn": true,
     
     "delay": [
-        21
+        0 , 100
     ],
     "server": {
         "cleanAfterSingleApp": true,
@@ -43,14 +43,13 @@
             "git_link": "",
             "application_name": "Java",
             "appPath": "lm-javastress",
-            "server_rdb_default": "20.188.58.169",
+            "server_rdb_default": "20.199.127.147",
             "server_app_default": "40.89.147.34",
             "language": "java",
-            "protocolApp": "https",
-            "protocolRDB": "https",
+            "protocolApp": "http",
+            "protocolRDB": "http",
             "delay": [
                 0,
-                12,
                 23,
                 1000
             ],
@@ -61,8 +60,13 @@
                     "code": "2"
                 },
                 {
-                    "name": "/smokozort",
+                    "name": "/",
                     "error": false,
+                    "code": "2"
+                },
+                {
+                    "name": "/NoSuchMethodException",
+                    "error": true,
                     "code": "2"
                 }
             ],
@@ -73,25 +77,15 @@
             ],
             "module": [
                 {
-                    "test_time": "150",
-                    "name": "apm",
+                    "test_time": "10",
+                    "name": "RDB-APM",
                     "server_app_default": "40.89.147.34",
-                    "port": "8081"
-                },
-                {
-                    "name": "none",
-                    "server_app_default": "40.89.147.34",
-                    "port": "8082"
-                },
-                {
-                    "name": "rdb",
-                    "server_app_default": "40.89.147.34",
-                    "port": "8083"
-                }
+                    "port": "8080"
+                }      
             ]
         },
         {
-            "active": "true",
+            "active": "false",
             "test_time": "2",
             "git_link": "",
             "application_name": "Java",

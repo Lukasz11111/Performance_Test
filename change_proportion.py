@@ -2,19 +2,24 @@
 import sys
 import re
 import json
-FILE=sys.argv[1]
+import os
+
+FILE=os.getenv('MODEL_TEST_FILE') 
+
 import operationOnConfigPython
 import random
 
-with open("TestsConfig/Configuration.json") as f:
+JSON_CONFIG=os.getenv('JSON_CONFIG')
+
+with open(JSON_CONFIG) as f:
     json_dict = json.load(f)
-idTest=int(sys.argv[3])
-idMod=int(sys.argv[5])
+idTest=int(sys.argv[2])
+idMod=int(sys.argv[4])
 PROTOCOL_= operationOnConfigPython.getProtocoleApp(idTest,idMod)
 
 
 #100=100% succes, 0= 100% error, 50=50% succes itd.
-PROPORTION=int(sys.argv[2])
+PROPORTION=int(sys.argv[1])
 
 
 with open(FILE) as f:
@@ -97,12 +102,13 @@ for x in range(0,lenProp):
 
 z =str(f).replace("ERRORS_",string )
 
-FILE_RESULT="./tmp.jmx"
+FILE_RESULT=os.getenv('TMP_TEST_FILE')
+
 f = open(FILE_RESULT, "w")
 f.write(z)
 f.close()
 
-DELAY=sys.argv[4]
+DELAY=sys.argv[3]
 
 with open(FILE_RESULT) as f:
     f = [line.rstrip() for line in f]

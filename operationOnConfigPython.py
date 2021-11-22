@@ -1,6 +1,7 @@
 import json
+import os
 
-JSON_CONFIG="TestsConfig/Configuration.json"
+JSON_CONFIG=os.getenv('JSON_CONFIG')
 
 with open(JSON_CONFIG) as f:
     json_dict = json.load(f)
@@ -25,8 +26,6 @@ def getErrorEndpoint(idTest):
 def getProtocoleApp(idTest, idMod):
     return getConf("protocolApp",idTest,"http")
 
-def getProtocoleRDB(idTest):
-    return getConf("protocolRDB",idTest,"http")
 
 def getRdbConfMod(name,idTest,idMod, nameConf):
     if  name in json_dict["Tests"][int(idTest)]["module"][int(idMod)]:
@@ -39,7 +38,7 @@ def getRdbConfMod(name,idTest,idMod, nameConf):
 
 def getRdbConf(name,idTest,defaultVal,nameConf, idMod=None):
     if idMod!=None:
-        result=getRdbConfMod(name,idTest, idMod)
+        result=getRdbConfMod(name,idTest,idMod,nameConf)
         if result!=None:
             return result
     if  name in json_dict["Tests"][int(idTest)]:
@@ -49,9 +48,9 @@ def getRdbConf(name,idTest,defaultVal,nameConf, idMod=None):
             else:
                 return json_dict["Tests"][int(idTest)][name][nameConf]
         else:
-            return getRdbConfTest(name,defaultVal)
+            return getRdbConfTest(name,defaultVal,nameConf)
 
-def getRdbConfTest(name,defaultVal):
+def getRdbConfTest(name,defaultVal,nameConf):
     if  name in json_dict:
         if  nameConf in json_dict[name]:
             if not json_dict[name][nameConf]:
@@ -269,3 +268,14 @@ def getRdbDBPort(idTest, idMod):
 def getRdbDBSysUser(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,False,"user_sys",idMod)
     return retValueOrEnv(result,'RDB_USER_SYSTEM')
+
+def getSlave(idTest,idMod):
+    return getConf("slave",idTest,"6",idMod)
+
+def getDeduplication(idTest,idMod):
+    result = getRdbConf("server_rdb_default",idTest,"0","deduplication",idMod)
+    return retValueOrEnv(result,'RDB_DEDUPLICATION')
+
+def getPgContainerName(idTest,idMod):
+    result = getRdbConf("server_rdb_default",idTest,"revdebug-server-docker-compose_postgres_1","pg_container_name",idMod)
+    return retValueOrEnv(result,'POSTGRESS_CONTAINER_NAME')
