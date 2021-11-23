@@ -20,9 +20,9 @@ JSON_CONFIG_PATH=sys.argv[4]+"/.config"
 JSON_RDB_INFO=sys.argv[5]
 
 active_line="6"
+
 col_nr_Recordings='A'
 col_nr_How_many_rec_should_percent='B'
-
 
 col_nr_Trace_suc='C'
 col_nr_Trace_err='D'
@@ -255,7 +255,7 @@ value['Successes']= data_name
 value["Trace_err"]=int(float(json_dict["Trace_Span_Err"]))
 value["Trace_suc"]=int(float(json_dict["Trace_Span_Suc"]))
 
-# value['JmeterErr'] =int(float(json_dict["TotalJmeter"]["errorPct"]))
+
 value['Module']= getMode(str(sys.argv[7]))
 value['Delay']= sys.argv[6]
 

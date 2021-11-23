@@ -115,22 +115,4 @@ print(f'Trace all: {resultTrace}')
 print(f'Trace err: {resultTraceErr}')
 print(f'Trace suc: {resultTraceSuc}')
 
-
-with open(os.getenv("RESULT_STATISTICS_PATH")) as f:
-    json_JM= json.load(f)
-
-with open(os.getenv("JSON_RAPORT_PATH")) as f:
-    json_result= json.load(f)
-
-json_result["TotalJmeter"]["sampleCount"] = json_JM["Total"]["sampleCount"]
-json_result["TotalJmeter"]["meanResTime"] = json_JM["Total"]["meanResTime"]
-json_result["TotalJmeter"]["receivedKBytesPerSec"] =json_JM["Total"]["receivedKBytesPerSec"]
-json_result["TotalJmeter"]["sentKBytesPerSec"] = json_JM["Total"]["sentKBytesPerSec"]
-
-json_result["Recordings"]=resultRecording
-json_result["Trace"]=resultTrace
-json_result["Trace_Succes"]=resultTraceSuc
-json_result["Trace_Error"]=resultTraceErr
-
-with open(os.getenv("JSON_RAPORT_PATH"), "w", encoding='utf-8') as x:    
-    json.dump(json_result, x, ensure_ascii=False, indent=4)
+operationOnResult.saveValue(resultRecording,resultTrace,resultTraceErr,resultTraceSuc)

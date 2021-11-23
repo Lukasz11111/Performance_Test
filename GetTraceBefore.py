@@ -12,7 +12,7 @@ import operationOnResult
 
 idTest=sys.argv[1]
 idMod=sys.argv[2]
-JSON_RAPORT_PATH=os.getenv("JSON_RAPORT_PATH")
+
 
 HOST=operationOnConfigPython.getRDBHost(idTest, idMod)
 PROTOCOL=operationOnConfigPython.getRdbProtocol(idTest, idMod)

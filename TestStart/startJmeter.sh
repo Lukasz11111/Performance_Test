@@ -5,8 +5,12 @@ slave_count="$1"
 
 chmod 600 $LC_STRESS_KEY_JMETER_VM
 
-mkdir /root/.ssh
-touch /root/.ssh/known_hosts
+if [ ! -d /root/.ssh ]; then
+    mkdir /root/.ssh
+        if [ ! -f /root/.ssh/known_hosts ]; then
+            touch /root/.ssh/known_hosts
+fi
+fi
 
 IP="$(curl https://ipinfo.io/ip)"
 

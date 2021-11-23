@@ -31,10 +31,10 @@ driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=options)
 driver.get(f'{PROTOCOL}://{HOST}')
 
 if operationOnConfigPython.getKeycloakActiv(idTest,idMod):
-    Xuser="/html//input[@id='email']"
+    Xuser="/html//input[@id='username']"
     Xpass="/html//input[@id='password']"
 else:
-    Xuser="/html//input[@id='username']"
+    Xuser="/html//input[@id='email']"
     Xpass="/html//input[@id='password']"
 
 

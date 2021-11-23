@@ -8,6 +8,7 @@ import operationOnConfigPython
 parser = argparse.ArgumentParser(description='Get config')
 
 parser.add_argument('-mod')
+parser.add_argument('-singleTestsActive',  nargs='?')
 parser.add_argument('-getDeduplication',  nargs='?')
 parser.add_argument('-getModeLen',  nargs='?')
 parser.add_argument('-getTestDelay',  nargs='?')
@@ -21,6 +22,8 @@ parser.add_argument('-getSlave',  nargs='?')
 parser.add_argument('-getRDBKey',  nargs='?')
 parser.add_argument('-getPgContainerName',  nargs='?')
 parser.add_argument('-getRdbDBSysUser',  nargs='?')
+parser.add_argument('-customSingleTest',  nargs='?')
+parser.add_argument('-slaveingleTest',  nargs='?')
 
 
 argsP=parser.parse_args().__dict__
@@ -36,7 +39,10 @@ if 'mod' in argsP:
 def getResult(argsP):
     for key, val in argsP.items():
         result = {  
+        'slaveingleTest': lambda x: operationOnConfigPython.slaveingleTest(),
+        'customSingleTest': lambda x: operationOnConfigPython.customSingleTest(),
         'getRdbDBSysUser': lambda x: operationOnConfigPython.getRdbDBSysUser(x,mod),
+        'singleTestsActive': lambda x: operationOnConfigPython.singleTestsActive(),
         'getPgContainerName': lambda x: operationOnConfigPython.getPgContainerName(x,mod),
         'getRDBKey': lambda x: operationOnConfigPython.getRdbKey(x,mod),
         'getDeduplication': lambda x: operationOnConfigPython.getDeduplication(x,mod),

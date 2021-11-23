@@ -279,3 +279,43 @@ def getDeduplication(idTest,idMod):
 def getPgContainerName(idTest,idMod):
     result = getRdbConf("server_rdb_default",idTest,"revdebug-server-docker-compose_postgres_1","pg_container_name",idMod)
     return retValueOrEnv(result,'POSTGRESS_CONTAINER_NAME')
+
+def singleTestsActive():
+    if 'active' in json_dict['start_my_file_test']:
+        try:
+            if to_bool(json_dict['start_my_file_test']['active']):
+                return "1"
+            else:
+                return "0"
+        except:
+            return "0"
+    else:
+        return "1"
+
+
+def customSingleTest():
+    return listToString(json_dict['start_my_file_test']["names"])
+
+def slaveingleTest():
+    return json_dict['start_my_file_test']["slave"]
+
+def getRaportName(idTest,idMod,time_):
+    return getConf("raport_name",idTest,f'Raport{time_}',idMod)
+
+def getMV(idTest,idMod):
+    return getRdbConf("server_rdb_default",idTest,"Non set","MV",idMod)
+
+def getLang(idTest,idMod):
+    if idMod!=None:
+        result=getConfMod("language",idTest, idMod)
+    if result!=None:
+        return result
+    if  name in json_dict["Tests"][int(idTest)]:
+        if not json_dict["Tests"][int(idTest)][name]:
+            return '-'
+        else:
+            return json_dict["Tests"][int(idTest)][name]
+
+def initialFilling(idTest,idMod):
+    if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
+        return getRdbConf("server",idTest,"Non set","initialFilling",idMod)

@@ -40,62 +40,63 @@ services:
             DATA_DB_SERVER_USER: ${DATA_DB_HOST:-azureuser}
         volumes:
             - ./:/app
-    # jmmaster:
-    #     container_name: master
-    #     image: jm-master:latest
-    #     build:
-    #         context:  docker-jm/jm-master/
-    #     tty: true
-    #     stdin_open: true
-    #     volumes:
-    #         - ./test:/testJM
-    #     network_mode: "bridge"
-    # slave0:
-    #     image: jm-slave:latest
-    #     build:
-    #         context: docker-jm/jm-slave/
-    #     network_mode: "bridge"
-    #     logging:
-    #         driver: none
-    # slave1:
-    #     image: jm-slave:latest
-    #     build:
-    #         context: docker-jm/jm-slave/
-    #     network_mode: "bridge"
-    #     logging:
-    #         driver: none
-    # slave2:
-    #     image: jm-slave:latest
-    #     build:
-    #         context: docker-jm/jm-slave/
-    #     network_mode: "bridge"
-    #     logging:
-    #         driver: none
-    # slave3:
-    #     image: jm-slave:latest
-    #     build:
-    #         context: docker-jm/jm-slave/
-    #     network_mode: "bridge"
-    #     logging:
-    #         driver: none
-    # slave4:
-    #     image: jm-slave:latest
-    #     build:
-    #         context: docker-jm/jm-slave/
-    #     network_mode: "bridge"
-    #     logging:
-    #         driver: none
-    # slave5:
-    #     image: jm-slave:latest
-    #     build:
-    #         context: docker-jm/jm-slave/
-    #     network_mode: "bridge"
-    #     logging:
-    #         driver: none
-    # slave6:
-    #     image: jm-slave:latest
-    #     build:
-    #         context: docker-jm/jm-slave/
-    #     network_mode: "bridge"
-    #     logging:
-    #         driver: none
+    jmmaster:
+        container_name: master
+        image: jm-master:latest
+        build:
+            context:  docker-jm/jm-master/
+        tty: true
+        stdin_open: true
+        volumes:
+            - ./TestResult:/testJM
+            - ./TestStart:/testJMStart
+        network_mode: "bridge"
+    slave0:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+        logging:
+            driver: none
+    slave1:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+        logging:
+            driver: none
+    slave2:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+        logging:
+            driver: none
+    slave3:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+        logging:
+            driver: none
+    slave4:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+        logging:
+            driver: none
+    slave5:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+        logging:
+            driver: none
+    slave6:
+        image: jm-slave:latest
+        build:
+            context: docker-jm/jm-slave/
+        network_mode: "bridge"
+        logging:
+            driver: none

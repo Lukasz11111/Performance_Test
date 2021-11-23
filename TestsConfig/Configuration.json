@@ -1,4 +1,11 @@
 {
+    "start_my_file_test":{
+       "active":"false",
+       "slave": 6,
+       "_comment": "if you active start_my_file_test there will be only that started",
+       "names": ["thread.jmx", "thread2.jmx"] 
+    },
+
     "test_time": "15",
     "thread": "10",
     "server_app_default":"40.89.147.34",
@@ -19,9 +26,17 @@
         "rdb_docker_tag": "nightly",
         "deduplication": "0",
         "pg_container_name":"rdb_postgres_1",
-        "keycloak_active": 1
+        "keycloak_active": 1,
+        "MV":{
+            "cpu":2,
+            "ram":16,
+            "disk_size":124,
+            "disk_type":"ssd",
+            "disk_iops":"",
+            "platform":"azure"
+        }
     },
-    "raport_name": "",
+    "raport_name": "raport-testowy",
     "codeLen":"all",
     "slave":"6",
     "_comment": "Only endpoints with the appropriate tags will be called: short, long, mid, all",
@@ -32,7 +47,14 @@
     ],
     "server": {
         "cleanAfterSingleApp": true,
-        "initialFilling": 0,
+        "apm_retention": false,
+        "devops_retention": false,
+        "initialFilling": {
+            "maxRec":10000000,
+            "minRec":1000,
+            "maxTrace":10000000,
+            "minTrace":1000
+        },
         "_comment": "If you not set test_time, that will be default"
     },
     "Tests": [
@@ -70,7 +92,6 @@
                     "code": "2"
                 }
             ],
-            "raport_name": "_Remont",
             "proportions": [
                 0,
                 25
@@ -105,7 +126,6 @@
                     "code": "2"
                 }
             ],
-            "raport_name": "_Remont",
             "proportions": [
                 41
             ],

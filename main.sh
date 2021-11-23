@@ -53,7 +53,6 @@ function exec_testMod(){
     done
 }
 
-
 function singleTest(){
 python3 GetTraceBefore.py $1 $2
 
@@ -62,15 +61,35 @@ rm -rf $RESULT_PATH
 SLAVE_COUNT="$(python3 operationOnConfig.py -getSlave $1 -mod $2 2>&1)"
 
 bash $INIT_JM $SLAVE_COUNT $TMP_TEST_FILE
-
 python3 GetRecordingAndTrace.py $1 $2
 
 # python3 conv.py $PROPORTION $JSON_RAPORT_PATH $RAPORT_NAME  $CONFIG_TEST_FILE_PATH $CHANGE_info_PATH $DELAY $MODE 
-
 }
 
 
-exec_tests $testsLen
+
+function customSingleTest(){
+customSingleTest=($(python3 operationOnConfig.py -customSingleTest 1 2>&1))
+slave=$(python3 operationOnConfig.py -slaveingleTest 1 2>&1)
+for test_ in "${customSingleTest[@]}"; do
+        bash $INIT_JM $slave $test_
+done
+
+}
+
+single_tests_active="$(python3 operationOnConfig.py -singleTestsActive 1 2>&1)"
+
+
+if [[ $single_tests_active != "1" ]]; then
+    exec_tests $testsLen
+else
+customSingleTest 
+
+fi
+
+
+
+
 
 
 
