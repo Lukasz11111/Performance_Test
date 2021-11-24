@@ -11,7 +11,8 @@
     "server_app_default":"40.89.147.34",
     "server_rdb_default": 
      {
-         "protocol": "http",
+         "version": "",
+        "protocol": "http",
         "host": "20.199.127.147",
         "login": "a",
         "password": "a",
@@ -32,7 +33,7 @@
             "ram":16,
             "disk_size":124,
             "disk_type":"ssd",
-            "disk_iops":"",
+            "disk_iops":"100",
             "platform":"azure"
         }
     },
@@ -59,6 +60,7 @@
     },
     "Tests": [
         {
+            "framework":"spring",
             "active": "true",
             "_comment": "If you not set test_time, that will be default",
             "test_time": "7",

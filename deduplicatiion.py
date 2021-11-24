@@ -6,6 +6,7 @@ import os
 import sys
 import json
 import operationOnConfigPython
+import operationOnResult
 
 options = webdriver.ChromeOptions()
 options.add_argument('headless')
@@ -28,7 +29,7 @@ PROTOCOL=operationOnConfigPython.getRdbProtocol(idTest,idMod)
 
 driver = webdriver.Chrome('/usr/local/bin/chromedriver',options=options)  
 
-driver.get(f'{PROTOCOL}://{HOST}')
+driver.get(f'{PROTOCOL}://{HOST}/home')
 
 if operationOnConfigPython.getKeycloakActiv(idTest,idMod):
     Xuser="/html//input[@id='username']"
@@ -48,7 +49,14 @@ search_pass.send_keys(str(operationOnConfigPython.getPass(idTest,idMod)))
 
 search_pass.submit()
 
+driver.find_element(By.XPATH,"//html//a[@id='settings-dropdown']").click()
+version = driver.find_element(By.XPATH,"//div[@id='settings-submenu']/p").get_attribute("innerHTML")
+
+operationOnResult.setVersion(version)
+
 driver.get(f'{PROTOCOL}://{HOST}/GlobalSettings/SaveRecordingSettings?deduplication=false&crashRecordingsCount=100&recordingMode=4')
+
+
 
 driver.quit()
 

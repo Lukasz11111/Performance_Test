@@ -1,8 +1,5 @@
 #!/bin/bash
 
-date_str=$(date +"%m-%d-%y_%H;%M")
-RAPORT_NAME="raport-$date_str.xlsx"
-
 . SetStaticPath.sh
 
 RDB_REMOVE="$1"

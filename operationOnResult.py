@@ -71,21 +71,17 @@ def createDictOfResult(idTest,idMod):
     result['Trace_Succes']=json_dict["Trace_Succes"]
     result['Trace_Error']=json_dict["Trace_Error"]
     result['Recordings_Percent']=percent(result['sampleCount'],json_dict["Recordings"],100-result['errorPct'])
-    result['Trace_Percent']=percent(result['sampleCount'],json_dict["Trace"],100)
+    result['Trace_Percent']=percent(result['sampleCount'],json_dict["Trace"],0)
     result['Mod']=operationOnConfigPython.getActiveMod(idTest,idMod)
-    return result
 
-
-
-def createDictOfResultLegend(idTest,idMod):
-    json_dict = load_json()
-    result={}
     result['MV']=operationOnConfigPython.getMV(idTest,idMod)
     result['commits']=getRDBCommits(idTest, idMod)
     result['lang']=operationOnConfigPython.getLang(idTest,idMod)
     result['initialFilling']=operationOnConfigPython.initialFilling(idTest,idMod)
+    return result
 
 def getCallsPerSecond():
+    import re
     infile = os.getenv("LOG_PATH")
     with open(infile) as f:
         f = f.readlines()
@@ -98,13 +94,19 @@ def getCallsPerSecond():
             tmp[2]=tmp[2][:-3]
             list_result.append(tmp[2])
             calls=list_result[len(list_result)-1].split("/s")[0]
-    return calls
+    calls=calls.replace(' ','')
+    return float(calls)
 
+def setVersion(version):
+    json_dict = load_json()
+    json_dict["version"]=version
+    with open(JSON_RAPORT_PATH, "w", encoding='utf-8') as x:    
+        json.dump(json_dict, x, ensure_ascii=False, indent=4)
 
 def percent(all_,value,scuProportion):
     howManyShould=((100-int(scuProportion))/100)*all_
-    if(int(How_many_should)!=0):
-        result =int((int(value)/How_many_should)*100)
+    if(int(howManyShould)!=0):
+        result =int((int(value)/howManyShould)*100)
         result=str(result)+ "%"
     else:
         result="-"

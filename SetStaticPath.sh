@@ -1,4 +1,5 @@
 #!/bin/bash
+export RUN_ID=$date_str
 export JSON_CONFIG="TestsConfig/Configuration.json"
 export RESULT_PATH="TestResult/result/"
 export RESULT_STATISTICS_PATH="TestResult/result/statistics.json"

@@ -121,7 +121,7 @@ def to_bool(value):
     if lower_value in valid:
         return valid[lower_value]
     else:
-        raise ValueError('invalid literal for boolean: "%s"' % value)
+        return False
 
 
 # for key, value in args.items():
@@ -306,8 +306,9 @@ def getMV(idTest,idMod):
     return getRdbConf("server_rdb_default",idTest,"Non set","MV",idMod)
 
 def getLang(idTest,idMod):
+    name="language"
     if idMod!=None:
-        result=getConfMod("language",idTest, idMod)
+        result=getConfMod(name,idTest, idMod)
     if result!=None:
         return result
     if  name in json_dict["Tests"][int(idTest)]:
@@ -319,3 +320,10 @@ def getLang(idTest,idMod):
 def initialFilling(idTest,idMod):
     if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
         return getRdbConf("server",idTest,"Non set","initialFilling",idMod)
+
+def getActiveMod(idTest,idMod):
+    return json_dict["Tests"][int(idTest)]["module"][int(idMod)]['name']
+
+
+def getColor(idTest,idMod):
+    getConfMod("color",idTest, idMod)
