@@ -24,6 +24,10 @@ parser.add_argument('-getPgContainerName',  nargs='?')
 parser.add_argument('-getRdbDBSysUser',  nargs='?')
 parser.add_argument('-customSingleTest',  nargs='?')
 parser.add_argument('-slaveingleTest',  nargs='?')
+parser.add_argument('-ifRaportGen',  nargs='?')
+parser.add_argument('-getSSLActive',  nargs='?')
+parser.add_argument('-getKeycloakActive',  nargs='?')
+parser.add_argument('-getDockerRDBPath',  nargs='?')
 
 
 argsP=parser.parse_args().__dict__
@@ -39,6 +43,13 @@ if 'mod' in argsP:
 def getResult(argsP):
     for key, val in argsP.items():
         result = {  
+        'getDockerRDBPath': lambda x: operationOnConfigPython.getDockerRDBPath(x,mod),
+        'clearRDBAfterMod': lambda x: operationOnConfigPython.clearRDBAfterMod(),
+        'clearRDBAfterTest': lambda x: operationOnConfigPython.clearRDBAfterTest(),
+        'clearRDBAfterAll': lambda x: operationOnConfigPython.clearRDBAfterAll(),
+        'getKeycloakActive': lambda x: operationOnConfigPython.getKeycloakActiveBash(x,mod),
+        'getSSLActive': lambda x: operationOnConfigPython.getSSLActive(x,mod),
+        'ifRaportGen': lambda x: operationOnConfigPython.ifRaportGen(x,mod),
         'slaveingleTest': lambda x: operationOnConfigPython.slaveingleTest(),
         'customSingleTest': lambda x: operationOnConfigPython.customSingleTest(),
         'getRdbDBSysUser': lambda x: operationOnConfigPython.getRdbDBSysUser(x,mod),

@@ -6,16 +6,15 @@ import operationOnConfigPython
 import operationOnResult
 import json
 import os
-idTest=sys.argv[1]
-idMod=sys.argv[2]
-time_=sys.argv[3]
-delay=sys.argv[4]
+
+
 
 gc = gspread.service_account(filename='./file.json')
-
 sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1BToFDEIASReYQERkGrCwgzo6TgWNNT9ySw2dWG5FHc4/edit#gid=0')
 
-worksheet = sh.get_worksheet(0)
+legendLine=1
+activeLine=2
+
 
 OrderInRow=[
     {"ID":False},
@@ -28,27 +27,27 @@ OrderInRow=[
     {"TRACE":True},
     {"ALL_CALLS":True},
     {"CALLS_PER_S":True},
-    {"SEND_KB_PER_S":True},
-    {"AVG_RESPONSE_APP_TIME":True},
-    {"PROPORION_ERROR_TO_SUCCES":True},
+    {"SEND_KB_PER_S":False},
+    {"AVG_RESPONSE_APP_TIME":False},
+    {"PERCENTAGE_OF_ERRORS":True},
     {"MODULE_NAME":True},
     {"CALL_DELAY":True},
-    {"RAM_RDB":True},
-    {"CPU_RDB":True},
-    {"DISK_SIZE_RDB":True},
-    {"DISK_TYPE_RDB":True},
-    {"DISK_IOPS":True},
-    {"PLATFORM_RDB":True},
-    {"VERSION_RDB":True},
-    {"COMPILER_VERSION":True},
-    {"AGENT_VERSION":True},
-    {"SSL_ON_RDB":True},
-    {"ENDPOINTS":True},
-    {"ENDPOINT_LEN":True},
-    {"MULTISERVICE":True},
-    {"DB_CALLS":True},
-    {"USERS_ON_RDB":True},
-    {"DATA_RETENTION":True},
+    {"RAM_RDB":False},
+    {"CPU_RDB":False},
+    {"DISK_SIZE_RDB":False},
+    {"DISK_TYPE_RDB":False},
+    {"DISK_IOPS":False},
+    {"PLATFORM_RDB":False},
+    {"VERSION_RDB":False},
+    {"COMPILER_VERSION":False},
+    {"AGENT_VERSION":False},
+    {"SSL_ON_RDB":False},
+    {"ENDPOINT_LEN":False},
+    {"MULTISERVICE":False},
+    {"DB_CALLS":False},
+    {"USERS_ON_RDB":False},
+    {"DATA_RETENTION_RDB":False},
+    {"DATA_RETENTION_APM":False},
     
 
 ]
@@ -65,51 +64,24 @@ class CallsOption():
 
 
 class StyleOptions():
-    def __init__(self,color,bold,horizontalAlignment):
+    def __init__(self,color,bold,horizontalAlignment,size=10):
         self.color=color
         self.bold=bold
         self.horizontalAlignment=horizontalAlignment
+        self.size=size
     color=0
     bold=False
     horizontalAlignment='CENTER'
 
 
 
-def getColor(colorValue=False):
-    result = {  
-    'antiquewhite': "#FAEBD7",
-    'azure': "#E0EEEE",
-    'bisque': "#FFE4C4",
-    'darkseagreen': "#B4EEB4",
-    'gray': "#A1A1A1",
-    'lavenderblus': "#FFF0F5",
-    'black': "#292421",
-    'lightpink': "#FFB6C1",
-    'mistyrose': "#FFE4E1",
-    'orangered': "#8B2500",
-    'plum': "#DDA0DD",
-    'seashell': "#CDC5BF",
-    'slategray': "#C6E2FF",
-    'thistle': "#D8BFD8",
-    'pink': "#FFC0CB",
-    'orange': "#FFA500",
-    'red': "#FFC1C1",
-    'blue': "#BBFFFF",
-    'green': "#98FB98",
-    'yellow': "#FFEC8B",
-    'white': "#FFFFFF",
-    }
-    import random
-    if not colorValue:
-        colorValue=random.choice(list(result.keys()))
-    result=result[colorValue]
-    return color.fromHex(result)
 
-def setSyle(worksheet,styleOption,range_):
+
+def setSyle(worksheet,styleOption,range_,fontSize_=10,wrapStrategy_='OVERFLOW_CELL'):
     fmt = cellFormat(
     backgroundColor=color(styleOption.color.red, styleOption.color.green, styleOption.color.blue),
-    textFormat=textFormat(bold=styleOption.bold, foregroundColor=color(1-styleOption.color.red, 1-styleOption.color.green, 1-styleOption.color.blue)),
-    horizontalAlignment=styleOption.horizontalAlignment
+    textFormat=textFormat(bold=styleOption.bold,fontSize=fontSize_,foregroundColor=color(1-styleOption.color.red, 1-styleOption.color.green, 1-styleOption.color.blue)),
+    horizontalAlignment=styleOption.horizontalAlignment , wrapStrategy =wrapStrategy_
     )
 
     format_cell_range(worksheet, range_, fmt)
@@ -126,8 +98,8 @@ def insert_note(worksheet, row, col, note):
                 "updateCells": {
                     "range": {
                         "sheetId": worksheet_id,
-                        "startRowIndex": row,
-                        "endRowIndex": row + 1,
+                        "startRowIndex": row-1,
+                        "endRowIndex": row,
                         "startColumnIndex": col,
                         "endColumnIndex": col + 1
                     },
@@ -148,6 +120,14 @@ def insert_note(worksheet, row, col, note):
     worksheet.spreadsheet.client.request("post", url, json=payload)
 
 
+
+def getNote(worksheet, cell_):
+    spreadsheet_id = worksheet.spreadsheet.id
+    worksheet_id = worksheet.id
+    return worksheet.spreadsheet.get_worksheet_by_id(worksheet_id).get_note(cell=cell_)
+    
+
+    
 
 def hideColumn(worksheet,colStart,colEnd):
     spreadsheet_id = worksheet.spreadsheet.id
@@ -190,25 +170,41 @@ def colnum_string(n):
     return string
 
 def addNewSheet(name):
-    return sh.add_worksheet(title=name, rows="100", cols="20")
+    worksheet=sh.add_worksheet(title=name, rows="100", cols="20")
+    createLegend(worksheet)
+    
+def createLegend(worksheet):
+    list_=[]
+    for index, item in enumerate(OrderInRow):
+        list_.append(formatString(next(iter(item))))
 
+    worksheet.update(createRowNr(legendLine),[list_])
+    styleOption=StyleOptions(color.fromHex('#292421'),True,"CENTER")
+    setSyle(worksheet,styleOption,createRowNr(legendLine),8,"WRAP")
 
-def openCreateWorkSheet(name):
+def formatString(string_):
+    string_=str(string_)
+    string_=string_.replace("_", " ")
+    string_=string_.lower()
+    string_=string_.capitalize() 
+    return string_
+
+def sheetName(idTest,idMod):
+    return operationOnResult.getSheetName(idTest, idMod)
+
+def openCreateWorkSheet(idTest,idMod):
+    if operationOnConfigPython.getdefaultRaportName(idTest, idMod):
+        name=sheetName(idTest,idMod)
+    else:
+        name=operationOnConfigPython.getRaportName(idTest,idMod)
+    
     try:
         worksheet = sh.worksheet(name)
     except:
         worksheet=addNewSheet(name)
     return worksheet
 
-
-global iRow
-iRow=0
-def iterationRow():
-    global iRow
-    iRow=iRow+1
-    return iRow-1
-
-def createRowCallsValue():  
+def createRowCallsValue(idTest, idMod):  
     result=operationOnResult.createDictOfResult(idTest,idMod)
     listResult=[]
 
@@ -222,7 +218,7 @@ def createRowCallsValue():
     listResult.append(CallsOption("CALLS_PER_S",result['Calls']))
     listResult.append(CallsOption("SEND_KB_PER_S",result['sentKBytesPerSec']))
     listResult.append(CallsOption("AVG_RESPONSE_APP_TIME",result['meanResTime']))
-    listResult.append(CallsOption("PROPORION_ERROR_TO_SUCCES",result['errorPct']))
+    listResult.append(CallsOption("PERCENTAGE_OF_ERRORS",result['errorPct']))
     listResult.append(CallsOption("MODULE_NAME",result['Mod']))
     listResult.append(CallsOption("CALL_DELAY",delay))
 
@@ -236,17 +232,45 @@ def createRowCallsValue():
     listResult.append(CallsOption("DISK_IOPS",result['MV']['disk_iops']))
     listResult.append(CallsOption("PLATFORM_RDB",result['MV']['platform']))
 
+    listResult.append(CallsOption("VERSION_RDB",result['rdb_version']))
+    listResult.append(CallsOption("COMPILER_VERSION",result['app_version']['compiler']))
+    listResult.append(CallsOption("AGENT_VERSION",result['app_version']['agent']))
+
+    listResult.append(CallsOption("SSL_ON_RDB",result['ssl']))
+
+    listResult.append(CallsOption("ENDPOINT_LEN",result['endpoint_len']))
+
+    listResult.append(CallsOption("MULTISERVICE",result['multiservice']))
+    listResult.append(CallsOption("DB_CALLS",result['db']))
+    listResult.append(CallsOption("USERS_ON_RDB",result['user_on_rdb']))
+    listResult.append(CallsOption("DATA_RETENTION_RDB",result['data_retention_rdb']))
+    listResult.append(CallsOption("DATA_RETENTION_APM",result['data_retention_apm']))
+
     return listResult
-       
-def createRowCalls(activeLine,worksheet):
-    rowOption=createRowCallsValue()
-    for x in rowOption:
+
+def sortListValueRow(idTest, idMod):
+    rowOptionList=createRowCallsValue(idTest, idMod)
+    resultList=[]
+    for x in rowOptionList:
+        index=getType(x.type_)
         try:
-            worksheet.update(createNr(x,activeLine),x.value)
+            resultList.insert(index,int(x.value))
         except:
-            print("Call err")
+            resultList.insert(index,str(x.value))
+    return resultList
+
+def createRowCalls(activeLine,worksheet,idTest, idMod):
+    rowOptions=sortListValueRow(idTest, idMod)
+    try:
+        worksheet.update(createRowNr(activeLine),[rowOptions])
+    except:
+        print("Call err")
 
 
+def insertNotes(activeLine,worksheet,idTest, idMod):
+    insert_note(worksheet, activeLine, getType('VERSION_RDB'), operationOnResult.getRDBCommits(idTest, idMod))
+
+    
 
 def getType(val):
     for index, item in enumerate(OrderInRow):
@@ -254,15 +278,13 @@ def getType(val):
             return index
 
 
-def createNr(rowOption,activeLine):
-    print(rowOption.type_)
-    print(colnum_string(getType(rowOption.type_)))
-    return f'{colnum_string(getType(rowOption.type_))}{activeLine}'
+def createRowNr(activeLine):
+    return f'A{activeLine}:{colnum_string(len(OrderInRow))}{activeLine}'
 
 
-def addRow(activeLine,worksheet):
+def addRow(activeLine,worksheet,idTest, idMod):
     worksheet.insert_row([],activeLine)
-    createRowCalls(activeLine,worksheet)
+    createRowCalls(activeLine,worksheet,idTest, idMod)
 
 def hideColumnStart(worksheet):
     for index, item in enumerate(OrderInRow):
@@ -271,18 +293,37 @@ def hideColumnStart(worksheet):
 
 def getAllValueFromRow(line):
     values_list = worksheet.row_values(line)
-activeLine=3
-worksheet=openCreateWorkSheet(operationOnConfigPython.getRaportName(idTest,idMod,time_))
-addRow(activeLine,worksheet)
 
 
 
-# insert_note(worksheet, 1, 1, "note")
+    
+def startGenRaportOnGoogleSheet(idTest,idMod):
+    worksheet=openCreateWorkSheet(idTest,idMod)
+    addRow(activeLine,worksheet,idTest, idMod)
+    styleOption=StyleOptions(color.fromHex(operationOnResult.getColor(idTest,idMod)),False,'CENTER')
+    setSyle(worksheet,styleOption,f'{colnum_string(0)}{activeLine}:{colnum_string(len(OrderInRow)-1)}{activeLine}')
+    insertNotes(activeLine,worksheet,idTest, idMod)
+ 
 
-styleOption=StyleOptions(getColor(),False,'CENTER')
-setSyle(worksheet,styleOption,f'{colnum_string(0)}{activeLine}:{colnum_string(len(OrderInRow))}{activeLine}')
 
-hideColumnStart(worksheet)
+
+idTest=sys.argv[1]
+idMod=sys.argv[2]
+delay=sys.argv[3]
+
+if delay=="hide":
+    worksheet=openCreateWorkSheet(idTest,idMod)
+    hideColumnStart(worksheet)
+else:
+    startGenRaportOnGoogleSheet(idTest, idMod)
+
+
+
+# getNote(worksheet,"V3")
+
+# values_list = worksheet.row_values(activeLine)
+# print(values_list)
+# worksheet.update('A2:C4', [[1, 2,2], [1, 2,2], [1, 2,2]])
 # hideColumn(worksheet,col2num('A'),3)
 
 

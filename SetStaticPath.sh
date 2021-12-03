@@ -1,4 +1,5 @@
 #!/bin/bash
+date_str=$(date +"%m%d%y%H%M")
 export RUN_ID=$date_str
 export JSON_CONFIG="TestsConfig/Configuration.json"
 export RESULT_PATH="TestResult/result/"
@@ -10,3 +11,6 @@ export TMP_TEST_FILE="./tmp.jmx"
 export MODEL_TEST_FILE="./model.jmx"
 export LOG_PATH="TestResult/path/jmeter.log"
 
+export OPERATION_ON_CONFIG_PATH="/app/operationOnConfig.py"
+
+export RDB_SERVER_FILE_PATH='RevDeBugServer/'

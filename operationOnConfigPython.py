@@ -26,6 +26,9 @@ def getErrorEndpoint(idTest):
 def getProtocoleApp(idTest, idMod):
     return getConf("protocolApp",idTest,"http")
 
+def ifRaportGen(idTest,idMod):
+    return getConf("raportOn",idTest,"False")
+
 
 def getRdbConfMod(name,idTest,idMod, nameConf):
     if  name in json_dict["Tests"][int(idTest)]["module"][int(idMod)]:
@@ -37,6 +40,7 @@ def getRdbConfMod(name,idTest,idMod, nameConf):
     return None
 
 def getRdbConf(name,idTest,defaultVal,nameConf, idMod=None):
+    
     if idMod!=None:
         result=getRdbConfMod(name,idTest,idMod,nameConf)
         if result!=None:
@@ -49,6 +53,7 @@ def getRdbConf(name,idTest,defaultVal,nameConf, idMod=None):
                 return json_dict["Tests"][int(idTest)][name][nameConf]
         else:
             return getRdbConfTest(name,defaultVal,nameConf)
+    return getRdbConfTest(name,defaultVal,nameConf)
 
 def getRdbConfTest(name,defaultVal,nameConf):
     if  name in json_dict:
@@ -142,19 +147,30 @@ def getTestTime(idTest,idmod):
 
 def getAllRun():
     runs={"allRun":0,"testTime":0}
+
     for index, val in enumerate(json_dict['Tests']):
+        idTest=index
+
         if to_bool(val['active']):
-            proportionSize=len(val['proportions'])
             allOnMode=returnLenOfActiveMod(val['module'])
             singletestTime=0
-            key=index
             for index, val in enumerate(val['module']):
+                idMod=index
                 if ifModIsActiv(val):
-                    singletestTime+=proportionSize*(int(getTestTime(key,index))+5)
+                    proportionSize=getLenProportion(idTest, idMod)
+                    delaySize=getLenDelay(idTest, idMod)
+                    singletestTime+=delaySize*proportionSize*(int(getTestTime(idTest,index))+65)
             runs["testTime"]=runs["testTime"]+singletestTime
             if proportionSize > 0 and allOnMode > 0:
-                runs["allRun"]=runs["allRun"]+(proportionSize*allOnMode)
+                runs["allRun"]=runs["allRun"]+(delaySize*proportionSize*allOnMode)
     return runs
+
+
+def getLenProportion(idTest, idMod):
+    return len(getConf("proportions",idTest,[0],idMod))
+
+def getLenDelay(idTest, idMod):
+    return len(getConf("delay",idTest,[0],idMod))
 
 def getTestsLen():
     return len(json_dict['Tests'])
@@ -195,7 +211,10 @@ def ifTestIsActive(idTest):
 
 def retValueOrEnv(result, envName):
     if not result:
-        return os.environ[envName]
+        try:
+            return os.environ[envName]
+        except:
+            return None
     else:
         return result
 
@@ -218,13 +237,47 @@ def getAppPort(idTest, idMod):
 def getThCount(idTest, idMod):
     return getConf("thread",idTest,"100",idMod)
 
-def getRDBHost(idTest, idMod):
-    result = getRdbConf("server_rdb_default",idTest,False,"host",idMod)
-    return retValueOrEnv(result,'RDB_HOST')
-
 def getRdbProtocol(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,"http","protocol",idMod)
     return retValueOrEnv(result,'RDB_PROTOCOL')
+
+def getRDBHost(idTest, idMod):
+    result = getRdbConf("server_rdb_default",idTest,False,"host",idMod)
+    try:
+        result =retValueOrEnv(result,'RDB_HOST')
+    except:
+        return "localhost"
+    if not result:
+        return "localhost"
+    return result
+
+def getAuthCode(idTest, idMod):
+    result = getRdbConf("server_rdb_default",idTest,"none","rdb_auth",idMod)
+    return result
+
+def getTag(idTest, idMod):
+    result = getRdbConf("server_rdb_default",idTest,"nightly","rdb_docker_tag",idMod)
+    return result
+
+def getServerName(idTest, idMod):
+    result = getRdbConf("server_rdb_default",idTest,getRDBHost(idTest, idMod),"server_name",idMod)
+    return result
+
+
+
+
+
+def checkSsl(idTest, idMod):
+    result = getRdbConf("server_rdb_default",idTest,"http","protocol",idMod)
+    if result=='https':
+        return 'ssl'
+    return 'non-ssl'
+
+def getSSLActive(idTest, idMod):
+    result = getRdbConf("server_rdb_default",idTest,"http","protocol",idMod)
+    if result=='https':
+        return "1"
+    return "0"
 
 def getslave():
     return json_dict["slave"]
@@ -232,9 +285,14 @@ def getslave():
 def getApplicationName():
     return getConf("application_name",idTest,"Non Name",idMod)
 
+def getKeycloakActiveBash(idTest, idMod):
+    if  to_bool(getKeycloakActiv(idTest, idMod)):
+        return '1'
+    return '0'
+
 def getKeycloakActiv(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,False,"keycloak_active",idMod)
-    return retValueOrEnv(result,'KEYCLOAK_ACTIVE')
+    return to_bool(retValueOrEnv(result,'KEYCLOAK_ACTIVE')) 
 
 def getLogin(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,False,"login",idMod)
@@ -299,23 +357,37 @@ def customSingleTest():
 def slaveingleTest():
     return json_dict['start_my_file_test']["slave"]
 
-def getRaportName(idTest,idMod,time_):
-    return getConf("raport_name",idTest,f'Raport{time_}',idMod)
+def getRaportName(idTest,idMod):
+    return getConf("raport_name",idTest,f'Raport{os.getenv("RUN_ID")}',idMod)
 
 def getMV(idTest,idMod):
     return getRdbConf("server_rdb_default",idTest,"Non set","MV",idMod)
 
-def getLang(idTest,idMod):
-    name="language"
+def getTestModOnly(idTest,idMod,name):
     if idMod!=None:
         result=getConfMod(name,idTest, idMod)
     if result!=None:
         return result
+    
     if  name in json_dict["Tests"][int(idTest)]:
         if not json_dict["Tests"][int(idTest)][name]:
             return '-'
         else:
             return json_dict["Tests"][int(idTest)][name]
+    return '-'
+
+def getLang(idTest,idMod):
+    return getTestModOnly(idTest,idMod,"language")
+
+def getFramework(idTest,idMod):
+    return getTestModOnly(idTest,idMod,"framework")
+
+
+def getAppVersion(idTest,idMod):
+    result=getTestModOnly(idTest,idMod,"app_version")
+    if result=='-':
+        return {'agent':'-','compiler':'-'}
+    return result
 
 def initialFilling(idTest,idMod):
     if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
@@ -326,4 +398,55 @@ def getActiveMod(idTest,idMod):
 
 
 def getColor(idTest,idMod):
-    getConfMod("color",idTest, idMod)
+    return getConfMod("color",idTest, idMod)
+
+def getAvgCodeLen(idTest,idMod):
+    value=getTestModOnly(idTest,idMod,'endpoints')
+    i=0
+    sum_=0
+    for x in value:
+        if 'code' in x:
+            try:
+                len_=int(x['code'])
+                sum_=sum_+len_
+                i=i+1
+            except:
+                print("Convert error")
+    if sum_>0 and i>0:
+        return str(int(sum_/i))
+    return '-'
+
+
+def getdefaultRaportName(idTest, idMod):
+    return to_bool(getConf("defaultRaportName",idTest,True,idMod)) 
+
+def getUsersOnRDB(idTest, idMod):
+    return getConf("user_on_rdb",idTest,False,idMod)
+def getdataRetentionRDB(idTest, idMod):
+    return getConf("data_retention_rdb",idTest,False,idMod)
+def getdataRetentionAPM(idTest, idMod):
+    return getConf("data_retention_apm",idTest,False,idMod)
+
+def getMultiservice(idTest, idMod):
+    return getConf("multiservice",idTest,False,idMod)
+
+def getDB(idTest, idMod):
+    return getConf("db",idTest,False,idMod)
+
+def clearRDBAfterMod():
+    if to_bool(json_dict["clear_RDB_after_mod"]):
+        return '1'
+    return '0'
+
+def clearRDBAfterTest():
+    if to_bool(json_dict["clear_RDB_after_test"]):
+        return '1'
+    return '0'
+
+def clearRDBAfterAll():
+    if to_bool(json_dict["clear_RDB_after_all"]):
+        return '1'
+    return '0'
+
+def getDockerRDBPath(idTest,idMod):
+    return getRdbConf("server_rdb_default",idTest,"~/rdb-docker-stress","rdb_docker_path",idMod)

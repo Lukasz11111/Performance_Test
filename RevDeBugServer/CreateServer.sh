@@ -1,36 +1,65 @@
 #!/bin/bash
 
-chmod 600 $LC_STRESS_KEY_RDB
+
+RDB_KEY="$(python3 $OPERATION_ON_CONFIG_PATH -getRDBKey $1 -mod $2 2>&1)"
+echo  $OPERATION_ON_CONFIG_PATH
+
+REMOTE_RDB_HOST="$(python3 $OPERATION_ON_CONFIG_PATH -getRDBHost $1 -mod $2 2>&1)"
+RDB_USER_SYSTEM="$(python3 $OPERATION_ON_CONFIG_PATH -getRdbDBSysUser $1 -mod $2 2>&1)"
+REVDEBUG_DOCKER_PATH="$(python3 $OPERATION_ON_CONFIG_PATH -getDockerRDBPath $1 -mod $2 2>&1)"
+
+chmod 600 $RDB_KEY
 
 mkdir /root/.ssh
 touch /root/.ssh/known_hosts
 
-IP="$1"
+(&>/dev/null ssh-keyscan -H $REMOTE_RDB_HOST >> ~/.ssh/known_hosts &)
+(&>/dev/null ssh-keyscan -H $RDB_USER_SYSTEM >> ~/.ssh/known_hosts &)
 
-ssh-keyscan -H $IP >> ~/.ssh/known_hosts
-ssh-keyscan -H $RDB_USER_SYSTEM >> ~/.ssh/known_hosts
+env="$(python3 $RDB_SERVER_FILE_PATH/CreateEnv.py  $1 $2 2>&1)"
+sslActive="$(python3 $OPERATION_ON_CONFIG_PATH -getSSLActive $1 -mod $2 2>&1)"
+keyCloak="$(python3 $OPERATION_ON_CONFIG_PATH -getKeycloakActive $1 -mod $2 2>&1)"
 
-ssh -i  $LC_STRESS_KEY_RDB $RDB_USER_SYSTEM@$IP  '
+
+echo $REMOTE_RDB_HOST
+echo $RDB_USER_SYSTEM
+echo $RDB_KEY
+echo $RDB_SERVER_FILE_PATH
+echo $env
+echo $sslActive
+echo $keyCloak
+sleep 100
+
+if [[ $sslActive != "1" ]]; then
+    sslComannd='
+    sudo cp ~/mycert/mycert.key /var/revdebug/cert;
+    sudo cp ~/mycert/mycert.cert /var/revdebug/cert;
+    '
+else
+    sslComannd=''
+fi
+
+if [[ $keyCloak != "1" ]]; then
+    startCmmand='sudo docker-compose -f docker-compose.keycloak.yml -f docker-compose.yml -p rdb up -d'
+else
+    startCmmand=' sudo docker-compose -p rdb up -d'
+fi
+
+
+bashCommand='
 sudo docker stop $(sudo docker ps -q); 
 sudo rm -rf /var/revdebug;
-sudo rm -rf rdb-stress;
-git clone https://github.com/RevDeBug/revdebug-server-docker-compose rdb-stress;
-cd rdb-stress;
+'$sslComannd'
+cd '$REVDEBUG_DOCKER_PATH';
 echo "
-REVDEBUG_AUTH='$REVDEBUG_AUTH'
-# Server fully qualified domain name
-REVDEBUG_SERVER_NAME='$REVDEBUG_SERVER_NAME'
-# Below settings can be left as they are and are optional
-REVDEBUG_ROOTVOLUME_PATH=/var/revdebug
-REVDEBUG_VOLUME_PATH=/var/revdebug/server/repo
-REVDEBUG_VOLUME_CAPATH=/var/revdebug/ca
-# Put the crt (public key) and pem (private key) certificate files here
-REVDEBUG_CERTIFICATE_PATH=/var/revdebug/cert
-# File name of certificate files without the extensions
-REVDEBUG_CERTIFICATE_NAME='$REVDEBUG_CERTIFICATE_NAME'
-REVDEBUG_KEEP_ACCESS_LOGS=false
-# Default version, do not change.
-REVDEBUG_DOCKER_TAG='$REVDEBUG_DOCKER_TAG'
-" > .env
-sudo docker-compose -p rdb up -d;
+'$env'
+" > .env;
+sudo docker-compose -f docker-compose.keycloak.yml -f docker-compose.yml -p rdb pull;
+'$startCmmand'
 '
+
+echo $bashCommand
+# ssh -i  $LC_STRESS_KEY_RDB $RDB_USER_SYSTEM@$REMOTE_RDB_HOST  $bashCommand
+
+#Na servie trzeba recznie zrobić ssl i przerzucić rdb-docker-stress 
+#lub pobrac repo ale zmodyfikowac taga w dockerze od keycloka >zapisac patha w configu

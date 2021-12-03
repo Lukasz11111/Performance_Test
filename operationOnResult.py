@@ -8,7 +8,7 @@ import operationOnConfigPython
 idTest=sys.argv[1]
 idMod=sys.argv[2]
 JSON_RAPORT_PATH=os.getenv('JSON_RAPORT_PATH')
-
+JSON_CONFIG=os.getenv('JSON_CONFIG')
 def load_json():
     with open(JSON_RAPORT_PATH) as f:
         return json.load(f)
@@ -75,10 +75,82 @@ def createDictOfResult(idTest,idMod):
     result['Mod']=operationOnConfigPython.getActiveMod(idTest,idMod)
 
     result['MV']=operationOnConfigPython.getMV(idTest,idMod)
+    result['rdb_version']=json_dict["version"]
     result['commits']=getRDBCommits(idTest, idMod)
     result['lang']=operationOnConfigPython.getLang(idTest,idMod)
     result['initialFilling']=operationOnConfigPython.initialFilling(idTest,idMod)
+
+    result['app_version']=operationOnConfigPython.getAppVersion(idTest,idMod)
+    result['ssl']=operationOnConfigPython.checkSsl(idTest, idMod)
+
+    result['endpoint_len']=operationOnConfigPython.getAvgCodeLen(idTest, idMod)
+
+    result['user_on_rdb']=operationOnConfigPython.getUsersOnRDB(idTest, idMod)
+    result['data_retention_rdb']=operationOnConfigPython.getdataRetentionRDB(idTest, idMod)
+    result['data_retention_apm']=operationOnConfigPython.getdataRetentionAPM(idTest, idMod)
+    result['multiservice']=operationOnConfigPython.getMultiservice(idTest, idMod)
+    result['db']=operationOnConfigPython.getDB(idTest, idMod)
+
+
     return result
+
+def getColor(idTest,idMod):
+    result = {  
+    'antiquewhite': "#FAEBD7",
+    'azure': "#E0EEEE",
+    'bisque': "#FFE4C4",
+    'darkseagreen': "#B4EEB4",
+    'gray': "#A1A1A1",
+    'lavenderblus': "#FFF0F5",
+    'black': "#292421",
+    'lightpink': "#FFB6C1",
+    'mistyrose': "#FFE4E1",
+    'orangered': "#8B2500",
+    'plum': "#DDA0DD",
+    'seashell': "#CDC5BF",
+    'slategray': "#C6E2FF",
+    'thistle': "#D8BFD8",
+    'pink': "#FFC0CB",
+    'orange': "#FFA500",
+    'red': "#FFC1C1",
+    'blue': "#BBFFFF",
+    'green': "#98FB98",
+    'yellow': "#FFEC8B",
+    'white': "#FFFFFF",
+    }
+    colorValue =operationOnConfigPython.getColor(idTest,idMod)
+
+    import random
+    if not colorValue:
+        colorValue=random.choice(list(result.keys()))
+        setColor(idTest,idMod, colorValue)
+    try:
+        result=result[colorValue]
+    except:
+        colorValue=random.choice(list(result.keys()))
+        setColor(idTest,idMod, colorValue)
+        result=result[colorValue]
+    return result
+
+def getSheetName(idTest, idMod):
+    lang=str(operationOnConfigPython.getLang(idTest,idMod))
+    framework=str(operationOnConfigPython.getFramework(idTest,idMod))
+    if framework.strip()=='-':
+        if lang.strip()=='-':
+            return "Not specified report"
+        else:
+            return lang
+    else:
+        return f'{lang}-{framework}'
+
+    
+def setColor(idTest,idMod, colorValue):
+    with open(JSON_CONFIG) as f:
+        json_dict= json.load(f)
+    json_dict["Tests"][int(idTest)]["module"][int(idMod)]['color']=colorValue
+    with open(JSON_CONFIG, "w", encoding='utf-8') as x:    
+        json.dump(json_dict, x, ensure_ascii=False, indent=4)
+    
 
 def getCallsPerSecond():
     import re
@@ -107,14 +179,15 @@ def percent(all_,value,scuProportion):
     howManyShould=((100-int(scuProportion))/100)*all_
     if(int(howManyShould)!=0):
         result =int((int(value)/howManyShould)*100)
-        result=str(result)+ "%"
+        result=str(result)
     else:
-        result="-"
+        result="0"
     return result
 
 def getRDBCommits(idTest, idMod):
     import requests
-    r = requests.get(f'{operationOnConfigPython.getRdbProtocol(idTest, idMod)}://{operationOnConfigPython.getRDBHost(idTest, idMod)}/info/hashes.version')
+    protocol=operationOnConfigPython.getRdbProtocol(idTest, idMod)
+    r = requests.get(f'{protocol}://{operationOnConfigPython.getRDBHost(idTest, idMod)}/info/hashes.version')
     return r.text
 
 def saveValue(rec,trace,traceErr,traceSuc):
@@ -122,10 +195,12 @@ def saveValue(rec,trace,traceErr,traceSuc):
         json_JM= json.load(f)
 
     json_result = load_json()
+    json_result["TotalJmeter"]["errorPct"] = int(json_JM["Total"]["errorPct"])
+
     json_result["TotalJmeter"]["sampleCount"] = json_JM["Total"]["sampleCount"]
-    json_result["TotalJmeter"]["meanResTime"] = json_JM["Total"]["meanResTime"]
-    json_result["TotalJmeter"]["receivedKBytesPerSec"] =json_JM["Total"]["receivedKBytesPerSec"]
-    json_result["TotalJmeter"]["sentKBytesPerSec"] = json_JM["Total"]["sentKBytesPerSec"]
+    json_result["TotalJmeter"]["meanResTime"] = int(json_JM["Total"]["meanResTime"])
+    json_result["TotalJmeter"]["receivedKBytesPerSec"] =int(json_JM["Total"]["receivedKBytesPerSec"])
+    json_result["TotalJmeter"]["sentKBytesPerSec"] = int(json_JM["Total"]["sentKBytesPerSec"])
 
     json_result["Recordings"]=rec
     json_result["Trace"]=trace
@@ -133,3 +208,5 @@ def saveValue(rec,trace,traceErr,traceSuc):
     json_result["Trace_Error"]=traceSuc
     with open(os.getenv("JSON_RAPORT_PATH"), "w", encoding='utf-8') as x:    
         json.dump(json_result, x, ensure_ascii=False, indent=4)
+    from time import sleep
+    sleep(0.5)

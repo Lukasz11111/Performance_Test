@@ -1,21 +1,33 @@
 {
-    "start_my_file_test":{
-       "active":"false",
-       "slave": 6,
-       "_comment": "if you active start_my_file_test there will be only that started",
-       "names": ["thread.jmx", "thread2.jmx"] 
+    "start_my_file_test": {
+        "active": "false",
+        "slave": 6,
+        "_comment": "if you active start_my_file_test there will be only that started",
+        "names": [
+            "thread.jmx",
+            "thread2.jmx"
+        ]
     },
-
+    "init_server":"1",
+    "clear_RDB_after_all":"1",
+    "clear_RDB_after_test":"1",
+    "clear_RDB_after_mod":"1",
+    "multiservice": "true",
+    "db": "true",
+    "user_on_rdb": "true",
+    "data_retention_rdb": "true",
+    "data_retention_apm": "true",
     "test_time": "15",
     "thread": "10",
-    "server_app_default":"40.89.147.34",
-    "server_rdb_default": 
-     {
-         "version": "",
+    "server_app_default": "40.89.147.34",
+    "server_rdb_default": {
+        "version": "",
         "protocol": "http",
         "host": "20.199.127.147",
+        "rdb_docker_path":"",
         "login": "a",
         "password": "a",
+        "server_name":"",
         "key_path": "./TestStart/server1.pem",
         "user_sys": "azureuser",
         "db": "revdebug_db",
@@ -26,96 +38,101 @@
         "rdb_cert_name": "mycert",
         "rdb_docker_tag": "nightly",
         "deduplication": "0",
-        "pg_container_name":"rdb_postgres_1",
+        "pg_container_name": "rdb_postgres_1",
         "keycloak_active": 1,
-        "MV":{
-            "cpu":2,
-            "ram":16,
-            "disk_size":124,
-            "disk_type":"ssd",
-            "disk_iops":"100",
-            "platform":"azure"
+        "MV": {
+            "cpu": 4,
+            "ram": 32,
+            "disk_size": 512,
+            "disk_type": "ssd",
+            "disk_iops": "100",
+            "platform": "aws"
         }
     },
     "raport_name": "raport-testowy",
-    "codeLen":"all",
-    "slave":"6",
+    "codeLen": "all",
+    "slave": "6",
     "_comment": "Only endpoints with the appropriate tags will be called: short, long, mid, all",
     "raportOn": true,
-    
+    "defaultRaportName": true,
     "delay": [
-        0 , 100
+        0
     ],
     "server": {
         "cleanAfterSingleApp": true,
-        "apm_retention": false,
-        "devops_retention": false,
         "initialFilling": {
-            "maxRec":10000000,
-            "minRec":1000,
-            "maxTrace":10000000,
-            "minTrace":1000
+            "maxRec": 10000000,
+            "minRec": 1000,
+            "maxTrace": 10000000,
+            "minTrace": 1000
         },
         "_comment": "If you not set test_time, that will be default"
     },
     "Tests": [
         {
-            "framework":"spring",
+            "multiservice": "false",
+            "db": "false",
+            "user_on_rdb": "false",
+            "data_retention_rdb": "false",
+            "data_retention_apm": "false",
+            "framework": "spring",
             "active": "true",
             "_comment": "If you not set test_time, that will be default",
             "test_time": "7",
             "git_link": "",
             "application_name": "Java",
             "appPath": "lm-javastress",
-            "server_rdb_default": "20.199.127.147",
             "server_app_default": "40.89.147.34",
             "language": "java",
             "protocolApp": "http",
-            "protocolRDB": "http",
             "delay": [
-                0,
-                23,
-                1000
+                10
             ],
+            "app_version": {
+                "agent": "2.1.1",
+                "compiler": "6.1"
+            },
             "endpoints": [
                 {
                     "name": "/err",
                     "error": true,
-                    "code": "2"
+                    "code": 2
                 },
                 {
                     "name": "/",
                     "error": false,
-                    "code": "2"
+                    "code": 2
                 },
                 {
                     "name": "/NoSuchMethodException",
                     "error": true,
-                    "code": "2"
+                    "code": 3
                 }
             ],
             "proportions": [
-                0,
-                25
+                0
             ],
             "module": [
                 {
                     "test_time": "10",
                     "name": "RDB-APM",
-                    "server_app_default": "40.89.147.34",
-                    "port": "8080"
-                }      
+                    "port": "8080",
+                    "color": "plum"
+                }
             ]
         },
         {
             "active": "false",
-            "test_time": "2",
+            "test_time": "5",
             "git_link": "",
-            "application_name": "Java",
+            "application_name": "Js",
             "appPath": "lm-javastress",
-            "server_app_default": "40.89.147.34",
-            "language": "java",
+            "language": "JS",
             "thread": "13",
+            "app_version": {
+                "agent": "2.1.1",
+                "compiler": "6.1"
+            },
             "endpoints": [
                 {
                     "name": "/err",
@@ -133,32 +150,34 @@
             ],
             "delay": [
                 0,
-                12,
-                23,
-                1000
+                12
             ],
             "module": [
                 {
+                    "app_version": {
+                        "agent": "6.2.1",
+                        "compiler": "6.3"
+                    },
                     "name": "rdb_and_apm",
-                    "server_app_default": "40.89.147.34",
                     "port": "8080",
-                    "_comment": "If you not set host, that will be default"
+                    "_comment": "If you not set host, that will be default",
+                    "color": "orange"
                 },
                 {
                     "name": "apm",
-                    "server_app_default": "40.89.147.34",
-                    "port": "8081"
+                    "port": "8080",
+                    "color": "red"
                 },
                 {
                     "name": "none",
-                    "server_app_default": "40.89.147.34",
-                    "port": "8082"
+                    "port": "8080",
+                    "color": "blue"
                 },
                 {
-                    "thread": "1234263",
+                    "thread": "123",
                     "name": "rdb",
-                    "server_app_default": "40.89.147.34",
-                    "port": "8083"
+                    "port": "8080",
+                    "color": "green"
                 }
             ]
         }
