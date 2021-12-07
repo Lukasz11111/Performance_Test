@@ -12,15 +12,20 @@ testsLen="$(python3 operationOnConfig.py -getTestsLen 1 2>&1 >/dev/null)"
 
 timeTests="$(python3 operationOnConfig.py -approximateTime 1 2>&1)"
 
+
+initRDBAll="$(python3 operationOnConfig.py -initServerAll 1 2>&1)"
+initRDBTest="$(python3 operationOnConfig.py -initServerTest 1 2>&1)"
+initRDBMod="$(python3 operationOnConfig.py -initServerMod 1 2>&1)"
+
 clearRDBAfterMod="$(python3 operationOnConfig.py -clearRDBAfterMod 1 2>&1)"
 clearRDBAfterTest="$(python3 operationOnConfig.py -clearRDBAfterTest 1 2>&1)"
 clearRDBAfterAll="$(python3 operationOnConfig.py -clearRDBAfterAll 1 2>&1)"
 
-echo $testsLen
-echo $counterall
+
 #todo init server/dedulikacja afterstart+retencja
 function claearServerRdb(){
-  if [[ $1 != "1" ]]; then
+  echo $1
+  if [[ $1 == "1" ]]; then
     echo CLEAR SERVER
         . $RDB_SERVER_FILE_PATH/CreateServer.sh $2 $3
       fi
@@ -28,13 +33,15 @@ function claearServerRdb(){
 
 function exec_tests(){
   testsLen=$(expr $1 - 1)
+  claearServerRdb $initRDBAll 0 0
   for test in $(seq 0 1 $testsLen); do
-    
     ifTestIsActive=$(python3 operationOnConfig.py -ifTestIsActive $test 2>&1)
       if [[ $ifTestIsActive != "0" ]]; then
+        claearServerRdb $initRDBTest $test 0
           exec_testsProp  $test
+          claearServerRdb $clearRDBAfterTest $test 0
       fi
-      claearServerRdb $clearRDBAfterTest $test 0
+      
   done
   claearServerRdb $clearRDBAfterAll 0 0
 }
@@ -54,17 +61,14 @@ function exec_testMod(){
     modesLen=($(python3 operationOnConfig.py -getModeLen $2 2>&1))
     modesIt=$(expr $modesLen - 1)
     for mod in $(seq 0 1 $modesIt); do
+      claearServerRdb $initRDBMod $test $mod
       python3 change_proportion.py $1 $2 $3 $mod
       . getDBIpRDB.sh $2 $mod
       
-      deduplication=$(python3 operationOnConfig.py -getDeduplication $test -mod $2 2>&1)
-        if [ $deduplication -ne 1 ]; then
-        chmod 777 deduplicatiion.py 
-        python3 deduplicatiion.py $2 $mod
-        fi 
+     
       singleTest $2 $mod $3
       rm ./tmp.jmx
-      claearServerRdb $clearRDBAfterMod $test $mod
+      claearServerRdb $clearRDBAfterMod $1 $mod
     done
 }
 
@@ -109,7 +113,6 @@ if [[ $single_tests_active != "1" ]]; then
 else
 customSingleTest 
 fi
-
-
+ 
 echo RUN END
 

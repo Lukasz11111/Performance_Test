@@ -2,3 +2,5 @@
 docker-jm/docker_main/server1.pem
 .env
 StartTime
+TestResult/path/*
+TestResult/result

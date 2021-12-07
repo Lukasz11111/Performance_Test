@@ -332,7 +332,7 @@ def getSlave(idTest,idMod):
 
 def getDeduplication(idTest,idMod):
     result = getRdbConf("server_rdb_default",idTest,"0","deduplication",idMod)
-    return retValueOrEnv(result,'RDB_DEDUPLICATION')
+    return result
 
 def getPgContainerName(idTest,idMod):
     result = getRdbConf("server_rdb_default",idTest,"revdebug-server-docker-compose_postgres_1","pg_container_name",idMod)
@@ -445,6 +445,20 @@ def clearRDBAfterTest():
 
 def clearRDBAfterAll():
     if to_bool(json_dict["clear_RDB_after_all"]):
+        return '1'
+    return '0'
+
+
+def initServerAll(x,mod):
+    if to_bool(json_dict["initServerAll"]):
+        return '1'
+    return '0'
+def initServerTest(x,mod):
+    if to_bool(json_dict["initServerTest"]):
+        return '1'
+    return '0'
+def initServerMod(x,mod):
+    if to_bool(json_dict["initServerMod"]):
         return '1'
     return '0'
 

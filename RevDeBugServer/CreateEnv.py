@@ -1,6 +1,5 @@
 import sys
 sys.path.append("/app")
-sys.path.append("/home/azureuser/stress_test")
 import os
 import operationOnConfigPython
 
@@ -9,19 +8,17 @@ import uuid;
 idTest=sys.argv[1]
 idMod=sys.argv[2]
 
-result= f'''
+result= f'''\n
 REVDEBUG_AUTH={operationOnConfigPython.getAuthCode(idTest, idMod)}
 REVDEBUG_SERVER_NAME={operationOnConfigPython.getServerName(idTest, idMod)}
 REVDEBUG_ROOTVOLUME_PATH=/var/revdebug
 REVDEBUG_VOLUME_PATH=/var/revdebug/server/repo
 REVDEBUG_VOLUME_CAPATH=/var/revdebug/ca
-
 REVDEBUG_CERTIFICATE_PATH=/var/revdebug/cert
-
 REVDEBUG_DOCKER_TAG={operationOnConfigPython.getTag(idTest, idMod)}
 '''
 
-if operationOnConfigPython.checkSsl(idTest, idMod):
+if operationOnConfigPython.getSSLActive(idTest, idMod)=="1":
     result=result+f"REVDEBUG_CERTIFICATE_NAME=mycert"
 
 if operationOnConfigPython.getKeycloakActiv(idTest, idMod):
@@ -33,9 +30,9 @@ REVDEBUG_AUTH_SAMESITE_OVERRIDE=None
 REVDEBUG_AUTH_ROLESPROVIDER=external'''
 
 
-# envPath=f"{os.getenv('RDB_SERVER_FILE_PATH')}.env"
-# text_file = open(envPath, "w")
-# text_file.write(result)
-# text_file.close()
+envPath=f"{os.getenv('RDB_SERVER_FILE_PATH')}.env"
+text_file = open(envPath, "w")
+text_file.write(result)
+text_file.close()
 
-sys.exit(result)
+# sys.exit(result)

@@ -9,9 +9,9 @@
     "Recordings": 0,
     "Trace": 0,
     "Trace_Succes": 0,
-    "Trace_Succes_Before": 1020,
+    "Trace_Succes_Before": 0,
     "Trace_Error": 0,
-    "Trace_Error_Before": 79884,
-    "StartTime": "2021-12-03 11:57:17.730798",
-    "version": "42.42.42-Dev"
+    "Trace_Error_Before": 0,
+    "StartTime": "2021-12-07 10:40:17.315860",
+    "version": "6.1.17.2757"
 }

@@ -9,6 +9,9 @@ parser = argparse.ArgumentParser(description='Get config')
 
 parser.add_argument('-mod')
 parser.add_argument('-singleTestsActive',  nargs='?')
+parser.add_argument('-initServerAll',  nargs='?')
+parser.add_argument('-initServerTest',  nargs='?')
+parser.add_argument('-initServerMod',  nargs='?')
 parser.add_argument('-getDeduplication',  nargs='?')
 parser.add_argument('-getModeLen',  nargs='?')
 parser.add_argument('-getTestDelay',  nargs='?')
@@ -28,6 +31,9 @@ parser.add_argument('-ifRaportGen',  nargs='?')
 parser.add_argument('-getSSLActive',  nargs='?')
 parser.add_argument('-getKeycloakActive',  nargs='?')
 parser.add_argument('-getDockerRDBPath',  nargs='?')
+parser.add_argument('-clearRDBAfterMod',  nargs='?')
+parser.add_argument('-clearRDBAfterTest',  nargs='?')
+parser.add_argument('-clearRDBAfterAll',  nargs='?')
 
 
 argsP=parser.parse_args().__dict__
@@ -42,7 +48,10 @@ if 'mod' in argsP:
 
 def getResult(argsP):
     for key, val in argsP.items():
-        result = {  
+        result = { 
+        'initServerAll': lambda x: operationOnConfigPython.initServerAll(x,mod),
+        'initServerTest': lambda x: operationOnConfigPython.initServerTest(x,mod),
+        'initServerMod': lambda x: operationOnConfigPython.initServerMod(x,mod),
         'getDockerRDBPath': lambda x: operationOnConfigPython.getDockerRDBPath(x,mod),
         'clearRDBAfterMod': lambda x: operationOnConfigPython.clearRDBAfterMod(),
         'clearRDBAfterTest': lambda x: operationOnConfigPython.clearRDBAfterTest(),
