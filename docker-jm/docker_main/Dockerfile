@@ -11,6 +11,7 @@ apt-get -yqq install ssh                     ; \
 apt-get install -y wget openssh-server       ; \
 apt-get -y install curl                     
  
+RUN pip install requests
 
 COPY . /app
 

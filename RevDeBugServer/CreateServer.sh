@@ -25,15 +25,6 @@ sslActive="$(python3 operationOnConfig.py -getSSLActive $1 -mod $2 2>&1)"
 keyCloak="$(python3 operationOnConfig.py -getKeycloakActive $1 -mod $2 2>&1)"
 
 
-# echo $REMOTE_RDB_HOST
-# echo $RDB_USER_SYSTEM
-# echo $RDB_KEY
-# echo $RDB_SERVER_FILE_PATH
-# echo $env
-# echo $sslActive
-# echo $keyCloak
-# sleep 100
-
 if [[ $sslActive == "1" ]]; then
     sslComannd='
     sudo mkdir /var/revdebug;

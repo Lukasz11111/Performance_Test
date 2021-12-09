@@ -393,6 +393,8 @@ def initialFilling(idTest,idMod):
     if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
         return getRdbConf("server",idTest,"Non set","initialFilling",idMod)
 
+
+
 def getActiveMod(idTest,idMod):
     return json_dict["Tests"][int(idTest)]["module"][int(idMod)]['name']
 
@@ -448,6 +450,13 @@ def clearRDBAfterAll():
         return '1'
     return '0'
 
+def initData(idTest,idMod):
+    try:
+        if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
+            return '1'
+    except:
+        pass
+    return '0'
 
 def initServerAll(x,mod):
     if to_bool(json_dict["initServerAll"]):

@@ -34,6 +34,7 @@ parser.add_argument('-getDockerRDBPath',  nargs='?')
 parser.add_argument('-clearRDBAfterMod',  nargs='?')
 parser.add_argument('-clearRDBAfterTest',  nargs='?')
 parser.add_argument('-clearRDBAfterAll',  nargs='?')
+parser.add_argument('-initData',  nargs='?')
 
 
 argsP=parser.parse_args().__dict__
@@ -49,6 +50,7 @@ if 'mod' in argsP:
 def getResult(argsP):
     for key, val in argsP.items():
         result = { 
+        'initData': lambda x: operationOnConfigPython.initData(x,mod),
         'initServerAll': lambda x: operationOnConfigPython.initServerAll(x,mod),
         'initServerTest': lambda x: operationOnConfigPython.initServerTest(x,mod),
         'initServerMod': lambda x: operationOnConfigPython.initServerMod(x,mod),

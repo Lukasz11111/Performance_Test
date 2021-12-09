@@ -29,7 +29,6 @@ REVDEBUG_AUTH_OPENID_ADDRESS={operationOnConfigPython.getRdbProtocol(idTest, idM
 REVDEBUG_AUTH_SAMESITE_OVERRIDE=None
 REVDEBUG_AUTH_ROLESPROVIDER=external'''
 
-
 envPath=f"{os.getenv('RDB_SERVER_FILE_PATH')}.env"
 text_file = open(envPath, "w")
 text_file.write(result)

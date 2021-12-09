@@ -33,6 +33,8 @@ COPY . /app
 
 RUN bash instalSelenium.sh
 
+RUN pip3 install httpx
+
 ARG  PATH_ARG
 ENV  PATH_=$PATH_ARG
 
