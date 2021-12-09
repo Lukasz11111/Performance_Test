@@ -451,10 +451,12 @@ def clearRDBAfterAll():
     return '0'
 
 def initData(idTest,idMod):
+    # print(f'idtest{idTest}  idmod{idMod}')
     try:
         if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
             return '1'
-    except:
+    except Exception as e:
+        print(e)
         pass
     return '0'
 

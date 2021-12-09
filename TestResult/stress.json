@@ -1,17 +1,17 @@
 {
     "TotalJmeter": {
-        "sampleCount": 110216,
-        "meanResTime": 611,
-        "receivedKBytesPerSec": 257,
-        "sentKBytesPerSec": 215,
+        "sampleCount": 0,
+        "meanResTime": 0,
+        "receivedKBytesPerSec": 0,
+        "sentKBytesPerSec": 0,
         "errorPct": 100
     },
     "Recordings": 0,
     "Trace": 0,
     "Trace_Succes": 0,
-    "Trace_Succes_Before": 1572964,
+    "Trace_Succes_Before": 1,
     "Trace_Error": 0,
-    "Trace_Error_Before": 426853,
-    "StartTime": "2021-12-08 17:48:08.951770",
+    "Trace_Error_Before": 86944,
+    "StartTime": "2021-12-09 09:46:07.232394",
     "version": "6.1.17.2757"
 }

@@ -1,0 +1,135 @@
+{
+    "start_my_file_test": {
+        "active": "false",
+        "slave": 6,
+        "_comment": "if you active start_my_file_test there will be only that started",
+        "names": [
+            "11aws.jmx"
+        ]
+    },
+    "initServerAll": "false",
+    "initServerTest": "false",
+    "initServerMod": "false",
+    "clear_RDB_after_all": "false",
+    "clear_RDB_after_test": "false",
+    "clear_RDB_after_mod": "false",
+    "multiservice": "false",
+    "db": "false",
+    "user_on_rdb": "false",
+    "data_retention_rdb": "false",
+    "data_retention_apm": "false",
+    "test_time": "20",
+    "thread": "100",
+    "server_app_default": "40.89.147.34",
+    "server_rdb_default": {
+        "version": "6.1.17.2757",
+        "protocol": "http",
+        "host": "20.199.127.147",
+        "rdb_docker_path": "",
+        "login": "a",
+        "password": "a",
+        "server_name": "",
+        "key_path": "./TestStart/server1.pem",
+        "user_sys": "azureuser",
+        "db": "revdebug_db",
+        "db_user": "rdb_user",
+        "db_pass": "masterkey",
+        "db_port": "5432",
+        "rdb_auth": "E56D341B29AC483B",
+        "rdb_cert_name": "mycert",
+        "rdb_docker_tag": "nightly",
+        "deduplication": "0",
+        "pg_container_name": "rdb_postgres_1",
+        "keycloak_active": 1,
+        "MV": {
+            "cpu": 4,
+            "ram": 16,
+            "disk_size": 512,
+            "disk_type": "ssd",
+            "disk_iops": "2300",
+            "platform": "azure"
+        }
+    },
+    "raport_name": "Java-RBI",
+    "codeLen": "all",
+    "slave": "6",
+    "_comment": "Only endpoints with the appropriate tags will be called: short, long, mid, all",
+    "raportOn": true,
+    "defaultRaportName": true,
+    "delay": [
+        0, 0, 0, 0, 0, 0
+    ],
+    "server": {
+        "cleanAfterSingleApp": false,
+        "initialFilling": {
+            "maxRec": 10000000,
+            "minRec": 11000,
+            "maxTrace": 10000000,
+            "minTrace": 1000
+        },
+        "_comment": "If you not set test_time, that will be default"
+    },
+    "Tests": [
+        {
+            "multiservice": "false",
+            "db": "false",
+            "user_on_rdb": "false",
+            "data_retention_rdb": "false",
+            "data_retention_apm": "false",
+            "framework": "spring",
+            "active": "true",
+            "_comment": "If you not set test_time, that will be default",
+            "test_time": "60",
+            "git_link": "",
+            "application_name": "Java-RBI-Test",
+            "appPath": "lm-javastress",
+            "server_app_default": "40.89.147.34",
+            "language": "java-rbi",
+            "protocolApp": "http",
+            "delay": [
+                0 
+            ],
+            "proportions": [
+            100, 99, 98, 97, 96, 95,92,91,90,85,80,75,50,25,5,0
+            ],
+            "app_version": {
+                "agent": "6.1.16",
+                "compiler": "6.1.16-SNAPSHOT-1635951658"
+            },
+            "endpoints": [
+                {
+                    "name": "/err",
+                    "error": true,
+                    "code": 1000
+                },
+                {
+                    "name": "/",
+                    "error": false,
+                    "code": 1000
+                }
+            ],
+            "module": [
+                {
+                    "name": "RDB-APM",
+                    "port": "8000",
+                    "color": "red"
+                },
+                {
+                    "name": "RDB",
+                    "port": "8001",
+                    "color": "antiquewhite"
+                },
+                {
+                    "name": "APM",
+                    "port": "8002",
+                    "color": "green"
+                },
+                {
+                    "name": "NONE",
+                    "port": "8003",
+                    "color": "blue"
+                }
+            ]
+        }
+    ]
+}

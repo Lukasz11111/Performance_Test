@@ -82,11 +82,9 @@ def start():
     expectation=operationOnConfigPython.initialFilling(idTest,idMod)
     if (expectation!=False):
         expectation=int(expectation['minRec'])
-        print(resultRecording)
-        print(expectation)
     if (expectation>resultRecording):
-        howMany=expectation-resultRecording+100
-
+        howMany=expectation-resultRecording
+        howMany=int(howMany+howMany*(howMany*0.000015))
         print(resultRecording)
         print(expectation)
         print(howMany)

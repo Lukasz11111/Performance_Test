@@ -76,7 +76,7 @@
             "user_on_rdb": "false",
             "data_retention_rdb": "false",
             "data_retention_apm": "false",
-            "framework": "spring",
+            "framework": "test",
             "active": "true",
             "_comment": "If you not set test_time, that will be default",
             "test_time": "7",
@@ -84,7 +84,7 @@
             "application_name": "Java",
             "appPath": "lm-javastress",
             "server_app_default": "40.89.147.34",
-            "language": "java",
+            "language": "test",
             "protocolApp": "http",
             "delay": [
                 10
@@ -126,7 +126,7 @@
             "active": "false",
             "test_time": "5",
             "git_link": "",
-            "application_name": "Js",
+            "application_name": "Jsa",
             "appPath": "lm-javastress",
             "language": "JS",
             "thread": "13",

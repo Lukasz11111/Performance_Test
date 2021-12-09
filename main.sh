@@ -24,32 +24,36 @@ clearRDBAfterAll="$(python3 operationOnConfig.py -clearRDBAfterAll 1 2>&1)"
 
 #todo init server/dedulikacja afterstart+retencja
 function claearServerRdb(){
-  if [[ $1 == "1" ]]; then
+  if [[ $1 == "1" ]] && [[ $4 == "0" ]]; then
     echo CLEAR SERVER
-        # . $RDB_SERVER_FILE_PATH/CreateServer.sh $2 $3
-      fi
-initData="$(python3 operationOnConfig.py -initData $2 -mod $3 2>&1)"
-echo $initData
-  if [[ $initData == "1" ]]; then
+         . $RDB_SERVER_FILE_PATH/CreateServer.sh $2 $3
+  fi
+
+if [[ $4 == "1" ]]; then
+initDataDef $2 $3 $1
+fi
+}
+function initDataDef(){
+  if [[ $3 == "1" ]]; then
   echo INIT DATA
-    . getDBIpRDB.sh $2 $3
-    python3 DataGenerationApp/DataGeneration.py $2 $3
+    . getDBIpRDB.sh $1 $2
+    python3 DataGenerationApp/DataGeneration.py $1 $2
   fi
 }
 
+
 function exec_tests(){
   testsLen=$(expr $1 - 1)
-  claearServerRdb $initRDBAll 0 0 $initData
-
+  claearServerRdb $initRDBAll 0 0 1 
   for test in $(seq 0 1 $testsLen); do
     ifTestIsActive=$(python3 operationOnConfig.py -ifTestIsActive $test 2>&1)
       if [[ $ifTestIsActive != "0" ]]; then
-        claearServerRdb $initRDBTest $test 0
+        claearServerRdb $initRDBTest $test 0 1
           exec_testsProp  $test
-          claearServerRdb $clearRDBAfterTest $test 0
+          claearServerRdb $clearRDBAfterTest $test 0 0
       fi   
   done
-  claearServerRdb $clearRDBAfterAll 0 0 
+  claearServerRdb $clearRDBAfterAll 0 0 0
 }
 
 function exec_testsProp(){
@@ -60,21 +64,21 @@ function exec_testsProp(){
           exec_testMod  $proportionVal $1 $testDelay
         done
       done
-     python3 RaportGenerationGoogle.py $1 0 hide
+    #  python3 RaportGenerationGoogle.py $1 0 hide
 }
 
 function exec_testMod(){
     modesLen=($(python3 operationOnConfig.py -getModeLen $2 2>&1))
     modesIt=$(expr $modesLen - 1)
     for mod in $(seq 0 1 $modesIt); do
-      claearServerRdb $initRDBMod $test $mod
+      claearServerRdb $initRDBMod $test $mod 1
       python3 change_proportion.py $1 $2 $3 $mod
       . getDBIpRDB.sh $2 $mod
       
      
       singleTest $2 $mod $3
       rm ./tmp.jmx
-      claearServerRdb $clearRDBAfterMod $1 $mod
+      claearServerRdb $clearRDBAfterMod $1 $mod 0
     done
 }
 
@@ -90,14 +94,14 @@ rm -rf $RESULT_PATH
 
 SLAVE_COUNT="$(python3 operationOnConfig.py -getSlave $1 -mod $2 2>&1)"
 
-bash $INIT_JM $SLAVE_COUNT $TMP_TEST_FILE
-python3 GetRecordingAndTrace.py $1 $2
+# bash $INIT_JM $SLAVE_COUNT $TMP_TEST_FILE
+# python3 GetRecordingAndTrace.py $1 $2
 
-if_raport_gen="$(python3 operationOnConfig.py -ifRaportGen $1 -mod $2 2>&1)"
+# if_raport_gen="$(python3 operationOnConfig.py -ifRaportGen $1 -mod $2 2>&1)"
 
- if [[ $if_raport_gen != "0" ]]; then
-python3 RaportGenerationGoogle.py $1 $2 $3
- fi 
+#  if [[ $if_raport_gen != "0" ]]; then
+# python3 RaportGenerationGoogle.py $1 $2 $3
+#  fi 
 
 }
 
