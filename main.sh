@@ -64,7 +64,7 @@ function exec_testsProp(){
           exec_testMod  $proportionVal $1 $testDelay
         done
       done
-    #  python3 RaportGenerationGoogle.py $1 0 hide
+     python3 RaportGenerationGoogle.py $1 0 hide
 }
 
 function exec_testMod(){
@@ -94,14 +94,14 @@ rm -rf $RESULT_PATH
 
 SLAVE_COUNT="$(python3 operationOnConfig.py -getSlave $1 -mod $2 2>&1)"
 
-# bash $INIT_JM $SLAVE_COUNT $TMP_TEST_FILE
-# python3 GetRecordingAndTrace.py $1 $2
+bash $INIT_JM $SLAVE_COUNT $TMP_TEST_FILE
+python3 GetRecordingAndTrace.py $1 $2
 
-# if_raport_gen="$(python3 operationOnConfig.py -ifRaportGen $1 -mod $2 2>&1)"
+if_raport_gen="$(python3 operationOnConfig.py -ifRaportGen $1 -mod $2 2>&1)"
 
-#  if [[ $if_raport_gen != "0" ]]; then
-# python3 RaportGenerationGoogle.py $1 $2 $3
-#  fi 
+ if [[ $if_raport_gen != "0" ]]; then
+python3 RaportGenerationGoogle.py $1 $2 $3
+ fi 
 
 }
 
@@ -109,6 +109,7 @@ SLAVE_COUNT="$(python3 operationOnConfig.py -getSlave $1 -mod $2 2>&1)"
 function customSingleTest(){
 customSingleTest=($(python3 operationOnConfig.py -customSingleTest 1 2>&1))
 slave=$(python3 operationOnConfig.py -slaveingleTest 1 2>&1)
+
 for test_ in "${customSingleTest[@]}"; do
         bash $INIT_JM $slave $test_
 done

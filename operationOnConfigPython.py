@@ -6,25 +6,25 @@ JSON_CONFIG=os.getenv('JSON_CONFIG')
 with open(JSON_CONFIG) as f:
     json_dict = json.load(f)
 
-def getEndpoints(idTest):  
-    return json_dict["Tests"][idTest]["endpoints"]
+def getEndpoints(idTest, idMod=0):  
+    return getRdbConf("server_app_default",idTest,[],"endpoints",idMod)
 
-def getSuccesEndpoint(idTest):
+def getSuccesEndpoint(idTest,idMod):
     result=[]
-    for x in json_dict["Tests"][idTest]["endpoints"]:
+    for x in getRdbConf("server_app_default",idTest,[],"endpoints",idMod):
         if not x.get("error"):
             result.append(x)
     return result
 
-def getErrorEndpoint(idTest):
+def getErrorEndpoint(idTest,idMod):
     result=[]
-    for x in json_dict["Tests"][idTest]["endpoints"]:
+    for x in getRdbConf("server_app_default",idTest,[],"endpoints",idMod):
         if x.get("error"):
             result.append(x)
     return result
 
 def getProtocoleApp(idTest, idMod):
-    return getConf("protocolApp",idTest,"http")
+    return getRdbConf("server_app_default",idTest,"http","protocol",idMod)
 
 def ifRaportGen(idTest,idMod):
     return getConf("raportOn",idTest,"False")
@@ -229,7 +229,7 @@ def getModeLen(idTest):
     return len(json_dict["Tests"][int(idTest)]['module'])
 
 def getAppHost(idTest, idMod):
-    return getConf("server_app_default",idTest,"0.0.0.0",idMod)
+    return getRdbConf("server_app_default",idTest,"0.0.0.0","host",idMod)
 
 def getAppPort(idTest, idMod):
     return json_dict["Tests"][int(idTest)]['module'][int(idMod)]['port']
@@ -263,10 +263,6 @@ def getServerName(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,getRDBHost(idTest, idMod),"server_name",idMod)
     return result
 
-
-
-
-
 def checkSsl(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,"http","protocol",idMod)
     if result=='https':
@@ -283,7 +279,8 @@ def getslave():
     return json_dict["slave"]
 
 def getApplicationName():
-    return getConf("application_name",idTest,"Non Name",idMod)
+    return getRdbConf("server_app_default",idTest,"Non-Name-App","application_name",idMod)
+
 
 def getKeycloakActiveBash(idTest, idMod):
     if  to_bool(getKeycloakActiv(idTest, idMod)):
@@ -377,23 +374,26 @@ def getTestModOnly(idTest,idMod,name):
     return '-'
 
 def getLang(idTest,idMod):
-    return getTestModOnly(idTest,idMod,"language")
+    return getRdbConf("server_app_default",idTest,"Not set lang","language",idMod)
+    
 
 def getFramework(idTest,idMod):
-    return getTestModOnly(idTest,idMod,"framework")
+    return getRdbConf("server_app_default",idTest,"-","framework",idMod)
 
+def getKey_path(idTest,idMod):
+    return getRdbConf("server_app_default",idTest,".","key_path",idMod)
+
+def getUser_sys(idTest,idMod):
+    return getRdbConf("server_app_default",idTest,"azureuser","user_sys",idMod)
+
+def getAppPath(idTest,idMod):
+    return getRdbConf("server_app_default",idTest,"azureuser","appPath",idMod)
 
 def getAppVersion(idTest,idMod):
-    result=getTestModOnly(idTest,idMod,"app_version")
+    result= getRdbConf("server_app_default",idTest,"-","app_version",idMod)
     if result=='-':
         return {'agent':'-','compiler':'-'}
     return result
-
-def initialFilling(idTest,idMod):
-    if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
-        return getRdbConf("server",idTest,"Non set","initialFilling",idMod)
-
-
 
 def getActiveMod(idTest,idMod):
     return json_dict["Tests"][int(idTest)]["module"][int(idMod)]['name']
@@ -403,7 +403,7 @@ def getColor(idTest,idMod):
     return getConfMod("color",idTest, idMod)
 
 def getAvgCodeLen(idTest,idMod):
-    value=getTestModOnly(idTest,idMod,'endpoints')
+    value=getRdbConf("server_app_default",idTest,[],"endpoints",idMod)
     i=0
     sum_=0
     for x in value:
@@ -424,10 +424,12 @@ def getdefaultRaportName(idTest, idMod):
 
 def getUsersOnRDB(idTest, idMod):
     return getConf("user_on_rdb",idTest,False,idMod)
+
 def getdataRetentionRDB(idTest, idMod):
-    return getConf("data_retention_rdb",idTest,False,idMod)
+    return getRdbConf("server_rdb_default",idTest,False,"data_retention_rdb",idMod)
+    
 def getdataRetentionAPM(idTest, idMod):
-    return getConf("data_retention_apm",idTest,False,idMod)
+    return getRdbConf("server_rdb_default",idTest,False,"data_retention_apm",idMod)
 
 def getMultiservice(idTest, idMod):
     return getConf("multiservice",idTest,False,idMod)
@@ -450,15 +452,21 @@ def clearRDBAfterAll():
         return '1'
     return '0'
 
+
 def initData(idTest,idMod):
-    # print(f'idtest{idTest}  idmod{idMod}')
-    try:
-        if to_bool(getRdbConf("server",idTest,False,"cleanAfterSingleApp",idMod)):
+    result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
+    if 'cleanAfterSingleApp' in result:
+        if to_bool(result['cleanAfterSingleApp' ]):
             return '1'
-    except Exception as e:
-        print(e)
-        pass
     return '0'
+
+def initialFilling(idTest,idMod):
+    result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
+    if initData(idTest,idMod)==1:
+        if "initialFilling" in result:
+            return result['initialFilling']
+    else:
+        return 0
 
 def initServerAll(x,mod):
     if to_bool(json_dict["initServerAll"]):

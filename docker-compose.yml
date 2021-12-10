@@ -5,29 +5,30 @@ services:
         build:
             context: .
             args: 
-                PATH_ARG: ${PATH_MAIN:-/home/azureuser/lm_performance_test}
+                PATH_ARG: ${PATH_MAIN:-/home/ubuntu/lm_performance_test}
         environment:
             TEST_CONFIG_PATH: ${TEST_CONFIG_PATH:-.TestsConfig/Configuration.json}
             LC_RDB_LOGIN: ${LC_RDB_LOGIN:-}
             LC_RDB_PASS: ${LC_RDB_PASS:-}
             LC_STRESS_KEY_JMETER_VM: ${LC_STRESS_KEY_JMETER_VM:-}
             LC_STRESS_KEY_RDB: ${LC_STRESS_KEY_RDB:-}
-            LC_USER_SYSTEM: ${LC_USER_SYSTEM:-azureuser}
+            LC_USER_SYSTEM: ${LC_USER_SYSTEM:-ubuntu}
             POSTGRESS_CONTAINER_NAME: ${POSTGRESS_CONTAINER_NAME:-revdebug-server-docker-compose_postgres_1}
             RDB_HOST: ${RDB_HOST:-}
             RDB_DB: ${RDB_DB:-revdebug_db}
             RDB_USER: ${RDB_USER:-rdb_user}
             RDB_PASS: ${RDB_PASS:-masterkey}
             RDB_PORT_DB: ${RDB_PASS:-5432}
-            RDB_USER_SYSTEM: ${RDB_USER_SYSTEM:-azureuser}
+            RDB_USER_SYSTEM: ${RDB_USER_SYSTEM:-ubuntu}
             REVDEBUG_AUTH: ${REVDEBUG_AUTH:-E56D341B29AC483B}
             REVDEBUG_SERVER_NAME: ${REVDEBUG_SERVER_NAME:-}
             REVDEBUG_CERTIFICATE_NAME: ${REVDEBUG_CERTIFICATE_NAME:-}
             REVDEBUG_DOCKER_TAG: ${REVDEBUG_DOCKER_TAG:-}
             KEYCLOAK_ACTIVE: ${KEYCLOAK_ACTIVE:-0}
             LC_STRESS_KEY_APP: ${LC_STRESS_KEY_APP:-}
-            APP_USER_SYSTEM: ${APP_USER_SYSTEM:-azureuser}
+            APP_USER_SYSTEM: ${APP_USER_SYSTEM:-ubuntu}
             APPS_PATH: ${APPS_PATH:-~/stress}
+            PATH_: ${PATH_MAIN:-~/}
 
             DATA_DB: ${DATA_DB:-}
             DATA_DB_USER: ${DATA_DB_USER:-}
@@ -36,7 +37,7 @@ services:
             DATA_DB_KEY: ${DATA_DB_KEY:-}
             DATA_DB_HOST: ${DATA_DB_HOST:-}
             DATA_DB_SERVER_HOST: ${DATA_DB_HOST:-}
-            DATA_DB_SERVER_USER: ${DATA_DB_HOST:-azureuser}
+            DATA_DB_SERVER_USER: ${DATA_DB_HOST:-ubuntu}
         volumes:
             - ./:/app
         networks:
@@ -53,9 +54,10 @@ services:
             REVDEBUG_APM: 1
             REVDEBUG_RELEASE: GoStressTest
             REVDEBUG_VERSION: GoStressTest
-            REVDEBUG_HOST: ${REVDEBUG_HOST:-20.199.127.147}
+            REVDEBUG_HOST: ${REVDEBUG_HOST:-3.125.113.214}
             REVDEBUG_SOLUTION: DataGeneration
             REVDEBUG_APPLICATION: DataGeneration
+            # REVDEBUG_LOGGING: DEBUG
         volumes:
             - ./DataGenerationApp/:/app/
         logging:

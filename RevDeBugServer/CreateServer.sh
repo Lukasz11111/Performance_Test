@@ -67,7 +67,8 @@ sudo docker-compose -f docker-compose.keycloak.yml -f docker-compose.yml -p rdb 
 
 echo "$bashCommand";
 
-ssh -i  $LC_STRESS_KEY_RDB $RDB_USER_SYSTEM@$REMOTE_RDB_HOST  "$bashCommand";
+
+ssh -i $LC_STRESS_KEY_RDB $RDB_USER_SYSTEM@$REMOTE_RDB_HOST  "$bashCommand";
 
 deduplication=$(python3 operationOnConfig.py -getDeduplication $1 -mod $2 2>&1)
 

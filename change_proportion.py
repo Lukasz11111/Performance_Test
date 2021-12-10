@@ -91,10 +91,10 @@ else:
 
 for x in range(0,lenProp):
   if error_count>0:
-    errEndpoint=random.choice(operationOnConfigPython.getErrorEndpoint(idTest)).get('name')
+    errEndpoint=random.choice(operationOnConfigPython.getErrorEndpoint(idTest, idMod)).get('name')
     string=f'{string}{createTestString(str(errEndpoint))}'
   if success_count>0:
-    sucEndpoint=random.choice(operationOnConfigPython.getSuccesEndpoint(idTest)).get('name')
+    sucEndpoint=random.choice(operationOnConfigPython.getSuccesEndpoint(idTest, idMod)).get('name')
     string=f'{string}{createTestString(str(sucEndpoint))}'
   error_count=error_count-1
   success_count=success_count-1
