@@ -175,6 +175,7 @@ def colnum_string(n):
 def addNewSheet(name):
     worksheet=sh.add_worksheet(title=name, rows="100", cols="20")
     createLegend(worksheet)
+    return worksheet
     
 def createLegend(worksheet):
     list_=[]

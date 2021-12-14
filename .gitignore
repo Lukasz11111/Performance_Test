@@ -4,3 +4,4 @@ docker-jm/docker_main/server1.pem
 StartTime
 TestResult/path/*
 TestResult/result
+TestsConfig/Configuration.json
