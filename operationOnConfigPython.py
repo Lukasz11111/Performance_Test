@@ -16,6 +16,7 @@ def getSuccesEndpoint(idTest,idMod):
             result.append(x)
     return result
 
+
 def getErrorEndpoint(idTest,idMod):
     result=[]
     for x in getRdbConf("server_app_default",idTest,[],"endpoints",idMod):
@@ -380,10 +381,13 @@ def getLang(idTest,idMod):
 def getFramework(idTest,idMod):
     return getRdbConf("server_app_default",idTest,"-","framework",idMod)
 
-def getKey_path(idTest,idMod):
+def getKeyPathApp(idTest,idMod):
     return getRdbConf("server_app_default",idTest,".","key_path",idMod)
 
-def getUser_sys(idTest,idMod):
+def getAppDir(idTest,idMod):
+    return getRdbConf("server_app_default",idTest,".","appDir",idMod)
+
+def getUserAppSys(idTest,idMod):
     return getRdbConf("server_app_default",idTest,"azureuser","user_sys",idMod)
 
 def getAppPath(idTest,idMod):
@@ -452,6 +456,28 @@ def clearRDBAfterAll():
         return '1'
     return '0'
 
+def rebuildAppAfterMod():
+    if to_bool(json_dict["rebuild_app_after_mod"]):
+        return '1'
+    return '0'
+
+def rebuildAppAfterTest():
+    if to_bool(json_dict["rebuild_app_after_test"]):
+        return '1'
+    return '0'
+
+def rebuildAppAfterAll():
+    if to_bool(json_dict["rebuild_app_after_all"]):
+        return '1'
+    return '0'
+
+def rebuildDataGenApp(idTest,idMod):
+    result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
+    if 'rebuildDataGenApp' in result:
+        if to_bool(result['rebuildDataGenApp' ]):
+            return '1'
+    return '0'
+
 
 def initData(idTest,idMod):
     result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
@@ -462,11 +488,30 @@ def initData(idTest,idMod):
 
 def initialFilling(idTest,idMod):
     result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
-    if initData(idTest,idMod)==1:
-        if "initialFilling" in result:
-            return result['initialFilling']
-    else:
-        return 0
+    if "initialFilling" in result:
+        return result['initialFilling']
+    return 0
+
+def getAppGenDataDir(idTest,idMod):
+    result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
+    if "appGen" in result:
+        if "genAppPath" in result['appGen']:
+            return result['appGen']['genAppPath']
+    return '.'
+
+def getAppGenDataPort(idTest,idMod):
+    result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
+    if "appGen" in result:
+        if "port" in result['appGen']:
+            return result['appGen']['port']
+    return '8080'
+
+def getAppGenDataEndpoint(idTest,idMod):
+    result= getRdbConf("server_rdb_default",idTest,False,"server",idMod)
+    if "appGen" in result:
+        if "endpoint" in result['appGen']:
+            return result['appGen']['endpoint']
+    return '/err'
 
 def initServerAll(x,mod):
     if to_bool(json_dict["initServerAll"]):
@@ -480,6 +525,7 @@ def initServerMod(x,mod):
     if to_bool(json_dict["initServerMod"]):
         return '1'
     return '0'
+
 
 def getDockerRDBPath(idTest,idMod):
     return getRdbConf("server_rdb_default",idTest,"~/rdb-docker-stress","rdb_docker_path",idMod)

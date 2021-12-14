@@ -35,6 +35,17 @@ parser.add_argument('-clearRDBAfterMod',  nargs='?')
 parser.add_argument('-clearRDBAfterTest',  nargs='?')
 parser.add_argument('-clearRDBAfterAll',  nargs='?')
 parser.add_argument('-initData',  nargs='?')
+parser.add_argument('-getKeyPathApp',  nargs='?')
+parser.add_argument('-getAppPath',  nargs='?')
+parser.add_argument('-getAppHost',  nargs='?')
+parser.add_argument('-getUserAppSys',  nargs='?')
+parser.add_argument('-getAppDir',  nargs='?')
+parser.add_argument('-rebuildAppAfterMod',  nargs='?')
+parser.add_argument('-rebuildAppAfterTest',  nargs='?')
+parser.add_argument('-rebuildAppAfterAll',  nargs='?')
+parser.add_argument('-rebuildDataGenApp',  nargs='?')
+parser.add_argument('-getAppGenDataDir',  nargs='?')
+
 
 
 argsP=parser.parse_args().__dict__
@@ -50,6 +61,16 @@ if 'mod' in argsP:
 def getResult(argsP):
     for key, val in argsP.items():
         result = { 
+        'getAppGenDataDir': lambda x: operationOnConfigPython.getAppGenDataDir(x,mod),
+        'rebuildAppAfterMod': lambda x: operationOnConfigPython.rebuildAppAfterMod(),
+        'rebuildAppAfterTest': lambda x: operationOnConfigPython.rebuildAppAfterTest(),
+        'rebuildAppAfterAll': lambda x: operationOnConfigPython.rebuildAppAfterAll(),
+        'rebuildDataGenApp': lambda x: operationOnConfigPython.rebuildDataGenApp(x,mod),
+        'getAppDir': lambda x: operationOnConfigPython.getAppDir(x,mod),
+        'getUserAppSys': lambda x: operationOnConfigPython.getUserAppSys(x,mod),
+        'getAppHost': lambda x: operationOnConfigPython.getAppHost(x,mod),
+        'getAppPath': lambda x: operationOnConfigPython.getAppPath(x,mod),
+        'getKeyPathApp': lambda x: operationOnConfigPython.getKeyPathApp(x,mod),
         'initData': lambda x: operationOnConfigPython.initData(x,mod),
         'initServerAll': lambda x: operationOnConfigPython.initServerAll(x,mod),
         'initServerTest': lambda x: operationOnConfigPython.initServerTest(x,mod),

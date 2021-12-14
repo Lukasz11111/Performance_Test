@@ -7,26 +7,63 @@
             "11aws.jmx"
         ]
     },
-    "initServerAll": "true",
-    "initServerTest": "false",
+    "initServerAll": "false",
+    "initServerTest": "true",
     "initServerMod": "false",
     "clear_RDB_after_all": "false",
-    "clear_RDB_after_test": "false",
+    "clear_RDB_after_test": "true",
     "clear_RDB_after_mod": "false",
-
-    "test_time": "15",
+    "rebuild_app_after_all": "false",
+    "rebuild_app_after_test": "true",
+    "rebuild_app_after_mod": "false",
+    "test_time": "25",
     "thread": "100",
     "slave": "6",
-
     "raportOn": true,
     "defaultRaportName": true,
     "raport_name": "raport-testowy",
-    
+    "delay": [
+        0, 100 
+    ],
+    "proportions": [
 
+        100, 99, 95, 90, 75, 50, 25, 0 
+    ],
+
+    "server_app_default": {
+        "app_version": {
+            "agent": "6.1.16",
+            "compiler": "6.1.16-SNAPSHOT-grpc"
+        },
+        "key_path": "./TestStart/server1.pem",
+        "user_sys": "ubuntu",
+        "application_name": "Java",
+        "appPath": "stress-test",
+        "appDir": "lm-javastress",
+        "protocol": "http",
+        "host": "3.69.148.44",
+        
+        "language": "java-test",
+        "framework": "spring-dev",
+        "endpoints": [
+            {
+                "name": "/err",
+                "error": true,
+                "code": 2,
+                "multiservice": "false",
+                "db": "false"
+            },
+            {
+                "name": "/",
+                "error": false,
+                "code": 2
+            }
+        ]
+    },
     "server_rdb_default": {
         "version": "",
-        "protocol": "http",
-        "host": "3.125.113.214",
+        "protocol": "https",
+        "host": "testperformancerdb.ddns.net",
         "rdb_docker_path": "",
         "login": "a",
         "password": "a",
@@ -47,42 +84,49 @@
         "data_retention_rdb": "false",
         "data_retention_apm": "false",
         "MV": {
-            "cpu": 4,
+            "cpu": 16,
             "ram": 32,
             "disk_size": 512,
             "disk_type": "ssd",
-            "disk_iops": "100",
+            "disk_iops": "-",
             "platform": "aws"
         },
         "server": {
             "cleanAfterSingleApp": true,
-            "initialFilling": 1000
-            
-    }
+            "rebuildDataGenApp": false,
+            "initialFilling": 0,
+            "appGen": {
+                "genAppPath": "genData",
+                "port": "8999",
+                "endpoint": "/err"
+            }
+        }
     },
-    
     "Tests": [
         {
-            "active": "true",  
-            "delay": [
-                0 
-            ],
-            "proportions": [
-                100, 0
-            ],
+            "active": "true",
+            "server_rdb_default": {
+                "login": "a",
+                "password": "a",
+                "keycloak_active": 1,
+                "server": {
+                    "cleanAfterSingleApp": false,
+                    "rebuildDataGenApp": true,
+                    "initialFilling": 0,
+                    "appGen": {
+                        "genAppPath": "genData",
+                        "port": "8999",
+                        "endpoint": "/err"
+                    }
+                }
+            },
             "server_app_default": {
                 "app_version": {
-                    "agent": "2.1.1",
-                    "compiler": "6.1"
+                    "agent": "6.1.16",
+                    "compiler": "6.1.16-SNAPSHOT-grpc"
                 },
-                "key_path": "./TestStart/server1.pem",
-                "user_sys": "ubuntu",
-                "application_name": "Java",
-                "appPath": "lm-javastress",
-                "protocol": "http",
-                "host": "3.69.148.44",
-                "language": "java-test",
-                "framework": "spring-dev",
+                "language": "java-",
+                "framework": "spring-new-grpc",
                 "endpoints": [
                     {
                         "name": "/err",
@@ -97,19 +141,80 @@
                         "code": 2
                     }
                 ]
-            },     
+            },
             "module": [
                 {
                     "name": "RDB-APM",
                     "port": "8080",
-                    "color": "plum"
+                    "color": "red"
+                },  {
+                    "name": "RDB",
+                    "port": "8081",
+                    "color": "blue"
                 },
                 {
+                    "name": "NONE",
+                    "port": "8083",
+                    "color": "green"
+                }
+            ]
+        }, {
+            "active": "true",
+            "server_rdb_default": {
+                "login": "a",
+                "password": "a",
+                "keycloak_active": 1,
+                "server": {
+                    "cleanAfterSingleApp": false,
+                    "rebuildDataGenApp": true,
+                    "initialFilling": 0,
+                    "appGen": {
+                        "genAppPath": "genData",
+                        "port": "8999",
+                        "endpoint": "/err"
+                    }
+                }
+            },
+            "server_app_default": {
+                "app_version": {
+                    "agent": "6.1.16",
+                    "compiler": "6.1.16-SNAPSHOT-1635951658"
+                },
+                "language": "java-",
+                "framework": "spring-old-grpc",
+                "endpoints": [
+                    {
+                        "name": "/err",
+                        "error": true,
+                        "code": 2,
+                        "multiservice": "false",
+                        "db": "false"
+                    },
+                    {
+                        "name": "/",
+                        "error": false,
+                        "code": 2
+                    }
+                ]
+            },
+            "module": [
+                {
                     "name": "RDB-APM",
+                    "port": "8080",
+                    "color": "red"
+                },  {
+                    "name": "RDB",
                     "port": "8081",
-                    "color": "plum"
+                    "color": "blue"
+                },
+                {
+                    "name": "NONE",
+                    "port": "8083",
+                    "color": "green"
                 }
             ]
         }
+
+
     ]
 }

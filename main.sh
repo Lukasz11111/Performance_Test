@@ -21,39 +21,66 @@ clearRDBAfterMod="$(python3 operationOnConfig.py -clearRDBAfterMod 1 2>&1)"
 clearRDBAfterTest="$(python3 operationOnConfig.py -clearRDBAfterTest 1 2>&1)"
 clearRDBAfterAll="$(python3 operationOnConfig.py -clearRDBAfterAll 1 2>&1)"
 
+rebuildAppAfterMod="$(python3 operationOnConfig.py -rebuildAppAfterMod 1 2>&1)"
+rebuildAppAfterTest="$(python3 operationOnConfig.py -rebuildAppAfterTest 1 2>&1)"
+rebuildAppAfterAll="$(python3 operationOnConfig.py -rebuildAppAfterAll 1 2>&1)"
+
 
 #todo init server/dedulikacja afterstart+retencja
+
+function clearInitRebuild(){
+  clear=$1
+  init=$2
+  rebuild=$3
+  idTest=$4
+  idMod=$5
+  claearServerRdb $clear $init $rebuild $idTest $idMod
+}
+
 function claearServerRdb(){
-  if [[ $1 == "1" ]] && [[ $4 == "0" ]]; then
+  if [[ $1 == "1" ]]; then
     echo CLEAR SERVER
-         . $RDB_SERVER_FILE_PATH/CreateServer.sh $2 $3
+         . $RDB_SERVER_FILE_PATH/CreateServer.sh $4 $5
   fi
 
-if [[ $4 == "1" ]]; then
-initDataDef $2 $3 $1
+if [[ $2 == "1" ]]; then
+initDataDef $4 $5 
+fi
+
+if [[ $3 == "1" ]]; then
+rebuildApp $4 $5 
 fi
 }
+
+
+function rebuildApp(){
+  echo Rebuild App
+  . $APP_SERVER_FILE_PATH/BuildApp.sh $1 $2 "app"
+}
+
+
 function initDataDef(){
-  if [[ $3 == "1" ]]; then
   echo INIT DATA
-    . getDBIpRDB.sh $1 $2
-    python3 DataGenerationApp/DataGeneration.py $1 $2
-  fi
+  rebuildDataGenApp=$(python3 operationOnConfig.py -rebuildDataGenApp $1 -mod $2 2>&1)
+    if [[ $rebuildDataGenApp == "1" ]]; then
+      . $APP_SERVER_FILE_PATH/BuildApp.sh $1 $2 "gen"
+    fi 
+     . getDBIpRDB.sh $1 $2
+    python3 TestApp/DataGeneration.py $1 $2
 }
 
 
 function exec_tests(){
   testsLen=$(expr $1 - 1)
-  claearServerRdb $initRDBAll 0 0 1 
+  clearInitRebuild $clearRDBAfterAll $initRDBAll $rebuildAppAfterAll 0 0  
   for test in $(seq 0 1 $testsLen); do
     ifTestIsActive=$(python3 operationOnConfig.py -ifTestIsActive $test 2>&1)
       if [[ $ifTestIsActive != "0" ]]; then
-        claearServerRdb $initRDBTest $test 0 1
-          exec_testsProp  $test
-          claearServerRdb $clearRDBAfterTest $test 0 0
+      clearInitRebuild $clearRDBAfterTest $initRDBTest $rebuildAppAfterTest $test 0
+          exec_testsProp  $test      
       fi   
   done
-  claearServerRdb $clearRDBAfterAll 0 0 0
+  clearInitRebuild $clearRDBAfterAll $initRDBAll $rebuildAppAfterAll 0 0
 }
 
 function exec_testsProp(){
@@ -71,14 +98,13 @@ function exec_testMod(){
     modesLen=($(python3 operationOnConfig.py -getModeLen $2 2>&1))
     modesIt=$(expr $modesLen - 1)
     for mod in $(seq 0 1 $modesIt); do
-      claearServerRdb $initRDBMod $test $mod 1
+      clearInitRebuild $clearRDBAfterMod $initRDBMod $rebuildAppAfterMod $1 $mod
       python3 change_proportion.py $1 $2 $3 $mod
       . getDBIpRDB.sh $2 $mod
       
      
       singleTest $2 $mod $3
       rm ./tmp.jmx
-      claearServerRdb $clearRDBAfterMod $1 $mod 0
     done
 }
 
@@ -124,6 +150,7 @@ if [[ $single_tests_active != "1" ]]; then
 else
 customSingleTest 
 fi
+
 
 
 echo RUN END

@@ -8,18 +8,6 @@ REMOTE_RDB_HOST="$(python3 operationOnConfig.py -getRDBHost $1 -mod $2 2>&1)"
 RDB_USER_SYSTEM="$(python3 operationOnConfig.py -getRdbDBSysUser $1 -mod $2 2>&1)"
 REVDEBUG_DOCKER_PATH="$(python3 operationOnConfig.py -getDockerRDBPath $1 -mod $2 2>&1)"
 
-chmod 600 $RDB_KEY
-
-if [ ! -d /root/.ssh ]; then
-    mkdir /root/.ssh
-        if [ ! -f /root/.ssh/known_hosts ]; then
-            touch /root/.ssh/known_hosts
-fi
-fi
-
-(&>/dev/null ssh-keyscan -H $REMOTE_RDB_HOST >> ~/.ssh/known_hosts &)
-(&>/dev/null ssh-keyscan -H $RDB_USER_SYSTEM >> ~/.ssh/known_hosts &)
-
 
 sslActive="$(python3 operationOnConfig.py -getSSLActive $1 -mod $2 2>&1)"
 keyCloak="$(python3 operationOnConfig.py -getKeycloakActive $1 -mod $2 2>&1)"
@@ -67,8 +55,7 @@ sudo docker-compose -f docker-compose.keycloak.yml -f docker-compose.yml -p rdb 
 
 echo "$bashCommand";
 
-
-ssh -i $LC_STRESS_KEY_RDB $RDB_USER_SYSTEM@$REMOTE_RDB_HOST  "$bashCommand";
+. RemoteServer.sh $RDB_KEY $REMOTE_RDB_HOST $RDB_USER_SYSTEM "$bashCommand"
 
 deduplication=$(python3 operationOnConfig.py -getDeduplication $1 -mod $2 2>&1)
 

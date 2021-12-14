@@ -18,7 +18,7 @@ options.add_argument("disable-setuid-sandbox")
 options.add_argument("disable-webgl")
 options.add_argument("disable-popup-blocking")
 options.add_argument('--disable-dev-shm-usage')
-
+options.add_argument('ignore-certificate-errors')
 
 idTest=sys.argv[1]
 idMod=sys.argv[2]

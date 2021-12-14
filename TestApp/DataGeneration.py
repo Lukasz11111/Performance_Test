@@ -81,17 +81,19 @@ def start():
     resultRecording = int(getREC())
     expectation=operationOnConfigPython.initialFilling(idTest,idMod)
     if (expectation!=False):
-        expectation=int(expectation['minRec'])
+        expectation=int(expectation)
     if (expectation>resultRecording):
         howMany=expectation-resultRecording
-        howMany=int(howMany+howMany*(howMany*0.000015))
+        howMany=int(howMany+howMany*(howMany*0.0000025))
         print(resultRecording)
         print(expectation)
         print(howMany)
-
+        hostApp=operationOnConfigPython.getAppHost(idTest,idMod)
+        portApp=operationOnConfigPython.getAppGenDataPort(idTest,idMod)
+        endpoint=operationOnConfigPython.getAppGenDataEndpoint(idTest,idMod)
         for x in range(0,howMany):
-            try:
-                r = requests.get('http://172.20.128.2:8080/err',timeout=0.0000000001)
+            try:   
+                r = requests.get(f'http://{hostApp}:{portApp}{endpoint}',timeout=0.0000000001)
             except:
                 pass
     else:
@@ -105,5 +107,7 @@ def main():
             result = start()
             if result:
                 sem=False
+
+
 
 main()

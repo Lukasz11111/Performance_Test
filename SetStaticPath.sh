@@ -14,3 +14,5 @@ export LOG_PATH="TestResult/path/jmeter.log"
 export OPERATION_ON_CONFIG_PATH="/app/operationOnConfig.py"
 
 export RDB_SERVER_FILE_PATH='RevDeBugServer/'
+export APP_SERVER_FILE_PATH='TestApp/'
+

@@ -1,3 +1,4 @@
+
 import gspread
 from gspread.urls import SPREADSHEETS_API_V4_BASE_URL
 from gspread_formatting import *
@@ -6,6 +7,7 @@ import operationOnConfigPython
 import operationOnResult
 import json
 import os
+import time
 
 
 
@@ -203,6 +205,7 @@ def openCreateWorkSheet(idTest,idMod):
         worksheet = sh.worksheet(name)
     except:
         worksheet=addNewSheet(name)
+        time.sleep(3)
     return worksheet
 
 def createRowCallsValue(idTest, idMod):  
@@ -258,6 +261,11 @@ def sortListValueRow(idTest, idMod):
             resultList.insert(index,int(x.value))
         except:
             resultList.insert(index,str(x.value))
+        try:
+            if resultList[index]==None:
+                resultList[index]='-'
+        except:
+            pass
     return resultList
 
 def createRowCalls(activeLine,worksheet,idTest, idMod):

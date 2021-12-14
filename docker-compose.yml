@@ -40,31 +40,7 @@ services:
             DATA_DB_SERVER_USER: ${DATA_DB_HOST:-ubuntu}
         volumes:
             - ./:/app
-        networks:
-            static-network:
-                ipv4_address: 172.20.128.3
 
-    AioHttp3.8:
-        image: aiohttp-py-3.8
-        build: 
-            context: DataGenerationApp/
-        ports:
-            - 8080:8080
-        environment:
-            REVDEBUG_APM: 1
-            REVDEBUG_RELEASE: GoStressTest
-            REVDEBUG_VERSION: GoStressTest
-            REVDEBUG_HOST: ${REVDEBUG_HOST:-3.125.113.214}
-            REVDEBUG_SOLUTION: DataGeneration
-            REVDEBUG_APPLICATION: DataGeneration
-            # REVDEBUG_LOGGING: DEBUG
-        volumes:
-            - ./DataGenerationApp/:/app/
-        logging:
-            driver: none
-        networks:
-            static-network:
-                ipv4_address: 172.20.128.2
     jmmaster:
         container_name: master
         image: jm-master:latest
@@ -125,8 +101,3 @@ services:
         network_mode: "bridge"
         logging:
             driver: none
-networks:
-  static-network:
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
