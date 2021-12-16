@@ -4,6 +4,10 @@ docker-jm/docker_main/server1.pem
 StartTime
 TestResult/path/*
 TestResult/result
+<<<<<<< HEAD
 TestResult/path/jmeter.log
 TestResult/stress.json
 tmp.jmx
+=======
+TestsConfig/Configuration.json
+>>>>>>> 9e9bf6c406046354457d317f4b21e8a07ca8b898

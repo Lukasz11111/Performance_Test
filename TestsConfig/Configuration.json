@@ -8,13 +8,13 @@
         ]
     },
     "initServerAll": "false",
-    "initServerTest": "true",
+    "initServerTest": "false",
     "initServerMod": "false",
     "clear_RDB_after_all": "false",
-    "clear_RDB_after_test": "true",
+    "clear_RDB_after_test": "false",
     "clear_RDB_after_mod": "false",
     "rebuild_app_after_all": "false",
-    "rebuild_app_after_test": "true",
+    "rebuild_app_after_test": "false",
     "rebuild_app_after_mod": "false",
     "test_time": "25",
     "thread": "100",
@@ -23,11 +23,11 @@
     "defaultRaportName": true,
     "raport_name": "raport-testowy",
     "delay": [
-        0, 100 
+        0 
     ],
     "proportions": [
 
-        100, 99, 95, 90, 75, 50, 25, 0 
+        100
     ],
 
     "server_app_default": {
@@ -41,7 +41,7 @@
         "appPath": "stress-test",
         "appDir": "lm-javastress",
         "protocol": "http",
-        "host": "3.69.148.44",
+        "host": "18.184.53.66",
         
         "language": "java-test",
         "framework": "spring-dev",
@@ -63,7 +63,7 @@
     "server_rdb_default": {
         "version": "",
         "protocol": "https",
-        "host": "testperformancerdb.ddns.net",
+        "host": "test-blulbulatora.ddns.net",
         "rdb_docker_path": "",
         "login": "a",
         "password": "a",
@@ -112,7 +112,7 @@
                 "server": {
                     "cleanAfterSingleApp": false,
                     "rebuildDataGenApp": true,
-                    "initialFilling": 0,
+                    "initialFilling": 1000,
                     "appGen": {
                         "genAppPath": "genData",
                         "port": "8999",
@@ -126,7 +126,7 @@
                     "compiler": "6.1.16-SNAPSHOT-grpc"
                 },
                 "language": "java-",
-                "framework": "spring-new-grpc",
+                "framework": "spring0000000",
                 "endpoints": [
                     {
                         "name": "/err",
@@ -147,70 +147,6 @@
                     "name": "RDB-APM",
                     "port": "8080",
                     "color": "red"
-                },  {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "blue"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "green"
-                }
-            ]
-        }, {
-            "active": "true",
-            "server_rdb_default": {
-                "login": "a",
-                "password": "a",
-                "keycloak_active": 1,
-                "server": {
-                    "cleanAfterSingleApp": false,
-                    "rebuildDataGenApp": true,
-                    "initialFilling": 0,
-                    "appGen": {
-                        "genAppPath": "genData",
-                        "port": "8999",
-                        "endpoint": "/err"
-                    }
-                }
-            },
-            "server_app_default": {
-                "app_version": {
-                    "agent": "6.1.16",
-                    "compiler": "6.1.16-SNAPSHOT-1635951658"
-                },
-                "language": "java-",
-                "framework": "spring-old-grpc",
-                "endpoints": [
-                    {
-                        "name": "/err",
-                        "error": true,
-                        "code": 2,
-                        "multiservice": "false",
-                        "db": "false"
-                    },
-                    {
-                        "name": "/",
-                        "error": false,
-                        "code": 2
-                    }
-                ]
-            },
-            "module": [
-                {
-                    "name": "RDB-APM",
-                    "port": "8080",
-                    "color": "red"
-                },  {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "blue"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "green"
                 }
             ]
         }
