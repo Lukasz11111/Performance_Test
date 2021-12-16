@@ -4,14 +4,14 @@
         "meanResTime": 0,
         "receivedKBytesPerSec": 0,
         "sentKBytesPerSec": 0,
-        "errorPct": 25
+        "errorPct": 75
     },
     "Recordings": 0,
     "Trace": 0,
     "Trace_Succes": 0,
-    "Trace_Succes_Before": 221965,
+    "Trace_Succes_Before": 268094,
     "Trace_Error": 0,
-    "Trace_Error_Before": 17532,
-    "StartTime": "2021-12-14 12:37:54.623154",
+    "Trace_Error_Before": 63371,
+    "StartTime": "2021-12-14 13:13:30.920943",
     "version": "42.42.42-Dev"
 }
