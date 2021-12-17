@@ -1,32 +1,17 @@
 {
     "TotalJmeter": {
-<<<<<<< HEAD
         "sampleCount": 0,
         "meanResTime": 0,
         "receivedKBytesPerSec": 0,
         "sentKBytesPerSec": 0,
-        "errorPct": 75
-=======
-        "sampleCount": 192343,
-        "meanResTime": 76,
-        "receivedKBytesPerSec": 1452,
-        "sentKBytesPerSec": 2753,
-        "errorPct": 0
->>>>>>> 9e9bf6c406046354457d317f4b21e8a07ca8b898
+        "errorPct": 1
     },
     "Recordings": 0,
-    "Trace": 37701,
+    "Trace": 0,
     "Trace_Succes": 0,
-<<<<<<< HEAD
-    "Trace_Succes_Before": 268094,
+    "Trace_Succes_Before": 324115,
     "Trace_Error": 0,
-    "Trace_Error_Before": 63371,
-    "StartTime": "2021-12-14 13:13:30.920943",
-=======
-    "Trace_Succes_Before": 117968,
-    "Trace_Error": 37701,
-    "Trace_Error_Before": 1,
-    "StartTime": "2021-12-14 14:07:23.380831",
->>>>>>> 9e9bf6c406046354457d317f4b21e8a07ca8b898
-    "version": "42.42.42-Dev"
+    "Trace_Error_Before": 8604,
+    "StartTime": "2021-12-17 11:45:42.766004",
+    "version": "6.2.0.2808"
 }

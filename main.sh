@@ -86,6 +86,7 @@ function exec_tests(){
 function exec_testsProp(){
  proportion=($(python3 operationOnConfig.py -getTestProportion $1 2>&1))
     for proportionVal in "${proportion[@]}"; do
+      export ACTUAL_PROPORTION="$proportionVal"
       DELAY_array=($(python3 operationOnConfig.py -getTestDelay $1 2>&1))
       for testDelay in "${DELAY_array[@]}"; do
           exec_testMod  $proportionVal $1 $testDelay

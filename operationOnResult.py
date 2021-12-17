@@ -195,7 +195,10 @@ def saveValue(rec,trace,traceErr,traceSuc):
         json_JM= json.load(f)
 
     json_result = load_json()
-    json_result["TotalJmeter"]["errorPct"] = int(json_JM["Total"]["errorPct"])
+    try:
+        json_result["TotalJmeter"]["errorPct"] =100- int(os.environ.get("ACTUAL_PROPORTION"))
+    except:
+        json_result["TotalJmeter"]["errorPct"] = int(json_JM["Total"]["errorPct"])
 
     json_result["TotalJmeter"]["sampleCount"] = json_JM["Total"]["sampleCount"]
     json_result["TotalJmeter"]["meanResTime"] = int(json_JM["Total"]["meanResTime"])

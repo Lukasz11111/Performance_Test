@@ -21,7 +21,9 @@ PROTOCOL_= operationOnConfigPython.getProtocoleApp(idTest,idMod)
 #100=100% succes, 0= 100% error, 50=50% succes itd.
 PROPORTION=int(sys.argv[1])
 
-
+# import os
+# os.environ["ACTUAL_PROPORTION"]=f'{PROPORTION}'
+# print(os.environ)
 with open(FILE) as f:
     f = [line.rstrip() for line in f]
 f=str(f)[2:]

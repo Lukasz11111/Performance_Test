@@ -16,7 +16,9 @@ function build(){
     env="$(cat $APP_SERVER_FILE_PATH.env)"
 
     bashCommand='cd '$APP_PATH'/'$APP_DIR';
+
     sudo docker-compose down
+    sudo rm .env
     echo "'$env'" > .env;
     sleep 3;
     sudo docker-compose build --no-cache
@@ -37,6 +39,7 @@ function buildDataGeneration(){
     GEN_DIR="$(python3 operationOnConfig.py -getAppGenDataDir $idTest -mod $idMod 2>&1)"
 
     bashCommand='cd '$APP_PATH'/'$GEN_DIR';
+    sudo rm .env
     sudo docker-compose down
     echo "'$env'" > .env;
     sudo docker-compose build --no-cache
