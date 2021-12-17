@@ -9,9 +9,9 @@
     "Recordings": 0,
     "Trace": 0,
     "Trace_Succes": 0,
-    "Trace_Succes_Before": 324115,
+    "Trace_Succes_Before": 0,
     "Trace_Error": 0,
-    "Trace_Error_Before": 8604,
-    "StartTime": "2021-12-17 11:45:42.766004",
+    "Trace_Error_Before": 0,
+    "StartTime": "2021-12-17 12:39:53.975809",
     "version": "6.2.0.2808"
 }

@@ -11,10 +11,10 @@ APP_PATH="$(python3 operationOnConfig.py -getAppPath $1 -mod $2 2>&1)"
 APP_DIR="$(python3 operationOnConfig.py -getAppDir $1 -mod $2 2>&1)"
 
 function build(){
-    python3 $APP_SERVER_FILE_PATH/CreateEnv.py  $idTest $idMod
+    python3 $APP_SERVER_FILE_PATH/CreateEnv.py  $idTest $idMod a
     sleep 1
     env="$(cat $APP_SERVER_FILE_PATH.env)"
-
+    echo $env
     bashCommand='cd '$APP_PATH'/'$APP_DIR';
 
     sudo docker-compose down

@@ -8,15 +8,15 @@
         ]
     },
     "initServerAll": "false",
-    "initServerTest": "true",
+    "initServerTest": "false",
     "initServerMod": "false",
     "clear_RDB_after_all": "false",
-    "clear_RDB_after_test": "true",
+    "clear_RDB_after_test": "false",
     "clear_RDB_after_mod": "false",
     "rebuild_app_after_all": "false",
     "rebuild_app_after_test": "true",
     "rebuild_app_after_mod": "false",
-    "test_time": "25",
+    "test_time": "600",
     "thread": "100",
     "slave": "6",
     "raportOn": true,
@@ -26,14 +26,276 @@
         0
     ],
     "proportions": [
-        100,
-        99,
         95,
-        90,
-        75,
-        50,
-        25,
-        0
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95,
+        95
     ],
     "server_app_default": {
         "app_version": {
@@ -46,19 +308,19 @@
         "appPath": "stress-test",
         "appDir": "lm-javastress",
         "protocol": "http",
-        "host": "3.69.148.44",
+        "host": "18.192.49.92",
         "language": "java-test",
         "framework": "spring-dev",
         "endpoints": [
             {
-                "name": "/multi-err",
+                "name": "/err",
                 "error": true,
                 "code": 2,
                 "multiservice": "false",
                 "db": "false"
             },
             {
-                "name": "/multi",
+                "name": "/",
                 "error": false,
                 "code": 2
             }
@@ -66,8 +328,8 @@
     },
     "server_rdb_default": {
         "version": "",
-        "protocol": "https",
-        "host": "testperformancerdb.ddns.net",
+        "protocol": "http",
+        "host": "18.192.105.201",
         "rdb_docker_path": "",
         "login": "a",
         "password": "a",
@@ -90,13 +352,13 @@
         "MV": {
             "cpu": 16,
             "ram": 32,
-            "disk_size": 512,
+            "disk_size": 1022,
             "disk_type": "ssd",
             "disk_iops": "-",
             "platform": "aws"
         },
         "server": {
-            "cleanAfterSingleApp": true,
+            "cleanAfterSingleApp": false,
             "rebuildDataGenApp": false,
             "initialFilling": 0,
             "appGen": {
@@ -107,61 +369,9 @@
         }
     },
     "Tests": [
-       
         {
             "active": "true",
             "server_rdb_default": {
-                "protocol": "https",
-                "host": "testperformancerdb.ddns.net",
-                "login": "a",
-                "password": "a",
-                "keycloak_active": 1,
-                "server": {
-                    "cleanAfterSingleApp": false,
-                    "rebuildDataGenApp": true,
-                    "initialFilling": 1000000,
-                    "appGen": {
-                        "genAppPath": "genData",
-                        "port": "8999",
-                        "endpoint": "/err"
-                    }
-                }
-            },
-            "server_app_default": {
-                "language": "java-",
-                "framework": "spring-ssl-1000000data-endpoint-multi-0delay"
-            },
-            "module": [
-                {
-                    "name": "RDB-APM",
-                    "port": "8080",
-                    "color": "red"
-                },
-                {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "yellow"
-                },
-                {
-                    "name": "APM",
-                    "port": "8082",
-                    "color": "green"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "blue"
-                }
-            ]
-        },
-            {
-            "active": "true",
-            "delay": [
-                100
-            ],
-            "server_rdb_default": {
-                "protocol": "https",
-                "host": "testperformancerdb.ddns.net",
                 "login": "a",
                 "password": "a",
                 "keycloak_active": 1,
@@ -177,246 +387,8 @@
                 }
             },
             "server_app_default": {
-                "language": "java",
-                "framework": "spring-ssl-0data-endpoint-multi-100delay"
-            },
-            "module": [
-                {
-                    "name": "RDB-APM",
-                    "port": "8080",
-                    "color": "red"
-                },
-                {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "yellow"
-                },
-                {
-                    "name": "APM",
-                    "port": "8082",
-                    "color": "green"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "blue"
-                }
-            ]
-        },
-        {
-            "active": "true",
-            "delay": [
-                100
-            ],
-            "server_rdb_default": {
-                "protocol": "https",
-                "host": "testperformancerdb.ddns.net",
-                "login": "a",
-                "password": "a",
-                "keycloak_active": 1,
-                "server": {
-                    "cleanAfterSingleApp": false,
-                    "rebuildDataGenApp": true,
-                    "initialFilling": 1000000,
-                    "appGen": {
-                        "genAppPath": "genData",
-                        "port": "8999",
-                        "endpoint": "/err"
-                    }
-                }
-            },
-            "server_app_default": {
                 "language": "java-",
-                "framework": "spring-ssl-1000000data-endpoint-multi-100delay"
-            },
-            "module": [
-                {
-                    "name": "RDB-APM",
-                    "port": "8080",
-                    "color": "red"
-                },
-                {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "yellow"
-                },
-                {
-                    "name": "APM",
-                    "port": "8082",
-                    "color": "green"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "blue"
-                }
-            ]
-        },{
-            "active": "true",
-            "server_rdb_default": {
-                "protocol": "http",
-                "host": "3.125.113.214",
-                "login": "a",
-                "password": "a",
-                "keycloak_active": 1,
-                "server": {
-                    "cleanAfterSingleApp": false,
-                    "rebuildDataGenApp": true,
-                    "initialFilling": 0,
-                    "appGen": {
-                        "genAppPath": "genData",
-                        "port": "8999",
-                        "endpoint": "/err"
-                    }
-                }
-            },
-            "server_app_default": {
-                "language": "java",
-                "framework": "spring-no-ssl-0data-endpoint-multi-0delay"
-            },
-            "module": [
-                {
-                    "name": "RDB-APM",
-                    "port": "8080",
-                    "color": "red"
-                },
-                {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "yellow"
-                },
-                {
-                    "name": "APM",
-                    "port": "8082",
-                    "color": "green"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "blue"
-                }
-            ]
-        },
-        {
-            "active": "true",
-            "server_rdb_default": {
-                "protocol": "http",
-                "host": "3.125.113.214",
-                "login": "a",
-                "password": "a",
-                "keycloak_active": 1,
-                "server": {
-                    "cleanAfterSingleApp": false,
-                    "rebuildDataGenApp": true,
-                    "initialFilling": 1000000,
-                    "appGen": {
-                        "genAppPath": "genData",
-                        "port": "8999",
-                        "endpoint": "/err"
-                    }
-                }
-            },
-            "server_app_default": {
-                "language": "java-",
-                "framework": "spring-no-ssl-1000000data-endpoint-multi-0delay"
-            },
-            "module": [
-                {
-                    "name": "RDB-APM",
-                    "port": "8080",
-                    "color": "red"
-                },
-                {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "yellow"
-                },
-                {
-                    "name": "APM",
-                    "port": "8082",
-                    "color": "green"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "blue"
-                }
-            ]
-        },
-            {
-            "active": "true",
-            "delay": [
-                100
-            ],
-            "server_rdb_default": {
-                "protocol": "http",
-                "host": "3.125.113.214",
-                "login": "a",
-                "password": "a",
-                "keycloak_active": 1,
-                "server": {
-                    "cleanAfterSingleApp": false,
-                    "rebuildDataGenApp": true,
-                    "initialFilling": 0,
-                    "appGen": {
-                        "genAppPath": "genData",
-                        "port": "8999",
-                        "endpoint": "/err"
-                    }
-                }
-            },
-            "server_app_default": {
-                "language": "java",
-                "framework": "spring-no-ssl-0data-endpoint-multi-100delay"
-            },
-            "module": [
-                {
-                    "name": "RDB-APM",
-                    "port": "8080",
-                    "color": "red"
-                },
-                {
-                    "name": "RDB",
-                    "port": "8081",
-                    "color": "yellow"
-                },
-                {
-                    "name": "APM",
-                    "port": "8082",
-                    "color": "green"
-                },
-                {
-                    "name": "NONE",
-                    "port": "8083",
-                    "color": "blue"
-                }
-            ]
-        },
-        {
-            "active": "true",
-            "delay": [
-                100
-            ],
-            "server_rdb_default": {
-                "protocol": "http",
-                "host": "3.125.113.214",
-                "login": "a",
-                "password": "a",
-                "keycloak_active": 1,
-                "server": {
-                    "cleanAfterSingleApp": false,
-                    "rebuildDataGenApp": true,
-                    "initialFilling": 1000000,
-                    "appGen": {
-                        "genAppPath": "genData",
-                        "port": "8999",
-                        "endpoint": "/err"
-                    }
-                }
-            },
-            "server_app_default": {
-                "language": "java-",
-                "framework": "spring-no-ssl-10000000data-endpoint-multi-100delay"
+                "framework": "spring-test_of_filling_server-no-ssl"
             },
             "module": [
                 {
