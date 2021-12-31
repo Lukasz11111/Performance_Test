@@ -16,6 +16,7 @@ REVDEBUG_VOLUME_PATH=/var/revdebug/server/repo
 REVDEBUG_VOLUME_CAPATH=/var/revdebug/ca
 REVDEBUG_CERTIFICATE_PATH=/var/revdebug/cert
 REVDEBUG_DOCKER_TAG={operationOnConfigPython.getTag(idTest, idMod)}
+REVDEBUG_DOCKER_REGISTRY={operationOnConfigPython.getHub(idTest, idMod)}
 '''
 
 if operationOnConfigPython.getSSLActive(idTest, idMod)=="1":

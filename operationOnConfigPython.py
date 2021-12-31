@@ -260,6 +260,10 @@ def getTag(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,"nightly","rdb_docker_tag",idMod)
     return result
 
+def getHub(idTest, idMod):
+    result = getRdbConf("server_rdb_default",idTest,"docker.revdebug.com/","rdb_docker_tag",idMod)
+    return result
+
 def getServerName(idTest, idMod):
     result = getRdbConf("server_rdb_default",idTest,getRDBHost(idTest, idMod),"server_name",idMod)
     return result
