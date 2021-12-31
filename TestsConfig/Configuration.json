@@ -1,6 +1,9 @@
 {
+    "RDBTestActiv":"true",
+    "AppTestActiv":"false",
+    "FileTestActiv":"false",
+
     "start_my_file_test": {
-        "active": "true",
         "slave": 6,
         "_comment": "if you active start_my_file_test there will be only that started",
         "names": [
@@ -106,6 +109,23 @@
             }
         }
     },
+    "TestRDBServer":[
+        {
+            "raportName": "",
+            "server_rdb_default": {},
+            "delay": [
+                0
+            ],
+            "endpoints": [
+                {
+                    "name": "/home"
+                },
+                {
+                    "name": "/"
+                }
+            ]
+        }
+    ],
     "Tests": [
         {
             "active": "true",

@@ -143,14 +143,29 @@ done
 
 }
 
-single_tests_active="$(python3 operationOnConfig.py -singleTestsActive 1 2>&1)"
+file_tests_active="$(python3 operationOnConfig.py -FileTestActiv 1 2>&1)"
+app_tests_active="$(python3 operationOnConfig.py -AppTestActiv 1 2>&1)"
+rdb_tests_active="$(python3 operationOnConfig.py -RDBTestActiv 1 2>&1)"
 
 
-if [[ $single_tests_active != "1" ]]; then
-    exec_tests $testsLen
-else
-customSingleTest 
+
+if [[ $file_tests_active == "1" ]]; then
+  echo "Start file test"
+     # customSingleTest 
+ 
 fi
+
+if [[ $rdb_tests_active == "1" ]]; then
+ echo "Start RevDeBug server test"
+     bash $RDBTEST
+fi
+
+if [[ $app_tests_active == "1" ]]; then
+ echo "Start App test"
+    # exec_tests $testsLen
+fi
+
+
 
 
 

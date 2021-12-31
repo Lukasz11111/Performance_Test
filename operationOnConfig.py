@@ -8,7 +8,7 @@ import operationOnConfigPython
 parser = argparse.ArgumentParser(description='Get config')
 
 parser.add_argument('-mod')
-parser.add_argument('-singleTestsActive',  nargs='?')
+
 parser.add_argument('-initServerAll',  nargs='?')
 parser.add_argument('-initServerTest',  nargs='?')
 parser.add_argument('-initServerMod',  nargs='?')
@@ -25,6 +25,7 @@ parser.add_argument('-getSlave',  nargs='?')
 parser.add_argument('-getRDBKey',  nargs='?')
 parser.add_argument('-getPgContainerName',  nargs='?')
 parser.add_argument('-getRdbDBSysUser',  nargs='?')
+parser.add_argument('-customRDBTest',  nargs='?')
 parser.add_argument('-customSingleTest',  nargs='?')
 parser.add_argument('-slaveingleTest',  nargs='?')
 parser.add_argument('-ifRaportGen',  nargs='?')
@@ -46,7 +47,9 @@ parser.add_argument('-rebuildAppAfterAll',  nargs='?')
 parser.add_argument('-rebuildDataGenApp',  nargs='?')
 parser.add_argument('-getAppGenDataDir',  nargs='?')
 
-
+parser.add_argument('-FileTestActiv',  nargs='?')
+parser.add_argument('-AppTestActiv',  nargs='?')
+parser.add_argument('-RDBTestActiv',  nargs='?')
 
 argsP=parser.parse_args().__dict__
 
@@ -61,6 +64,7 @@ if 'mod' in argsP:
 def getResult(argsP):
     for key, val in argsP.items():
         result = { 
+        'customRDBTest': lambda x: operationOnConfigPython.customRDBTest(),
         'getAppGenDataDir': lambda x: operationOnConfigPython.getAppGenDataDir(x,mod),
         'rebuildAppAfterMod': lambda x: operationOnConfigPython.rebuildAppAfterMod(),
         'rebuildAppAfterTest': lambda x: operationOnConfigPython.rebuildAppAfterTest(),
@@ -85,7 +89,9 @@ def getResult(argsP):
         'slaveingleTest': lambda x: operationOnConfigPython.slaveingleTest(),
         'customSingleTest': lambda x: operationOnConfigPython.customSingleTest(),
         'getRdbDBSysUser': lambda x: operationOnConfigPython.getRdbDBSysUser(x,mod),
-        'singleTestsActive': lambda x: operationOnConfigPython.singleTestsActive(),
+        'FileTestActiv': lambda x: operationOnConfigPython.FileTestActiv(),
+        'RDBTestActiv': lambda x: operationOnConfigPython.RDBTestActiv(),
+        'AppTestActiv': lambda x: operationOnConfigPython.AppTestActiv(),
         'getPgContainerName': lambda x: operationOnConfigPython.getPgContainerName(x,mod),
         'getRDBKey': lambda x: operationOnConfigPython.getRdbKey(x,mod),
         'getDeduplication': lambda x: operationOnConfigPython.getDeduplication(x,mod),

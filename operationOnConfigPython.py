@@ -340,18 +340,32 @@ def getPgContainerName(idTest,idMod):
     result = getRdbConf("server_rdb_default",idTest,"revdebug-server-docker-compose_postgres_1","pg_container_name",idMod)
     return retValueOrEnv(result,'POSTGRESS_CONTAINER_NAME')
 
-def singleTestsActive():
-    if 'active' in json_dict['start_my_file_test']:
+def FileTestActiv():
         try:
-            if to_bool(json_dict['start_my_file_test']['active']):
+            if to_bool(json_dict['FileTestActiv']):
                 return "1"
             else:
                 return "0"
         except:
             return "0"
-    else:
-        return "1"
 
+def RDBTestActiv():
+        try:
+            if to_bool(json_dict['RDBTestActiv']):
+                return "1"
+            else:
+                return "0"
+        except:
+            return "0"
+
+def AppTestActiv():
+        try:
+            if to_bool(json_dict['AppTestActiv']):
+                return "1"
+            else:
+                return "0"
+        except:
+            return "0"
 
 def customSingleTest():
     return listToString(json_dict['start_my_file_test']["names"])
