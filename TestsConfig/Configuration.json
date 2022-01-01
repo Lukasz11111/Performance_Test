@@ -1,8 +1,6 @@
 {
-    "RDBTestActiv":"true",
-    "AppTestActiv":"false",
-    "FileTestActiv":"false",
-
+    "AppTestActiv": "true",
+    "FileTestActiv": "false",
     "start_my_file_test": {
         "slave": 6,
         "_comment": "if you active start_my_file_test there will be only that started",
@@ -14,10 +12,10 @@
     "initServerTest": "false",
     "initServerMod": "false",
     "clear_RDB_after_all": "false",
-    "clear_RDB_after_test": "true",
+    "clear_RDB_after_test": "false",
     "clear_RDB_after_mod": "false",
     "rebuild_app_after_all": "false",
-    "rebuild_app_after_test": "true",
+    "rebuild_app_after_test": "false",
     "rebuild_app_after_mod": "false",
     "test_time": "20",
     "thread": "100",
@@ -50,7 +48,6 @@
         "appDir": "lm-javastress",
         "protocol": "http",
         "host": "40.89.147.34",
-       
         "endpoints": [
             {
                 "name": "/err",
@@ -82,8 +79,8 @@
         "db_port": "5432",
         "rdb_auth": "E56D341B29AC483B",
         "rdb_cert_name": "mycert",
-        "rdb_docker_tag": "20211228_10",
-        "rdb_docker_hub": "docker-test.revdebug.com/",
+        "rdb_docker_tag": "nightly",
+        "rdb_docker_hub": "docker.revdebug.com/",
         "deduplication": "0",
         "pg_container_name": "rdb_postgres_1",
         "keycloak_active": 1,
@@ -109,10 +106,26 @@
             }
         }
     },
-    "TestRDBServer":[
+    "Tests": [
         {
+            "active": "true",
+            "TestType": "RDB",
             "raportName": "",
-            "server_rdb_default": {},
+            "server_rdb_default": {
+                "login": "a",
+                "password": "a",
+                "keycloak_active": 1,
+                "server": {
+                    "cleanAfterSingleApp": false,
+                    "rebuildDataGenApp": true,
+                    "initialFilling": 0,
+                    "appGen": {
+                        "genAppPath": "genData",
+                        "port": "8999",
+                        "endpoint": "/err"
+                    }
+                }
+            },
             "delay": [
                 0
             ],
@@ -123,12 +136,17 @@
                 {
                     "name": "/"
                 }
+            ],
+            "module": [
+                {
+                    "name": "RevDeBug",
+                    "port": "80",
+                    "color": "red"
+                }
             ]
-        }
-    ],
-    "Tests": [
+        },
         {
-            "active": "true",
+            "active": "false",
             "server_rdb_default": {
                 "login": "a",
                 "password": "a",

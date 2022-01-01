@@ -31,27 +31,27 @@ def ifRaportGen(idTest,idMod):
     return getConf("raportOn",idTest,"False")
 
 
-def getRdbConfMod(name,idTest,idMod, nameConf):
-    if  name in json_dict["Tests"][int(idTest)]["module"][int(idMod)]:
-        if nameConf in json_dict["Tests"][int(idTest)]["module"][int(idMod)][name]:
-            if not json_dict["Tests"][int(idTest)]["module"][int(idMod)][name][nameConf]:
+def getRdbConfMod(name,idTest,idMod, nameConf, TestType="Tests"):
+    if  name in json_dict[TestType][int(idTest)]["module"][int(idMod)]:
+        if nameConf in json_dict[TestType][int(idTest)]["module"][int(idMod)][name]:
+            if not json_dict[TestType][int(idTest)]["module"][int(idMod)][name][nameConf]:
                 return None
             else:
-                return json_dict["Tests"][int(idTest)]["module"][int(idMod)][name][nameConf]
+                return json_dict[TestType][int(idTest)]["module"][int(idMod)][name][nameConf]
     return None
 
-def getRdbConf(name,idTest,defaultVal,nameConf, idMod=None):
+def getRdbConf(name,idTest,defaultVal,nameConf, idMod=None, TestType="Tests"):
     
     if idMod!=None:
-        result=getRdbConfMod(name,idTest,idMod,nameConf)
+        result=getRdbConfMod(name,idTest,idMod,nameConf,TestType)
         if result!=None:
             return result
-    if  name in json_dict["Tests"][int(idTest)]:
-        if  nameConf in json_dict["Tests"][int(idTest)][name]:
-            if not json_dict["Tests"][int(idTest)][name][nameConf]:
+    if  name in json_dict[TestType][int(idTest)]:
+        if  nameConf in json_dict[TestType][int(idTest)][name]:
+            if not json_dict[TestType][int(idTest)][name][nameConf]:
                 return getRdbConfTest(name,defaultVal)
             else:
-                return json_dict["Tests"][int(idTest)][name][nameConf]
+                return json_dict[TestType][int(idTest)][name][nameConf]
         else:
             return getRdbConfTest(name,defaultVal,nameConf)
     return getRdbConfTest(name,defaultVal,nameConf)
@@ -66,26 +66,26 @@ def getRdbConfTest(name,defaultVal,nameConf):
     return defaultVal
 
 
-def getConfMod(name,idTest,idMod):
-    if  name in json_dict["Tests"][int(idTest)]["module"][int(idMod)]:
-        if not json_dict["Tests"][int(idTest)]["module"][int(idMod)][name]:
+def getConfMod(name,idTest,idMod,TestType="Tests"):
+    if  name in json_dict[TestType][int(idTest)]["module"][int(idMod)]:
+        if not json_dict[TestType][int(idTest)]["module"][int(idMod)][name]:
             return None
         else:
-            return json_dict["Tests"][int(idTest)]["module"][int(idMod)][name]
+            return json_dict[TestType][int(idTest)]["module"][int(idMod)][name]
     else:
         return None
 
 
-def getConf(name,idTest,defaultVal, idMod=None):
+def getConf(name,idTest,defaultVal, idMod=None,TestType="Tests"):
     if idMod!=None:
-        result=getConfMod(name,idTest, idMod)
+        result=getConfMod(name,idTest, idMod,TestType)
         if result!=None:
             return result
-    if  name in json_dict["Tests"][int(idTest)]:
-        if not json_dict["Tests"][int(idTest)][name]:
+    if  name in json_dict[TestType][int(idTest)]:
+        if not json_dict[TestType][int(idTest)][name]:
             return getConfTest(name,defaultVal)
         else:
-            return json_dict["Tests"][int(idTest)][name]
+            return json_dict[TestType][int(idTest)][name]
     else:
         return getConfTest(name,defaultVal)
 
@@ -99,13 +99,13 @@ def getConfTest(name,defaultVal):
         return defaultVal
 
 
-def getTestTime(idTest,idmod):
-    if "test_time" in json_dict['Tests'][idTest]['module'][idmod]:
-        if int(json_dict['Tests'][idTest]['module'][idmod]["test_time"]) > 0:
-            return json_dict['Tests'][idTest]['module'][idmod]["test_time"]
-    if "test_time" in json_dict['Tests'][idTest]:
-        if int(json_dict['Tests'][idTest]['test_time']) > 0:
-            return json_dict['Tests'][idTest]['test_time']
+def getTestTime(idTest,idmod,TestType="Tests"):
+    if "test_time" in json_dict[TestType][idTest]['module'][idmod]:
+        if int(json_dict[TestType][idTest]['module'][idmod]["test_time"]) > 0:
+            return json_dict[TestType][idTest]['module'][idmod]["test_time"]
+    if "test_time" in json_dict[TestType][idTest]:
+        if int(json_dict[TestType][idTest]['test_time']) > 0:
+            return json_dict[TestType][idTest]['test_time']
     if "test_time" in json_dict:
         if int(json_dict['test_time']) > 0:
             return json_dict['test_time']
@@ -133,23 +133,23 @@ def to_bool(value):
 # for key, value in args.items():
 #     json_dict[key]=value
 
-def getTestTime(idTest,idmod):
-    if "test_time" in json_dict['Tests'][idTest]['module'][idmod]:
-        if int(json_dict['Tests'][idTest]['module'][idmod]["test_time"]) > 0:
-            return json_dict['Tests'][idTest]['module'][idmod]["test_time"]
-    if "test_time" in json_dict['Tests'][idTest]:
-        if int(json_dict['Tests'][idTest]['test_time']) > 0:
-            return json_dict['Tests'][idTest]['test_time']
+def getTestTime(idTest,idmod,TestType="Tests"):
+    if "test_time" in json_dict[TestType][idTest]['module'][idmod]:
+        if int(json_dict[TestType][idTest]['module'][idmod]["test_time"]) > 0:
+            return json_dict[TestType][idTest]['module'][idmod]["test_time"]
+    if "test_time" in json_dict[TestType][idTest]:
+        if int(json_dict[TestType][idTest]['test_time']) > 0:
+            return json_dict[TestType][idTest]['test_time']
     if "test_time" in json_dict:
         if int(json_dict['test_time']) > 0:
             return json_dict['test_time']
     return '10'
     
 
-def getAllRun():
+def getAllRun(TestType="Tests"):
     runs={"allRun":0,"testTime":0}
 
-    for index, val in enumerate(json_dict['Tests']):
+    for index, val in enumerate(json_dict[TestType]):
         idTest=index
 
         if to_bool(val['active']):
@@ -173,8 +173,8 @@ def getLenProportion(idTest, idMod):
 def getLenDelay(idTest, idMod):
     return len(getConf("delay",idTest,[0],idMod))
 
-def getTestsLen():
-    return len(json_dict['Tests'])
+def getTestsLen(TestType="Tests"):
+    return len(json_dict[TestType])
 
 def ifModIsActiv(mod):
     if 'active' in mod:
@@ -197,10 +197,10 @@ def returnLenOfActiveMod(mods):
     return activeMod
 
 
-def ifTestIsActive(idTest):
-    if 'active' in json_dict['Tests'][int(idTest)]:
+def ifTestIsActive(idTest,TestType="Tests"):
+    if 'active' in json_dict[TestType][int(idTest)]:
         try:
-            if to_bool(json_dict['Tests'][int(idTest)]['active']):
+            if to_bool(json_dict[TestType][int(idTest)]['active']):
                 return "1"
             else:
                 return "0"
@@ -226,14 +226,14 @@ def getTestDelay(idTest):
 def getTestProportion(idTest):
     return listToString(getConf("proportions",idTest,[50]))
 
-def getModeLen(idTest):
-    return len(json_dict["Tests"][int(idTest)]['module'])
+def getModeLen(idTest,TestType="Tests"):
+    return len(json_dict[TestType][int(idTest)]['module'])
 
 def getAppHost(idTest, idMod):
     return getRdbConf("server_app_default",idTest,"0.0.0.0","host",idMod)
 
-def getAppPort(idTest, idMod):
-    return json_dict["Tests"][int(idTest)]['module'][int(idMod)]['port']
+def getAppPort(idTest, idMod,TestType="Tests"):
+    return json_dict[TestType][int(idTest)]['module'][int(idMod)]['port']
 
 def getThCount(idTest, idMod):
     return getConf("thread",idTest,"100",idMod)
@@ -261,7 +261,7 @@ def getTag(idTest, idMod):
     return result
 
 def getHub(idTest, idMod):
-    result = getRdbConf("server_rdb_default",idTest,"docker.revdebug.com/","rdb_docker_tag",idMod)
+    result = getRdbConf("server_rdb_default",idTest,"docker.revdebug.com/","rdb_docker_hub",idMod)
     return result
 
 def getServerName(idTest, idMod):
@@ -349,14 +349,9 @@ def FileTestActiv():
         except:
             return "0"
 
-def RDBTestActiv():
-        try:
-            if to_bool(json_dict['RDBTestActiv']):
-                return "1"
-            else:
-                return "0"
-        except:
-            return "0"
+def typeTest(idTest):
+        result = getConf("TestType",idTest,"APP")
+        return result
 
 def AppTestActiv():
         try:
@@ -366,6 +361,7 @@ def AppTestActiv():
                 return "0"
         except:
             return "0"
+
 
 def customSingleTest():
     return listToString(json_dict['start_my_file_test']["names"])
@@ -379,17 +375,17 @@ def getRaportName(idTest,idMod):
 def getMV(idTest,idMod):
     return getRdbConf("server_rdb_default",idTest,"Non set","MV",idMod)
 
-def getTestModOnly(idTest,idMod,name):
+def getTestModOnly(idTest,idMod,name,TestType="Tests"):
     if idMod!=None:
         result=getConfMod(name,idTest, idMod)
     if result!=None:
         return result
     
-    if  name in json_dict["Tests"][int(idTest)]:
-        if not json_dict["Tests"][int(idTest)][name]:
+    if  name in json_dict[TestType][int(idTest)]:
+        if not json_dict[TestType][int(idTest)][name]:
             return '-'
         else:
-            return json_dict["Tests"][int(idTest)][name]
+            return json_dict[TestType][int(idTest)][name]
     return '-'
 
 def getLang(idTest,idMod):
@@ -417,8 +413,8 @@ def getAppVersion(idTest,idMod):
         return {'agent':'-','compiler':'-'}
     return result
 
-def getActiveMod(idTest,idMod):
-    return json_dict["Tests"][int(idTest)]["module"][int(idMod)]['name']
+def getActiveMod(idTest,idMod,TestType="Tests"):
+    return json_dict[TestType][int(idTest)]["module"][int(idMod)]['name']
 
 
 def getColor(idTest,idMod):

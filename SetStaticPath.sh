@@ -17,3 +17,4 @@ export RDB_SERVER_FILE_PATH='RevDeBugServer/'
 export APP_SERVER_FILE_PATH='TestApp/'
 export RDBTEST='RevDeBugInstanceTests/mainRDB.sh'
 
+export MODEL_TEST_FILE_RDB='RevDeBugInstanceTests/modelRDB.sh'

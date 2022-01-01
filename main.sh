@@ -77,7 +77,15 @@ function exec_tests(){
     ifTestIsActive=$(python3 operationOnConfig.py -ifTestIsActive $test 2>&1)
       if [[ $ifTestIsActive != "0" ]]; then
       clearInitRebuild $clearRDBAfterTest $initRDBTest $rebuildAppAfterTest $test 0
-          exec_testsProp  $test      
+      typeTest=$(python3 operationOnConfig.py -typeTest $test 2>&1)
+      echo $typeTest "sss"
+if [[ $typeTest == "RDB" ]]; then
+  echo "Start RevDeBug test"
+     bash $RDBTEST $test 
+else 
+echo "Start App test"
+ exec_testsProp  $test  
+fi           
       fi   
   done
   clearInitRebuild $clearRDBAfterAll $initRDBAll $rebuildAppAfterAll 0 0
@@ -145,24 +153,19 @@ done
 
 file_tests_active="$(python3 operationOnConfig.py -FileTestActiv 1 2>&1)"
 app_tests_active="$(python3 operationOnConfig.py -AppTestActiv 1 2>&1)"
-rdb_tests_active="$(python3 operationOnConfig.py -RDBTestActiv 1 2>&1)"
+
 
 
 
 if [[ $file_tests_active == "1" ]]; then
   echo "Start file test"
-     # customSingleTest 
- 
+     customSingleTest 
 fi
 
-if [[ $rdb_tests_active == "1" ]]; then
- echo "Start RevDeBug server test"
-     bash $RDBTEST
-fi
+
 
 if [[ $app_tests_active == "1" ]]; then
- echo "Start App test"
-    # exec_tests $testsLen
+    exec_tests $testsLen
 fi
 
 

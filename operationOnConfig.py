@@ -25,7 +25,6 @@ parser.add_argument('-getSlave',  nargs='?')
 parser.add_argument('-getRDBKey',  nargs='?')
 parser.add_argument('-getPgContainerName',  nargs='?')
 parser.add_argument('-getRdbDBSysUser',  nargs='?')
-parser.add_argument('-customRDBTest',  nargs='?')
 parser.add_argument('-customSingleTest',  nargs='?')
 parser.add_argument('-slaveingleTest',  nargs='?')
 parser.add_argument('-ifRaportGen',  nargs='?')
@@ -49,7 +48,7 @@ parser.add_argument('-getAppGenDataDir',  nargs='?')
 
 parser.add_argument('-FileTestActiv',  nargs='?')
 parser.add_argument('-AppTestActiv',  nargs='?')
-parser.add_argument('-RDBTestActiv',  nargs='?')
+parser.add_argument('-typeTest',  nargs='?')
 
 argsP=parser.parse_args().__dict__
 
@@ -64,7 +63,7 @@ if 'mod' in argsP:
 def getResult(argsP):
     for key, val in argsP.items():
         result = { 
-        'customRDBTest': lambda x: operationOnConfigPython.customRDBTest(),
+        'typeTest': lambda x: operationOnConfigPython.typeTest(x),
         'getAppGenDataDir': lambda x: operationOnConfigPython.getAppGenDataDir(x,mod),
         'rebuildAppAfterMod': lambda x: operationOnConfigPython.rebuildAppAfterMod(),
         'rebuildAppAfterTest': lambda x: operationOnConfigPython.rebuildAppAfterTest(),
