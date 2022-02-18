@@ -26,7 +26,7 @@ options.add_argument('ignore-certificate-errors')
 
 idTest=sys.argv[1]
 idMod=sys.argv[2]
-
+DELAY=sys.argv[3]
 
 HOST=operationOnConfigPython.getRDBHost(idTest,idMod)
 PROTOCOL=operationOnConfigPython.getRdbProtocol(idTest,idMod)
@@ -60,6 +60,6 @@ operationOnResult.setVersion(version)
 
 print(version)
 
-createJMFile.create(driver.get_cookies())
+createJMFile.create(driver.get_cookies(),idTest,idMod, DELAY)
 
 driver.quit()

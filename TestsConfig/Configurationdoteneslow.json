@@ -2,48 +2,46 @@
     "AppTestActiv": "true",
     "FileTestActiv": "false",
     "start_my_file_test": {
-        "active": "true",
         "slave": 6,
         "_comment": "if you active start_my_file_test there will be only that started",
         "names": [
-            "a.jmx"
+            "tmp.jmx"
         ]
     },
     "initServerAll": "false",
     "initServerTest": "false",
     "initServerMod": "false",
     "clear_RDB_after_all": "false",
-    "clear_RDB_after_test": "true",
+    "clear_RDB_after_test": "false",
     "clear_RDB_after_mod": "false",
     "rebuild_app_after_all": "false",
     "rebuild_app_after_test": "true",
     "rebuild_app_after_mod": "false",
-    "test_time": "1800",
-    "thread": "100",
+    "RDBTEST_restartAfterSingleRun": "true",
+    "test_time": "120",
+    "thread": "50",
     "slave": "6",
     "raportOn": true,
     "defaultRaportName": true,
-    "raport_name": "java-old",
+    "raport_name": "RDB-test-2",
     "delay": [
         0
     ],
     "proportions": [
-       100
+        100, 99 ,98,97,96,95,94,93,92,91,90,80
     ],
     "server_app_default": {
         "app_version": {
-            "agent": "6.3.0",
-            "compiler": "6.3.0"
+            "agent": "6.1.20",
+            "compiler": "6.1.17"
         },
-        "key_path": "./TestStart/keyAppLm.pem",
+        "key_path": "./TestStart/serviceapp.pem",
         "user_sys": "lm",
-        "application_name": "Java",
+        "application_name": "DotNet",
         "appPath": "stress",
-        "appDir": "lm-javastress",
+        "appDir": "stresstestdotnetcore",
         "protocol": "http",
         "host": "40.89.147.34",
-        "language": "java-old",
-        "framework": "17.02",
         "endpoints": [
             {
                 "name": "/err",
@@ -63,7 +61,7 @@
         "version": "",
         "protocol": "http",
         "host": "20.199.127.147",
-        "rdb_docker_path": "",
+        "rdb_docker_path": "~/rdb-docker-stress",
         "login": "a",
         "password": "a",
         "server_name": "",
@@ -76,6 +74,7 @@
         "rdb_auth": "E56D341B29AC483B",
         "rdb_cert_name": "mycert",
         "rdb_docker_tag": "nightly",
+        "rdb_docker_hub": "docker.revdebug.com/",
         "deduplication": "0",
         "pg_container_name": "rdb_postgres_1",
         "keycloak_active": 1,
@@ -85,7 +84,7 @@
         "MV": {
             "cpu": 16,
             "ram": 32,
-            "disk_size": 512,
+            "disk_size": 1022,
             "disk_type": "ssd",
             "disk_iops": "-",
             "platform": "aws"
@@ -95,57 +94,76 @@
             "rebuildDataGenApp": false,
             "initialFilling": 0,
             "appGen": {
-                "genAppPath": "genData",
+                "genAppPath": "genApp",
                 "port": "8999",
                 "endpoint": "/err"
             }
         }
     },
-    "Tests": [
-        {
-            "active": "true",
-            "delay": [
-                0
-            ],
-            "server_rdb_default": {
-                "rdb_docker_tag": "6.3.1"
-            
-            },
-            "server_app_default": {
-                "app_version": {
-                    "agent": "6.3.1",
-                    "compiler": "6.3.1"
+    "Tests": [ {
+        "active": "true",
+        "delay": [
+            500
+        ],
+        "server_rdb_default": {
+            "protocol": "http",
+            "host": "20.199.127.147",
+            "login": "a",
+            "password": "a",
+            "keycloak_active": 1,
+            "server": {
+                "cleanAfterSingleApp": false,
+                "rebuildDataGenApp": true,
+                "initialFilling": 0,
+                "appGen": {
+                    "genAppPath": "genData",
+                    "port": "8999",
+                    "endpoint": "/err"
+                }
+            }
+        },
+        "server_app_default": {
+            "language": "dotnet",
+            "framework": "netcoreapp3.1-05.01.22",
+            "endpoints": [
+                {
+                    "name": "/err",
+                    "error": true,
+                    "code": 2,
+                    "multiservice": "false",
+                    "db": "false"
                 },
-                "application_name": "DotNet",
-                "appPath": "stress",
-                "appDir": "stresstestdotnetcore",
-                "language": "dotnet-new",
-                "framework": "18.02",
-                "endpoints": [
-                    {
-                        "name": "/err",
-                        "error": true,
-                        "code": 2,
-                        "multiservice": "false",
-                        "db": "false"
-                    },
-                    {
-                        "name": "/short",
-                        "error": false,
-                        "code": 2
-                    }
-                ]
-            },
-            "module": [
-                { 
-                    "comparison": true,
-                    "name": "RDB-APM",
-                    "port": "8060",
-                    "color": "red"
+                {
+                    "name": "/short",
+                    "error": false,
+                    "code": 2
                 }
             ]
-        }
-        
-        
+        },
+        "module": [
+            {
+                "comparison": true,
+                "name": "NONE",
+                "port": "8063",
+                "color": "blue"
+            },
+            {
+                "name": "RDB",
+                "port": "8061",
+                "color": "yellow"
+            },
+            {
+                "name": "APM",
+                "port": "8062",
+                "color": "green"
+            },
+            {
+                "name": "RDB-APM",
+                "port": "8060",
+                "color": "red"
+            }
+        ]
+    }
+       
     ]
 }

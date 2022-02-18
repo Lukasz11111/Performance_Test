@@ -28,7 +28,7 @@ function build(){
     sudo docker-compose up -d;
     '
 echo $bashCommand
-
+    echo $KEY
     . RemoteServer.sh $KEY $REMOTE_HOST $USER_SYSTEM "$bashCommand"
     sleep 160
     echo App build and start

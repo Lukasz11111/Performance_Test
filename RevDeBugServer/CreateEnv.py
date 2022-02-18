@@ -17,6 +17,8 @@ REVDEBUG_VOLUME_CAPATH=/var/revdebug/ca
 REVDEBUG_CERTIFICATE_PATH=/var/revdebug/cert
 REVDEBUG_DOCKER_TAG={operationOnConfigPython.getTag(idTest, idMod)}
 REVDEBUG_DOCKER_REGISTRY={operationOnConfigPython.getHub(idTest, idMod)}
+KEYCLOAK_USER=admin
+KEYCLOAK_PASSWORD=admin
 '''
 
 if operationOnConfigPython.getSSLActive(idTest, idMod)=="1":
@@ -28,7 +30,9 @@ REVDEBUG_AUTH_OPENID_SECRET={str(uuid.uuid4())}
 REVDEBUG_AUTH_METHOD=openid-connect
 REVDEBUG_AUTH_OPENID_ADDRESS={operationOnConfigPython.getRdbProtocol(idTest, idMod)}://{operationOnConfigPython.getRDBHost(idTest, idMod)}/auth/realms/rdbRealm
 REVDEBUG_AUTH_SAMESITE_OVERRIDE=None
-REVDEBUG_AUTH_ROLESPROVIDER=external'''
+REVDEBUG_AUTH_ROLESPROVIDER=external
+KEYCLOAK_USER=admin
+KEYCLOAK_PASSWORD=admin'''
 
 envPath=f"{os.getenv('RDB_SERVER_FILE_PATH')}.env"
 text_file = open(envPath, "w")

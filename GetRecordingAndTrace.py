@@ -115,4 +115,5 @@ print(f'Trace all: {resultTrace}')
 print(f'Trace err: {resultTraceErr}')
 print(f'Trace suc: {resultTraceSuc}')
 
-operationOnResult.saveValue(resultRecording,resultTrace,resultTraceErr,resultTraceSuc)
+
+operationOnResult.saveValue(resultRecording,resultTrace,resultTraceErr,resultTraceSuc,idTest,idMod)

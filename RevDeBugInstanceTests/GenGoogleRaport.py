@@ -1,14 +1,15 @@
-
 import gspread
 from gspread.urls import SPREADSHEETS_API_V4_BASE_URL
 from gspread_formatting import *
 import sys
+import operatinonOnResultRDBTest
+sys.path.append("/app")
 import operationOnConfigPython
 import operationOnResult
 import json
 import os
 import time
-
+from datetime import datetime
 
 
 gc = gspread.service_account(filename='./file.json')
@@ -19,23 +20,27 @@ activeLine=2
 
 
 OrderInRow=[
+    
     {"ID":False},
     {"TIME":False},
-    {"RECORDINGS":True},
-    {"RECORDING_PRECENT":True},
-    {"TRACE_SUCCES":False},
-    {"TRACE_ERROR":False},
-    {"TRACE_PERCENT":False},
-    {"TRACE":True},
+    {"ERROR_COUNT":True},
+    {"ERROR_PCT":True},
+    {"ENDPOINTS":True},
+    {"USERS":True},
     {"ALL_CALLS":True},
-    {"COMPERE_WITH_DEF":True},
     {"CALLS_PER_S":True},
-    {"SEND_KB_PER_S":False},
-    {"AVG_RESPONSE_APP_TIME":False},
-    {"PERCENTAGE_OF_ERRORS":True},
-    {"MODULE_NAME":True},
     {"CALL_DELAY":True},
-
+    {"MEAN_RES_TIME":True},
+    {"MEDIAN_RES_TIME":True},
+    {"MIN_RES_TIME":True},
+    {"MAX_RES_TIME":True},
+    {"PCT_RES_TIME_90":True},
+    {"PCT_RES_TIME_95":True},
+    {"PCT_RES_TIME_99":True},
+    {"THROUGHPUT":True},
+    {"RECEIVED_KBYTES_PER_SEC":True},
+    {"SENT_KBYTES_PER_SEC":True},
+    {"EMPTY_SERVER":True},
     {"CPU_RDB":False},
     {"RAM_RDB":False},
     {"DISK_SIZE_RDB":False},
@@ -43,17 +48,7 @@ OrderInRow=[
     {"DISK_IOPS":False},
     {"PLATFORM_RDB":False},
     {"VERSION_RDB":False},
-    {"COMPILER_VERSION":False},
-    {"AGENT_VERSION":False},
     {"SSL_ON_RDB":False},
-    {"ENDPOINT_LEN":False},
-    {"MULTISERVICE":False},
-    {"DB_CALLS":False},
-    {"USERS_ON_RDB":False},
-    {"DATA_RETENTION_RDB":False},
-    {"DATA_RETENTION_APM":False},
-    
-
 ]
 
 
@@ -198,11 +193,7 @@ def sheetName(idTest,idMod):
     return operationOnResult.getSheetName(idTest, idMod)
 
 def openCreateWorkSheet(idTest,idMod):
-    if operationOnConfigPython.getdefaultRaportName(idTest, idMod):
-        name=sheetName(idTest,idMod)
-    else:
-        name=operationOnConfigPython.getRaportName(idTest,idMod)
-    
+    name=operationOnConfigPython.getRaportName(idTest,idMod)
     try:
         worksheet = sh.worksheet(name)
     except:
@@ -211,62 +202,51 @@ def openCreateWorkSheet(idTest,idMod):
     return worksheet
 
 def createRowCallsValue(idTest, idMod):  
-    result=operationOnResult.createDictOfResult(idTest,idMod)
+    result=operatinonOnResultRDBTest.createDictOfResult(idTest,idMod)
+
     listResult=[]
     listResult.append(CallsOption("ID",os.getenv("RUN_ID")))
-    listResult.append(CallsOption("TIME",operationOnResult.getStartTime()))
-    listResult.append(CallsOption("RECORDINGS",result['Recordings']))
-    listResult.append(CallsOption("RECORDING_PRECENT",result['Recordings_Percent']))
-    listResult.append(CallsOption("TRACE_ERROR",result['Trace_Error']))
-    listResult.append(CallsOption("TRACE_SUCCES",result['Trace_Succes']))
-    listResult.append(CallsOption("TRACE_PERCENT",result['Trace_Percent']))
-    listResult.append(CallsOption("TRACE",result['Trace']))
+    listResult.append(CallsOption("TIME",str(datetime.fromtimestamp(time.time()))))
+
+    listResult.append(CallsOption("USERS",result['users']))
+    listResult.append(CallsOption("ERROR_COUNT",result['errorCount']))
+    listResult.append(CallsOption("ERROR_PCT",result['errorPct']))
+    listResult.append(CallsOption("ENDPOINTS",result['endpoints']))
     listResult.append(CallsOption("ALL_CALLS",result['sampleCount']))
-    listResult.append(CallsOption("COMPERE_WITH_DEF",result['compare']))
     listResult.append(CallsOption("CALLS_PER_S",result['Calls']))
-    listResult.append(CallsOption("SEND_KB_PER_S",result['sentKBytesPerSec']))
-    listResult.append(CallsOption("AVG_RESPONSE_APP_TIME",result['meanResTime']))
-    listResult.append(CallsOption("PERCENTAGE_OF_ERRORS",result['errorPct']))
-    listResult.append(CallsOption("MODULE_NAME",result['Mod']))
-    
+
+    listResult.append(CallsOption("MEAN_RES_TIME",result['meanResTime']))
+    listResult.append(CallsOption("MEDIAN_RES_TIME",result['medianResTime']))
+    listResult.append(CallsOption("MIN_RES_TIME",result['minResTime']))
+    listResult.append(CallsOption("MAX_RES_TIME",result['maxResTime']))
+    listResult.append(CallsOption("PCT_RES_TIME_90",result['pct1ResTime']))
+    listResult.append(CallsOption("PCT_RES_TIME_95",result['pct2ResTime']))
+    listResult.append(CallsOption("PCT_RES_TIME_99",result['pct3ResTime']))
+    listResult.append(CallsOption("THROUGHPUT",result['throughput']))
+    listResult.append(CallsOption("RECEIVED_KBYTES_PER_SEC",result['receivedKBytesPerSec']))
+    listResult.append(CallsOption("SENT_KBYTES_PER_SEC",result['sentKBytesPerSec']))
+    listResult.append(CallsOption("EMPTY_SERVER",result['emptyServer']))
     listResult.append(CallsOption("CALL_DELAY",delay))
 
-    
-
-
-    listResult.append(CallsOption("CPU_RDB",result['MV']['ram']))
     listResult.append(CallsOption("RAM_RDB",result['MV']['cpu']))
-    
+    listResult.append(CallsOption("CPU_RDB",result['MV']['ram']))
     listResult.append(CallsOption("DISK_SIZE_RDB",result['MV']['disk_size']))
     listResult.append(CallsOption("DISK_TYPE_RDB",result['MV']['disk_type']))
     listResult.append(CallsOption("DISK_IOPS",result['MV']['disk_iops']))
     listResult.append(CallsOption("PLATFORM_RDB",result['MV']['platform']))
 
     listResult.append(CallsOption("VERSION_RDB",result['rdb_version']))
-    listResult.append(CallsOption("COMPILER_VERSION",result['app_version']['compiler']))
-    listResult.append(CallsOption("AGENT_VERSION",result['app_version']['agent']))
-
     listResult.append(CallsOption("SSL_ON_RDB",result['ssl']))
 
-    listResult.append(CallsOption("ENDPOINT_LEN",result['endpoint_len']))
-
-    listResult.append(CallsOption("MULTISERVICE",result['multiservice']))
-    listResult.append(CallsOption("DB_CALLS",result['db']))
-    listResult.append(CallsOption("USERS_ON_RDB",result['user_on_rdb']))
-    listResult.append(CallsOption("DATA_RETENTION_RDB",result['data_retention_rdb']))
-    listResult.append(CallsOption("DATA_RETENTION_APM",result['data_retention_apm']))
-
-    
     return listResult
 
 def sortListValueRow(idTest, idMod):
     rowOptionList=createRowCallsValue(idTest, idMod)
     resultList=[]
-
     for x in rowOptionList:
         index=getType(x.type_)
         try:
-            resultList.insert(index,round(float(x.value),1) )
+            resultList.insert(index,int(x.value))
         except:
             resultList.insert(index,str(x.value))
         try:
@@ -278,7 +258,6 @@ def sortListValueRow(idTest, idMod):
 
 def createRowCalls(activeLine,worksheet,idTest, idMod):
     rowOptions=sortListValueRow(idTest, idMod)
-    
     try:
         worksheet.update(createRowNr(activeLine),[rowOptions])
     except:
@@ -287,7 +266,6 @@ def createRowCalls(activeLine,worksheet,idTest, idMod):
 
 def insertNotes(activeLine,worksheet,idTest, idMod):
     insert_note(worksheet, activeLine, getType('VERSION_RDB'), operationOnResult.getRDBCommits(idTest, idMod))
-    insert_note(worksheet, activeLine, getType('COMPERE_WITH_DEF'), operationOnResult.getCompare())
 
     
 
@@ -314,12 +292,10 @@ def getAllValueFromRow(line):
     values_list = worksheet.row_values(line)
 
 
-
-    
 def startGenRaportOnGoogleSheet(idTest,idMod):
     worksheet=openCreateWorkSheet(idTest,idMod)
     addRow(activeLine,worksheet,idTest, idMod)
-    styleOption=StyleOptions(color.fromHex(operationOnResult.getColor(idTest,idMod)),False,'CENTER')
+    styleOption=StyleOptions(color.fromHex(operatinonOnResultRDBTest.getColor(idTest,idMod)),False,'CENTER')
     setSyle(worksheet,styleOption,f'{colnum_string(0)}{activeLine}:{colnum_string(len(OrderInRow)-1)}{activeLine}')
     insertNotes(activeLine,worksheet,idTest, idMod)
  
@@ -330,13 +306,14 @@ idTest=sys.argv[1]
 idMod=sys.argv[2]
 delay=sys.argv[3]
 
+
+
+
 if delay=="hide":
     worksheet=openCreateWorkSheet(idTest,idMod)
     hideColumnStart(worksheet)
 else:
     startGenRaportOnGoogleSheet(idTest, idMod)
-
-
 
 # getNote(worksheet,"V3")
 

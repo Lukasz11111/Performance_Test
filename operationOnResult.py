@@ -56,6 +56,7 @@ def getTraceSUCCESBefore():
     json_dict = load_json()
     return json_dict["Trace_Succes_Before"]
 
+
 def createDictOfResult(idTest,idMod):
     json_dict = load_json()
     result={}
@@ -73,6 +74,7 @@ def createDictOfResult(idTest,idMod):
     result['Recordings_Percent']=percent(result['sampleCount'],json_dict["Recordings"],100-result['errorPct'])
     result['Trace_Percent']=percent(result['sampleCount'],json_dict["Trace"],0)
     result['Mod']=operationOnConfigPython.getActiveMod(idTest,idMod)
+    result['compare']=compereValueWithDef()
 
     result['MV']=operationOnConfigPython.getMV(idTest,idMod)
     result['rdb_version']=json_dict["version"]
@@ -90,7 +92,6 @@ def createDictOfResult(idTest,idMod):
     result['data_retention_apm']=operationOnConfigPython.getdataRetentionAPM(idTest, idMod)
     result['multiservice']=operationOnConfigPython.getMultiservice(idTest, idMod)
     result['db']=operationOnConfigPython.getDB(idTest, idMod)
-
 
     return result
 
@@ -190,7 +191,18 @@ def getRDBCommits(idTest, idMod):
     r = requests.get(f'{protocol}://{operationOnConfigPython.getRDBHost(idTest, idMod)}/info/hashes.version')
     return r.text
 
-def saveValue(rec,trace,traceErr,traceSuc):
+def compereValueWithDef():
+    json_result = load_json()
+    print(getCallsPerSecond())
+    print(json_result["Comparison"]["Calls"])
+    print(getCallsPerSecond()*100/json_result["Comparison"]["Calls"])
+    return (getCallsPerSecond()*100/json_result["Comparison"]["Calls"])
+
+def getCompare():
+    json_result = load_json()
+    return str(json_result["Comparison"])
+
+def saveValue(rec,trace,traceErr,traceSuc,idTest, idMod):
     with open(os.getenv("RESULT_STATISTICS_PATH")) as f:
         json_JM= json.load(f)
 
@@ -209,6 +221,11 @@ def saveValue(rec,trace,traceErr,traceSuc):
     json_result["Trace"]=trace
     json_result["Trace_Succes"]=traceErr
     json_result["Trace_Error"]=traceSuc
+    if operationOnConfigPython.checkIfComparisonMod(idTest,idMod):
+        json_result["Comparison"]["sampleCount"]=json_JM["Total"]["sampleCount"]
+        json_result["Comparison"]["errorPct"]=json_JM["Total"]["errorPct"]
+        time.sleep(1)
+        json_result["Comparison"]["Calls"]=getCallsPerSecond()
     with open(os.getenv("JSON_RAPORT_PATH"), "w", encoding='utf-8') as x:    
         json.dump(json_result, x, ensure_ascii=False, indent=4)
     from time import sleep

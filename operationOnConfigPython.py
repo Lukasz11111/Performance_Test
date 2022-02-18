@@ -27,6 +27,12 @@ def getErrorEndpoint(idTest,idMod):
 def getProtocoleApp(idTest, idMod):
     return getRdbConf("server_app_default",idTest,"http","protocol",idMod)
 
+
+
+
+def getEmptyServer(idTest,idMod):
+    return getConf("emptyServer",idTest,"Empty",idMod)
+
 def ifRaportGen(idTest,idMod):
     return getConf("raportOn",idTest,"False")
 
@@ -134,6 +140,8 @@ def to_bool(value):
 #     json_dict[key]=value
 
 def getTestTime(idTest,idmod,TestType="Tests"):
+    idTest=int(idTest)
+    idmod=int(idmod)
     if "test_time" in json_dict[TestType][idTest]['module'][idmod]:
         if int(json_dict[TestType][idTest]['module'][idmod]["test_time"]) > 0:
             return json_dict[TestType][idTest]['module'][idmod]["test_time"]
@@ -283,7 +291,7 @@ def getSSLActive(idTest, idMod):
 def getslave():
     return json_dict["slave"]
 
-def getApplicationName():
+def getApplicationName(idTest,idMod):
     return getRdbConf("server_app_default",idTest,"Non-Name-App","application_name",idMod)
 
 
@@ -352,6 +360,17 @@ def FileTestActiv():
 def typeTest(idTest):
         result = getConf("TestType",idTest,"APP")
         return result
+
+
+def RDBrestartAfterSingleRun(idTest,idMod):
+    try:
+        if to_bool(getConf("RDBTEST_restartAfterSingleRun",idTest,"true",idMod)):
+            return "1"
+        else:
+            return "0"
+    except:
+        return "0"
+
 
 def AppTestActiv():
         try:
@@ -543,3 +562,6 @@ def initServerMod(x,mod):
 
 def getDockerRDBPath(idTest,idMod):
     return getRdbConf("server_rdb_default",idTest,"~/rdb-docker-stress","rdb_docker_path",idMod)
+
+def checkIfComparisonMod(idTest,idMod):
+    return to_bool(getConfMod("comparison",idTest,idMod)) 

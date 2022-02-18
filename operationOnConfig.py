@@ -9,6 +9,7 @@ parser = argparse.ArgumentParser(description='Get config')
 
 parser.add_argument('-mod')
 
+parser.add_argument('-RDBrestartAfterSingleRun',  nargs='?')
 parser.add_argument('-initServerAll',  nargs='?')
 parser.add_argument('-initServerTest',  nargs='?')
 parser.add_argument('-initServerMod',  nargs='?')
@@ -64,6 +65,7 @@ def getResult(argsP):
     for key, val in argsP.items():
         result = { 
         'typeTest': lambda x: operationOnConfigPython.typeTest(x),
+        'RDBrestartAfterSingleRun': lambda x: operationOnConfigPython.RDBrestartAfterSingleRun(x,mod),
         'getAppGenDataDir': lambda x: operationOnConfigPython.getAppGenDataDir(x,mod),
         'rebuildAppAfterMod': lambda x: operationOnConfigPython.rebuildAppAfterMod(),
         'rebuildAppAfterTest': lambda x: operationOnConfigPython.rebuildAppAfterTest(),

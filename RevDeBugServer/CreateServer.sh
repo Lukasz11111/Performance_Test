@@ -25,7 +25,7 @@ else
 fi
 
 if [[ $keyCloak == "1" ]]; then
-    startCmmand='sudo docker-compose -f docker-compose.keycloak.yml -f docker-compose.yml -p rdb up -d'
+    startCmmand='sudo docker-compose -p rdb up -d'
 else
     startCmmand=' sudo docker-compose -p rdb up -d'
 fi
@@ -48,8 +48,17 @@ sudo rm '$REVDEBUG_DOCKER_PATH'/.env;
 sudo mv .env '$REVDEBUG_DOCKER_PATH';
 cd '$REVDEBUG_DOCKER_PATH';
 
-sudo docker-compose -f docker-compose.keycloak.yml -f docker-compose.yml -p rdb pull;
-sudo docker-compose -f docker-compose.keycloak.yml -f docker-compose.yml -p rdb down;
+
+sudo mkdir /var/revdebug;
+sudo mkdir /var/revdebug/server;
+sudo mkdir /var/revdebug/server;
+sudo mkdir /var/revdebug/server/repo;
+
+sudo cp license.dat /var/revdebug/server/repo/license.dat;
+
+
+sudo docker-compose -p rdb pull;
+sudo docker-compose -p rdb down;
 '$startCmmand'
 '
 
