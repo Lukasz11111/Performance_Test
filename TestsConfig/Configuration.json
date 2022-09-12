@@ -1,22 +1,22 @@
 {
-    "AppTestActiv": "true",
-    "FileTestActiv": "false",
+    "AppTestActiv": "false",
+    "FileTestActiv": "true",
     "start_my_file_test": {
         "active": "true",
         "slave": 6,
         "_comment": "if you active start_my_file_test there will be only that started",
         "names": [
-            "a.jmx"
+            "py-mem.jmx"
         ]
     },
     "initServerAll": "false",
     "initServerTest": "false",
     "initServerMod": "false",
     "clear_RDB_after_all": "false",
-    "clear_RDB_after_test": "true",
+    "clear_RDB_after_test": "false",
     "clear_RDB_after_mod": "false",
     "rebuild_app_after_all": "false",
-    "rebuild_app_after_test": "true",
+    "rebuild_app_after_test": "false",
     "rebuild_app_after_mod": "false",
     "test_time": "1800",
     "thread": "100",
@@ -35,15 +35,15 @@
             "agent": "6.3.0",
             "compiler": "6.3.0"
         },
-        "key_path": "./TestStart/keyAppLm.pem",
-        "user_sys": "lm",
+        "key_path": "./TestStart/server1a.pem",
+        "user_sys": "ubuntu",
         "application_name": "Java",
         "appPath": "stress",
         "appDir": "lm-javastress",
         "protocol": "http",
-        "host": "40.89.147.34",
-        "language": "java-old",
-        "framework": "17.02",
+        "host": "54.93.250.85",
+        "language": "dotnet-new",
+        "framework": "22.02",
         "endpoints": [
             {
                 "name": "/err",
@@ -62,13 +62,13 @@
     "server_rdb_default": {
         "version": "",
         "protocol": "http",
-        "host": "20.199.127.147",
-        "rdb_docker_path": "",
+        "host": "3.66.224.92",
+        "rdb_docker_path": "revdebug-server-docker-compose",
         "login": "a",
         "password": "a",
         "server_name": "",
-        "key_path": "./TestStart/server1.pem",
-        "user_sys": "azureuser",
+        "key_path": "./TestStart/server1a.pem",
+        "user_sys": "ubuntu",
         "db": "revdebug_db",
         "db_user": "rdb_user",
         "db_pass": "masterkey",
@@ -120,7 +120,7 @@
                 "appPath": "stress",
                 "appDir": "stresstestdotnetcore",
                 "language": "dotnet-new",
-                "framework": "18.02",
+                "framework": "22.02",
                 "endpoints": [
                     {
                         "name": "/err",

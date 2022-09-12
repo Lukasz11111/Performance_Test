@@ -1,22 +1,22 @@
 {
     "TotalJmeter": {
-        "sampleCount": 3850215,
-        "meanResTime": 278,
-        "receivedKBytesPerSec": 706,
-        "sentKBytesPerSec": 730,
+        "sampleCount": 863359,
+        "meanResTime": 1280,
+        "receivedKBytesPerSec": 167,
+        "sentKBytesPerSec": 162,
         "errorPct": 0
     },
     "Recordings": 0,
-    "Trace": 1743464,
+    "Trace": 713192,
     "Trace_Succes": 0,
-    "Trace_Succes_Before": 0,
-    "Trace_Error": 1743464,
-    "Trace_Error_Before": 1,
-    "StartTime": "2022-02-18 09:43:56.774696",
+    "Trace_Succes_Before": 1585929,
+    "Trace_Error": 713192,
+    "Trace_Error_Before": 0,
+    "StartTime": "2022-02-22 15:40:39.984686",
     "version": "6.3.1.2854",
     "Comparison": {
-        "sampleCount": 3850215,
-        "errorPct": 0.033920184,
-        "Calls": 2016.1
+        "sampleCount": 863359,
+        "errorPct": 0.90217394,
+        "Calls": 453.7
     }
 }

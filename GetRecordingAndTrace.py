@@ -80,6 +80,50 @@ def getREC():
 
 
 
+# def getTRACE(is_err):
+#     getall=True
+#     i=0
+#     result2=-1
+#     while getall:
+#         result = singleOperation(f'''(SELECT COUNT(*) FROM public."segment"  WHERE is_error={is_err} );''')
+#         time.sleep(5)
+#         result2 = singleOperation(f'''(SELECT COUNT(*) FROM public."segment"  WHERE is_error={is_err} );''')
+#         if(result==result2):
+#             getall=False
+#         if(i==60):
+#             result2="Oh, something went wrong"
+#             getall=False
+#         i=i+1
+#     return result2
+
+from opensearchpy import OpenSearch
+
+def singleOperationOpen(query):
+    with SSHTunnelForwarder(
+            (HOST, 22),
+            ssh_private_key=SSH_PKEY,
+            ### in my case, I used a password instead of a private key
+            ssh_username=KEY_PW,
+        #  ssh_password="<mypasswd>", 
+            remote_bind_address=(DB_HOST, 5432)) as server:
+            server.start()    
+
+            params = {
+                'database': DBNAME,
+                'user': USER,
+                'password': PASSWORD,
+                'host': 'localhost',
+                'port': server.local_bind_port
+                }
+
+            conn = psycopg2.connect(**params)
+            curs = conn.cursor()
+            curs.execute(query)
+            result = curs.fetchall()
+            curs.close()
+        
+            return result[0][0]
+
 def getTRACE(is_err):
     getall=True
     i=0

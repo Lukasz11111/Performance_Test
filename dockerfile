@@ -22,7 +22,8 @@ pip3 install openpyxl                            ; \
 pip3 install sshtunnel                            ; \
 pip3 install gspread                            ; \
 pip3 install gspread_formatting                            ; \
-pip3 install psycopg2-binary
+pip3 install psycopg2-binary                      ; \
+pip install opensearch-py
 
 # RUN apt-get install -y libglib2.0-0 \
 #     libnss3 \
