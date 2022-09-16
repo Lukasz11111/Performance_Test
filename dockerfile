@@ -1,42 +1,42 @@
-FROM ubuntu
+# Use Java 8 slim JRE
+FROM openjdk:8-jre-slim as jmbase
+
+# JMeter version
+ARG JMETER_VERSION=5.4.1
+
+# Install few utilities
+RUN apt-get clean && \
+    apt-get update && \
+    apt-get -qy install \
+                wget \
+                telnet \
+                iputils-ping \
+                unzip \
+                python3
+
+# Install JMeter
+RUN   mkdir /jmeter \
+      && cd /jmeter/ \
+      && wget https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-$JMETER_VERSION.tgz \
+      && tar -xzf apache-jmeter-5.4.1.tgz \
+      && rm apache-jmeter-5.4.1.tgz
+
+# Set JMeter Home
+ENV JMETER_HOME /jmeter/apache-jmeter-5.4.1/
+
+# Add JMeter to the Path
+ENV PATH $JMETER_HOME/bin:$PATH
+
+# Use vinsdocker base image
+FROM jmbase
+
+# Ports to be exposed from the container for JMeter Master
+EXPOSE 60000
 
 WORKDIR /app
-
-RUN  apt-get -yq update && \
-     apt-get -yqq install ssh ; \ 
-     apt-get install openssh-client
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
 
 
-RUN apt-get update                              ; \
-apt-get -yqq install ssh                        ; \
-apt-get install -y wget openssh-server          ; \
-apt-get -y install curl                         ; \
-apt-get install python3-pip     -y              ; \
-# apt-get -y install google-chrome-stable          ; \
-# apt-get install -y chromium-browser             ; \
-# apt-get install -y chromium-chromedriver        ; \
-# apt-get install -y urllib3                       ; \
-pip3 install selenium                           ; \           
-pip3 install requests                           ; \
-pip3 install openpyxl                            ; \
-pip3 install sshtunnel                            ; \
-pip3 install gspread                            ; \
-pip3 install gspread_formatting                            ; \
-pip3 install psycopg2-binary                      ; \
-pip install opensearch-py
+ENTRYPOINT ["/run.sh"]
 
-# RUN apt-get install -y libglib2.0-0 \
-#     libnss3 \
-#     libgconf-2-4\
-#     libfontconfig1
-
-COPY . /app
-
-RUN bash instalSelenium.sh
-
-RUN pip3 install httpx
-
-ARG  PATH_ARG
-ENV  PATH_=$PATH_ARG
-
-CMD ["bash", "start.sh"] 

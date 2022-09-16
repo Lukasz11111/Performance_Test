@@ -1,0 +1,20 @@
+{
+    "ip":"34.249.58.48",
+    "port": 7001,
+    "protocol": "http",
+    "proportion": 99,
+    "TestTime": 1800,
+    "threadCount": 50,
+    "callPerS": 500,
+
+
+    "endpoints": [ 
+        {
+        "name": "/",
+        "error": true
+    },  {
+        "name": "/a",
+        "error": false
+    }
+]
+}
