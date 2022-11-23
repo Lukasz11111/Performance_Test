@@ -1,19 +1,21 @@
 {
-    "ip":"34.249.58.48",
-    "port": 7001,
+    "ip":"34.142.20.56",
+    "port": 6018,
     "protocol": "http",
-    "proportion": 99,
-    "TestTime": 1800,
+    "proportion": 50,
+    "TestTime": 6000,
     "threadCount": 50,
-    "callPerS": 500,
+    "callPerS": 10000,
+    "connect_timeou": 10000,
+    "response_timeout": 10000,
 
 
     "endpoints": [ 
         {
-        "name": "/",
+        "name": "/Error/error_msg_file_name",
         "error": true
     },  {
-        "name": "/a",
+        "name": "/Basic/multiply",
         "error": false
     }
 ]

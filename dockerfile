@@ -5,8 +5,7 @@ FROM openjdk:8-jre-slim as jmbase
 ARG JMETER_VERSION=5.4.1
 
 # Install few utilities
-RUN apt-get clean && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get -qy install \
                 wget \
                 telnet \

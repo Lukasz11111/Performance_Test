@@ -19,6 +19,10 @@ THREAD_COUNT=json_dict["threadCount"]
 CALL_S=int(json_dict["callPerS"])*100
 IP_CHANGE=json_dict["ip"]
 PORT_CHANGE=json_dict["port"]
+
+CON_TIM=str(json_dict["connect_timeou"])
+RES_TIM=str(json_dict["response_timeout"])
+
 with open(FILE) as f:
     f = [line.rstrip() for line in f]
 f=str(f)[2:]
@@ -35,7 +39,9 @@ f=str(f).replace("IP_CHANGE",str(IP_CHANGE))
 f=str(f).replace("PORT_CHANGE",str(PORT_CHANGE))
 
 
-def createTestString(endpoint):
+
+
+def createTestString(endpoint, conTim,resTim):
     return """         
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Test" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
@@ -52,9 +58,9 @@ def createTestString(endpoint):
             <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
             <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
             <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.implementation">Java</stringProp>
-            <stringProp name="HTTPSampler.connect_timeout">1</stringProp>
-            <stringProp name="HTTPSampler.response_timeout">1</stringProp>
+            <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+            <stringProp name="HTTPSampler.connect_timeout">"""+conTim+"""</stringProp>
+            <stringProp name="HTTPSampler.response_timeout">"""+resTim+"""</stringProp>
           </HTTPSamplerProxy>
           <hashTree/>
 """
@@ -95,13 +101,15 @@ def getEndpoint(status):
     return result
 
 
+
+
 for x in range(0,lenProp):
   if error_count>0:
     errEndpoint=random.choice(getEndpoint(True)).get('name')
-    string=f'{string}{createTestString(str(errEndpoint))}'
+    string=f'{string}{createTestString(str(errEndpoint),CON_TIM,RES_TIM)}'
   if success_count>0:
     sucEndpoint=random.choice(getEndpoint(False)).get('name')
-    string=f'{string}{createTestString(str(sucEndpoint))}'
+    string=f'{string}{createTestString(str(sucEndpoint),CON_TIM,RES_TIM)}'
   error_count=error_count-1
   success_count=success_count-1
 
