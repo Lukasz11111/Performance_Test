@@ -34,8 +34,8 @@ EXPOSE 60000
 
 WORKDIR /app
 COPY run.sh /run.sh
-RUN chmod +x /run.sh
+RUN chmod 777 /run.sh
 
 
-ENTRYPOINT ["/run.sh"]
+CMD ["/run.sh"]
 

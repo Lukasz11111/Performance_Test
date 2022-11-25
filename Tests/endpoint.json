@@ -2,7 +2,7 @@
     "ip":"34.142.20.56",
     "port": 6018,
     "protocol": "http",
-    "proportion": 50,
+    "proportion": 0,
     "TestTime": 6000,
     "threadCount": 50,
     "callPerS": 10000,
@@ -12,7 +12,7 @@
 
     "endpoints": [ 
         {
-        "name": "/Error/error_msg_file_name",
+        "name": "/T2/",
         "error": true
     },  {
         "name": "/Basic/multiply",
