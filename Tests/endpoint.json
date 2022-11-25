@@ -1,0 +1,22 @@
+{
+    "ip":"34.142.20.56",
+    "port": 6018,
+    "protocol": "http",
+    "proportion": 0,
+    "TestTime": 6000,
+    "threadCount": 50,
+    "callPerS": 10000,
+    "connect_timeou": 10000,
+    "response_timeout": 10000,
+
+
+    "endpoints": [ 
+        {
+        "name": "/T2/",
+        "error": true
+    },  {
+        "name": "/Basic/multiply",
+        "error": false
+    }
+]
+}
